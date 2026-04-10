@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第11章 日常整備とトラブル対応 — 機関編</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@keyframes blink-red {
+  0%, 100% { fill: #e53e3e; }
+  50% { fill: #feb2b2; }
+}
+.animate-alarm { animation: blink-red 1s ease-in-out infinite; }
+@keyframes wrench-turn {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-20deg); }
+  75% { transform: rotate(20deg); }
+}
+.animate-wrench { animation: wrench-turn 1.5s ease-in-out infinite; transform-origin: center; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <p class="subtitle">内航船員のための海技教材</p>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="eng10_tanker.html">前章: タンカー特有の機器</a>
+    <a href="eng12_law.html">次章: 機関関連法規</a>
+  </nav>
+</header>
+
+<div class="content">
+
+<h1>第11章 日常整備とトラブル対応</h1>
+
+<p>船舶の機関設備は、陸上の工場設備と異なり、航海中に外部からの修理支援を受けることが困難です。そのため、日常的な点検整備と、トラブル発生時の迅速な対応能力が極めて重要です。本章では、計画保全の考え方から具体的な点検項目、故障診断、応急修理まで、実務に直結する知識を学びます。</p>
+
+<!-- ===== 1. PMS ===== -->
+<h2>1. 計画保全（PMS）の考え方</h2>
+
+<p><strong>計画保全（PMS: Planned Maintenance System）</strong>とは、機器の故障を未然に防ぐために、計画的に点検・整備を行う管理手法です。ISMコードでも、適切な保全計画の策定と実施が求められています。</p>
+
+<h3>保全の3つのアプローチ</h3>
+<table>
+  <thead>
+    <tr><th>保全方式</th><th>略称</th><th>内容</th><th>例</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>時間基準保全</strong></td>
+      <td>TBM</td>
+      <td>一定の運転時間や期間ごとに部品交換・整備を行う</td>
+      <td>ピストンリングは○○時間ごとに交換</td>
+    </tr>
+    <tr>
+      <td><strong>状態基準保全</strong></td>
+      <td>CBM</td>
+      <td>機器の状態を測定・監視し、劣化が進んだ時点で整備を行う</td>
+      <td>振動値が基準を超えたら軸受交換</td>
+    </tr>
+    <tr>
+      <td><strong>事後保全</strong></td>
+      <td>BM</td>
+      <td>故障してから修理する（重要度の低い機器に適用）</td>
+      <td>照明の電球交換</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="key-point">
+  <p><strong>TBMとCBMの使い分け:</strong> 重要な機器（主機関、発電機、舵取機等）にはTBMを基本とし、CBMで補完するのが一般的です。CBMの代表的な手法として、<strong>潤滑油分析</strong>（摩耗粉の検出）、<strong>振動測定</strong>（軸受の劣化検知）、<strong>温度監視</strong>（異常発熱の検出）があります。</p>
+</div>
+
+<h3>PMSの実施サイクル</h3>
+<ol>
+  <li><strong>計画（Plan）:</strong> メーカー推奨と実績に基づき、整備スケジュールを作成</li>
+  <li><strong>実施（Do）:</strong> 計画に従って点検・整備を実施</li>
+  <li><strong>記録（Check）:</strong> 実施内容・測定値・使用部品を記録</li>
+  <li><strong>改善（Act）:</strong> 記録を分析し、次回の計画に反映（整備間隔の見直し等）</li>
+</ol>
+
+<!-- ===== 2. 日常点検 ===== -->
+<h2>2. 日常点検項目一覧</h2>
+
+<h3>2-1. 主機関の点検</h3>
+<table>
+  <thead>
+    <tr><th>点検項目</th><th>確認内容</th><th>異常時の判断基準</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>冷却水温度</strong></td>
+      <td>出口温度、入口との温度差</td>
+      <td>通常より5℃以上の上昇は要注意</td>
+    </tr>
+    <tr>
+      <td><strong>潤滑油圧力</strong></td>
+      <td>主管圧力、フィルター前後の差圧</td>
+      <td>規定値を下回る場合は直ちに原因調査</td>
+    </tr>
+    <tr>
+      <td><strong>潤滑油温度</strong></td>
+      <td>クーラー出口温度</td>
+      <td>規定範囲を超える場合はクーラーの汚れを疑う</td>
+    </tr>
+    <tr>
+      <td><strong>排気温度</strong></td>
+      <td>各シリンダの排気温度</td>
+      <td>シリンダ間の偏差が大きい場合は要注意</td>
+    </tr>
+    <tr>
+      <td><strong>振動・異音</strong></td>
+      <td>軸受部、歯車部の振動と音</td>
+      <td>いつもと異なる振動や音は早期対応</td>
+    </tr>
+    <tr>
+      <td><strong>排気の色</strong></td>
+      <td>煙突からの排気色を目視</td>
+      <td>黒煙=燃焼不良、白煙=水混入、青煙=潤滑油燃焼</td>
+    </tr>
+    <tr>
+      <td><strong>燃料油圧力</strong></td>
+      <td>噴射ポンプ入口の油圧</td>
+      <td>圧力低下はフィルター詰まりの可能性</td>
+    </tr>
+    <tr>
+      <td><strong>過給機</strong></td>
+      <td>回転音、給気圧力</td>
+      <td>異音や給気圧低下は汚れ・損傷の兆候</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2-2. 補機の点検</h3>
+<ul>
+  <li><strong>発電機:</strong> 電圧・周波数・電流値、軸受温度、絶縁抵抗</li>
+  <li><strong>空気圧縮機:</strong> 吐出圧力、各段の温度、油面</li>
+  <li><strong>ポンプ類:</strong> 吐出圧力、軸封部からの漏洩、異常振動</li>
+  <li><strong>ボイラー:</strong> 水面計の水位、蒸気圧力、炎の状態</li>
+  <li><strong>清水造水器:</strong> 造水量、塩分濃度</li>
+</ul>
+
+<h3>2-3. 各種タンクの液面確認</h3>
+<ul>
+  <li>燃料油タンク（FOサービスタンク、セットリングタンク）</li>
+  <li>潤滑油タンク（主機LO、補機LO）</li>
+  <li>冷却清水膨張タンク</li>
+  <li>ビルジ井の液面（異常な増加は漏洩の兆候）</li>
+  <li>油圧作動油タンク</li>
+</ul>
+
+<!-- ===== 3. 定期整備 ===== -->
+<h2>3. 定期整備作業</h2>
+
+<h3>3-1. シリンダライナの計測</h3>
+<p>シリンダライナは運転に伴い内面が摩耗します。定期的に内径を計測し、摩耗量が限度値に達したら交換します。</p>
+<ul>
+  <li><strong>計測工具:</strong> 内径マイクロメーター（インサイドマイクロメーター）</li>
+  <li><strong>計測位置:</strong> ライナの上部（TDC付近）、中部、下部の3箇所、かつ前後方向と左右方向の2方向で計測</li>
+  <li><strong>摩耗限度:</strong> メーカー規定値（一般的に新品内径の0.5〜1%が限度）</li>
+  <li>上部が最も摩耗しやすい（燃焼圧力が高く、潤滑油膜が薄い）</li>
+</ul>
+
+<h3>3-2. ピストンリングの交換</h3>
+<ul>
+  <li>ピストンリングはシリンダ内のガスシール、潤滑油の制御、熱伝達の役割を持つ</li>
+  <li><strong>交換判断:</strong> リング合口隙間（エンドギャップ）を計測し、限度値を超えたら交換</li>
+  <li>新しいリングの装着時は、各リングの合口位置をずらす（ガス漏れ防止）</li>
+  <li>リングの上下・表裏を間違えないこと（刻印を確認）</li>
+</ul>
+
+<h3>3-3. 弁のすり合わせ</h3>
+<p>吸排気弁は、高温・高圧にさらされるため、弁座との密着面（シート面）が次第に荒れていきます。これを研磨して密着性を回復する作業が「すり合わせ」です。</p>
+<ul>
+  <li><strong>使用材料:</strong> バルブコンパウンド（研磨剤）— 粗目→細目の順に使用</li>
+  <li><strong>方法:</strong> 弁を弁座に合わせ、回転させながら研磨する（打ち込み式やすり合わせ機を使用）</li>
+  <li><strong>確認:</strong> 光明丹（当たり確認用の赤い塗料）を塗布し、接触面が均一であることを確認</li>
+  <li>密着不良はガス漏れ（ブローバイ）や弁の焼損の原因となる</li>
+</ul>
+
+<h3>3-4. フィルター類の清掃・交換</h3>
+<table>
+  <thead>
+    <tr><th>フィルター</th><th>清掃/交換間隔の目安</th><th>注意点</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>燃料油フィルター</td><td>差圧上昇時、または定期</td><td>清掃後のガスケット確認</td></tr>
+    <tr><td>潤滑油フィルター</td><td>運転500〜1,000時間</td><td>バイパス弁の作動確認</td></tr>
+    <tr><td>空気フィルター</td><td>月1回程度</td><td>過給機の性能低下防止</td></tr>
+    <tr><td>油圧フィルター</td><td>差圧上昇時、または定期</td><td>作動油の汚染防止</td></tr>
+    <tr><td>海水ストレーナ</td><td>差圧上昇時、随時</td><td>冷却水量の確保</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 4. 故障診断 ===== -->
+<h2>4. 故障診断の基本的な考え方</h2>
+
+<p>機器の異常を発見した場合、闇雲に部品を交換するのではなく、<strong>症状→原因→対策</strong>の順序で論理的に診断することが重要です。</p>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 750 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr11a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#2d3748"/>
+      </marker>
+    </defs>
+    <text x="375" y="28" text-anchor="middle" class="svg-title" font-size="15">故障診断フローチャート</text>
+    <!-- 異常発見 -->
+    <rect x="250" y="45" width="250" height="45" rx="22" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+    <circle cx="275" cy="67" r="10" class="animate-alarm"/>
+    <text x="390" y="73" text-anchor="middle" font-size="13" fill="#c53030" font-weight="700">異常を発見！</text>
+    <!-- ↓ -->
+    <line x1="375" y1="90" x2="375" y2="115" stroke="#2d3748" stroke-width="2" marker-end="url(#arr11a)"/>
+    <!-- Step1: 安全確認 -->
+    <rect x="225" y="115" width="300" height="45" rx="8" fill="#fff5f5" stroke="#e53e3e" stroke-width="2"/>
+    <text x="375" y="143" text-anchor="middle" font-size="12" fill="#e53e3e" font-weight="700">Step1: 安全確認 — 人命・船体に危険はないか？</text>
+    <!-- 分岐 -->
+    <line x1="375" y1="160" x2="375" y2="185" stroke="#2d3748" stroke-width="2" marker-end="url(#arr11a)"/>
+    <!-- Step2: 症状の確認 -->
+    <rect x="225" y="185" width="300" height="50" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="375" y="207" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="700">Step2: 症状の正確な把握</text>
+    <text x="375" y="225" text-anchor="middle" font-size="10" fill="#2b6cb0">いつ・どこで・何が・どのように？</text>
+    <!-- ↓ -->
+    <line x1="375" y1="235" x2="375" y2="260" stroke="#2d3748" stroke-width="2" marker-end="url(#arr11a)"/>
+    <!-- Step3: 計器データ -->
+    <rect x="225" y="260" width="300" height="50" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+    <text x="375" y="282" text-anchor="middle" font-size="12" fill="#38a169" font-weight="700">Step3: 計器データの確認</text>
+    <text x="375" y="300" text-anchor="middle" font-size="10" fill="#38a169">温度・圧力・回転数・電流値等</text>
+    <!-- ↓ -->
+    <line x1="375" y1="310" x2="375" y2="335" stroke="#2d3748" stroke-width="2" marker-end="url(#arr11a)"/>
+    <!-- Step4: 原因の推定 -->
+    <rect x="225" y="335" width="300" height="50" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+    <text x="375" y="357" text-anchor="middle" font-size="12" fill="#6b46c1" font-weight="700">Step4: 原因の推定と確認</text>
+    <text x="375" y="375" text-anchor="middle" font-size="10" fill="#6b46c1">可能性の高い順に検証する</text>
+    <!-- ↓ -->
+    <line x1="375" y1="385" x2="375" y2="410" stroke="#2d3748" stroke-width="2" marker-end="url(#arr11a)"/>
+    <!-- Step5: 対策の実施 -->
+    <rect x="225" y="410" width="300" height="45" rx="8" fill="#fefcbf" stroke="#975a16" stroke-width="2"/>
+    <text x="375" y="438" text-anchor="middle" font-size="12" fill="#975a16" font-weight="700">Step5: 対策の実施と結果確認</text>
+    <!-- ↓ -->
+    <line x1="375" y1="455" x2="375" y2="480" stroke="#2d3748" stroke-width="2" marker-end="url(#arr11a)"/>
+    <!-- Step6: 報告・記録 -->
+    <rect x="250" y="480" width="250" height="40" rx="20" fill="#e2e8f0" stroke="#4a5568" stroke-width="2"/>
+    <text x="375" y="505" text-anchor="middle" font-size="12" fill="#4a5568" font-weight="700">Step6: 報告・記録</text>
+    <!-- 右側注記 -->
+    <rect x="560" y="115" width="165" height="40" rx="4" fill="#fff5f5" stroke="#e53e3e" stroke-width="1"/>
+    <text x="642" y="133" text-anchor="middle" font-size="9" fill="#e53e3e">危険な場合は機関停止・</text>
+    <text x="642" y="147" text-anchor="middle" font-size="9" fill="#e53e3e">船橋に即報告</text>
+    <line x1="525" y1="137" x2="560" y2="137" stroke="#e53e3e" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="560" y="260" width="165" height="40" rx="4" fill="#f0fff4" stroke="#38a169" stroke-width="1"/>
+    <text x="642" y="278" text-anchor="middle" font-size="9" fill="#38a169">正常時のデータと比較</text>
+    <text x="642" y="292" text-anchor="middle" font-size="9" fill="#38a169">（日頃の記録が重要）</text>
+    <line x1="525" y1="285" x2="560" y2="285" stroke="#38a169" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="560" y="335" width="165" height="40" rx="4" fill="#faf5ff" stroke="#6b46c1" stroke-width="1"/>
+    <text x="642" y="353" text-anchor="middle" font-size="9" fill="#6b46c1">簡単→複雑の順に</text>
+    <text x="642" y="367" text-anchor="middle" font-size="9" fill="#6b46c1">チェックしていく</text>
+    <line x1="525" y1="360" x2="560" y2="360" stroke="#6b46c1" stroke-width="1" stroke-dasharray="3 2"/>
+  </svg>
+  <div class="caption">図11-1: 故障診断の基本フローチャート</div>
+</div>
+
+<!-- ===== 5. よくあるトラブル ===== -->
+<h2>5. よくあるトラブルと対処</h2>
+
+<h3>5-1. 主機の出力低下</h3>
+<div class="box box-info">
+  <h4>考えられる原因と対策</h4>
+  <table>
+    <thead><tr><th>原因</th><th>確認方法</th><th>対策</th></tr></thead>
+    <tbody>
+      <tr><td>燃料フィルター詰まり</td><td>フィルター前後の差圧を確認</td><td>フィルター清掃・交換</td></tr>
+      <tr><td>燃料噴射弁の不良</td><td>各シリンダの排気温度の偏差</td><td>噴射弁のテスト・交換</td></tr>
+      <tr><td>過給機の汚れ</td><td>給気圧力の低下</td><td>過給機のタービン側・ブロワ側洗浄</td></tr>
+      <tr><td>エアフィルター詰まり</td><td>給気温度の上昇、給気圧低下</td><td>フィルター清掃</td></tr>
+      <tr><td>船底汚損</td><td>同回転数での船速低下</td><td>次回入渠時に船底清掃・塗装</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>5-2. 冷却水温度上昇</h3>
+<div class="box box-info">
+  <h4>考えられる原因と対策</h4>
+  <table>
+    <thead><tr><th>原因</th><th>確認方法</th><th>対策</th></tr></thead>
+    <tbody>
+      <tr><td>海水ストレーナ詰まり</td><td>海水流量・圧力の低下</td><td>ストレーナ清掃</td></tr>
+      <tr><td>冷却器（クーラー）の汚れ</td><td>冷却水入口出口の温度差増大</td><td>クーラーの洗浄</td></tr>
+      <tr><td>冷却水ポンプの能力低下</td><td>吐出圧力の低下</td><td>インペラ点検・交換</td></tr>
+      <tr><td>サーモスタット弁の固着</td><td>冷却水温度の異常変動</td><td>サーモスタット弁の点検・交換</td></tr>
+      <tr><td>冷却水量不足</td><td>膨張タンクの液面確認</td><td>冷却水の補充、漏洩箇所の修理</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>5-3. 潤滑油圧力低下</h3>
+<div class="box box-danger">
+  <h4>緊急度の高いトラブル</h4>
+  <p>潤滑油圧力の低下は、軸受の焼付きなど重大な損傷に直結するため、速やかな対応が必要です。</p>
+  <table>
+    <thead><tr><th>原因</th><th>確認方法</th><th>対策</th></tr></thead>
+    <tbody>
+      <tr><td>LO量不足</td><td>サンプタンク液面確認</td><td>潤滑油の補充</td></tr>
+      <tr><td>LOフィルター詰まり</td><td>差圧の確認</td><td>フィルター清掃・交換</td></tr>
+      <tr><td>LOポンプの摩耗</td><td>ポンプ吐出圧力の測定</td><td>ポンプ整備・交換</td></tr>
+      <tr><td>リリーフ弁の不良</td><td>弁の作動確認</td><td>弁の調整・交換</td></tr>
+      <tr><td>軸受隙間の増大</td><td>クランクデフレクション測定</td><td>軸受メタル交換</td></tr>
+      <tr><td>LO温度上昇（粘度低下）</td><td>LO温度計の確認</td><td>LOクーラーの清掃</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>5-4. 排気温度異常</h3>
+<ul>
+  <li><strong>全シリンダが高い場合:</strong> 過給機の汚れ、エアフィルター詰まり、過負荷運転の可能性</li>
+  <li><strong>特定シリンダだけ高い場合:</strong> そのシリンダの噴射弁不良、排気弁の漏れ、ピストンリング摩耗の可能性</li>
+  <li><strong>特定シリンダだけ低い場合:</strong> 燃料噴射量の不足（噴射ポンプの不良）の可能性</li>
+</ul>
+
+<h3>5-5. ポンプの異常振動</h3>
+<ul>
+  <li><strong>キャビテーション:</strong> 吸込側で液体が蒸発して気泡が発生。吸込条件の改善（吸込弁の全開確認、ストレーナ清掃）</li>
+  <li><strong>軸の芯ずれ:</strong> ポンプと電動機の軸心がずれている。アライメント（芯出し）調整</li>
+  <li><strong>軸受の摩耗:</strong> 異音を伴う振動。軸受交換</li>
+  <li><strong>インペラの損傷:</strong> 不均一な振動。インペラの点検・交換</li>
+</ul>
+
+<!-- ===== 6. 応急修理 ===== -->
+<h2>6. 応急修理の考え方</h2>
+
+<p>航海中の故障に対して、港に到着するまでの間、安全に航行を続けるための一時的な修理が応急修理です。</p>
+
+<div class="box box-warning">
+  <h4>応急修理の原則</h4>
+  <ul>
+    <li><strong>安全第一:</strong> 応急修理中も船の安全航行を最優先する</li>
+    <li><strong>原因の把握:</strong> 応急修理は「時間稼ぎ」であり、根本的な修理ではない。原因を記録し、次の寄港時に本修理を行う</li>
+    <li><strong>報告:</strong> 応急修理を行った場合は、必ず機関長・船長に報告し、機関日誌に記録する</li>
+    <li><strong>備品の確認:</strong> 日頃から応急修理に必要な予備品（パッキン、ボルト、配管材料等）の在庫を確認しておく</li>
+  </ul>
+</div>
+
+<h3>代表的な応急修理の例</h3>
+<ul>
+  <li><strong>配管からの漏洩:</strong> パッキンの巻き直し、クランプバンドの取り付け、エポキシパテによる補修</li>
+  <li><strong>ボルトの折損:</strong> エキストラクター（逆タップ）での抜き取り、ドリルでの除去</li>
+  <li><strong>ガスケットの吹き抜け:</strong> 応急ガスケットの製作・交換</li>
+  <li><strong>電気系統の不具合:</strong> 仮配線による回路の確保（ただし安全基準の範囲内で）</li>
+</ul>
+
+<!-- ===== 7. 工具 ===== -->
+<h2>7. 工具の種類と正しい使い方</h2>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+    <text x="350" y="25" text-anchor="middle" class="svg-title" font-size="15">船舶機関で使用する主な工具</text>
+    <!-- スパナ -->
+    <g transform="translate(60, 60)">
+      <rect x="0" y="20" width="80" height="8" rx="3" fill="#a0aec0" stroke="#4a5568" stroke-width="1.5"/>
+      <path d="M 0 10 L 0 38 Q -10 24 0 10" fill="#a0aec0" stroke="#4a5568" stroke-width="1.5"/>
+      <path d="M 80 15 L 80 33 Q 95 24 80 15" fill="#a0aec0" stroke="#4a5568" stroke-width="1.5"/>
+      <text x="40" y="60" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">スパナ</text>
+      <text x="40" y="75" text-anchor="middle" font-size="8" fill="#718096">ボルト・ナットの</text>
+      <text x="40" y="87" text-anchor="middle" font-size="8" fill="#718096">締付・取外し</text>
+    </g>
+    <!-- トルクレンチ -->
+    <g transform="translate(210, 60)">
+      <rect x="0" y="18" width="100" height="10" rx="3" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+      <rect x="60" y="10" width="40" height="26" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+      <circle cx="10" cy="23" r="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="50" y="60" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">トルクレンチ</text>
+      <text x="50" y="75" text-anchor="middle" font-size="8" fill="#718096">規定トルクでの</text>
+      <text x="50" y="87" text-anchor="middle" font-size="8" fill="#718096">締付け</text>
+    </g>
+    <!-- ノギス -->
+    <g transform="translate(380, 55)">
+      <rect x="0" y="10" width="90" height="6" rx="1" fill="#fefcbf" stroke="#975a16" stroke-width="1.5"/>
+      <rect x="0" y="0" width="8" height="40" rx="1" fill="#fefcbf" stroke="#975a16" stroke-width="1.5"/>
+      <rect x="30" y="0" width="6" height="35" rx="1" fill="#fefcbf" stroke="#975a16" stroke-width="1"/>
+      <text x="45" y="65" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">ノギス</text>
+      <text x="45" y="80" text-anchor="middle" font-size="8" fill="#718096">寸法の測定</text>
+    </g>
+    <!-- マイクロメーター -->
+    <g transform="translate(530, 55)">
+      <rect x="20" y="15" width="60" height="10" rx="2" fill="#e9d8fd" stroke="#6b46c1" stroke-width="1.5"/>
+      <path d="M 20 5 Q 10 20 20 35" stroke="#6b46c1" stroke-width="2" fill="none"/>
+      <rect x="75" y="10" width="30" height="20" rx="3" fill="#e9d8fd" stroke="#6b46c1" stroke-width="1.5"/>
+      <text x="55" y="60" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">マイクロメーター</text>
+      <text x="55" y="75" text-anchor="middle" font-size="8" fill="#718096">精密測定</text>
+      <text x="55" y="87" text-anchor="middle" font-size="8" fill="#718096">（0.01mm単位）</text>
+    </g>
+    <!-- 下段 -->
+    <!-- パイプレンチ -->
+    <g transform="translate(60, 180)">
+      <rect x="10" y="15" width="70" height="8" rx="3" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <path d="M 10 8 L 0 25 L 10 30" stroke="#c53030" stroke-width="2" fill="none"/>
+      <text x="45" y="50" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">パイプレンチ</text>
+      <text x="45" y="65" text-anchor="middle" font-size="8" fill="#718096">配管の締付・取外</text>
+    </g>
+    <!-- シックネスゲージ -->
+    <g transform="translate(210, 175)">
+      <rect x="10" y="10" width="80" height="25" rx="4" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <line x1="90" y1="22" x2="120" y2="22" stroke="#38a169" stroke-width="1"/>
+      <text x="55" y="55" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">シックネスゲージ</text>
+      <text x="55" y="70" text-anchor="middle" font-size="8" fill="#718096">隙間の測定</text>
+      <text x="55" y="82" text-anchor="middle" font-size="8" fill="#718096">（弁隙間等）</text>
+    </g>
+    <!-- テスター -->
+    <g transform="translate(400, 170)">
+      <rect x="10" y="5" width="50" height="35" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+      <circle cx="35" cy="20" r="8" fill="#e9d8fd" stroke="#6b46c1" stroke-width="1"/>
+      <line x1="20" y1="45" x2="20" y2="55" stroke="#e53e3e" stroke-width="2"/>
+      <line x1="50" y1="45" x2="50" y2="55" stroke="#2d3748" stroke-width="2"/>
+      <text x="35" y="65" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">テスター</text>
+      <text x="35" y="80" text-anchor="middle" font-size="8" fill="#718096">電気計測</text>
+    </g>
+  </svg>
+  <div class="caption">図11-2: 船舶機関で使用する主な工具</div>
+</div>
+
+<div class="box box-warning">
+  <h4>工具使用の安全注意</h4>
+  <ul>
+    <li>工具は正しいサイズを使用する（合わない工具はボルト・ナットを損傷し、怪我の原因にもなる）</li>
+    <li>トルクレンチは規定トルク値を守る（締めすぎはボルト折損の原因）</li>
+    <li>高所作業では工具の落下防止策を講じる（ひも付き工具袋の使用）</li>
+    <li>使用後は工具を確実に回収する（機械内部への置き忘れ防止）</li>
+    <li>油で汚れた手で工具を使わない（滑りによる怪我の防止）</li>
+  </ul>
+</div>
+
+<!-- ===== 8. 実務 ===== -->
+<h2>8. 実務: 当直中の異常発見時の報告手順</h2>
+
+<p>機関当直中に異常を発見した場合、以下の手順で対応します。</p>
+
+<div class="box box-danger">
+  <h4>異常発見時の報告手順</h4>
+  <ol>
+    <li><strong>状況の把握:</strong> 何がどのように異常なのか、計器の値、異音・異臭の有無を素早く確認する</li>
+    <li><strong>緊急性の判断:</strong>
+      <ul>
+        <li><strong>緊急（人命・船体に危険）:</strong> 直ちに機関停止し、船橋に報告。火災の場合は消火活動</li>
+        <li><strong>要注意（運転継続は可能だが監視が必要）:</strong> 機関長に報告し、指示を仰ぐ</li>
+        <li><strong>軽微:</strong> 自身で対処可能なら対処し、機関長に事後報告</li>
+      </ul>
+    </li>
+    <li><strong>報告の内容（5W1H）:</strong>
+      <ul>
+        <li><strong>When</strong>（いつ）: 「○時○分頃」</li>
+        <li><strong>Where</strong>（どこで）: 「主機関のNo.○シリンダ」</li>
+        <li><strong>What</strong>（何が）: 「排気温度が」</li>
+        <li><strong>How</strong>（どのように）: 「通常より○℃高くなっている」</li>
+        <li><strong>Why</strong>（推定原因）: 「噴射弁の不良と思われる」</li>
+        <li><strong>Action</strong>（対処）: 「減速して様子を見ている」</li>
+      </ul>
+    </li>
+    <li><strong>機関日誌への記録:</strong> 異常の発見時刻、内容、対処、報告先を機関日誌に記録する</li>
+  </ol>
+</div>
+
+<div class="key-point">
+  <p><strong>「報告をためらわない」ことが最も重要:</strong> 些細な異常でも報告することで、大きな事故を未然に防げます。「こんなことで報告して良いのか」と迷ったら、迷わず報告してください。報告が遅れたことによる事故は多数ありますが、報告が早すぎたことによる問題はありません。特に経験が浅い時期は、自分の判断だけで済ませず、上位者に相談する習慣をつけましょう。</p>
+</div>
+
+<!-- ===== クイズ ===== -->
+<div class="quiz">
+  <h4>章末確認クイズ</h4>
+
+  <p><strong>Q1.</strong> 計画保全（PMS）において、「一定の運転時間ごとに整備を行う」方式を何というか？</p>
+  <button onclick="showAnswer('q11-1')">解答を表示</button>
+  <div id="q11-1" class="quiz-answer">
+    <p><strong>答え: 時間基準保全（TBM: Time Based Maintenance）</strong></p>
+    <p>メーカーの推奨する運転時間ごとに部品交換や整備を行う、最も基本的な保全方式です。これに対して、機器の状態を監視して劣化に応じて整備する方式をCBM（状態基準保全）といいます。</p>
+  </div>
+
+  <p><strong>Q2.</strong> 排気の色から異常を判断する場合、黒煙は何を示唆するか？</p>
+  <button onclick="showAnswer('q11-2')">解答を表示</button>
+  <div id="q11-2" class="quiz-answer">
+    <p><strong>答え: 燃焼不良（不完全燃焼）</strong></p>
+    <p>黒煙は未燃焼の炭素粒子（すす）が多いことを意味し、燃料噴射弁の不良、空気不足（エアフィルター詰まり、過給機の汚れ）、過負荷運転などが原因です。白煙は水分の混入、青煙は潤滑油の燃焼を示します。</p>
+  </div>
+
+  <p><strong>Q3.</strong> 潤滑油圧力が低下した場合、最初に確認すべきことは何か？</p>
+  <button onclick="showAnswer('q11-3')">解答を表示</button>
+  <div id="q11-3" class="quiz-answer">
+    <p><strong>答え: 潤滑油タンク（サンプタンク）の油面</strong></p>
+    <p>最もシンプルで確率の高い原因から確認するのが故障診断の基本です。油面低下は油量不足を意味し、補充で改善する可能性があります。同時に、なぜ油面が下がったのか（漏洩、消費量の増加等）の原因も調査します。</p>
+  </div>
+</div>
+
+<!-- ===== 章末ナビ ===== -->
+<div class="chapter-nav">
+  <a href="eng10_tanker.html">&larr; 第10章: タンカー特有の機器</a>
+  <a href="eng12_law.html">第12章: 機関関連法規 &rarr;</a>
+</div>
+
+</div>
+
+<script>
+function showAnswer(id) { var el = document.getElementById(id); el.classList.toggle('show'); }
+</script>
+</body>
+</html>

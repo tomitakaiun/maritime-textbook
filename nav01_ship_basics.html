@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章 船の基礎知識 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第1章 船の基礎知識</h1>
+  <div class="subtitle">内航船員のための海技教材 — 航海編</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="nav02_compass.html">次章: コンパスと方位 &raquo;</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <p>船員としての第一歩は、船のことを正しく知ることから始まります。本章では、船体各部の名称、船の種類、トン数の意味、そして内航タンカーの構造的特徴について学びます。陸上の建物でいえば「柱」「梁」「屋根」に当たる部分を、船の世界ではどう呼ぶのか。まずはその基本用語をしっかり身につけましょう。</p>
+
+  <!-- ============================== -->
+  <h2 id="hull-parts">1-1. 船体各部の名称</h2>
+
+  <p>船には、陸上の建物にはない独特の呼び方があります。船乗りとして最初に覚えるべき用語です。右と左も、船の世界では呼び方が違います。</p>
+
+  <h3>主要な名称一覧</h3>
+  <table>
+    <thead>
+      <tr><th>日本語</th><th>英語</th><th>説明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>船首</strong></td><td><span class="glossary-term" data-def="Bow: 船の前方部分">Bow</span></td><td>船の前方。波を切る形状になっている</td></tr>
+      <tr><td><strong>船尾</strong></td><td><span class="glossary-term" data-def="Stern: 船の後方部分">Stern</span></td><td>船の後方。プロペラや舵がある</td></tr>
+      <tr><td><strong>右舷</strong></td><td><span class="glossary-term" data-def="Starboard: 船首に向かって右側">Starboard</span></td><td>船首に向かって右側。緑色で表示</td></tr>
+      <tr><td><strong>左舷</strong></td><td><span class="glossary-term" data-def="Port: 船首に向かって左側">Port</span></td><td>船首に向かって左側。赤色で表示</td></tr>
+      <tr><td><strong>船橋（ブリッジ）</strong></td><td><span class="glossary-term" data-def="Bridge: 操船指揮を行う場所">Bridge</span></td><td>操船・航海指揮の場所。最上部に位置</td></tr>
+      <tr><td><strong>機関室</strong></td><td><span class="glossary-term" data-def="Engine Room: 主機関や発電機がある区画">Engine Room</span></td><td>主機関・発電機・ボイラー等がある区画</td></tr>
+      <tr><td><strong>甲板（デッキ）</strong></td><td><span class="glossary-term" data-def="Deck: 船体の水平面（床）">Deck</span></td><td>船体の水平面。上甲板、二重底など複数ある</td></tr>
+      <tr><td><strong>船倉 / タンク</strong></td><td>Hold / Tank</td><td>貨物を積む区画。タンカーではカーゴタンク</td></tr>
+      <tr><td><strong>船底（ビルジ）</strong></td><td><span class="glossary-term" data-def="Bilge: 船底の最下部で水がたまる部分">Bilge</span></td><td>船底最下部。ビルジ水がたまる場所</td></tr>
+      <tr><td><strong>舷側</strong></td><td>Ship's side</td><td>船体の側面部分</td></tr>
+      <tr><td><strong>喫水線</strong></td><td><span class="glossary-term" data-def="Waterline: 水面と船体が交わる線">Waterline</span></td><td>水面と船体が接する線</td></tr>
+      <tr><td><strong>バルバスバウ</strong></td><td>Bulbous bow</td><td>船首水面下の球状突起。造波抵抗を軽減</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p><strong>右舷（Starboard）= 緑、左舷（Port）= 赤</strong>は、灯火の色と一致します。夜間に他船の灯火を見て、どちら側を向いているか判断する基本です。「左舷＝Port＝赤ワイン」と覚える船員が多いです。</p>
+  </div>
+
+  <!-- SVG: 船の側面図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="船の側面図と各部名称">
+      <!-- 海面 -->
+      <rect x="0" y="240" width="800" height="160" fill="#d4eaf7" opacity="0.5"/>
+      <path d="M0,240 Q50,230 100,240 Q150,250 200,240 Q250,230 300,240 Q350,250 400,240 Q450,230 500,240 Q550,250 600,240 Q650,230 700,240 Q750,250 800,240" stroke="#90cdf4" stroke-width="2" fill="none" class="animate-flow"/>
+
+      <!-- 船体 -->
+      <path d="M120,240 L100,180 L100,140 L680,140 L680,180 L720,200 L730,240 Z" fill="#a0aec0" stroke="#4a5568" stroke-width="2"/>
+      <!-- 船底（水面下） -->
+      <path d="M120,240 L160,300 L650,300 L730,240 Z" fill="#718096" stroke="#4a5568" stroke-width="2"/>
+      <!-- バルバスバウ -->
+      <ellipse cx="140" cy="280" rx="30" ry="18" fill="#718096" stroke="#4a5568" stroke-width="2"/>
+
+      <!-- 甲板 -->
+      <line x1="100" y1="140" x2="680" y2="140" stroke="#2d3748" stroke-width="3"/>
+
+      <!-- 船橋（ブリッジ） -->
+      <rect x="540" y="60" width="120" height="80" rx="4" fill="#e2e8f0" stroke="#4a5568" stroke-width="2"/>
+      <rect x="550" y="68" width="40" height="25" rx="2" fill="#bee3f8" stroke="#4a5568" stroke-width="1"/>
+      <rect x="600" y="68" width="40" height="25" rx="2" fill="#bee3f8" stroke="#4a5568" stroke-width="1"/>
+
+      <!-- 煙突 -->
+      <rect x="490" y="80" width="30" height="60" rx="3" fill="#e53e3e" stroke="#4a5568" stroke-width="2"/>
+
+      <!-- マスト -->
+      <line x1="200" y1="40" x2="200" y2="140" stroke="#4a5568" stroke-width="3"/>
+      <line x1="600" y1="30" x2="600" y2="60" stroke="#4a5568" stroke-width="3"/>
+
+      <!-- カーゴタンク区画線 -->
+      <line x1="200" y1="140" x2="200" y2="300" stroke="#4a5568" stroke-width="1" stroke-dasharray="5,5"/>
+      <line x1="300" y1="140" x2="300" y2="300" stroke="#4a5568" stroke-width="1" stroke-dasharray="5,5"/>
+      <line x1="400" y1="140" x2="400" y2="300" stroke="#4a5568" stroke-width="1" stroke-dasharray="5,5"/>
+      <line x1="470" y1="140" x2="470" y2="300" stroke="#4a5568" stroke-width="1" stroke-dasharray="5,5"/>
+
+      <!-- ラベル -->
+      <text x="110" y="175" class="svg-label" font-weight="bold" fill="#e53e3e">&larr; 船首 (Bow)</text>
+      <text x="685" y="205" class="svg-label" font-weight="bold" fill="#e53e3e">船尾 (Stern) &rarr;</text>
+      <text x="555" y="55" class="svg-label" font-weight="bold" fill="#1a365d">船橋 (Bridge)</text>
+      <text x="493" y="75" class="svg-label" font-size="10" fill="#c53030">煙突</text>
+      <text x="235" y="220" class="svg-label" fill="#1a365d">No.1 Tank</text>
+      <text x="330" y="220" class="svg-label" fill="#1a365d">No.2 Tank</text>
+      <text x="410" y="220" class="svg-label" fill="#1a365d">No.3</text>
+      <text x="530" y="170" class="svg-label" fill="#1a365d">機関室</text>
+      <text x="350" y="135" class="svg-label" fill="#2d3748">上甲板 (Deck)</text>
+      <text x="400" y="320" class="svg-label" fill="#4a5568">船底 (Bilge)</text>
+      <text x="100" y="290" class="svg-label" font-size="10" fill="#4a5568">バルバスバウ</text>
+
+      <!-- 喫水線 -->
+      <line x1="80" y1="240" x2="760" y2="240" stroke="#2b6cb0" stroke-width="1.5" stroke-dasharray="8,4"/>
+      <text x="760" y="235" class="svg-label" font-size="10" fill="#2b6cb0">喫水線</text>
+
+      <!-- プロペラ -->
+      <circle cx="710" cy="290" r="20" fill="none" stroke="#4a5568" stroke-width="2"/>
+      <line x1="710" y1="270" x2="710" y2="310" stroke="#4a5568" stroke-width="3"/>
+      <line x1="690" y1="290" x2="730" y2="290" stroke="#4a5568" stroke-width="3"/>
+      <text x="695" y="325" class="svg-label" font-size="10" fill="#4a5568">プロペラ</text>
+
+      <!-- 舵 -->
+      <rect x="735" y="270" width="8" height="40" rx="2" fill="#4a5568"/>
+      <text x="745" y="295" class="svg-label" font-size="10" fill="#4a5568">舵</text>
+    </svg>
+    <div class="caption">図1-1: 内航タンカーの側面図（概略）。船首側にカーゴタンク、船尾側に機関室と船橋を配置する</div>
+  </div>
+
+  <h3>船首（Bow）と船尾（Stern）の方向表現</h3>
+  <p>船の中での位置関係を表す言い方も覚えましょう。</p>
+  <ul>
+    <li><strong>前方（Forward / Fore）</strong>: 船首方向へ</li>
+    <li><strong>後方（Aft）</strong>: 船尾方向へ</li>
+    <li><strong>正横（Abeam）</strong>: 船の真横の方向</li>
+    <li><strong>船首楼（Forecastle / Fo'c'sle）</strong>: 船首部の上構造物</li>
+  </ul>
+
+  <div class="box box-example">
+    <h4>実務での使い方</h4>
+    <p>「フォアのデッキに集合」= 船首側の甲板に集まること。「アフトのタンク」= 船尾側のタンク。内航タンカーでは荷役のとき「マニホールド周りに来てくれ」のように、部位名で場所を指示します。</p>
+  </div>
+
+  <!-- SVG: 船を上から見た図（右舷・左舷） -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="船の上面図：右舷と左舷">
+      <!-- 船体外形（上から見た図） -->
+      <path d="M100,150 L130,60 L250,45 L550,45 L620,70 L640,150 L620,230 L550,255 L250,255 L130,240 Z" fill="#e2e8f0" stroke="#4a5568" stroke-width="2"/>
+
+      <!-- 中心線 -->
+      <line x1="100" y1="150" x2="640" y2="150" stroke="#4a5568" stroke-width="1" stroke-dasharray="6,4"/>
+
+      <!-- 右舷側（上） -->
+      <rect x="250" y="55" width="60" height="85" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5" opacity="0.5"/>
+      <rect x="320" y="55" width="60" height="85" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5" opacity="0.5"/>
+      <rect x="390" y="55" width="60" height="85" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5" opacity="0.5"/>
+
+      <!-- 左舷側（下） -->
+      <rect x="250" y="160" width="60" height="85" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5" opacity="0.5"/>
+      <rect x="320" y="160" width="60" height="85" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5" opacity="0.5"/>
+      <rect x="390" y="160" width="60" height="85" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5" opacity="0.5"/>
+
+      <!-- 船橋 -->
+      <rect x="520" y="110" width="80" height="80" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+
+      <!-- マニホールド -->
+      <circle cx="350" cy="150" r="8" fill="#ed8936" stroke="#c05621" stroke-width="2" class="animate-pulse"/>
+
+      <!-- ラベル -->
+      <text x="80" y="150" class="svg-label" font-weight="bold" text-anchor="end" fill="#e53e3e">船首</text>
+      <text x="660" y="155" class="svg-label" font-weight="bold" fill="#e53e3e">船尾</text>
+      <text x="350" y="30" class="svg-label" font-weight="bold" fill="#38a169">右舷 Starboard（緑）</text>
+      <text x="350" y="290" class="svg-label" font-weight="bold" fill="#e53e3e">左舷 Port（赤）</text>
+      <text x="540" y="105" class="svg-label" fill="#1a365d">Bridge</text>
+      <text x="340" y="175" class="svg-label" font-size="10" fill="#c05621">マニホールド</text>
+      <text x="260" y="100" class="svg-label" font-size="10" fill="#2d3748">Tank</text>
+      <text x="330" y="100" class="svg-label" font-size="10" fill="#2d3748">Tank</text>
+      <text x="400" y="100" class="svg-label" font-size="10" fill="#2d3748">Tank</text>
+    </svg>
+    <div class="caption">図1-2: 船の上面図。船首に向かって右が右舷（緑）、左が左舷（赤）。中央のオレンジはマニホールド</div>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="ship-types">1-2. 船の種類</h2>
+
+  <p>海を行き交う船には、積む貨物の種類や航海の目的に応じたさまざまな種類があります。6級海技士試験でも出題されるため、主な分類を把握しておきましょう。</p>
+
+  <h3>主な商船の分類</h3>
+  <table>
+    <thead>
+      <tr><th>種類</th><th>積み荷</th><th>特徴</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>油タンカー</strong></td><td>原油、石油製品</td><td>液体貨物をタンクに積載。カーゴポンプで荷役</td></tr>
+      <tr><td><strong>ケミカルタンカー</strong></td><td>化学薬品</td><td>タンク内面にコーティング。多品種少量輸送</td></tr>
+      <tr><td><strong>LPGタンカー</strong></td><td>液化石油ガス</td><td>加圧・冷却タンクで輸送</td></tr>
+      <tr><td><strong>一般貨物船</strong></td><td>雑貨、鋼材等</td><td>船倉にクレーンで荷役</td></tr>
+      <tr><td><strong>コンテナ船</strong></td><td>コンテナ</td><td>規格化されたコンテナを積載。効率的な荷役</td></tr>
+      <tr><td><strong>ばら積み船</strong></td><td>穀物、石炭、鉱石</td><td>大型船倉に非包装の貨物を積載</td></tr>
+      <tr><td><strong>RORO船</strong></td><td>車両、トレーラー</td><td>ランプウェイから車両が自走で乗降</td></tr>
+      <tr><td><strong>フェリー</strong></td><td>旅客、車両</td><td>旅客と車両を同時に輸送</td></tr>
+      <tr><td><strong>セメント船</strong></td><td>セメント</td><td>空気圧送で荷役。内航に多い</td></tr>
+    </tbody>
+  </table>
+
+  <h3>内航船の特徴</h3>
+  <p>日本の沿岸・港間を運航する船を<span class="glossary-term" data-def="内航船: 日本国内の港間のみを運航する船舶">内航船</span>と呼びます。内航船は日本の物流を支える重要な存在で、特に石油製品の輸送では国内輸送量の約80%を担っています。</p>
+  <ul>
+    <li>総トン数499GT以下の小型船が多い（船舶検査の区分上有利）</li>
+    <li>乗組員は5〜10名程度の少人数</li>
+    <li>航海は数時間〜2日程度の短距離が中心</li>
+    <li>内航タンカーは製油所から油槽所へガソリン・軽油・灯油などを運ぶ</li>
+  </ul>
+
+  <div class="box box-info">
+    <h4>裕洋丸の例</h4>
+    <p>当社の裕洋丸は、<strong>総トン数199GT / 載貨重量490DWT</strong>の内航油タンカーです。京浜・中京・阪神の製油所から各地の油槽所へ石油製品（ガソリン、軽油、灯油、A重油等）を輸送しています。乗組員は5名で運航しています。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="tonnage">1-3. トン数の意味</h2>
+
+  <p>「トン」という単位は船の世界ではいくつかの異なる意味で使われます。これが初学者を混乱させるポイントです。しっかり区別しましょう。</p>
+
+  <table>
+    <thead>
+      <tr><th>トン数</th><th>英語</th><th>単位</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>総トン数</strong></td><td><span class="glossary-term" data-def="GT: 船の囲まれた空間の容積を表す指標">Gross Tonnage (GT)</span></td><td>トン（容積）</td><td>船全体の囲まれた空間の大きさ。船の「サイズ」を表す</td></tr>
+      <tr><td><strong>純トン数</strong></td><td>Net Tonnage (NT)</td><td>トン（容積）</td><td>貨物を積める空間の大きさ。港費などの基準</td></tr>
+      <tr><td><strong>載貨重量トン</strong></td><td><span class="glossary-term" data-def="DWT: 船が積載できる貨物・燃料・水等の最大重量">Deadweight Tonnage (DWT)</span></td><td>トン（重量）</td><td>貨物・燃料・水など、船が載せられる最大重量</td></tr>
+      <tr><td><strong>排水量</strong></td><td>Displacement</td><td>トン（重量）</td><td>船が押しのける水の重量。船体+積荷の総重量</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p><strong>GT（総トン数）は「大きさ」、DWT（載貨重量トン）は「積める量」</strong>と覚えましょう。GTは法規上の基準（船員配乗基準、港費等）に使われ、DWTは商業上の基準（傭船料、運賃等）に使われます。裕洋丸は199GT/490DWTです。GTに比べてDWTが大きいのは、タンカーは甲板上の構造物が小さく、船内のほとんどがタンクだからです。</p>
+  </div>
+
+  <div class="box box-example">
+    <h4>トン数による法規制の違い（内航船）</h4>
+    <ul>
+      <li><strong>20GT未満</strong>: 小型船舶として扱われ、小型船舶操縦士免許で操縦可能</li>
+      <li><strong>20GT以上</strong>: 海技免状が必要。乗組員の配乗基準が適用される</li>
+      <li><strong>200GT未満</strong>: 6級海技士で船長になれる範囲（沿海区域）</li>
+      <li><strong>200GT以上</strong>: 5級以上の海技士が必要。船舶検査の要件も厳しくなる</li>
+    </ul>
+    <p>内航タンカーには199GTの船が多いですが、これは200GT未満で必要な海技免状のハードルが下がるためです。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="domestic-ocean">1-4. 内航船と外航船の違い</h2>
+
+  <p>日本の海運は「内航海運」と「外航海運」の2つに大きく分かれます。法律上も実務上も大きな違いがあります。</p>
+
+  <table>
+    <thead>
+      <tr><th>項目</th><th>内航船</th><th>外航船</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>航行区域</strong></td><td>日本国内の港間のみ</td><td>外国の港へも航行</td></tr>
+      <tr><td><strong>適用法令</strong></td><td>内航海運業法、船舶安全法</td><td>海上運送法、SOLAS条約等</td></tr>
+      <tr><td><strong>船員</strong></td><td>日本人船員が中心</td><td>外国人船員も多い（混乗）</td></tr>
+      <tr><td><strong>船の大きさ</strong></td><td>数百〜数千GT</td><td>数千〜数十万GT</td></tr>
+      <tr><td><strong>航海期間</strong></td><td>数時間〜数日</td><td>数週間〜数ヶ月</td></tr>
+      <tr><td><strong>乗組員数</strong></td><td>5〜15名程度</td><td>20〜30名程度</td></tr>
+      <tr><td><strong>公用語</strong></td><td>日本語</td><td>英語</td></tr>
+      <tr><td><strong>特徴</strong></td><td>カボタージュ制度で保護</td><td>国際競争にさらされる</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-info">
+    <h4>カボタージュ制度とは</h4>
+    <p><span class="glossary-term" data-def="カボタージュ: 国内沿岸輸送を自国船に限定する制度">カボタージュ制度</span>とは、国内の港と港の間の輸送を自国籍船に限定する制度です。日本では「船舶法第3条」により、日本国籍でない船は原則として国内輸送ができません。これにより内航海運は外国船との競争から守られ、国内物流の安定確保と船員の雇用維持が図られています。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="tanker-structure">1-5. 油タンカーの構造的特徴</h2>
+
+  <p>油タンカーは液体の石油製品を運ぶため、一般貨物船とは異なる独特の構造を持っています。内航タンカー船員として、この構造を理解することは安全運航と効率的な荷役の基本です。</p>
+
+  <h3>タンカー特有の主要構造</h3>
+
+  <h4>カーゴタンク（Cargo Tank）</h4>
+  <p>石油製品を積載するタンクです。内航タンカーでは通常3〜6個のタンクに区画されています。異なる油種（ガソリン、軽油、灯油等）を同時に積み分けることが可能です。タンクの配置は、船の<span class="glossary-term" data-def="トリム: 船首と船尾の喫水の差。船の前後方向の傾き">トリム</span>（前後の傾き）や<span class="glossary-term" data-def="復原力: 船が傾いたときに元に戻ろうとする力">復原性</span>に大きく影響します。</p>
+
+  <h4>ポンプ室（Pump Room）</h4>
+  <p>カーゴタンクと機関室の間に設けられた区画で、荷役ポンプ（カーゴポンプ）が設置されています。油の積み込みは陸上のポンプで行いますが、揚げ荷（陸揚げ）は船のカーゴポンプを使います。ポンプ室は可燃性ガスが滞留しやすいため、換気と防爆が重要です。</p>
+
+  <h4>スロップタンク（Slop Tank）</h4>
+  <p><span class="glossary-term" data-def="スロップタンク: タンク洗浄水や残油を集めるタンク">スロップタンク</span>はタンク洗浄水や残油を集めておくためのタンクです。油種切り替え時のタンク洗浄で出た洗浄水を海に捨てることは法律で禁止されているため、スロップタンクに集めて陸上で処理します。</p>
+
+  <h4>マニホールド（Manifold）</h4>
+  <p>船の中央付近の甲板上に設けられた配管接続部で、陸上の荷役設備とホースやアームで接続する場所です。荷役作業の要となる場所で、油の流れを制御するバルブが集中しています。</p>
+
+  <h4>コファダム（Cofferdam）</h4>
+  <p><span class="glossary-term" data-def="コファダム: タンクと居住区等の間に設ける空の区画。安全のための緩衝帯">コファダム</span>はカーゴタンクと機関室や居住区の間に設けられた空の区画です。万が一油が漏れても、居住区や機関室に浸入するのを防ぐ緩衝帯の役割があります。</p>
+
+  <!-- SVG: タンカー断面図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="油タンカーの断面構造図">
+      <!-- 船体断面 -->
+      <!-- 外板 -->
+      <path d="M150,100 L150,320 Q150,380 250,390 L550,390 Q650,380 650,320 L650,100 Z" fill="#e2e8f0" stroke="#4a5568" stroke-width="2.5"/>
+
+      <!-- 二重底 -->
+      <path d="M160,320 L160,350 Q160,370 250,375 L550,375 Q640,370 640,350 L640,320 Z" fill="#cbd5e0" stroke="#4a5568" stroke-width="1.5"/>
+      <text x="400" y="355" class="svg-label" text-anchor="middle" font-size="11" fill="#4a5568">二重底（バラストタンク / 燃料タンク）</text>
+
+      <!-- 左舷タンク -->
+      <rect x="165" y="110" width="210" height="200" fill="#feebc8" stroke="#c05621" stroke-width="1.5"/>
+      <text x="270" y="200" class="svg-label" text-anchor="middle" font-weight="bold" fill="#c05621">左舷</text>
+      <text x="270" y="220" class="svg-label" text-anchor="middle" fill="#c05621">カーゴタンク</text>
+
+      <!-- 右舷タンク -->
+      <rect x="425" y="110" width="210" height="200" fill="#feebc8" stroke="#c05621" stroke-width="1.5"/>
+      <text x="530" y="200" class="svg-label" text-anchor="middle" font-weight="bold" fill="#c05621">右舷</text>
+      <text x="530" y="220" class="svg-label" text-anchor="middle" fill="#c05621">カーゴタンク</text>
+
+      <!-- 中央隔壁 -->
+      <rect x="375" y="110" width="50" height="210" fill="#a0aec0" stroke="#4a5568" stroke-width="1.5"/>
+      <text x="400" y="240" class="svg-label" text-anchor="middle" font-size="10" fill="#fff" transform="rotate(-90, 400, 240)">中央隔壁</text>
+
+      <!-- 油面アニメーション（左） -->
+      <rect x="170" y="180" width="200" height="125" fill="#ed8936" opacity="0.3">
+        <animate attributeName="y" values="180;170;180" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="height" values="125;135;125" dur="4s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- 油面アニメーション（右） -->
+      <rect x="430" y="190" width="200" height="115" fill="#ed8936" opacity="0.3">
+        <animate attributeName="y" values="190;200;190" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="height" values="115;105;115" dur="4s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- 甲板 -->
+      <line x1="140" y1="100" x2="660" y2="100" stroke="#2d3748" stroke-width="3"/>
+      <text x="400" y="90" class="svg-label" text-anchor="middle" font-weight="bold" fill="#1a365d">上甲板</text>
+
+      <!-- マニホールド -->
+      <rect x="385" y="70" width="30" height="30" rx="4" fill="#e53e3e" stroke="#c53030" stroke-width="2"/>
+      <text x="400" y="60" class="svg-label" text-anchor="middle" font-size="10" fill="#c53030">マニホールド</text>
+
+      <!-- 配管 -->
+      <line x1="400" y1="100" x2="400" y2="70" stroke="#e53e3e" stroke-width="3"/>
+      <line x1="270" y1="100" x2="270" y2="110" stroke="#c05621" stroke-width="2" stroke-dasharray="4,3" class="animate-flow"/>
+      <line x1="530" y1="100" x2="530" y2="110" stroke="#c05621" stroke-width="2" stroke-dasharray="4,3" class="animate-flow"/>
+
+      <!-- 寸法矢印 -->
+      <line x1="130" y1="100" x2="130" y2="390" stroke="#718096" stroke-width="1"/>
+      <text x="120" y="250" class="svg-label" text-anchor="end" font-size="10" fill="#718096" transform="rotate(-90, 120, 250)">喫水方向</text>
+
+      <!-- 凡例 -->
+      <rect x="20" y="400" width="15" height="15" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+      <text x="40" y="413" class="svg-label" font-size="11">カーゴタンク</text>
+      <rect x="170" y="400" width="15" height="15" fill="#ed8936" opacity="0.3"/>
+      <text x="190" y="413" class="svg-label" font-size="11">積載油</text>
+      <rect x="310" y="400" width="15" height="15" fill="#cbd5e0" stroke="#4a5568" stroke-width="1"/>
+      <text x="330" y="413" class="svg-label" font-size="11">二重底</text>
+    </svg>
+    <div class="caption">図1-3: 油タンカーの横断面図。左右のタンクは中央隔壁で分割。油面のゆらぎはフリーサーフェス効果を示す</div>
+  </div>
+
+  <div class="key-point">
+    <p><strong>タンカーのタンクが左右に分かれている理由</strong>: 液体貨物は船の動揺に合わせて動き（<span class="glossary-term" data-def="フリーサーフェス効果: タンク内の液面が動くことで復原力が低下する現象">フリーサーフェス効果</span>）、これが復原力を低下させます。タンクを細かく区画することで液面の動きを抑え、船の安定性を確保しています。</p>
+  </div>
+
+  <h3>タンカーの安全設備</h3>
+  <p>石油製品は可燃性・爆発性があるため、タンカーには一般貨物船にはない安全対策が求められます。</p>
+  <ul>
+    <li><strong>防爆電気設備</strong>: 甲板上の電気機器は防爆構造（火花が出ない構造）</li>
+    <li><strong>ガス検知装置</strong>: カーゴタンク周辺の可燃性ガス濃度を常時監視</li>
+    <li><strong>静電気防止</strong>: 荷役時のアース（接地）接続。帯電防止が重要</li>
+    <li><strong>消火設備</strong>: 泡消火装置、粉末消火器など</li>
+    <li><strong>通風装置</strong>: ポンプ室、コファダムの強制換気</li>
+  </ul>
+
+  <div class="box box-danger">
+    <h4>タンカー乗船時の注意</h4>
+    <p>荷役中や荷役前後は甲板上での喫煙、裸火の使用は厳禁です。携帯電話の使用も制限されます。乗船時には必ず安全靴を履き、帯電防止服を着用してください。ポンプ室への入室は必ず換気確認後に行い、単独では入りません。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="crew-roles">1-6. 乗組員の役割</h2>
+
+  <p>船は一つのチームで運営されます。各乗組員がどのような役割を担っているか理解することは、安全運航の基本です。内航船では少人数のため、一人が複数の業務を兼任することもあります。</p>
+
+  <h3>甲板部（航海系）</h3>
+  <table>
+    <thead>
+      <tr><th>役職</th><th>英語</th><th>主な任務</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>船長</strong></td><td><span class="glossary-term" data-def="Master/Captain: 船の最高責任者">Master</span></td><td>船の最高責任者。運航全般の指揮、法的責任者</td></tr>
+      <tr><td><strong>一等航海士（チョッサー）</strong></td><td>Chief Officer</td><td>甲板部の長。荷役の責任者。船長の代理</td></tr>
+      <tr><td><strong>二等航海士</strong></td><td>Second Officer</td><td>海図・航海計器の管理。航海当直</td></tr>
+      <tr><td><strong>甲板員（甲板手）</strong></td><td>Able Seaman</td><td>操舵、見張り、係船作業、甲板整備</td></tr>
+    </tbody>
+  </table>
+
+  <h3>機関部（機関系）</h3>
+  <table>
+    <thead>
+      <tr><th>役職</th><th>英語</th><th>主な任務</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>機関長</strong></td><td><span class="glossary-term" data-def="Chief Engineer: 機関部の最高責任者">Chief Engineer</span></td><td>機関部の長。主機関・補機の管理責任者</td></tr>
+      <tr><td><strong>一等機関士</strong></td><td>First Engineer</td><td>主機関の運転・整備。機関長の代理</td></tr>
+      <tr><td><strong>機関員</strong></td><td>Oiler</td><td>機関室の日常点検・整備補助</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-info">
+    <h4>内航タンカーの実情</h4>
+    <p>199GT程度の内航タンカーでは、乗組員は<strong>船長、一等航海士（チョッサー）、機関長、機関員、甲板員</strong>の5名程度が一般的です。少人数のため「航海当直→荷役作業→甲板整備」など一人が多くの仕事をこなします。「自分の仕事以外は知りません」では務まらない世界です。</p>
+  </div>
+
+  <h3>船内の指揮系統</h3>
+  <p>船長はすべての乗組員の上に立つ最高責任者です。海上においては、船長の命令は絶対的な効力を持ちます（船員法に定められた「船長の権限」）。緊急時には船長の指揮のもと、全員が協力して対処します。日常業務では、甲板部は一等航海士（チョッサー）が、機関部は機関長がそれぞれ指揮をとります。</p>
+
+  <!-- SVG: 船内組織図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="内航タンカー乗組員の組織図">
+      <!-- 船長 -->
+      <rect x="225" y="10" width="150" height="45" rx="8" fill="#1a365d" stroke="#1a365d" stroke-width="2"/>
+      <text x="300" y="38" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">船長（Master）</text>
+
+      <!-- 線 -->
+      <line x1="300" y1="55" x2="300" y2="80" stroke="#4a5568" stroke-width="2"/>
+      <line x1="150" y1="80" x2="450" y2="80" stroke="#4a5568" stroke-width="2"/>
+      <line x1="150" y1="80" x2="150" y2="100" stroke="#4a5568" stroke-width="2"/>
+      <line x1="450" y1="80" x2="450" y2="100" stroke="#4a5568" stroke-width="2"/>
+
+      <!-- 甲板部 -->
+      <rect x="50" y="100" width="200" height="40" rx="8" fill="#2b6cb0" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="150" y="125" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">一等航海士（C/O）</text>
+
+      <line x1="150" y1="140" x2="150" y2="165" stroke="#4a5568" stroke-width="2"/>
+
+      <rect x="50" y="165" width="200" height="35" rx="6" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="150" y="188" text-anchor="middle" fill="#1a365d" font-size="12">甲板員（AB）</text>
+
+      <text x="150" y="225" text-anchor="middle" fill="#2b6cb0" font-size="11" font-weight="bold">【甲板部】</text>
+      <text x="150" y="242" text-anchor="middle" fill="#718096" font-size="10">航海・荷役・係船作業</text>
+
+      <!-- 機関部 -->
+      <rect x="350" y="100" width="200" height="40" rx="8" fill="#c53030" stroke="#c53030" stroke-width="2"/>
+      <text x="450" y="125" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">機関長（C/E）</text>
+
+      <line x1="450" y1="140" x2="450" y2="165" stroke="#4a5568" stroke-width="2"/>
+
+      <rect x="350" y="165" width="200" height="35" rx="6" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <text x="450" y="188" text-anchor="middle" fill="#742a2a" font-size="12">機関員（Oiler）</text>
+
+      <text x="450" y="225" text-anchor="middle" fill="#c53030" font-size="11" font-weight="bold">【機関部】</text>
+      <text x="450" y="242" text-anchor="middle" fill="#718096" font-size="10">機関運転・整備</text>
+    </svg>
+    <div class="caption">図1-4: 199GT内航タンカーの典型的な組織図（5名体制の例）</div>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="summary">まとめ</h2>
+
+  <div class="key-point">
+    <ul>
+      <li>船体各部には固有の名称があり、<strong>船首(Bow)・船尾(Stern)・右舷(Starboard)・左舷(Port)</strong>は最優先で覚える</li>
+      <li>船の大きさは<strong>GT（総トン数）</strong>で表し、積める量は<strong>DWT（載貨重量トン数）</strong>で表す</li>
+      <li>内航船は日本国内の港間のみを運航し、カボタージュ制度で保護されている</li>
+      <li>油タンカーは<strong>カーゴタンク、ポンプ室、マニホールド、コファダム</strong>が特徴的な構造</li>
+      <li>タンクを区画するのは<strong>フリーサーフェス効果</strong>を抑えて安定性を確保するため</li>
+      <li>内航タンカーは5名程度の少人数で運航。一人ひとりの役割が重要</li>
+    </ul>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="quiz">章末クイズ</h2>
+
+  <div class="quiz">
+    <h4>Q1. 船首に向かって右側を何と呼ぶか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('q1')">A. Port</li>
+      <li onclick="showAnswer('q1')">B. Starboard</li>
+      <li onclick="showAnswer('q1')">C. Bow</li>
+      <li onclick="showAnswer('q1')">D. Stern</li>
+    </ul>
+    <div id="q1" class="quiz-answer">
+      <p><strong>正解: B. Starboard（スターボード）</strong></p>
+      <p>船首に向かって右側が右舷（Starboard）で、緑色の灯火を表示します。左側はPort（ポート）で赤色です。</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q2. 総トン数（GT）と載貨重量トン数（DWT）の違いとして正しいものはどれか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('q2')">A. GTは船の重量、DWTは貨物の重量</li>
+      <li onclick="showAnswer('q2')">B. GTは船の容積（大きさ）を表す指標、DWTは積載可能な重量</li>
+      <li onclick="showAnswer('q2')">C. GTとDWTは同じ意味で、単位が異なるだけ</li>
+      <li onclick="showAnswer('q2')">D. GTは外航船に使い、DWTは内航船に使う</li>
+    </ul>
+    <div id="q2" class="quiz-answer">
+      <p><strong>正解: B. GTは船の容積（大きさ）を表す指標、DWTは積載可能な重量</strong></p>
+      <p>GT（総トン数）は船の囲まれた空間の容積から算出される指標で、法規制の基準に使われます。DWT（載貨重量トン数）は貨物・燃料・水など船が載せられる最大重量で、商業上の基準に使われます。</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q3. タンカーのタンクが複数に区画されている主な理由は何か？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('q3')">A. 建造コストを下げるため</li>
+      <li onclick="showAnswer('q3')">B. フリーサーフェス効果を抑え、復原力を維持するため</li>
+      <li onclick="showAnswer('q3')">C. 見た目を良くするため</li>
+      <li onclick="showAnswer('q3')">D. 荷役時間を短くするため</li>
+    </ul>
+    <div id="q3" class="quiz-answer">
+      <p><strong>正解: B. フリーサーフェス効果を抑え、復原力を維持するため</strong></p>
+      <p>液体貨物は船の動揺に合わせてタンク内で移動します。広いタンクでは液面の移動が大きくなり、復原力が著しく低下します（フリーサーフェス効果）。タンクを区画することで液面の動きを制限し、安全性を確保します。また、異なる油種の積み分けにも役立ちます。</p>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <div class="chapter-nav">
+    <span></span>
+    <a href="nav02_compass.html">次章: 第2章 コンパスと方位 &raquo;</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+</body>
+</html>

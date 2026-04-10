@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8章 空気圧縮機と空気系統 — 機関編 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <div class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="eng07_electrical.html">← 第7章 電気設備</a>
+    <a href="eng09_deck_machinery.html">第9章 甲板機械 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第8章 空気圧縮機と空気系統</h1>
+
+  <p>船舶では、主機関の起動をはじめ、制御装置の作動、各種作業用の動力源として<strong>圧縮空気</strong>が使用されています。圧縮空気は「目に見えないエネルギー」であり、その供給が途絶えると主機関が起動できず、船は推進力を失います。空気圧縮機と空気系統の知識は、安全運航に直結する重要な分野です。</p>
+
+  <!-- ===== 1. 圧縮空気の用途 ===== -->
+  <h2>1. 圧縮空気の用途</h2>
+
+  <p>船内で使用される圧縮空気は、圧力や品質によって以下の用途に分けられます。</p>
+
+  <table>
+    <thead><tr><th>用途</th><th>圧力の目安</th><th>説明</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>主機起動用</strong></td>
+        <td>2.5〜3.0 MPa</td>
+        <td>ディーゼル主機関のシリンダに圧縮空気を送り、クランク軸を回転させて起動する。最も高い圧力が必要</td>
+      </tr>
+      <tr>
+        <td><strong>制御用</strong></td>
+        <td>0.5〜0.7 MPa</td>
+        <td>制御弁、空気作動式計器、自動制御装置の動力源。清浄・乾燥な空気が要求される</td>
+      </tr>
+      <tr>
+        <td><strong>作業用</strong></td>
+        <td>0.5〜0.7 MPa</td>
+        <td>エアツール（インパクトレンチ、グラインダー等）、甲板洗浄、塗装用エアブラスト</td>
+      </tr>
+      <tr>
+        <td><strong>汽笛（ホーン）用</strong></td>
+        <td>0.5〜0.7 MPa</td>
+        <td>霧中信号や入出港時の汽笛吹鳴</td>
+      </tr>
+      <tr>
+        <td><strong>発電機起動用</strong></td>
+        <td>2.5〜3.0 MPa</td>
+        <td>ディーゼル発電機の起動（主機と同様の方式）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <ul>
+      <li>主機起動用の圧縮空気は<strong>最も高い圧力</strong>（2.5〜3.0 MPa）が必要。</li>
+      <li>制御用空気には<strong>清浄・乾燥</strong>が求められ、ドライヤーやフィルターを通す。</li>
+      <li>空気圧の喪失は<strong>主機起動不能</strong>に直結する重大な事態。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 2. 往復式空気圧縮機の構造 ===== -->
+  <h2>2. 往復式空気圧縮機の構造</h2>
+
+  <p>船舶で最も一般的に使用される空気圧縮機は<strong>往復式（レシプロ式）</strong>です。ピストンの往復運動によって空気を圧縮します。</p>
+
+  <h3>主な構成部品</h3>
+  <ul>
+    <li><strong>シリンダ</strong>: 空気を圧縮する空間</li>
+    <li><strong>ピストン</strong>: シリンダ内を往復し、空気を圧縮する</li>
+    <li><strong>ピストンリング</strong>: 気密性を保つ</li>
+    <li><strong>吸込弁・吐出弁</strong>: 空気の流れ方向を制御する逆止弁</li>
+    <li><strong>クランク軸</strong>: 回転運動を往復運動に変換</li>
+    <li><strong>連接棒</strong>: ピストンとクランク軸を連結</li>
+    <li><strong>冷却装置</strong>: シリンダジャケット冷却、中間冷却器</li>
+  </ul>
+
+  <!-- 往復式空気圧縮機 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="往復式空気圧縮機の構造図">
+      <text x="300" y="25" text-anchor="middle" class="svg-title" font-size="15">往復式空気圧縮機の構造</text>
+
+      <!-- シリンダ（1段目） -->
+      <rect x="100" y="60" width="120" height="200" rx="4" fill="#ebf8ff" stroke="#1a365d" stroke-width="2.5"/>
+      <text x="160" y="50" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">1段目シリンダ</text>
+
+      <!-- 冷却ジャケット -->
+      <rect x="92" y="80" width="8" height="160" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1"/>
+      <rect x="220" y="80" width="8" height="160" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1"/>
+      <text x="80" y="165" text-anchor="end" font-size="8" fill="#2b6cb0">冷却水</text>
+
+      <!-- ピストン（アニメーション付き） -->
+      <g class="animate-piston" style="transform-origin: 160px 180px;">
+        <rect x="108" y="165" width="104" height="30" rx="3" fill="#a0aec0" stroke="#2d3748" stroke-width="2"/>
+        <text x="160" y="184" text-anchor="middle" font-size="9" fill="#fff" font-weight="600">ピストン</text>
+        <!-- ピストンリング -->
+        <line x1="108" y1="170" x2="212" y2="170" stroke="#2d3748" stroke-width="1.5"/>
+        <line x1="108" y1="190" x2="212" y2="190" stroke="#2d3748" stroke-width="1.5"/>
+        <!-- 連接棒 -->
+        <line x1="160" y1="195" x2="160" y2="280" stroke="#4a5568" stroke-width="6" stroke-linecap="round"/>
+      </g>
+
+      <!-- 圧縮空気の色変化 -->
+      <rect x="104" y="64" width="112" height="100" rx="2" fill="#2b6cb0" opacity="0.1" class="animate-pulse"/>
+
+      <!-- 吸込弁 -->
+      <rect x="105" y="56" width="40" height="12" rx="3" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="125" y="65" text-anchor="middle" font-size="7" fill="#38a169">吸込弁</text>
+      <text x="85" y="46" text-anchor="end" font-size="9" fill="#38a169">空気吸入 ↓</text>
+
+      <!-- 吐出弁 -->
+      <rect x="175" y="56" width="40" height="12" rx="3" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="195" y="65" text-anchor="middle" font-size="7" fill="#c53030">吐出弁</text>
+
+      <!-- 1段→中間冷却器への配管 -->
+      <line x1="215" y1="62" x2="270" y2="62" stroke="#e53e3e" stroke-width="2" class="animate-flow"/>
+      <text x="242" y="55" text-anchor="middle" font-size="8" fill="#c53030">→</text>
+
+      <!-- 中間冷却器 -->
+      <rect x="270" y="40" width="80" height="50" rx="8" fill="#e6fffa" stroke="#38a169" stroke-width="2"/>
+      <text x="310" y="60" text-anchor="middle" font-size="9" fill="#38a169" font-weight="600">中間</text>
+      <text x="310" y="73" text-anchor="middle" font-size="9" fill="#38a169" font-weight="600">冷却器</text>
+      <!-- 冷却水の表現 -->
+      <line x1="280" y1="48" x2="340" y2="48" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="280" y1="82" x2="340" y2="82" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="3,2"/>
+
+      <!-- 中間冷却器→2段目 -->
+      <line x1="350" y1="65" x2="400" y2="65" stroke="#ed8936" stroke-width="2" class="animate-flow"/>
+
+      <!-- シリンダ（2段目） -->
+      <rect x="400" y="60" width="90" height="200" rx="4" fill="#fff5f5" stroke="#1a365d" stroke-width="2.5"/>
+      <text x="445" y="50" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">2段目シリンダ</text>
+
+      <!-- 2段目ピストン -->
+      <g class="animate-piston" style="transform-origin: 445px 180px; animation-delay: 1s;">
+        <rect x="406" y="165" width="78" height="25" rx="3" fill="#718096" stroke="#2d3748" stroke-width="2"/>
+        <text x="445" y="182" text-anchor="middle" font-size="8" fill="#fff">ピストン</text>
+        <line x1="445" y1="190" x2="445" y2="280" stroke="#4a5568" stroke-width="5" stroke-linecap="round"/>
+      </g>
+
+      <!-- 圧縮表現 -->
+      <rect x="404" y="64" width="82" height="100" rx="2" fill="#e53e3e" opacity="0.1" class="animate-pulse" style="animation-delay:0.5s"/>
+
+      <!-- 2段目吐出弁 -->
+      <rect x="410" y="56" width="35" height="12" rx="3" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="428" y="65" text-anchor="middle" font-size="7" fill="#c53030">吐出</text>
+
+      <!-- 後部冷却器 -->
+      <line x1="445" y1="56" x2="445" y2="20" stroke="#c53030" stroke-width="2"/>
+      <line x1="445" y1="20" x2="540" y2="20" stroke="#c53030" stroke-width="2" class="animate-flow"/>
+      <rect x="540" y="5" width="55" height="35" rx="6" fill="#e6fffa" stroke="#38a169" stroke-width="1.5"/>
+      <text x="568" y="20" text-anchor="middle" font-size="8" fill="#38a169">後部</text>
+      <text x="568" y="32" text-anchor="middle" font-size="8" fill="#38a169">冷却器</text>
+
+      <!-- 空気槽へ -->
+      <line x1="568" y1="40" x2="568" y2="62" stroke="#c53030" stroke-width="2" marker-end="url(#arrowE)"/>
+      <text x="568" y="75" text-anchor="middle" font-size="9" fill="#c53030" font-weight="600">空気槽へ ↓</text>
+      <text x="568" y="90" text-anchor="middle" font-size="8" fill="#718096">（2.5〜3.0 MPa）</text>
+
+      <!-- クランク軸部分 -->
+      <rect x="80" y="290" width="430" height="60" rx="8" fill="#f7fafc" stroke="#2d3748" stroke-width="2"/>
+      <!-- クランク軸 -->
+      <line x1="100" y1="320" x2="490" y2="320" stroke="#4a5568" stroke-width="4"/>
+      <!-- クランクピン -->
+      <circle cx="160" cy="305" r="10" fill="#4a5568" stroke="#2d3748" stroke-width="1.5"/>
+      <circle cx="445" cy="305" r="10" fill="#4a5568" stroke="#2d3748" stroke-width="1.5"/>
+      <text x="295" y="340" text-anchor="middle" font-size="10" fill="#2d3748">クランク軸</text>
+
+      <!-- 電動機 -->
+      <rect x="140" y="370" width="120" height="50" rx="8" fill="#ebf8ff" stroke="#1a365d" stroke-width="2"/>
+      <text x="200" y="395" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">電動機</text>
+      <text x="200" y="410" text-anchor="middle" font-size="9" fill="#718096">（モーター駆動）</text>
+      <line x1="200" y1="370" x2="200" y2="350" stroke="#1a365d" stroke-width="2"/>
+
+      <!-- 圧縮段階の説明 -->
+      <rect x="80" y="435" width="440" height="15" rx="3" fill="#f7fafc"/>
+      <text x="300" y="446" text-anchor="middle" font-size="10" fill="#718096">1段目で中間圧まで圧縮 → 中間冷却 → 2段目で最終圧力まで圧縮 → 後部冷却 → 空気槽</text>
+    </svg>
+    <div class="caption">図8-1: 2段式往復空気圧縮機の構造（ピストン運動アニメーション付き）</div>
+  </div>
+
+  <!-- ===== 3. 2段圧縮の仕組みと中間冷却器 ===== -->
+  <h2>3. 2段圧縮の仕組みと中間冷却器</h2>
+
+  <p>高い圧力（2.5〜3.0 MPa）を効率よく得るために、船用空気圧縮機は通常<strong>2段圧縮</strong>を採用しています。</p>
+
+  <h3>なぜ2段圧縮なのか</h3>
+  <ul>
+    <li>空気を圧縮すると温度が上昇する（断熱圧縮）</li>
+    <li>1段で大気圧から3.0 MPaまで圧縮すると、<strong>温度が非常に高くなり</strong>危険</li>
+    <li>高温は潤滑油の劣化、カーボン堆積、爆発の危険を伴う</li>
+    <li>2段に分けて途中で冷却することで、<strong>安全かつ効率的</strong>に圧縮できる</li>
+  </ul>
+
+  <h3>圧縮の流れ</h3>
+  <ol>
+    <li><strong>1段目</strong>: 大気圧の空気を吸い込み、中間圧力（約0.3〜0.5 MPa）まで圧縮</li>
+    <li><strong>中間冷却器</strong>: 圧縮で高温になった空気を海水または清水で冷却。水分も分離</li>
+    <li><strong>2段目</strong>: 冷却された空気をさらに圧縮し、最終圧力（2.5〜3.0 MPa）に到達</li>
+    <li><strong>後部冷却器</strong>: 最終段の圧縮熱を冷却し、空気槽に送る</li>
+  </ol>
+
+  <div class="box box-info">
+    <h4>中間冷却器の効果</h4>
+    <p>中間冷却を行うことで、2段目の吸込温度が下がり、圧縮仕事（必要エネルギー）が減少します。理論的には<strong>等温圧縮</strong>に近づくほど効率が良くなります。また、冷却により空気中の水分が凝縮し、ドレンとして排出されるため、空気の乾燥にも寄与します。</p>
+  </div>
+
+  <!-- ===== 4. 空気槽 ===== -->
+  <h2>4. 空気槽（エアリザーバ）の安全装置</h2>
+
+  <p>圧縮空気は<strong>空気槽（エアリザーバ）</strong>に貯蔵されます。主機関起動用の主空気槽は通常2基設けられ、それぞれ単独で主機関を数回起動できる容量を持っています。</p>
+
+  <h3>安全装置</h3>
+  <table>
+    <thead><tr><th>装置名</th><th>目的</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>安全弁</strong></td>
+        <td>空気槽の圧力が設定値を超えた場合に自動開放し、過圧による破裂を防止</td>
+      </tr>
+      <tr>
+        <td><strong>圧力計</strong></td>
+        <td>空気槽内の圧力を表示。機関制御室にも遠隔表示</td>
+      </tr>
+      <tr>
+        <td><strong>ドレン弁</strong></td>
+        <td>空気槽底部に溜まった水分（ドレン）を排出。定期的な排出が必要</td>
+      </tr>
+      <tr>
+        <td><strong>融解栓（ヒューズプラグ）</strong></td>
+        <td>異常高温（火災等）で融解し、空気槽内の空気を放出して破裂を防止</td>
+      </tr>
+      <tr>
+        <td><strong>圧力スイッチ</strong></td>
+        <td>空気圧低下時に圧縮機を自動起動、設定圧に達すると自動停止</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box box-warning">
+    <h4>空気槽のドレン抜きの重要性</h4>
+    <p>圧縮空気には水蒸気が含まれており、空気槽内で冷却されると凝縮して水（ドレン）が溜まります。ドレンが起動空気弁を通じてシリンダ内に入ると、<strong>ウォーターハンマー</strong>を起こして重大な損傷の原因になります。最低1日1回のドレン排出を徹底します。</p>
+  </div>
+
+  <!-- ===== 5. 起動空気系統 ===== -->
+  <h2>5. 起動空気系統</h2>
+
+  <p>主機関の起動空気系統は、空気槽から主機関のシリンダまでの圧縮空気の供給経路です。</p>
+
+  <!-- 起動空気系統図 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="起動空気系統の構成図">
+      <defs>
+        <marker id="arrowAir" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,3 L0,6 Z" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+      <text x="350" y="25" text-anchor="middle" class="svg-title" font-size="15">起動空気系統の構成</text>
+
+      <!-- 空気圧縮機 -->
+      <rect x="30" y="70" width="100" height="60" rx="8" fill="#ebf8ff" stroke="#1a365d" stroke-width="2"/>
+      <text x="80" y="95" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="600">空気圧縮機</text>
+      <text x="80" y="110" text-anchor="middle" font-size="8" fill="#718096">（2段式）</text>
+
+      <!-- 配管（圧縮機→空気槽） -->
+      <line x1="130" y1="100" x2="170" y2="100" stroke="#2b6cb0" stroke-width="3" class="animate-flow" marker-end="url(#arrowAir)"/>
+
+      <!-- 空気槽 No.1 -->
+      <rect x="180" y="55" width="90" height="90" rx="40" fill="#f0fff4" stroke="#38a169" stroke-width="2.5"/>
+      <text x="225" y="95" text-anchor="middle" font-size="10" fill="#38a169" font-weight="600">主空気槽</text>
+      <text x="225" y="110" text-anchor="middle" font-size="9" fill="#38a169">No.1</text>
+      <text x="225" y="125" text-anchor="middle" font-size="8" fill="#718096">3.0 MPa</text>
+      <!-- 安全弁 -->
+      <rect x="200" y="40" width="50" height="14" rx="3" fill="#fff5f5" stroke="#e53e3e" stroke-width="1"/>
+      <text x="225" y="50" text-anchor="middle" font-size="7" fill="#c53030">安全弁</text>
+      <!-- ドレン弁 -->
+      <rect x="200" y="148" width="50" height="14" rx="3" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <text x="225" y="158" text-anchor="middle" font-size="7" fill="#975a16">ドレン弁</text>
+
+      <!-- 空気槽 No.2 -->
+      <rect x="180" y="185" width="90" height="90" rx="40" fill="#f0fff4" stroke="#38a169" stroke-width="2.5"/>
+      <text x="225" y="225" text-anchor="middle" font-size="10" fill="#38a169" font-weight="600">主空気槽</text>
+      <text x="225" y="240" text-anchor="middle" font-size="9" fill="#38a169">No.2</text>
+      <text x="225" y="255" text-anchor="middle" font-size="8" fill="#718096">3.0 MPa</text>
+      <rect x="200" y="278" width="50" height="14" rx="3" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <text x="225" y="288" text-anchor="middle" font-size="7" fill="#975a16">ドレン弁</text>
+
+      <!-- 配管（空気槽→主管） -->
+      <line x1="270" y1="100" x2="320" y2="100" stroke="#2b6cb0" stroke-width="3" class="animate-flow"/>
+      <line x1="270" y1="230" x2="320" y2="230" stroke="#2b6cb0" stroke-width="3" class="animate-flow"/>
+      <line x1="320" y1="100" x2="320" y2="230" stroke="#2b6cb0" stroke-width="3"/>
+
+      <!-- 主管止め弁 -->
+      <rect x="335" y="155" width="50" height="20" rx="4" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="360" y="168" text-anchor="middle" font-size="8" fill="#975a16">主管弁</text>
+      <line x1="320" y1="165" x2="335" y2="165" stroke="#2b6cb0" stroke-width="3"/>
+      <line x1="385" y1="165" x2="430" y2="165" stroke="#2b6cb0" stroke-width="3" class="animate-flow" marker-end="url(#arrowAir)"/>
+
+      <!-- 起動空気弁（安全弁付き） -->
+      <rect x="430" y="145" width="70" height="40" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="465" y="163" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="600">起動弁</text>
+      <text x="465" y="176" text-anchor="middle" font-size="8" fill="#718096">（自動弁）</text>
+
+      <!-- 逆火防止器 -->
+      <line x1="500" y1="165" x2="530" y2="165" stroke="#2b6cb0" stroke-width="3" class="animate-flow"/>
+      <rect x="530" y="148" width="55" height="34" rx="4" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="558" y="163" text-anchor="middle" font-size="8" fill="#c53030">逆火</text>
+      <text x="558" y="174" text-anchor="middle" font-size="8" fill="#c53030">防止器</text>
+
+      <!-- 主機関 -->
+      <line x1="585" y1="165" x2="610" y2="165" stroke="#2b6cb0" stroke-width="3" class="animate-flow" marker-end="url(#arrowAir)"/>
+      <rect x="615" y="120" width="70" height="90" rx="8" fill="#fed7d7" stroke="#c53030" stroke-width="2.5"/>
+      <text x="650" y="155" text-anchor="middle" font-size="11" fill="#c53030" font-weight="600">主機関</text>
+      <text x="650" y="175" text-anchor="middle" font-size="9" fill="#718096">各シリンダ</text>
+      <text x="650" y="190" text-anchor="middle" font-size="9" fill="#718096">起動空気弁</text>
+
+      <!-- 制御空気系統への分岐 -->
+      <line x1="320" y1="165" x2="320" y2="280" stroke="#38a169" stroke-width="2"/>
+      <line x1="320" y1="280" x2="380" y2="280" stroke="#38a169" stroke-width="2" marker-end="url(#arrowAir)"/>
+      <!-- 減圧弁 -->
+      <rect x="380" y="268" width="55" height="24" rx="4" fill="#e6fffa" stroke="#38a169" stroke-width="1.5"/>
+      <text x="408" y="284" text-anchor="middle" font-size="8" fill="#38a169">減圧弁</text>
+      <line x1="435" y1="280" x2="470" y2="280" stroke="#38a169" stroke-width="2" class="animate-flow"/>
+      <!-- ドライヤー -->
+      <rect x="470" y="268" width="55" height="24" rx="4" fill="#e6fffa" stroke="#38a169" stroke-width="1.5"/>
+      <text x="498" y="284" text-anchor="middle" font-size="8" fill="#38a169">ドライヤー</text>
+      <line x1="525" y1="280" x2="560" y2="280" stroke="#38a169" stroke-width="2" class="animate-flow" marker-end="url(#arrowAir)"/>
+      <!-- 制御空気先 -->
+      <rect x="560" y="262" width="90" height="36" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="605" y="278" text-anchor="middle" font-size="9" fill="#38a169" font-weight="600">制御空気</text>
+      <text x="605" y="292" text-anchor="middle" font-size="8" fill="#718096">0.5〜0.7 MPa</text>
+
+      <!-- 凡例 -->
+      <line x1="40" y1="330" x2="70" y2="330" stroke="#2b6cb0" stroke-width="3"/>
+      <text x="78" y="334" font-size="9" fill="#2d3748">起動空気系統（高圧）</text>
+      <line x1="250" y1="330" x2="280" y2="330" stroke="#38a169" stroke-width="2"/>
+      <text x="288" y="334" font-size="9" fill="#2d3748">制御空気系統（低圧・乾燥）</text>
+    </svg>
+    <div class="caption">図8-2: 起動空気系統と制御空気系統の構成</div>
+  </div>
+
+  <h3>起動空気系統の主要構成品</h3>
+  <ul>
+    <li><strong>主空気槽</strong>: 高圧空気の貯蔵。2基設置が一般的</li>
+    <li><strong>起動弁</strong>: 操縦室からの操作で空気供給を開始する自動弁</li>
+    <li><strong>起動空気分配弁</strong>: 各シリンダへの空気供給タイミングを制御</li>
+    <li><strong>逆火防止器</strong>: シリンダからの火炎が空気管に逆流するのを防止する安全装置</li>
+    <li><strong>主管弁（止め弁）</strong>: 空気槽からの空気供給を遮断する弁</li>
+  </ul>
+
+  <div class="box box-danger">
+    <h4>逆火防止器の重要性</h4>
+    <p>ディーゼル機関のシリンダ内の燃焼ガスが起動空気管を通じて空気槽に逆流すると、空気槽内で<strong>爆発</strong>を起こす危険があります。逆火防止器は火炎の逆流を遮断するための安全装置であり、起動空気管に必ず設置されています。ディスク（破裂板）の定期点検が必要です。</p>
+  </div>
+
+  <!-- ===== 6. 制御空気系統 ===== -->
+  <h2>6. 制御空気系統</h2>
+
+  <p>制御空気は、主空気槽の高圧空気を<strong>減圧弁</strong>で0.5〜0.7 MPaに減圧し、さらに<strong>エアドライヤー</strong>と<strong>フィルター</strong>で清浄・乾燥して供給します。</p>
+
+  <h3>制御空気の主な供給先</h3>
+  <ul>
+    <li><strong>主機の遠隔操縦装置</strong>: 空気作動式の操作弁、燃料噴射制御</li>
+    <li><strong>自動制御装置</strong>: 空気式の計器、制御弁、温度調節弁</li>
+    <li><strong>安全装置</strong>: 非常停止装置、過速度防止装置</li>
+    <li><strong>汽笛</strong>: 信号用ホーン</li>
+  </ul>
+
+  <h3>制御空気の品質管理</h3>
+  <p>制御空気に水分や油分が含まれると、制御弁の動作不良や固着の原因になります。</p>
+  <ul>
+    <li><strong>エアドライヤー</strong>の定期点検（乾燥剤の交換・再生）</li>
+    <li><strong>フィルター</strong>のドレン排出と清掃</li>
+    <li>制御空気圧力の監視（低下は漏れの兆候）</li>
+  </ul>
+
+  <!-- ===== 7. 圧縮機の保守 ===== -->
+  <h2>7. 圧縮機の保守</h2>
+
+  <h3>弁の点検</h3>
+  <p>吸込弁・吐出弁は圧縮機の最重要部品であり、弁板の割れ、変形、シート面の損傷がないか定期的に点検します。弁の不良は圧縮効率の低下に直結します。</p>
+
+  <h3>潤滑</h3>
+  <ul>
+    <li><strong>シリンダ潤滑</strong>: 適正量の潤滑油を供給。過多はカーボン堆積の原因</li>
+    <li><strong>クランクケース潤滑</strong>: 油量と汚れを定期確認。油面計の監視</li>
+    <li>潤滑油は専用のコンプレッサー油を使用（引火点が高いもの）</li>
+  </ul>
+
+  <h3>ドレン抜き</h3>
+  <ul>
+    <li>中間冷却器、後部冷却器、空気槽のドレンを<strong>毎日排出</strong></li>
+    <li>ドレン中に油分が多い場合は、ピストンリングの摩耗が疑われる</li>
+  </ul>
+
+  <h3>運転時の監視項目</h3>
+  <table>
+    <thead><tr><th>監視項目</th><th>異常時の考えられる原因</th></tr></thead>
+    <tbody>
+      <tr><td>吐出圧力が上がらない</td><td>弁の損傷、ピストンリング摩耗、空気漏れ</td></tr>
+      <tr><td>吐出温度が高い</td><td>中間冷却器の詰まり、弁の不良、潤滑不足</td></tr>
+      <tr><td>異常な音・振動</td><td>弁の破損、軸受の摩耗、連接棒ボルトの緩み</td></tr>
+      <tr><td>潤滑油の消費が多い</td><td>ピストンリングの摩耗</td></tr>
+      <tr><td>充填時間が長い</td><td>弁の不良、漏れ、冷却不良</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 8. 安全装置 ===== -->
+  <h2>8. 安全装置</h2>
+
+  <p>空気圧縮機と空気系統には、以下の安全装置が設けられています。</p>
+
+  <h3>安全弁</h3>
+  <p>各段の吐出側および空気槽に設置され、異常な圧力上昇を防止します。定期的に手動テストで動作を確認します。</p>
+
+  <h3>圧力スイッチ</h3>
+  <p>空気槽の圧力を監視し、設定圧力まで低下すると圧縮機を自動起動、上限圧力で自動停止する制御を行います。また、異常高圧時のアラームにも使用されます。</p>
+
+  <h3>融解栓（ヒューズプラグ）</h3>
+  <p>空気槽や配管に設置され、異常な高温（火災時等）で低融点金属が融解して空気を放出します。これにより空気槽の内圧上昇による破裂を防止します。</p>
+
+  <h3>温度スイッチ</h3>
+  <p>各段の吐出空気温度を監視し、異常高温時に圧縮機を自動停止させます。</p>
+
+  <h3>無負荷始動装置</h3>
+  <p>圧縮機を無負荷（吐出弁を開放した状態）で起動し、電動機の始動電流を軽減する装置です。</p>
+
+  <div class="key-point">
+    <ul>
+      <li>安全弁は各段の吐出側と空気槽に設置。<strong>定期テスト</strong>が必要。</li>
+      <li>融解栓は<strong>火災時の空気槽破裂防止</strong>が目的。</li>
+      <li>圧力スイッチにより圧縮機は<strong>自動発停</strong>する。</li>
+      <li>吐出温度の監視は<strong>カーボン堆積・爆発防止</strong>に重要。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 9. 実務 ===== -->
+  <h2>9. 実務: 空気圧低下時の対応</h2>
+
+  <p>主空気槽の圧力が異常に低下した場合、主機関の起動ができなくなる恐れがあり、緊急の対応が必要です。</p>
+
+  <div class="box box-danger">
+    <h4>空気圧低下時の対応手順</h4>
+    <ol>
+      <li><strong>警報の確認</strong>: 空気圧低下の警報が作動した場合、直ちに確認する</li>
+      <li><strong>圧縮機の運転確認</strong>: 圧縮機が正常に運転しているか確認。停止している場合は手動で起動</li>
+      <li><strong>漏れの調査</strong>: 配管、弁、継手からの空気漏れがないか確認。漏れ箇所には石鹸水を塗って泡立ちで検出</li>
+      <li><strong>ドレン弁の確認</strong>: ドレン弁が開いたままになっていないか確認</li>
+      <li><strong>弁の点検</strong>: 圧縮機の吸込弁・吐出弁の状態を確認</li>
+      <li><strong>空気の節約</strong>: 不要な作業用空気の使用を中止し、起動用空気の確保を優先</li>
+      <li><strong>船橋への報告</strong>: 空気圧が規定値まで回復しない場合、船長に報告</li>
+    </ol>
+  </div>
+
+  <div class="box box-info">
+    <h4>日常管理のポイント</h4>
+    <ul>
+      <li>当直時に空気槽の圧力を<strong>定期的に確認</strong>する習慣をつける</li>
+      <li>圧縮機の<strong>自動発停</strong>が正しく動作しているか注意する（頻繁な起動は漏れのサイン）</li>
+      <li>出港前には必ず<strong>空気槽を満充填</strong>にしておく</li>
+      <li>空気槽のドレン抜きは<strong>毎日実施</strong>（特に高温多湿の時期は水分が多い）</li>
+      <li>圧縮機の運転時間を記録し、<strong>計画的な保守</strong>に活用する</li>
+    </ul>
+  </div>
+
+  <!-- ===== クイズ ===== -->
+  <div class="quiz">
+    <h4>章末クイズ — 第8章 空気圧縮機と空気系統</h4>
+
+    <p><strong>問1:</strong> 主機関の起動用圧縮空気の圧力として正しいものはどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 0.5〜0.7 MPa</li>
+      <li>B. 1.0〜1.5 MPa</li>
+      <li>C. 2.5〜3.0 MPa</li>
+    </ul>
+    <button onclick="showAnswer('a8-1')">解答を見る</button>
+    <div id="a8-1" class="quiz-answer">
+      <p><strong>正解: C. 2.5〜3.0 MPa</strong></p>
+      <p>主機関のシリンダに圧縮空気を送ってクランク軸を回転させるため、高い圧力が必要です。0.5〜0.7 MPaは制御用や作業用空気の圧力です。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問2:</strong> 空気圧縮機を2段圧縮にする主な理由として正しいものはどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 1段では騒音が大きすぎるため</li>
+      <li>B. 1段で高圧まで圧縮すると温度が過度に上昇し危険なため</li>
+      <li>C. 2段にすると空気槽の容量を小さくできるため</li>
+    </ul>
+    <button onclick="showAnswer('a8-2')">解答を見る</button>
+    <div id="a8-2" class="quiz-answer">
+      <p><strong>正解: B. 1段で高圧まで圧縮すると温度が過度に上昇し危険なため</strong></p>
+      <p>空気の圧縮に伴い温度が上昇します。1段で大気圧から3.0 MPaまで圧縮すると非常に高温になり、潤滑油の劣化やカーボン堆積、爆発の危険があります。2段に分けて中間冷却を行うことで安全かつ効率的に圧縮できます。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問3:</strong> 起動空気系統に設置される「逆火防止器」の目的として正しいものはどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 空気圧縮機への空気の逆流を防止する</li>
+      <li>B. シリンダからの火炎が空気管・空気槽に逆流するのを防止する</li>
+      <li>C. 空気槽の過充填を防止する</li>
+    </ul>
+    <button onclick="showAnswer('a8-3')">解答を見る</button>
+    <div id="a8-3" class="quiz-answer">
+      <p><strong>正解: B. シリンダからの火炎が空気管・空気槽に逆流するのを防止する</strong></p>
+      <p>主機関のシリンダ内の高温ガスや火炎が起動空気管を通じて逆流すると、空気槽で爆発を起こす危険があります。逆火防止器はこの火炎の逆流を遮断する安全装置です。</p>
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="eng07_electrical.html">← 第7章 電気設備の基礎</a>
+    <a href="eng09_deck_machinery.html">第9章 甲板機械と舵取機 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) { var el = document.getElementById(id); el.classList.toggle('show'); }
+</script>
+
+</body>
+</html>

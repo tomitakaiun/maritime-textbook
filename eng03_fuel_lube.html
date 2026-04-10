@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 燃料油と潤滑油 — 機関編 | 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <div class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="eng02_diesel_structure.html">&laquo; 第2章 ディーゼル機関の構造</a>
+    <a href="eng04_cooling.html">第4章 冷却系統と給気系統 &raquo;</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第3章 燃料油と潤滑油</h1>
+
+  <p>ディーゼル機関を動かすには「燃料」が必要であり、機関を長持ちさせるには「潤滑油」が欠かせません。本章では、内航船で扱う燃料油と潤滑油について、種類・性質・取り扱いの基本を学びます。実務では、燃料受入れ時のチェックや油の劣化管理が重要な日常業務となります。</p>
+
+  <!-- ===== 3-1 燃料油の種類 ===== -->
+  <h2>3-1 燃料油の種類</h2>
+
+  <p>船舶で使用する燃料油は、原油を精製する過程で得られる石油製品です。精製の段階により軽質油から重質油まで様々な種類があります。</p>
+
+  <h3>内航船で使う主な燃料油</h3>
+
+  <table>
+    <thead>
+      <tr><th>種類</th><th>特徴</th><th>主な用途</th><th>粘度（50℃）</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>軽油（ディーゼル油）</strong></td>
+        <td>軽質で取り扱いが容易。引火点は約50℃以上</td>
+        <td>小型船の主機関、非常用発電機</td>
+        <td>約2〜5 cSt</td>
+      </tr>
+      <tr>
+        <td><strong>A重油</strong></td>
+        <td>軽油に少量の残渣油を混合。引火点60℃以上</td>
+        <td>内航船の主機関・補機（最も一般的）</td>
+        <td>約10〜20 cSt</td>
+      </tr>
+      <tr>
+        <td><strong>C重油</strong></td>
+        <td>残渣油主体。粘度が高く加熱が必要。硫黄分多め</td>
+        <td>大型外航船の主機関</td>
+        <td>約50〜700 cSt</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p><strong>内航船ではA重油が主流です。</strong>C重油と比べて粘度が低く、加熱装置や高性能な清浄装置が不要なため、内航船のような比較的小型の船舶に適しています。価格はC重油より高いですが、設備がシンプルで済み、メンテナンスコストも抑えられます。</p>
+  </div>
+
+  <h3>JIS規格による分類</h3>
+  <p>日本産業規格（JIS K 2205）では、重油を1種（A重油）、2種（B重油）、3種（C重油）に分類しています。1種はさらに1号と2号に分かれ、硫黄分含有量が異なります。内航船では環境規制の観点から、低硫黄のA重油1号が一般的に使用されます。</p>
+
+  <!-- ===== 3-2 燃料油の性質 ===== -->
+  <h2>3-2 燃料油の性質</h2>
+
+  <p>燃料油を正しく取り扱うためには、その性質を理解することが重要です。以下の性質が特に重要です。</p>
+
+  <h3>粘度（ねんど）</h3>
+  <p><span class="glossary-term" data-def="液体の流れにくさを表す指標。単位はcSt（センチストークス）">粘度</span>は燃料油の「流れにくさ」を表します。粘度が高いほどドロドロしており、低いほどサラサラしています。エンジンに送る燃料油は適切な粘度に調整する必要があり、C重油の場合は加熱して粘度を下げます。A重油は常温でも比較的低粘度であり、通常は加熱不要です。</p>
+
+  <h3>引火点（いんかてん）</h3>
+  <p><span class="glossary-term" data-def="油の蒸気に火を近づけたとき、一瞬燃え上がる最低温度">引火点</span>は、油の蒸気に炎を近づけたときに瞬間的に燃え上がる最低温度です。安全規則上、船舶の燃料油の引火点は<strong>60℃以上</strong>が求められます（A重油は通常70℃前後）。引火点が低い燃料は火災のリスクが高まるため、タンク内や機関室での温度管理が重要です。</p>
+
+  <h3>流動点（りゅうどうてん）</h3>
+  <p><span class="glossary-term" data-def="油が流動性を失い始める温度">流動点</span>は、油が冷却されて流動しなくなる温度です。冬季や寒冷地では、燃料油が流動点以下になるとタンクやパイプ内で固まり、エンジンへの供給が停止します。必要に応じてタンクヒーターで加温します。</p>
+
+  <h3>残留炭素分（ざんりゅうたんそぶん）</h3>
+  <p>燃料油を蒸発させた後に残る炭素の割合です。残留炭素分が高い燃料は、燃焼後にカーボン（すす）が多く生成され、ピストンリングや排気弁の固着、排気管の詰まりなどの原因となります。A重油は残留炭素分が少なく、機関への負担が小さいのが利点です。</p>
+
+  <h3>硫黄分（いおうぶん）</h3>
+  <p>燃料中の硫黄は燃焼により亜硫酸ガス（SO<sub>2</sub>）となり、さらに水分と結合すると硫酸となって機関内部を腐食させます。また、大気汚染の原因にもなります。2020年のIMO規制（SOx規制）により、船舶燃料の硫黄分は<strong>0.50%以下</strong>が義務化されました。内航船のA重油は通常0.5%以下であるため、この規制に適合しています。</p>
+
+  <div class="box box-info">
+    <h4>6級海技士試験でのポイント</h4>
+    <p>試験では「引火点とは何か」「粘度が機関に与える影響」などが頻出です。特に引火点60℃以上のルールは確実に覚えましょう。</p>
+  </div>
+
+  <!-- ===== 3-3 燃料油タンクの配置と系統 ===== -->
+  <h2>3-3 燃料油タンクの配置と系統</h2>
+
+  <p>船内の燃料油は、複数のタンクを経由してエンジンに供給されます。それぞれのタンクには役割があり、燃料を段階的に清浄化してから使用します。</p>
+
+  <h3>タンクの種類と役割</h3>
+  <ul>
+    <li><strong>貯蔵タンク（ストレージタンク）:</strong> バンカリング（燃料補給）で受け入れた燃料を大量に貯蔵するタンク。船底付近の二重底などに設置。</li>
+    <li><strong>セットリングタンク（沈殿タンク）:</strong> 貯蔵タンクから移送された燃料を静置して、水分やスラッジ（沈殿物）を沈殿分離するためのタンク。通常24時間以上の静置が望ましい。</li>
+    <li><strong>サービスタンク（常用タンク）:</strong> セットリングタンクから清浄機を通して送られた清浄な燃料を貯めるタンク。ここからエンジンに直接供給される。</li>
+  </ul>
+
+  <!-- SVG: 燃料油系統図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="max-width:800px; width:100%;">
+      <defs>
+        <marker id="arrowF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#2b6cb0"/>
+        </marker>
+        <linearGradient id="tankGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#bee3f8"/>
+          <stop offset="100%" stop-color="#2b6cb0" stop-opacity="0.3"/>
+        </linearGradient>
+        <linearGradient id="oilGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ed8936"/>
+          <stop offset="100%" stop-color="#c05621"/>
+        </linearGradient>
+      </defs>
+
+      <!-- 背景 -->
+      <rect x="0" y="0" width="800" height="400" fill="#f7fafc" rx="8"/>
+      <text x="400" y="30" text-anchor="middle" class="svg-title" font-size="15">燃料油系統図（内航船 A重油の場合）</text>
+
+      <!-- バンカリング -->
+      <rect x="10" y="60" width="90" height="50" rx="6" fill="#e2e8f0" stroke="#718096"/>
+      <text x="55" y="82" text-anchor="middle" font-size="11" fill="#2d3748">バンカー船</text>
+      <text x="55" y="98" text-anchor="middle" font-size="9" fill="#718096">（燃料補給）</text>
+
+      <!-- 矢印: バンカー → 貯蔵タンク -->
+      <line x1="100" y1="85" x2="145" y2="85" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowF)"/>
+      <circle r="4" fill="#ed8936">
+        <animateMotion dur="2s" repeatCount="indefinite" path="M100,85 L145,85"/>
+      </circle>
+
+      <!-- 貯蔵タンク -->
+      <rect x="150" y="50" width="120" height="80" rx="8" fill="url(#tankGrad)" stroke="#2b6cb0" stroke-width="2"/>
+      <rect x="155" y="85" width="110" height="40" rx="4" fill="url(#oilGrad)" opacity="0.6"/>
+      <text x="210" y="72" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">貯蔵タンク</text>
+      <text x="210" y="108" text-anchor="middle" font-size="9" fill="#fff">燃料油</text>
+
+      <!-- 矢印: 貯蔵 → セットリング -->
+      <line x1="270" y1="90" x2="315" y2="90" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowF)"/>
+      <text x="293" y="82" text-anchor="middle" font-size="8" fill="#718096">移送</text>
+      <!-- 流れアニメーション -->
+      <line x1="270" y1="93" x2="315" y2="93" stroke="#ed8936" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- セットリングタンク -->
+      <rect x="320" y="50" width="120" height="80" rx="8" fill="url(#tankGrad)" stroke="#2b6cb0" stroke-width="2"/>
+      <rect x="325" y="80" width="110" height="45" rx="4" fill="url(#oilGrad)" opacity="0.6"/>
+      <rect x="325" y="115" width="110" height="10" rx="2" fill="#a0aec0" opacity="0.5"/>
+      <text x="380" y="72" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">セットリング</text>
+      <text x="380" y="102" text-anchor="middle" font-size="9" fill="#fff">静置・沈殿</text>
+      <text x="380" y="128" text-anchor="middle" font-size="8" fill="#718096">水・スラッジ↓</text>
+
+      <!-- 矢印: セットリング → 清浄機 -->
+      <line x1="440" y1="90" x2="480" y2="90" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowF)"/>
+      <line x1="440" y1="93" x2="480" y2="93" stroke="#ed8936" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- 清浄機（遠心分離機） -->
+      <circle cx="520" cy="90" r="35" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <circle cx="520" cy="90" r="20" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+      <circle cx="520" cy="90" r="8" fill="#2b6cb0"/>
+      <!-- 回転アニメーション -->
+      <g transform-origin="520 90" class="animate-rotate">
+        <line x1="520" y1="72" x2="520" y2="68" stroke="#2b6cb0" stroke-width="2"/>
+        <line x1="538" y1="90" x2="542" y2="90" stroke="#2b6cb0" stroke-width="2"/>
+        <line x1="520" y1="108" x2="520" y2="112" stroke="#2b6cb0" stroke-width="2"/>
+        <line x1="502" y1="90" x2="498" y2="90" stroke="#2b6cb0" stroke-width="2"/>
+      </g>
+      <text x="520" y="140" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="bold">清浄機</text>
+      <text x="520" y="153" text-anchor="middle" font-size="9" fill="#718096">（遠心分離機）</text>
+
+      <!-- 排出（スラッジ） -->
+      <line x1="520" y1="125" x2="520" y2="170" stroke="#a0aec0" stroke-width="2" stroke-dasharray="4 3"/>
+      <text x="540" y="168" font-size="8" fill="#718096">スラッジ排出</text>
+
+      <!-- 矢印: 清浄機 → サービスタンク -->
+      <line x1="555" y1="90" x2="600" y2="90" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowF)"/>
+      <line x1="555" y1="93" x2="600" y2="93" stroke="#ed8936" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- サービスタンク -->
+      <rect x="605" y="50" width="120" height="80" rx="8" fill="url(#tankGrad)" stroke="#38a169" stroke-width="2"/>
+      <rect x="610" y="70" width="110" height="55" rx="4" fill="#ed8936" opacity="0.4"/>
+      <text x="665" y="68" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">サービスタンク</text>
+      <text x="665" y="100" text-anchor="middle" font-size="9" fill="#c05621">清浄な燃料</text>
+
+      <!-- 矢印: サービスタンク → エンジン -->
+      <path d="M665,130 L665,200" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowF)" fill="none"/>
+      <line x1="663" y1="130" x2="663" y2="200" stroke="#ed8936" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- 燃料フィルター -->
+      <rect x="640" y="175" width="50" height="25" rx="4" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="665" y="192" text-anchor="middle" font-size="9" fill="#975a16">フィルター</text>
+
+      <!-- エンジン -->
+      <rect x="610" y="220" width="120" height="70" rx="10" fill="#1a365d" stroke="#2c5282" stroke-width="2"/>
+      <text x="670" y="250" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">主機関</text>
+      <text x="670" y="270" text-anchor="middle" font-size="10" fill="#bee3f8">（ディーゼルエンジン）</text>
+
+      <!-- 戻り油ライン -->
+      <path d="M730,250 L760,250 L760,90 L725,90" stroke="#a0aec0" stroke-width="2" stroke-dasharray="6 3" fill="none" marker-end="url(#arrowF)"/>
+      <text x="770" y="170" font-size="8" fill="#718096" transform="rotate(90,770,170)">戻り油</text>
+
+      <!-- 凡例 -->
+      <rect x="20" y="340" width="760" height="50" rx="8" fill="#fff" stroke="#e2e8f0"/>
+      <text x="40" y="362" font-size="11" fill="#1a365d" font-weight="bold">凡例:</text>
+      <line x1="90" y1="358" x2="120" y2="358" stroke="#2b6cb0" stroke-width="3"/>
+      <text x="128" y="362" font-size="10" fill="#2d3748">供給ライン</text>
+      <line x1="210" y1="358" x2="240" y2="358" stroke="#ed8936" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="248" y="362" font-size="10" fill="#2d3748">油の流れ（アニメ）</text>
+      <line x1="380" y1="358" x2="410" y2="358" stroke="#a0aec0" stroke-width="2" stroke-dasharray="4 3"/>
+      <text x="418" y="362" font-size="10" fill="#2d3748">排出・戻りライン</text>
+      <circle cx="540" cy="358" r="6" fill="url(#oilGrad)"/>
+      <text x="555" y="362" font-size="10" fill="#2d3748">燃料油</text>
+    </svg>
+    <div class="caption">図3-1 燃料油系統図 ── 貯蔵タンクからエンジンまでの燃料の流れ</div>
+  </div>
+
+  <div class="box box-warning">
+    <h4>実務のポイント: サービスタンクの管理</h4>
+    <p>サービスタンクは常に十分な油量を確保し、エンジンへの供給が途切れないようにします。タンク底部のドレン（水抜き）は毎日実施し、水分の混入を防ぎます。水分が混入するとエンジンの燃焼不良やノッキングの原因となります。</p>
+  </div>
+
+  <!-- ===== 3-4 燃料油の移送と清浄 ===== -->
+  <h2>3-4 燃料油の移送と清浄</h2>
+
+  <p>貯蔵タンクからサービスタンクまで、燃料油は移送ポンプで送られ、その途中で<strong>遠心分離機（清浄機/ピューリファイア）</strong>により水分やスラッジが除去されます。</p>
+
+  <h3>遠心分離機の原理</h3>
+  <p>遠心分離機は、高速回転（通常6,000〜9,000 rpm）によって生じる遠心力を利用して、密度の異なる成分を分離する装置です。重い成分（水、スラッジ）は外周部に、軽い成分（清浄な油）は中心部に集まります。</p>
+
+  <ul>
+    <li><strong>ピューリファイア（清浄機）:</strong> 油・水・スラッジの3相を分離。水分の多い燃料に使用</li>
+    <li><strong>クラリファイア（澄清機）:</strong> 油・スラッジの2相を分離。水分の少ない燃料に使用</li>
+  </ul>
+
+  <!-- SVG: 遠心分離機の断面図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" style="max-width:600px; width:100%;">
+      <defs>
+        <marker id="arrowS" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+          <polygon points="0,0 7,2.5 0,5" fill="#1a365d"/>
+        </marker>
+      </defs>
+
+      <rect x="0" y="0" width="600" height="450" fill="#f7fafc" rx="8"/>
+      <text x="300" y="30" text-anchor="middle" class="svg-title" font-size="15">遠心分離機（ピューリファイア）概略断面図</text>
+
+      <!-- 外殻 -->
+      <ellipse cx="300" cy="230" rx="160" ry="150" fill="#e2e8f0" stroke="#718096" stroke-width="2"/>
+      <ellipse cx="300" cy="230" rx="140" ry="130" fill="#fff" stroke="#a0aec0" stroke-width="1"/>
+
+      <!-- ディスク（分離板） -->
+      <g>
+        <line x1="200" y1="180" x2="300" y2="140" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="140" x2="400" y2="180" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="195" y1="195" x2="300" y2="155" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="155" x2="405" y2="195" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="190" y1="210" x2="300" y2="170" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="170" x2="410" y2="210" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="188" y1="225" x2="300" y2="185" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="185" x2="412" y2="225" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="188" y1="240" x2="300" y2="200" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="200" x2="412" y2="240" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="190" y1="255" x2="300" y2="215" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="215" x2="410" y2="255" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="195" y1="270" x2="300" y2="230" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="230" x2="405" y2="270" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="200" y1="285" x2="300" y2="245" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="300" y1="245" x2="400" y2="285" stroke="#2b6cb0" stroke-width="1.5"/>
+      </g>
+      <text x="445" y="230" font-size="10" fill="#2b6cb0" font-weight="bold">分離板（ディスク）</text>
+      <line x1="413" y1="230" x2="435" y2="230" stroke="#2b6cb0" stroke-width="1"/>
+
+      <!-- 中心軸 -->
+      <rect x="295" y="80" width="10" height="280" rx="3" fill="#718096"/>
+      <text x="320" y="105" font-size="10" fill="#718096">回転軸</text>
+
+      <!-- 回転方向 -->
+      <path d="M340,100 A30,30 0 0,1 370,115" fill="none" stroke="#e53e3e" stroke-width="2" marker-end="url(#arrowS)"/>
+      <text x="365" y="96" font-size="9" fill="#e53e3e">回転方向</text>
+
+      <!-- 汚れた油の入口 -->
+      <rect x="270" y="60" width="60" height="25" rx="4" fill="#ed8936" opacity="0.6" stroke="#c05621"/>
+      <text x="300" y="77" text-anchor="middle" font-size="9" fill="#c05621">汚れた油</text>
+      <line x1="300" y1="85" x2="300" y2="105" stroke="#c05621" stroke-width="2" marker-end="url(#arrowS)"/>
+
+      <!-- 清浄油の出口（中心寄り） -->
+      <rect x="120" y="110" width="55" height="30" rx="4" fill="#38a169" opacity="0.3" stroke="#38a169"/>
+      <text x="148" y="125" text-anchor="middle" font-size="9" fill="#276749">清浄油</text>
+      <text x="148" y="137" text-anchor="middle" font-size="8" fill="#276749">（出口）</text>
+      <path d="M230,150 L175,130" stroke="#38a169" stroke-width="2" marker-end="url(#arrowS)" fill="none"/>
+
+      <!-- 水の出口（外周寄り） -->
+      <rect x="430" y="300" width="55" height="30" rx="4" fill="#63b3ed" opacity="0.3" stroke="#2b6cb0"/>
+      <text x="458" y="315" text-anchor="middle" font-size="9" fill="#2b6cb0">分離水</text>
+      <text x="458" y="327" text-anchor="middle" font-size="8" fill="#2b6cb0">（出口）</text>
+      <path d="M420,295 L440,305" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arrowS)" fill="none"/>
+
+      <!-- スラッジ -->
+      <rect x="120" y="310" width="65" height="30" rx="4" fill="#a0aec0" opacity="0.3" stroke="#718096"/>
+      <text x="153" y="325" text-anchor="middle" font-size="9" fill="#718096">スラッジ</text>
+      <text x="153" y="337" text-anchor="middle" font-size="8" fill="#718096">（底部排出）</text>
+      <path d="M200,330 L190,330" stroke="#718096" stroke-width="2" marker-end="url(#arrowS)" fill="none"/>
+
+      <!-- 領域表示 -->
+      <!-- 外周=水分が集まる -->
+      <path d="M170,320 A140,130 0 0,1 170,140" fill="#63b3ed" opacity="0.08" stroke="none"/>
+      <!-- 中心=清浄油 -->
+      <ellipse cx="300" cy="210" rx="40" ry="60" fill="#38a169" opacity="0.08"/>
+
+      <!-- ラベル -->
+      <text x="230" y="395" font-size="10" fill="#2b6cb0">中心部: 軽い成分（清浄油）</text>
+      <text x="230" y="412" font-size="10" fill="#718096">外周部: 重い成分（水・スラッジ）</text>
+      <text x="230" y="429" font-size="10" fill="#e53e3e">回転速度: 約6,000〜9,000 rpm</text>
+    </svg>
+    <div class="caption">図3-2 遠心分離機の原理 ── 高速回転で密度差により油・水・スラッジを分離する</div>
+  </div>
+
+  <div class="key-point">
+    <p><strong>遠心分離の原理:</strong> 遠心力は密度に比例するため、重い物質（水: 約1.0 g/cm<sup>3</sup>）は外周へ、軽い物質（油: 約0.85〜0.95 g/cm<sup>3</sup>）は中心へ集まります。分離板（ディスク）は油膜を薄くして分離効率を高める役割を果たします。</p>
+  </div>
+
+  <h3>清浄機の運転管理</h3>
+  <ul>
+    <li>燃料油の温度を適正に保つ（A重油: 約30〜40℃、C重油: 約95〜98℃）</li>
+    <li>処理量を適切に設定する（流量が多すぎると分離効率が低下）</li>
+    <li>定期的にスラッジを排出する（自動排出タイプが主流）</li>
+    <li>分離板の清掃・点検を定期的に行う</li>
+  </ul>
+
+  <!-- ===== 3-5 潤滑油の役割 ===== -->
+  <h2>3-5 潤滑油の役割</h2>
+
+  <p>潤滑油はエンジンの「血液」に例えられるほど重要な存在です。金属同士が直接接触すると摩耗や焼付きが発生しますが、潤滑油が薄い油膜をつくることでこれを防ぎます。</p>
+
+  <h3>潤滑油の5つの役割</h3>
+  <table>
+    <thead>
+      <tr><th>役割</th><th>内容</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>潤滑（じゅんかつ）</strong></td><td>摺動面に油膜をつくり、摩擦と摩耗を減少させる</td></tr>
+      <tr><td><strong>冷却（れいきゃく）</strong></td><td>摩擦で発生した熱を吸収し、オイルクーラーで放熱する</td></tr>
+      <tr><td><strong>密封（みっぷう）</strong></td><td>ピストンリングとシリンダライナの隙間を埋め、燃焼ガスの漏れを防ぐ</td></tr>
+      <tr><td><strong>洗浄（せんじょう）</strong></td><td>燃焼で生じたカーボンや金属摩耗粉を洗い流し、フィルターで捕捉する</td></tr>
+      <tr><td><strong>防錆（ぼうせい）</strong></td><td>金属面に油膜を保ち、水分や酸性物質による腐食を防ぐ</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-success">
+    <h4>覚え方のコツ</h4>
+    <p>潤滑油の5つの役割は「<strong>じゅん・れい・みつ・せん・ぼう</strong>」と頭文字で覚えましょう。「潤滑・冷却・密封・洗浄・防錆」の順です。</p>
+  </div>
+
+  <!-- ===== 3-6 潤滑油の種類 ===== -->
+  <h2>3-6 潤滑油の種類</h2>
+
+  <h3>シリンダ油</h3>
+  <p>シリンダライナとピストンリングの間を潤滑する油です。大型2サイクル機関では、シリンダ油は燃焼室に直接注入され、燃焼ガスにさらされるため消耗品として扱います。燃料に含まれる硫黄から生成される硫酸を中和するため、アルカリ性の高い（高TBN）油が使用されます。</p>
+  <p>ただし、内航船で多い4サイクル中速機関ではシステム油がシリンダ潤滑も兼ねるため、専用のシリンダ油を使わない場合が多いです。</p>
+
+  <h3>システム油（機関油）</h3>
+  <p>クランク室を循環して主軸受、クランクピン軸受、カム軸軸受などを潤滑する油です。4サイクル機関ではシリンダ潤滑も兼ねるため、<strong>内航船の4サイクル機関ではシステム油が最も重要</strong>です。オイルパン（油だめ）に貯蔵され、ポンプで循環します。</p>
+
+  <!-- ===== 3-7 潤滑油系統 ===== -->
+  <h2>3-7 潤滑油系統</h2>
+
+  <p>潤滑油はポンプで圧送され、各潤滑箇所を巡った後、オイルパンに戻る循環系統です。</p>
+
+  <!-- SVG: 潤滑油系統図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 380" xmlns="http://www.w3.org/2000/svg" style="max-width:750px; width:100%;">
+      <defs>
+        <marker id="arrowL" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#38a169"/>
+        </marker>
+      </defs>
+
+      <rect x="0" y="0" width="750" height="380" fill="#f7fafc" rx="8"/>
+      <text x="375" y="28" text-anchor="middle" class="svg-title" font-size="15">潤滑油系統図（4サイクル機関）</text>
+
+      <!-- オイルパン -->
+      <rect x="40" y="280" width="140" height="60" rx="8" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+      <text x="110" y="308" text-anchor="middle" font-size="12" fill="#975a16" font-weight="bold">オイルパン</text>
+      <text x="110" y="325" text-anchor="middle" font-size="9" fill="#975a16">（油だめ）</text>
+
+      <!-- ポンプ -->
+      <circle cx="110" cy="230" r="25" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="110" y="228" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">潤滑油</text>
+      <text x="110" y="240" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">ポンプ</text>
+      <!-- パン → ポンプ -->
+      <line x1="110" y1="280" x2="110" y2="255" stroke="#38a169" stroke-width="3" marker-end="url(#arrowL)"/>
+
+      <!-- フィルター -->
+      <rect x="80" y="155" width="60" height="35" rx="6" fill="#fff" stroke="#38a169" stroke-width="2"/>
+      <text x="110" y="177" text-anchor="middle" font-size="10" fill="#276749">フィルター</text>
+      <!-- ポンプ → フィルター -->
+      <line x1="110" y1="205" x2="110" y2="190" stroke="#38a169" stroke-width="3" marker-end="url(#arrowL)"/>
+      <line x1="108" y1="205" x2="108" y2="190" stroke="#c05621" stroke-width="2" stroke-dasharray="5 3" class="animate-flow"/>
+
+      <!-- オイルクーラー -->
+      <rect x="80" y="80" width="60" height="40" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="110" y="98" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="bold">オイル</text>
+      <text x="110" y="112" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="bold">クーラー</text>
+      <!-- フィルター → クーラー -->
+      <line x1="110" y1="155" x2="110" y2="120" stroke="#38a169" stroke-width="3" marker-end="url(#arrowL)"/>
+      <line x1="108" y1="155" x2="108" y2="120" stroke="#c05621" stroke-width="2" stroke-dasharray="5 3" class="animate-flow"/>
+
+      <!-- メインライン（横引き） -->
+      <line x1="140" y1="100" x2="680" y2="100" stroke="#38a169" stroke-width="3"/>
+      <line x1="140" y1="98" x2="680" y2="98" stroke="#c05621" stroke-width="2" stroke-dasharray="5 3" class="animate-flow"/>
+      <text x="400" y="92" text-anchor="middle" font-size="9" fill="#38a169">主管（圧力配管）</text>
+
+      <!-- 分岐先1: 主軸受 -->
+      <line x1="250" y1="100" x2="250" y2="160" stroke="#38a169" stroke-width="2" marker-end="url(#arrowL)"/>
+      <rect x="210" y="160" width="80" height="35" rx="6" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="250" y="182" text-anchor="middle" font-size="10" fill="#c53030">主軸受</text>
+
+      <!-- 分岐先2: クランクピン -->
+      <line x1="370" y1="100" x2="370" y2="160" stroke="#38a169" stroke-width="2" marker-end="url(#arrowL)"/>
+      <rect x="320" y="160" width="100" height="35" rx="6" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="370" y="182" text-anchor="middle" font-size="10" fill="#c53030">クランクピン軸受</text>
+
+      <!-- 分岐先3: カム軸 -->
+      <line x1="490" y1="100" x2="490" y2="160" stroke="#38a169" stroke-width="2" marker-end="url(#arrowL)"/>
+      <rect x="450" y="160" width="80" height="35" rx="6" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="490" y="182" text-anchor="middle" font-size="10" fill="#c53030">カム軸軸受</text>
+
+      <!-- 分岐先4: シリンダ -->
+      <line x1="610" y1="100" x2="610" y2="160" stroke="#38a169" stroke-width="2" marker-end="url(#arrowL)"/>
+      <rect x="560" y="160" width="100" height="35" rx="6" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="610" y="178" text-anchor="middle" font-size="10" fill="#c53030">シリンダ</text>
+      <text x="610" y="191" text-anchor="middle" font-size="8" fill="#c53030">（ピストン冷却含む）</text>
+
+      <!-- 戻り線（各部 → オイルパン） -->
+      <path d="M250,195 L250,310 L180,310" stroke="#a0aec0" stroke-width="2" stroke-dasharray="5 3" fill="none" marker-end="url(#arrowL)"/>
+      <path d="M370,195 L370,330 L180,330" stroke="#a0aec0" stroke-width="2" stroke-dasharray="5 3" fill="none"/>
+      <path d="M490,195 L490,340 L180,340" stroke="#a0aec0" stroke-width="2" stroke-dasharray="5 3" fill="none"/>
+      <path d="M610,195 L610,350 L110,350 L110,340" stroke="#a0aec0" stroke-width="2" stroke-dasharray="5 3" fill="none"/>
+      <text x="400" y="360" text-anchor="middle" font-size="9" fill="#a0aec0">自然落下でオイルパンへ戻る</text>
+
+      <!-- 補給タンク -->
+      <rect x="620" y="270" width="100" height="50" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="670" y="295" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">潤滑油貯蔵</text>
+      <text x="670" y="310" text-anchor="middle" font-size="9" fill="#718096">（補給用）</text>
+      <path d="M620,295 L180,295" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="3 2" fill="none"/>
+      <text x="400" y="290" text-anchor="middle" font-size="8" fill="#718096">補給ライン</text>
+    </svg>
+    <div class="caption">図3-3 潤滑油系統図 ── オイルパンからポンプで圧送し、各部を潤滑後に自然落下で戻る</div>
+  </div>
+
+  <h3>系統のポイント</h3>
+  <ul>
+    <li><strong>オイルパン:</strong> 機関下部にあり、潤滑油を貯蔵する「油だめ」</li>
+    <li><strong>潤滑油ポンプ:</strong> 歯車式が多い。機関駆動型と電動型がある</li>
+    <li><strong>フィルター:</strong> 金属粉やカーボンを捕捉。目詰まり時の差圧警報付きが一般的</li>
+    <li><strong>オイルクーラー:</strong> 清水や海水で油温を下げる。適正油温は通常40〜55℃</li>
+    <li>各軸受を潤滑した油は自然落下でオイルパンに戻る</li>
+  </ul>
+
+  <!-- ===== 3-8 油の劣化と管理 ===== -->
+  <h2>3-8 油の劣化と管理</h2>
+
+  <p>潤滑油は使用に伴い劣化します。適切な時期に交換または補給しなければ、機関に深刻なダメージを与えます。</p>
+
+  <h3>潤滑油が劣化する原因</h3>
+  <ul>
+    <li><strong>酸化:</strong> 高温にさらされ、油が酸化してスラッジが生成される</li>
+    <li><strong>燃料の混入:</strong> ピストンリングの摩耗などで燃料油が混入し、粘度が低下する</li>
+    <li><strong>水分の混入:</strong> シリンダライナの亀裂や冷却器の漏れにより混入。乳化して潤滑性能が低下</li>
+    <li><strong>金属摩耗粉:</strong> 軸受やギヤの摩耗で生じた金属粉が混入し、研磨材となって摩耗を促進</li>
+    <li><strong>カーボンの混入:</strong> 燃焼残渣が油中に混ざり、スラッジ化する</li>
+  </ul>
+
+  <h3>油の試験項目</h3>
+  <table>
+    <thead>
+      <tr><th>試験項目</th><th>目的</th><th>判断基準の例</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>粘度</td><td>油膜形成能力の確認</td><td>新油比 ±25%以内</td></tr>
+      <tr><td>全塩基価（TBN）</td><td>酸の中和能力の残量</td><td>新油比の50%以上</td></tr>
+      <tr><td>水分</td><td>水混入の有無</td><td>0.2%以下</td></tr>
+      <tr><td>不溶解分</td><td>スラッジ・カーボンの量</td><td>2%以下</td></tr>
+      <tr><td>引火点</td><td>燃料油混入の有無</td><td>新油比で著しく低下していないこと</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-warning">
+    <h4>実務での油管理</h4>
+    <p>内航船では、潤滑油メーカーや管理会社に定期的に油のサンプルを送って分析してもらう「<strong>オイル分析サービス</strong>」を利用するのが一般的です。分析結果に基づいて交換時期を判断します。油面の日常チェック（量と色の確認）も欠かさず行いましょう。</p>
+  </div>
+
+  <!-- ===== 3-9 実務的な注意事項 ===== -->
+  <h2>3-9 実務的な注意事項</h2>
+
+  <h3>燃料受入時のチェックポイント</h3>
+  <ol>
+    <li><strong>バンカー前:</strong> タンクの残量を正確に計測（サウンディング）、受入量を確認</li>
+    <li><strong>バンカー中:</strong> タンクのオーバーフローに注意。甲板の排水口（スカッパー）を閉鎖し、油流出防止を徹底</li>
+    <li><strong>バンカー後:</strong> 受入量の確認、<span class="glossary-term" data-def="燃料油受渡書。油の品質・量を証明する書類">バンカーデリバリーノート（BDN）</span>の受領・保管（3年間保管義務）</li>
+    <li><strong>サンプル採取:</strong> 供給元と共同でサンプルを採取し、紛争時の証拠として保管</li>
+  </ol>
+
+  <h3>油濁防止</h3>
+  <p>油の海洋流出は重大な環境汚染です。<strong>海洋汚染防止法</strong>および<strong>MARPOL条約 附属書I</strong>により、船舶からの油排出は厳しく規制されています。</p>
+
+  <div class="box box-danger">
+    <h4>油流出を防ぐために</h4>
+    <ul>
+      <li>燃料移送時は必ず立ち会い、タンクのオーバーフローを防ぐ</li>
+      <li>デッキ上の油作業時はスカッパーを閉止する</li>
+      <li>ビルジ中の油分は油水分離器で処理してから排出する</li>
+      <li>油記録簿（オイルレコードブック）に全ての油の移送・排出を記録する</li>
+      <li>万一流出した場合は、直ちに油吸着材で回収し、船長に報告、海上保安庁に通報</li>
+    </ul>
+  </div>
+
+  <h3>MARPOL条約との関連</h3>
+  <p>MARPOL条約は船舶による海洋汚染を防止する国際条約で、附属書Iが油による汚染防止を規定しています。主な内容:</p>
+  <ul>
+    <li>機関区域のビルジは油水分離器で油分濃度<strong>15 ppm以下</strong>にしてから排出</li>
+    <li>油記録簿への記録義務（機関区域操作: Part I）</li>
+    <li>船舶燃料の硫黄分規制（附属書VI: <strong>0.50%以下</strong>、ECA海域では0.10%以下）</li>
+    <li>BDN（燃料油受渡書）の3年間保管義務</li>
+  </ul>
+
+  <div class="key-point">
+    <p><strong>油記録簿は法定記録です。</strong>燃料油の受入、タンク間の移送、ビルジの排出、スラッジの処分など、油に関する全ての操作を正確に記録しなければなりません。記録の怠りや虚偽記載は、PSC（ポートステートコントロール）で重大な指摘事項となります。</p>
+  </div>
+
+  <!-- ===== クイズ ===== -->
+  <div class="quiz">
+    <h4>章末確認クイズ</h4>
+
+    <h4>Q1. 内航船で最も一般的に使用される燃料油はどれですか？</h4>
+    <ul class="quiz-options">
+      <li>A. 軽油</li>
+      <li>B. A重油</li>
+      <li>C. C重油</li>
+    </ul>
+    <button onclick="showAnswer('ans3-1')" style="margin:0.5rem 0; padding:0.4rem 1rem; border-radius:6px; border:1px solid #9f7aea; background:#faf5ff; cursor:pointer;">解答を見る</button>
+    <div id="ans3-1" class="quiz-answer">
+      <p><strong>正解: B. A重油</strong></p>
+      <p>内航船では、粘度が比較的低く取り扱いが容易なA重油が主流です。C重油は大型外航船で使われますが、加熱設備や高性能清浄装置が必要なため、内航船には適しません。</p>
+    </div>
+
+    <h4 style="margin-top:1.5rem;">Q2. 遠心分離機で、清浄な油が集まるのはどこですか？</h4>
+    <ul class="quiz-options">
+      <li>A. 外周部</li>
+      <li>B. 中心部</li>
+      <li>C. 底部</li>
+    </ul>
+    <button onclick="showAnswer('ans3-2')" style="margin:0.5rem 0; padding:0.4rem 1rem; border-radius:6px; border:1px solid #9f7aea; background:#faf5ff; cursor:pointer;">解答を見る</button>
+    <div id="ans3-2" class="quiz-answer">
+      <p><strong>正解: B. 中心部</strong></p>
+      <p>遠心力により、密度の大きい水やスラッジは外周部へ、密度の小さい清浄な油は中心部に集まります。これが遠心分離の基本原理です。</p>
+    </div>
+
+    <h4 style="margin-top:1.5rem;">Q3. 潤滑油の5つの役割に含まれないものはどれですか？</h4>
+    <ul class="quiz-options">
+      <li>A. 燃焼</li>
+      <li>B. 密封</li>
+      <li>C. 防錆</li>
+    </ul>
+    <button onclick="showAnswer('ans3-3')" style="margin:0.5rem 0; padding:0.4rem 1rem; border-radius:6px; border:1px solid #9f7aea; background:#faf5ff; cursor:pointer;">解答を見る</button>
+    <div id="ans3-3" class="quiz-answer">
+      <p><strong>正解: A. 燃焼</strong></p>
+      <p>潤滑油の5つの役割は「潤滑・冷却・密封・洗浄・防錆」です。「燃焼」は含まれません。覚え方: 「じゅん・れい・みつ・せん・ぼう」</p>
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="eng02_diesel_structure.html">&laquo; 第2章 ディーゼル機関の構造</a>
+    <a href="eng04_cooling.html">第4章 冷却系統と給気系統 &raquo;</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

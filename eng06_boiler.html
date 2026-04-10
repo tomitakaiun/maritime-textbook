@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6章 ボイラーと蒸気系統 — 機関編 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <div class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="eng05_pumps.html">← 第5章 ポンプ</a>
+    <a href="eng07_electrical.html">第7章 電気設備 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第6章 ボイラーと蒸気系統</h1>
+
+  <p>ディーゼル主機関が推進力の主役であるのに対し、<strong>ボイラー</strong>は船内のさまざまな熱需要を支える重要な補機です。特に内航タンカーでは、貨物油の加熱や配管の保温など、蒸気の利用範囲が広く、ボイラーの知識と管理能力は機関士にとって必須のスキルです。</p>
+
+  <!-- ===== 1. 船用ボイラーの役割 ===== -->
+  <h2>1. 船用ボイラーの役割</h2>
+
+  <p>船舶においてボイラーが生成する蒸気は、以下のような多岐にわたる用途に使用されます。</p>
+
+  <h3>蒸気の主な用途</h3>
+  <ul>
+    <li><strong>燃料油の加熱</strong>: C重油（粘度が高い）を使用する場合、噴射前に加熱して粘度を下げる必要がある</li>
+    <li><strong>貨物油タンクの加熱</strong>: 内航タンカーでは粘度の高い石油製品を運ぶため、荷揚げ時にタンク加熱（カーゴヒーティング）が不可欠</li>
+    <li><strong>燃料油タンクの加熱</strong>: セットリングタンク、サービスタンクの加熱</li>
+    <li><strong>清水の加温</strong>: 居住区の風呂、シャワー用温水</li>
+    <li><strong>暖房</strong>: 居住区のスチームヒーター</li>
+    <li><strong>造水装置への供給</strong>: 清水生成のための加熱源</li>
+    <li><strong>配管のトレース加温</strong>: 燃料油配管が冷えて粘度が上がるのを防止</li>
+  </ul>
+
+  <div class="box box-warning">
+    <h4>タンカーにおけるボイラーの重要性</h4>
+    <p>内航タンカーでは、貨物油（特にC重油やアスファルト等）の荷役時にカーゴヒーティングが必要であり、ボイラーの蒸気供給量が荷役スケジュールに直結します。<strong>ボイラーの不調は荷役遅延に直結</strong>するため、日常の管理が極めて重要です。</p>
+  </div>
+
+  <!-- ===== 2. ボイラーの種類 ===== -->
+  <h2>2. ボイラーの種類</h2>
+
+  <p>船用ボイラーは、燃焼ガスと水の配置により大きく2種類に分かれます。</p>
+
+  <h3>円筒ボイラー（丸ボイラー / 煙管ボイラー）</h3>
+  <p>大きな円筒形の胴の中に水を満たし、その中を<strong>煙管（燃焼ガスが通る管）</strong>が貫通する構造です。燃焼ガスの熱が煙管を通じて周囲の水に伝わり、蒸気が生成されます。</p>
+  <ul>
+    <li>構造が簡単で頑丈、保守が容易</li>
+    <li>保有水量が大きく、負荷変動に強い</li>
+    <li>起動に時間がかかる</li>
+    <li>内航船の<strong>補助ボイラー</strong>として最も一般的</li>
+  </ul>
+
+  <h3>水管ボイラー</h3>
+  <p><strong>水管（水が通る管）</strong>の外側を燃焼ガスが流れる構造です。水管内の水が加熱されて蒸気になります。</p>
+  <ul>
+    <li>高圧・大容量の蒸気生成が可能</li>
+    <li>起動が比較的早い</li>
+    <li>保有水量が少ないため、水質管理が厳格に必要</li>
+    <li>大型船やボイラー主機船で使用（内航では少ない）</li>
+  </ul>
+
+  <!-- ボイラー種類比較 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="円筒ボイラーと水管ボイラーの構造比較">
+      <text x="350" y="25" text-anchor="middle" class="svg-title" font-size="15">ボイラーの種類と構造比較</text>
+
+      <!-- 円筒ボイラー -->
+      <text x="190" y="55" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="700">円筒ボイラー（煙管式）</text>
+      <!-- 胴体 -->
+      <rect x="60" y="70" width="260" height="180" rx="90" fill="#bee3f8" stroke="#1a365d" stroke-width="2.5"/>
+      <!-- 水の表示 -->
+      <text x="190" y="100" text-anchor="middle" font-size="11" fill="#2b6cb0">水</text>
+      <!-- 煙管 -->
+      <rect x="80" y="120" width="220" height="16" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <rect x="80" y="150" width="220" height="16" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <rect x="80" y="180" width="220" height="16" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <rect x="80" y="210" width="220" height="16" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <!-- 煙管流れアニメーション -->
+      <line x1="85" y1="128" x2="295" y2="128" stroke="#e53e3e" stroke-width="2" stroke-dasharray="8,6" class="animate-flow"/>
+      <line x1="85" y1="158" x2="295" y2="158" stroke="#e53e3e" stroke-width="2" stroke-dasharray="8,6" class="animate-flow"/>
+      <line x1="85" y1="188" x2="295" y2="188" stroke="#e53e3e" stroke-width="2" stroke-dasharray="8,6" class="animate-flow"/>
+      <line x1="85" y1="218" x2="295" y2="218" stroke="#e53e3e" stroke-width="2" stroke-dasharray="8,6" class="animate-flow"/>
+      <!-- ラベル -->
+      <text x="350" y="133" font-size="10" fill="#c53030">← 煙管（燃焼ガス通過）</text>
+      <!-- 蒸気出口 -->
+      <rect x="170" y="58" width="40" height="15" rx="3" fill="#f0fff4" stroke="#38a169" stroke-width="1"/>
+      <text x="190" y="69" text-anchor="middle" font-size="8" fill="#38a169">蒸気↑</text>
+      <!-- 説明 -->
+      <text x="190" y="280" text-anchor="middle" font-size="11" fill="#718096">管の中: 燃焼ガス（赤）</text>
+      <text x="190" y="296" text-anchor="middle" font-size="11" fill="#718096">管の外: 水（青）→ 蒸気へ</text>
+
+      <!-- 水管ボイラー -->
+      <text x="530" y="55" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="700">水管ボイラー</text>
+      <!-- 炉 -->
+      <rect x="410" y="70" width="240" height="200" rx="8" fill="#fff5f5" stroke="#1a365d" stroke-width="2.5"/>
+      <text x="530" y="95" text-anchor="middle" font-size="11" fill="#c53030">燃焼ガス空間</text>
+      <!-- 水管 -->
+      <line x1="440" y1="100" x2="440" y2="250" stroke="#2b6cb0" stroke-width="8" stroke-linecap="round"/>
+      <line x1="480" y1="100" x2="480" y2="250" stroke="#2b6cb0" stroke-width="8" stroke-linecap="round"/>
+      <line x1="520" y1="100" x2="520" y2="250" stroke="#2b6cb0" stroke-width="8" stroke-linecap="round"/>
+      <line x1="560" y1="100" x2="560" y2="250" stroke="#2b6cb0" stroke-width="8" stroke-linecap="round"/>
+      <line x1="600" y1="100" x2="600" y2="250" stroke="#2b6cb0" stroke-width="8" stroke-linecap="round"/>
+      <!-- 水の流れアニメーション -->
+      <circle cx="440" cy="120" r="3" fill="#fff" class="animate-pulse"/>
+      <circle cx="480" cy="160" r="3" fill="#fff" class="animate-pulse" style="animation-delay:0.3s"/>
+      <circle cx="520" cy="140" r="3" fill="#fff" class="animate-pulse" style="animation-delay:0.6s"/>
+      <circle cx="560" cy="180" r="3" fill="#fff" class="animate-pulse" style="animation-delay:0.9s"/>
+      <circle cx="600" cy="150" r="3" fill="#fff" class="animate-pulse" style="animation-delay:1.2s"/>
+      <!-- 上部ドラム -->
+      <rect x="425" y="80" width="190" height="24" rx="12" fill="#bee3f8" stroke="#1a365d" stroke-width="1.5"/>
+      <text x="520" y="96" text-anchor="middle" font-size="9" fill="#1a365d">蒸気ドラム</text>
+      <!-- 下部ドラム -->
+      <rect x="425" y="246" width="190" height="24" rx="12" fill="#bee3f8" stroke="#1a365d" stroke-width="1.5"/>
+      <text x="520" y="262" text-anchor="middle" font-size="9" fill="#1a365d">水ドラム</text>
+      <!-- 説明 -->
+      <text x="530" y="300" text-anchor="middle" font-size="11" fill="#718096">管の中: 水（青）→ 蒸気へ</text>
+      <text x="530" y="316" text-anchor="middle" font-size="11" fill="#718096">管の外: 燃焼ガス（赤背景）</text>
+
+      <!-- 比較凡例 -->
+      <rect x="100" y="340" width="500" height="30" rx="6" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="350" y="360" text-anchor="middle" font-size="11" fill="#2d3748">内航船の補助ボイラーには「円筒ボイラー（煙管式）」が最も多く使用される</text>
+    </svg>
+    <div class="caption">図6-1: 円筒ボイラーと水管ボイラーの構造比較</div>
+  </div>
+
+  <!-- ===== 3. 補助ボイラーの構造と各部名称 ===== -->
+  <h2>3. 補助ボイラーの構造と各部名称</h2>
+
+  <p>内航船で一般的な<strong>立て型円筒煙管ボイラー</strong>の主要構成部品を示します。</p>
+
+  <!-- 補助ボイラー構造図 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="補助ボイラーの構造図">
+      <defs>
+        <marker id="arrowR" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,3 L0,6 Z" fill="#c53030"/>
+        </marker>
+      </defs>
+      <text x="300" y="25" text-anchor="middle" class="svg-title" font-size="15">立て型円筒煙管ボイラーの構造</text>
+
+      <!-- 外殻 -->
+      <rect x="150" y="50" width="300" height="380" rx="12" fill="#ebf8ff" stroke="#1a365d" stroke-width="3"/>
+
+      <!-- 蒸気空間 -->
+      <rect x="160" y="55" width="280" height="80" rx="8" fill="#e6fffa" stroke="#38a169" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="300" y="85" text-anchor="middle" font-size="11" fill="#38a169" font-weight="600">蒸気空間</text>
+      <text x="300" y="102" text-anchor="middle" font-size="10" fill="#718096">（ドライスチーム生成）</text>
+
+      <!-- 水面 -->
+      <line x1="160" y1="135" x2="440" y2="135" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="465" y="139" font-size="10" fill="#2b6cb0">← 水面</text>
+
+      <!-- 水空間 -->
+      <text x="300" y="160" text-anchor="middle" font-size="11" fill="#2b6cb0" font-weight="600">水空間</text>
+
+      <!-- 煙管群 -->
+      <circle cx="220" cy="220" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="260" cy="220" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="300" cy="220" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="340" cy="220" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="380" cy="220" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="240" cy="260" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="280" cy="260" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="320" cy="260" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <circle cx="360" cy="260" r="10" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+      <text x="480" y="240" font-size="10" fill="#c53030">← 煙管（断面）</text>
+      <line x1="400" y1="235" x2="470" y2="237" stroke="#c53030" stroke-width="1"/>
+
+      <!-- 炉筒（バーナー） -->
+      <rect x="230" y="310" width="140" height="80" rx="8" fill="#fffff0" stroke="#d69e2e" stroke-width="2"/>
+      <text x="300" y="345" text-anchor="middle" font-size="11" fill="#975a16" font-weight="600">炉筒</text>
+      <text x="300" y="362" text-anchor="middle" font-size="10" fill="#975a16">（燃焼室）</text>
+      <!-- バーナー -->
+      <rect x="270" y="390" width="60" height="20" rx="4" fill="#ed8936" stroke="#c05621" stroke-width="1.5"/>
+      <text x="300" y="404" text-anchor="middle" font-size="9" fill="#fff" font-weight="600">バーナー</text>
+
+      <!-- 炎アニメーション -->
+      <ellipse cx="300" cy="340" rx="20" ry="10" fill="#ed8936" opacity="0.6" class="animate-pulse"/>
+      <ellipse cx="300" cy="335" rx="12" ry="6" fill="#e53e3e" opacity="0.5" class="animate-pulse" style="animation-delay:0.5s"/>
+
+      <!-- 右側ラベル群 -->
+      <!-- 安全弁 -->
+      <rect x="460" y="55" width="80" height="22" rx="4" fill="#fff5f5" stroke="#e53e3e" stroke-width="1"/>
+      <text x="500" y="70" text-anchor="middle" font-size="9" fill="#c53030">安全弁</text>
+      <line x1="450" y1="66" x2="460" y2="66" stroke="#c53030" stroke-width="1"/>
+
+      <!-- 圧力計 -->
+      <rect x="460" y="85" width="80" height="22" rx="4" fill="#f7fafc" stroke="#2d3748" stroke-width="1"/>
+      <text x="500" y="100" text-anchor="middle" font-size="9" fill="#2d3748">圧力計</text>
+      <line x1="450" y1="96" x2="460" y2="96" stroke="#2d3748" stroke-width="1"/>
+
+      <!-- 水面計 -->
+      <rect x="460" y="120" width="80" height="22" rx="4" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+      <text x="500" y="135" text-anchor="middle" font-size="9" fill="#2b6cb0">水面計</text>
+      <line x1="450" y1="131" x2="460" y2="131" stroke="#2b6cb0" stroke-width="1"/>
+
+      <!-- 給水口 -->
+      <rect x="460" y="170" width="80" height="22" rx="4" fill="#f0fff4" stroke="#38a169" stroke-width="1"/>
+      <text x="500" y="185" text-anchor="middle" font-size="9" fill="#38a169">給水口</text>
+      <line x1="450" y1="181" x2="460" y2="181" stroke="#38a169" stroke-width="1"/>
+
+      <!-- 蒸気出口 -->
+      <rect x="80" y="55" width="60" height="22" rx="4" fill="#e6fffa" stroke="#38a169" stroke-width="1"/>
+      <text x="110" y="70" text-anchor="middle" font-size="9" fill="#38a169">蒸気出口</text>
+      <line x1="140" y1="66" x2="150" y2="66" stroke="#38a169" stroke-width="1"/>
+
+      <!-- ブロー弁 -->
+      <rect x="60" y="400" width="80" height="22" rx="4" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <text x="100" y="415" text-anchor="middle" font-size="9" fill="#975a16">ブロー弁</text>
+      <line x1="140" y1="411" x2="150" y2="411" stroke="#975a16" stroke-width="1"/>
+
+      <!-- 煙道出口 -->
+      <rect x="255" y="42" width="90" height="16" rx="3" fill="#a0aec0"/>
+      <text x="300" y="53" text-anchor="middle" font-size="9" fill="#fff">煙突へ ↑</text>
+
+      <!-- ガスの流れ -->
+      <text x="300" y="475" text-anchor="middle" font-size="10" fill="#718096">燃焼ガス: 炉筒→煙管→煙突 / 水を加熱して蒸気を生成</text>
+    </svg>
+    <div class="caption">図6-2: 立て型円筒煙管ボイラーの構造と各部名称</div>
+  </div>
+
+  <!-- ===== 4. ボイラー付属品 ===== -->
+  <h2>4. ボイラー付属品</h2>
+
+  <p>ボイラーには安全運転のための付属品が法令で取り付けを義務づけられています。</p>
+
+  <h3>安全弁</h3>
+  <p>ボイラー内の蒸気圧力が設定値を超えた場合に自動的に開いて蒸気を放出し、<strong>過圧による爆発を防止</strong>する最も重要な安全装置です。ばね式が一般的で、2個以上の設置が義務づけられています。</p>
+  <ul>
+    <li>吹き出し圧力の設定は<strong>資格者のみ</strong>が行う（封印あり）</li>
+    <li>定期的に手動でテスト（レバー引き）を行い、動作を確認する</li>
+  </ul>
+
+  <h3>水面計</h3>
+  <p>ボイラー内の水位を監視する計器です。<strong>ガラス管式水面計</strong>が一般的で、2個以上の設置が義務づけられています。</p>
+  <ul>
+    <li>正常水位の範囲を把握し、常に監視する</li>
+    <li>ガラス管の汚れや詰まりに注意し、定期的にブロー（吹き通し）する</li>
+    <li>高水位・低水位の<strong>警報装置</strong>も設けられている</li>
+  </ul>
+
+  <h3>圧力計</h3>
+  <p>ボイラー内の蒸気圧力を表示する計器です。ブルドン管式が一般的で、使用圧力の範囲を赤線で示します。サイフォン管を介して取り付け、高温蒸気が直接圧力計に入るのを防ぎます。</p>
+
+  <h3>給水装置</h3>
+  <p>ボイラーに清水を供給するための装置です。給水ポンプ（電動式）と給水逆止弁で構成され、自動水位制御装置により水位を一定に保ちます。</p>
+
+  <div class="key-point">
+    <ul>
+      <li>安全弁は2個以上必要。設定変更は資格者のみ（封印あり）。</li>
+      <li>水面計は2個以上必要。定期的なブロー（吹き通し）で正確さを保つ。</li>
+      <li>圧力計にはサイフォン管を介して接続する。</li>
+      <li>これらの付属品は<strong>法定検査</strong>の対象であり、適切な整備が必須。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 5. ボイラー水の管理 ===== -->
+  <h2>5. ボイラー水の管理</h2>
+
+  <p>ボイラー水の水質管理は、<strong>スケール（水垢）の付着防止</strong>と<strong>腐食防止</strong>のために極めて重要です。水管やドラム内壁にスケールが付着すると熱伝導が悪化し、局部過熱による損傷の原因になります。</p>
+
+  <h3>清缶剤（ボイラー処理剤）</h3>
+  <p>ボイラー水に添加する化学薬品で、以下の目的で使用します。</p>
+  <ul>
+    <li><strong>pH調整</strong>: 弱アルカリ性（pH 10.5〜11.8）に保ち、腐食を防止</li>
+    <li><strong>スケール防止</strong>: カルシウム・マグネシウムなどの硬度成分をスラッジ化して除去しやすくする</li>
+    <li><strong>脱酸素</strong>: 溶存酸素を除去し、酸素腐食（孔食）を防止</li>
+  </ul>
+
+  <h3>ブロー（吹き出し）</h3>
+  <p>ボイラー水中に蓄積した不純物やスラッジを排出するために、ボイラー水の一部を排出する操作です。</p>
+  <ul>
+    <li><strong>表面ブロー</strong>: 水面付近の泡や浮遊物を除去</li>
+    <li><strong>底部ブロー</strong>: 底部に沈殿したスラッジを排出</li>
+    <li>ブローは蒸気圧力がある程度あるとき（水位が正常範囲のとき）に行う</li>
+  </ul>
+
+  <h3>水質試験</h3>
+  <p>定期的にボイラー水のサンプルを採取し、以下の項目を試験します。</p>
+  <table>
+    <thead><tr><th>試験項目</th><th>目的</th><th>管理値の目安</th></tr></thead>
+    <tbody>
+      <tr><td>pH</td><td>腐食防止</td><td>10.5〜11.8</td></tr>
+      <tr><td>塩化物イオン（Cl⁻）</td><td>海水混入の検出</td><td>できるだけ低く</td></tr>
+      <tr><td>全硬度</td><td>スケール防止</td><td>0に近いほど良い</td></tr>
+      <tr><td>電気伝導率</td><td>不純物濃度の管理</td><td>規定範囲内</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-danger">
+    <h4>水位管理の重要性</h4>
+    <p><strong>低水位</strong>は最も危険な状態です。水がなくなった状態で加熱が続くと、ボイラーの鋼板が過熱して強度を失い、最悪の場合<strong>爆発事故</strong>につながります。低水位警報が作動した場合は、直ちにバーナーを停止し、原因を調査します。<strong>低水位の状態で絶対に給水してはなりません</strong>（急冷による損傷の危険）。</p>
+  </div>
+
+  <!-- ===== 6. 排ガスエコノマイザ ===== -->
+  <h2>6. 排ガスエコノマイザ</h2>
+
+  <p><strong>排ガスエコノマイザ</strong>（排気ガスボイラー、エキゾーストガスボイラーとも呼ばれる）は、主機関や発電機関の排気ガスの余熱を利用して蒸気または温水を生成する装置です。</p>
+
+  <h3>仕組みと利点</h3>
+  <ul>
+    <li>排気ガスが通る煙道に<strong>フィン付き水管</strong>を配置</li>
+    <li>排気ガスの熱で管内の水を加熱し、蒸気を生成</li>
+    <li>燃料を使わずに蒸気が得られるため、<strong>大幅な燃費節約</strong>になる</li>
+    <li>航海中（主機運転中）はエコノマイザで蒸気需要の大部分を賄える場合がある</li>
+  </ul>
+
+  <h3>注意点</h3>
+  <ul>
+    <li><strong>スートファイア（すす火災）</strong>: フィンに堆積したすすに着火する危険。定期的なスートブロー（すす吹き）が必要</li>
+    <li>主機が停止するとエコノマイザも機能しなくなるため、停泊中は補助ボイラーに切り替え</li>
+    <li>ドライアウト（水切れ）防止のため、循環ポンプの監視が重要</li>
+  </ul>
+
+  <!-- ===== 7. 蒸気系統の構成 ===== -->
+  <h2>7. 蒸気系統の構成</h2>
+
+  <p>ボイラーやエコノマイザで生成された蒸気は、蒸気主管を通じて各需要先に供給されます。使用済みの蒸気（ドレン）はドレン管を通じて回収され、再びボイラー給水として利用されます。</p>
+
+  <!-- 蒸気系統図 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="蒸気系統の構成図">
+      <defs>
+        <marker id="arrowG" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,3 L0,6 Z" fill="#38a169"/>
+        </marker>
+        <marker id="arrowO" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,3 L0,6 Z" fill="#ed8936"/>
+        </marker>
+      </defs>
+      <text x="350" y="25" text-anchor="middle" class="svg-title" font-size="15">蒸気系統の構成</text>
+
+      <!-- ボイラー -->
+      <rect x="30" y="80" width="110" height="70" rx="8" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+      <text x="85" y="110" text-anchor="middle" font-size="11" fill="#c53030" font-weight="600">補助</text>
+      <text x="85" y="126" text-anchor="middle" font-size="11" fill="#c53030" font-weight="600">ボイラー</text>
+
+      <!-- エコノマイザ -->
+      <rect x="30" y="180" width="110" height="70" rx="8" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+      <text x="85" y="210" text-anchor="middle" font-size="11" fill="#975a16" font-weight="600">排ガス</text>
+      <text x="85" y="226" text-anchor="middle" font-size="11" fill="#975a16" font-weight="600">エコノマイザ</text>
+
+      <!-- 蒸気主管 -->
+      <line x1="140" y1="115" x2="200" y2="115" stroke="#e53e3e" stroke-width="4" class="animate-flow"/>
+      <line x1="140" y1="215" x2="200" y2="215" stroke="#e53e3e" stroke-width="4" class="animate-flow"/>
+      <line x1="200" y1="115" x2="200" y2="215" stroke="#e53e3e" stroke-width="4"/>
+      <line x1="200" y1="165" x2="650" y2="165" stroke="#e53e3e" stroke-width="4" class="animate-flow"/>
+      <text x="400" y="155" text-anchor="middle" font-size="11" fill="#c53030" font-weight="600">蒸気主管</text>
+
+      <!-- 各需要先 -->
+      <!-- 燃料油加熱 -->
+      <line x1="280" y1="165" x2="280" y2="220" stroke="#e53e3e" stroke-width="2" class="animate-flow"/>
+      <rect x="235" y="220" width="90" height="45" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="280" y="240" text-anchor="middle" font-size="10" fill="#1a365d">燃料油</text>
+      <text x="280" y="254" text-anchor="middle" font-size="10" fill="#1a365d">加熱器</text>
+
+      <!-- カーゴヒーティング -->
+      <line x1="390" y1="165" x2="390" y2="220" stroke="#e53e3e" stroke-width="2" class="animate-flow"/>
+      <rect x="345" y="220" width="90" height="45" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="390" y="240" text-anchor="middle" font-size="10" fill="#1a365d">カーゴ</text>
+      <text x="390" y="254" text-anchor="middle" font-size="10" fill="#1a365d">ヒーティング</text>
+
+      <!-- 温水器 -->
+      <line x1="500" y1="165" x2="500" y2="220" stroke="#e53e3e" stroke-width="2" class="animate-flow"/>
+      <rect x="455" y="220" width="90" height="45" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="500" y="240" text-anchor="middle" font-size="10" fill="#1a365d">温水器</text>
+      <text x="500" y="254" text-anchor="middle" font-size="10" fill="#1a365d">（居住区）</text>
+
+      <!-- 暖房 -->
+      <line x1="610" y1="165" x2="610" y2="220" stroke="#e53e3e" stroke-width="2" class="animate-flow"/>
+      <rect x="565" y="220" width="90" height="45" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="610" y="240" text-anchor="middle" font-size="10" fill="#1a365d">暖房</text>
+      <text x="610" y="254" text-anchor="middle" font-size="10" fill="#1a365d">トレース加温</text>
+
+      <!-- ドレン回収管 -->
+      <line x1="280" y1="265" x2="280" y2="320" stroke="#ed8936" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="390" y1="265" x2="390" y2="320" stroke="#ed8936" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="500" y1="265" x2="500" y2="320" stroke="#ed8936" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="610" y1="265" x2="610" y2="320" stroke="#ed8936" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="280" y1="320" x2="610" y2="320" stroke="#ed8936" stroke-width="3" stroke-dasharray="6,4"/>
+      <text x="445" y="340" text-anchor="middle" font-size="11" fill="#c05621" font-weight="600">ドレン回収管</text>
+
+      <!-- ホットウェルタンク -->
+      <line x1="445" y1="320" x2="445" y2="360" stroke="#ed8936" stroke-width="2" marker-end="url(#arrowO)"/>
+      <rect x="385" y="365" width="120" height="40" rx="8" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+      <text x="445" y="389" text-anchor="middle" font-size="11" fill="#975a16" font-weight="600">ホットウェルタンク</text>
+
+      <!-- 給水ポンプ経由でボイラーへ -->
+      <line x1="385" y1="385" x2="85" y2="385" stroke="#38a169" stroke-width="2" marker-end="url(#arrowG)"/>
+      <line x1="85" y1="385" x2="85" y2="250" stroke="#38a169" stroke-width="2" marker-end="url(#arrowG)"/>
+      <text x="220" y="400" text-anchor="middle" font-size="10" fill="#38a169">給水ポンプ → ボイラーへ</text>
+
+      <!-- 凡例 -->
+      <line x1="40" y1="430" x2="70" y2="430" stroke="#e53e3e" stroke-width="3"/>
+      <text x="78" y="434" font-size="10" fill="#2d3748">蒸気</text>
+      <line x1="150" y1="430" x2="180" y2="430" stroke="#ed8936" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="188" y="434" font-size="10" fill="#2d3748">ドレン（復水）</text>
+      <line x1="300" y1="430" x2="330" y2="430" stroke="#38a169" stroke-width="2"/>
+      <text x="338" y="434" font-size="10" fill="#2d3748">給水</text>
+    </svg>
+    <div class="caption">図6-3: 蒸気系統の構成図（蒸気→使用→ドレン回収→給水の循環）</div>
+  </div>
+
+  <!-- ===== 8. ボイラーの点火・停止手順 ===== -->
+  <h2>8. ボイラーの点火・停止手順</h2>
+
+  <h3>点火前の確認事項</h3>
+  <ol>
+    <li>ボイラー水位が正常範囲にあることを水面計で確認</li>
+    <li>安全弁が正常に動作することを確認</li>
+    <li>蒸気主管の弁が閉じていることを確認（空焚き防止）</li>
+    <li>燃料油の供給準備（燃料弁開、温度確認）</li>
+    <li>通風装置（FDF: 強制通風ファン）を起動し、炉内をプレパージ（掃気）する</li>
+  </ol>
+
+  <div class="box box-danger">
+    <h4>プレパージの重要性</h4>
+    <p>点火前の<strong>プレパージ（炉内掃気）</strong>は、炉内に残留する未燃ガスを排出するために必須の手順です。これを怠ると、点火時に残留ガスに引火し、<strong>炉内爆発（バックファイア）</strong>を引き起こす危険があります。通常、30秒〜1分以上の掃気が必要です。</p>
+  </div>
+
+  <h3>点火手順</h3>
+  <ol>
+    <li>プレパージ完了後、点火トランスによりスパーク（着火用の火花）を発生</li>
+    <li>燃料油弁を開いてバーナーに燃料を供給</li>
+    <li>着火を確認（炎検出器が検知）</li>
+    <li>蒸気圧力が上昇するのを監視</li>
+    <li>所定圧力に達したら蒸気弁を開いて供給開始</li>
+  </ol>
+
+  <h3>停止手順</h3>
+  <ol>
+    <li>燃料油弁を閉じてバーナーを消火</li>
+    <li>通風ファンをしばらく運転して炉内を冷却（ポストパージ）</li>
+    <li>蒸気需要がなくなったら蒸気弁を閉じる</li>
+    <li>水位を確認し、適正範囲に保つ</li>
+  </ol>
+
+  <!-- ===== 9. ボイラー事故の原因と予防 ===== -->
+  <h2>9. ボイラー事故の原因と予防</h2>
+
+  <table>
+    <thead><tr><th>事故の種類</th><th>原因</th><th>予防策</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>低水位事故</strong></td>
+        <td>給水装置の故障、水位制御の異常、漏水</td>
+        <td>水面計の定期ブロー、低水位警報の動作確認、給水装置の保守</td>
+      </tr>
+      <tr>
+        <td><strong>過圧事故</strong></td>
+        <td>安全弁の固着・動作不良、圧力制御の故障</td>
+        <td>安全弁の定期テスト（レバー引き）、圧力計の校正</td>
+      </tr>
+      <tr>
+        <td><strong>炉内爆発</strong></td>
+        <td>プレパージ不足、失火後の再点火操作ミス</td>
+        <td>プレパージの確実な実施、自動安全装置の整備</td>
+      </tr>
+      <tr>
+        <td><strong>スケール付着による過熱</strong></td>
+        <td>水質管理不良</td>
+        <td>清缶剤の適切な投入、定期的な水質試験、ブローの実施</td>
+      </tr>
+      <tr>
+        <td><strong>腐食</strong></td>
+        <td>溶存酸素、pH低下、海水混入</td>
+        <td>脱酸素処理、pH管理、塩化物イオンの監視</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <ul>
+      <li><strong>低水位</strong>はボイラー事故の最大の原因。水面計の監視と低水位警報の動作確認が重要。</li>
+      <li><strong>プレパージ</strong>（炉内掃気）を怠ると炉内爆発の危険がある。</li>
+      <li>ボイラー水の<strong>水質管理</strong>（pH、塩化物イオン、硬度）を定期的に行う。</li>
+      <li>安全弁の<strong>定期テスト</strong>は法令で義務づけられている。</li>
+    </ul>
+  </div>
+
+  <!-- ===== クイズ ===== -->
+  <div class="quiz">
+    <h4>章末クイズ — 第6章 ボイラーと蒸気系統</h4>
+
+    <p><strong>問1:</strong> 内航船の補助ボイラーとして最も一般的に使用されるボイラーの種類はどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 水管ボイラー</li>
+      <li>B. 円筒ボイラー（煙管式）</li>
+      <li>C. 貫流ボイラー</li>
+    </ul>
+    <button onclick="showAnswer('a6-1')">解答を見る</button>
+    <div id="a6-1" class="quiz-answer">
+      <p><strong>正解: B. 円筒ボイラー（煙管式）</strong></p>
+      <p>円筒ボイラーは構造が簡単で頑丈、保守が容易であり、保有水量が大きく負荷変動に強いため、内航船の補助ボイラーとして広く使用されています。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問2:</strong> ボイラーの点火前に炉内の掃気（プレパージ）を行う目的として正しいものはどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 炉内の温度を均一にするため</li>
+      <li>B. 残留する未燃ガスを排出し、炉内爆発を防止するため</li>
+      <li>C. 煙管のすすを除去するため</li>
+    </ul>
+    <button onclick="showAnswer('a6-2')">解答を見る</button>
+    <div id="a6-2" class="quiz-answer">
+      <p><strong>正解: B. 残留する未燃ガスを排出し、炉内爆発を防止するため</strong></p>
+      <p>前回運転時の未燃ガスや燃料蒸気が炉内に残っている可能性があり、そのまま点火すると爆発の危険があります。プレパージにより安全な状態を確保してから点火します。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問3:</strong> ボイラー運転中に低水位警報が作動した場合の対応として、正しいものはどれか。</p>
+    <ul class="quiz-options">
+      <li>A. すぐに大量の給水を行って水位を回復させる</li>
+      <li>B. バーナーを停止し、原因を調査する。低水位のまま給水してはならない</li>
+      <li>C. 安全弁を手動で開いて蒸気を放出する</li>
+    </ul>
+    <button onclick="showAnswer('a6-3')">解答を見る</button>
+    <div id="a6-3" class="quiz-answer">
+      <p><strong>正解: B. バーナーを停止し、原因を調査する。低水位のまま給水してはならない</strong></p>
+      <p>低水位の状態で過熱した鋼板に冷水を入れると、急激な温度変化によりボイラーが損傷する危険があります。まずバーナーを停止し、十分に冷却してから原因を調査・対処します。</p>
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="eng05_pumps.html">← 第5章 ポンプの種類と原理</a>
+    <a href="eng07_electrical.html">第7章 電気設備の基礎 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) { var el = document.getElementById(id); el.classList.toggle('show'); }
+</script>
+
+</body>
+</html>

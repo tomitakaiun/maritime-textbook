@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 海図の読み方 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第3章 海図の読み方</h1>
+  <div class="subtitle">内航船員のための海技教材 — 航海編</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="nav02_compass.html">&laquo; 前章: コンパスと方位</a>
+    <a href="nav04_aids.html">次章: 航路標識 &raquo;</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <p>海図は「海の地図」です。陸上の地図が道路や建物を示すように、海図は水深、航路標識、障害物、海底の状態など、航海に必要なあらゆる情報を一枚の紙（または電子画面）に詰め込んだものです。海図を正確に読めることは、安全な航海の大前提です。本章では、海図の基礎から実務での使い方までを学びます。</p>
+
+  <!-- ============================== -->
+  <h2 id="what-is-chart">3-1. 海図とは何か</h2>
+
+  <p><span class="glossary-term" data-def="海図: 航海のために作成された特殊な地図。水深・航路標識・障害物等を表示">海図（かいず）</span>とは、航海の安全のために必要な情報を集約した特殊な地図です。日本では<span class="glossary-term" data-def="海上保安庁: 日本の海図を刊行する官庁。水路通報で海図の最新情報を提供">海上保安庁</span>が作成・刊行しています。</p>
+
+  <h3>海図に載っている主な情報</h3>
+  <ul>
+    <li><strong>水深</strong>: 海底までの深さ（メートル単位）。安全に航行できるか判断する基本</li>
+    <li><strong>海底の質（底質）</strong>: 砂、泥、岩など。錨泊地選定に重要</li>
+    <li><strong>航路標識</strong>: 灯台、灯浮標、導灯など。位置と特性が記載</li>
+    <li><strong>危険物</strong>: 暗岩、洗岩、沈船など。航行の障害となるもの</li>
+    <li><strong>海岸線</strong>: 陸地の形状。埋立地や防波堤も表示</li>
+    <li><strong>航路・水路</strong>: 推薦航路、分離通航帯、制限区域など</li>
+    <li><strong>等深線</strong>: 同じ水深の点を結んだ線。海底地形を把握できる</li>
+    <li><strong>潮流情報</strong>: 主要な潮流の方向と速さ</li>
+    <li><strong>コンパスローズ</strong>: 方位目盛りと偏差情報</li>
+  </ul>
+
+  <div class="box box-info">
+    <h4>紙海図と電子海図（ECDIS）</h4>
+    <p>近年は<span class="glossary-term" data-def="ECDIS: Electronic Chart Display and Information System（電子海図情報表示装置）">ECDIS（電子海図）</span>を搭載する船が増えています。電子海図はGPSと連動して自船位置をリアルタイム表示でき、非常に便利です。しかし、内航船では紙海図も併用している船が多く、6級海技士試験も紙海図の読み方が中心です。電子機器が故障した場合のバックアップとして、紙海図を読む能力は不可欠です。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="chart-types">3-2. 海図の種類</h2>
+
+  <p>海図は表示範囲の広さ（縮尺）によって種類が分けられています。目的に応じて使い分けます。</p>
+
+  <table>
+    <thead>
+      <tr><th>種類</th><th>縮尺</th><th>用途</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>総図</strong></td><td>1/3,500,000以上</td><td>大洋横断などの大圏航法の計画。内航ではほぼ使わない</td></tr>
+      <tr><td><strong>航洋図</strong></td><td>1/1,000,000〜1/3,500,000</td><td>外洋航行の概略計画。内航ではほぼ使わない</td></tr>
+      <tr><td><strong>航海図</strong></td><td>1/300,000〜1/1,000,000</td><td>沿岸航海の計画。内航船の航路全体の把握に使う</td></tr>
+      <tr><td><strong>海岸図</strong></td><td>1/50,000〜1/300,000</td><td>沿岸の詳細。内航船が最もよく使う海図</td></tr>
+      <tr><td><strong>港泊図</strong></td><td>1/50,000以下</td><td>港湾内の詳細。入出港・係留時に使用</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p>内航船では<strong>海岸図と港泊図</strong>を最もよく使います。航路計画では海岸図で全体像を把握し、入出港時には港泊図で岸壁や水深の詳細を確認します。縮尺が大きいほど（分母が小さいほど）詳しい情報が載っていますが、表示範囲は狭くなります。</p>
+  </div>
+
+  <div class="box box-example">
+    <h4>内航タンカーでの使い分け例</h4>
+    <p>裕洋丸が千葉から大阪へ向かう場合:</p>
+    <ul>
+      <li><strong>航路計画</strong>: 海岸図（東京湾〜伊勢湾〜大阪湾）で全体ルートを引く</li>
+      <li><strong>東京湾航行</strong>: 海岸図（東京湾）で浦賀水道等の通過計画</li>
+      <li><strong>千葉港出港</strong>: 港泊図（千葉港）で水深・障害物を確認</li>
+      <li><strong>大阪港入港</strong>: 港泊図（大阪港）で係留岸壁までの進入ルートを確認</li>
+    </ul>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="lat-lon">3-3. 緯度と経度の仕組み</h2>
+
+  <p>地球上の位置を特定するために使われるのが<span class="glossary-term" data-def="緯度: 赤道を基準にした南北方向の角度（0〜90度）">緯度（いど）</span>と<span class="glossary-term" data-def="経度: 本初子午線を基準にした東西方向の角度（0〜180度）">経度（けいど）</span>の座標系です。</p>
+
+  <h3>緯度（Latitude）</h3>
+  <ul>
+    <li>赤道を0度として、北極が北緯90度、南極が南緯90度</li>
+    <li>記号: N（北緯）、S（南緯）</li>
+    <li>1度 = 60分、1分 = 60秒</li>
+    <li><strong>緯度1分 = 1海里（1,852m）</strong>← これは距離の計算で非常に重要</li>
+  </ul>
+
+  <h3>経度（Longitude）</h3>
+  <ul>
+    <li>イギリスのグリニッジ天文台を通る<span class="glossary-term" data-def="本初子午線: 経度0度の基準線。グリニッジ天文台を通る">本初子午線</span>を0度とし、東西それぞれ180度</li>
+    <li>記号: E（東経）、W（西経）</li>
+    <li>経度の1分の距離は緯度によって変わる（赤道で最大、極で0）</li>
+  </ul>
+
+  <!-- SVG: 地球の緯度・経度概略図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="緯度と経度の概念図">
+      <!-- 地球（楕円） -->
+      <ellipse cx="300" cy="200" rx="170" ry="170" fill="#d4eaf7" stroke="#2b6cb0" stroke-width="2"/>
+
+      <!-- 大陸っぽい装飾 -->
+      <ellipse cx="330" cy="160" rx="40" ry="25" fill="#c6f6d5" opacity="0.6"/>
+      <ellipse cx="280" cy="210" rx="30" ry="20" fill="#c6f6d5" opacity="0.5"/>
+
+      <!-- 赤道 -->
+      <ellipse cx="300" cy="200" rx="170" ry="40" fill="none" stroke="#e53e3e" stroke-width="2"/>
+      <text x="485" y="195" font-size="12" font-weight="bold" fill="#e53e3e">赤道（緯度0&deg;）</text>
+
+      <!-- 緯度線 -->
+      <ellipse cx="300" cy="145" rx="145" ry="30" fill="none" stroke="#718096" stroke-width="1" stroke-dasharray="5,5"/>
+      <text x="460" y="142" font-size="10" fill="#718096">北緯30&deg;</text>
+      <ellipse cx="300" cy="255" rx="145" ry="30" fill="none" stroke="#718096" stroke-width="1" stroke-dasharray="5,5"/>
+      <text x="460" y="258" font-size="10" fill="#718096">南緯30&deg;</text>
+
+      <!-- 経度線（子午線） -->
+      <ellipse cx="300" cy="200" rx="10" ry="170" fill="none" stroke="#38a169" stroke-width="2"/>
+      <text x="318" y="28" font-size="10" font-weight="bold" fill="#38a169">本初子午線（経度0&deg;）</text>
+
+      <ellipse cx="300" cy="200" rx="85" ry="170" fill="none" stroke="#718096" stroke-width="1" stroke-dasharray="5,5"/>
+
+      <!-- 北極・南極 -->
+      <circle cx="300" cy="30" r="4" fill="#1a365d"/>
+      <text x="300" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a365d">北極 (N90&deg;)</text>
+      <circle cx="300" cy="370" r="4" fill="#1a365d"/>
+      <text x="300" y="392" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a365d">南極 (S90&deg;)</text>
+
+      <!-- 日本の位置（概略） -->
+      <circle cx="370" cy="148" r="6" fill="#ed8936" stroke="#c05621" stroke-width="2" class="animate-pulse"/>
+      <text x="385" y="140" font-size="11" font-weight="bold" fill="#c05621">日本</text>
+      <text x="385" y="155" font-size="9" fill="#718096">約N34&deg; E135&deg;</text>
+
+      <!-- 矢印：緯度方向 -->
+      <line x1="145" y1="200" x2="145" y2="50" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arrowR)"/>
+      <text x="100" y="130" font-size="11" fill="#e53e3e" transform="rotate(-90,100,130)">緯度 (Lat)</text>
+
+      <!-- 矢印：経度方向 -->
+      <path d="M300,375 Q420,375 440,340" fill="none" stroke="#38a169" stroke-width="1.5"/>
+      <text x="420" y="370" font-size="11" fill="#38a169">経度 (Lon)</text>
+
+      <defs>
+        <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#e53e3e"/>
+        </marker>
+      </defs>
+    </svg>
+    <div class="caption">図3-1: 地球上の緯度と経度。赤道が緯度0度、グリニッジを通る線が経度0度。日本は北緯約34度、東経約135度</div>
+  </div>
+
+  <div class="box box-example">
+    <h4>位置の読み方例</h4>
+    <p>千葉港の位置: <strong>35&deg;36.5'N, 140&deg;05.8'E</strong></p>
+    <p>読み方: 「北緯35度36分5（36.5分）、東経140度05分8（05.8分）」</p>
+    <p>海図上では、左右の目盛り（緯度スケール）と上下の目盛り（経度スケール）から読み取ります。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="chart-symbols">3-4. 海図の記号と略語</h2>
+
+  <p>海図には膨大な情報が記号と略語で詰め込まれています。すべてを暗記する必要はありませんが、よく使う記号は見てすぐわかるようになりましょう。詳細は海上保安庁刊行の<strong>「海図図式」（Chart No.1 / W200）</strong>にまとめられています。</p>
+
+  <h3>水深の表示</h3>
+  <ul>
+    <li>海図上の数字はメートル単位の水深を示す</li>
+    <li><span class="glossary-term" data-def="基本水準面: 海図の水深の基準となる面。最低水面にほぼ等しい">基本水準面</span>（ほぼ最低水面）を基準にしている</li>
+    <li>つまり、実際の水深は海図の数字<strong>以上</strong>であることが多い（潮汐による）</li>
+    <li>小数点以下の表示: 「4₅」は4.5mを意味する（小さい数字が小数部）</li>
+  </ul>
+
+  <h3>主要な海図記号一覧</h3>
+  <table>
+    <thead>
+      <tr><th>記号/略語</th><th>意味</th><th>説明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>数字（例: 12）</strong></td><td>水深</td><td>12m（基本水準面からの深さ）</td></tr>
+      <tr><td><strong>S</strong></td><td>砂（Sand）</td><td>底質が砂。錨泊に適する</td></tr>
+      <tr><td><strong>M</strong></td><td>泥（Mud）</td><td>底質が泥。錨の把駐力は中程度</td></tr>
+      <tr><td><strong>R</strong></td><td>岩（Rock）</td><td>底質が岩。錨泊に不適</td></tr>
+      <tr><td><strong>Sh</strong></td><td>貝殻（Shell）</td><td>底質が貝殻混じり</td></tr>
+      <tr><td><strong>&#x2605; (黒星)</strong></td><td>暗岩</td><td>常に水面下にある岩。危険</td></tr>
+      <tr><td><strong>+ (十字)</strong></td><td>洗岩</td><td>干潮時に現れる岩</td></tr>
+      <tr><td><strong>&#x2606; (白星)</strong></td><td>干出岩</td><td>低潮時に水面上に出る岩</td></tr>
+      <tr><td><strong>Wk</strong></td><td>沈船</td><td>沈没した船。マストの深度を表示</td></tr>
+      <tr><td><strong>Obstn</strong></td><td>障害物</td><td>航行の妨げになるもの</td></tr>
+      <tr><td><strong>F / Fl / Oc</strong></td><td>灯質</td><td>F=不動光, Fl=閃光, Oc=明暗光</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-warning">
+    <h4>水深は「保証値」ではない</h4>
+    <p>海図記載の水深は測量時の値です。その後の土砂堆積や地形変化で浅くなっている可能性があります。特に港湾内や河口付近では、水路通報で最新の水深情報を確認してください。内航タンカーは喫水（船の沈み具合）が積荷量で大きく変わるため、水深の確認は特に重要です。満載時と空船時で喫水が1m以上変わることがあります。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="distance-speed">3-5. 距離の測り方</h2>
+
+  <p>海上での距離の単位は<span class="glossary-term" data-def="海里 (NM): 海上の距離の単位。1海里 = 1,852m = 緯度1分の弧の長さ">海里（かいり）</span>です。</p>
+
+  <div class="key-point">
+    <p><strong>1海里（nautical mile / NM）= 1,852m</strong></p>
+    <p><strong>1海里 = 緯度1分の弧の長さ</strong></p>
+    <p>つまり、海図の左右の緯度目盛りがそのまま距離のスケールになります。</p>
+  </div>
+
+  <h3>海図上での距離の測り方</h3>
+  <ol>
+    <li><span class="glossary-term" data-def="ディバイダ: 海図上で距離を測るための二本脚の器具">ディバイダ</span>（二本脚のコンパス状の器具）で2点間の距離を取る</li>
+    <li>そのままディバイダを海図の左右の<strong>緯度目盛り</strong>に当てる</li>
+    <li>目盛りの分（'）の数を読む → それが海里数</li>
+  </ol>
+
+  <div class="box box-warning">
+    <h4>経度目盛りは使わない</h4>
+    <p>距離を測るときは必ず<strong>緯度目盛り（左右の目盛り）</strong>を使います。経度目盛り（上下の目盛り）は使いません。なぜなら、経度の1分の実際の距離は緯度によって変わるからです（赤道で最大、極で0）。一方、緯度の1分は地球上のどこでもほぼ1,852mです。また、測定したい場所と同じくらいの緯度の位置の目盛りを使うとより正確です。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="knot">3-6. 速力の単位</h2>
+
+  <p>海上での速力は<span class="glossary-term" data-def="ノット (kt): 海上の速力の単位。1ノット = 1海里/時 = 1,852m/h">ノット（knot / kt）</span>で表します。</p>
+
+  <div class="key-point">
+    <p><strong>1ノット = 1海里/時 = 1,852m/h ≒ 0.514m/s</strong></p>
+  </div>
+
+  <div class="box box-example">
+    <h4>実務での計算例</h4>
+    <p>裕洋丸の巡航速力が<strong>10ノット</strong>で、千葉から横浜まで<strong>30海里</strong>の場合:</p>
+    <p>所要時間 = 距離 ÷ 速力 = 30 ÷ 10 = <strong>3時間</strong></p>
+    <p>もし潮流が1ノットの逆潮（向かい潮）なら、対地速力は約9ノット:</p>
+    <p>所要時間 = 30 ÷ 9 ≒ <strong>3時間20分</strong></p>
+    <p>内航タンカーでは荷役時間の調整もあるため、このような到着時刻の見積もりが日常的に行われます。</p>
+  </div>
+
+  <p>参考: 一般的な内航タンカーの速力は<strong>10〜12ノット</strong>程度です。時速に換算すると約18〜22km/hで、自転車程度の速さです。しかし、500トンもの鉄の塊がこの速度で動くのですから、止まるにも曲がるにも相当の距離が必要です。</p>
+
+
+  <!-- ============================== -->
+  <h2 id="position-fix">3-7. 海図上での船位の求め方</h2>
+
+  <p>航海中に「自分の船が今どこにいるか」を海図上で確定することを<span class="glossary-term" data-def="船位測定: 自船の現在位置を海図上で確定すること">船位測定（フィックス）</span>と呼びます。GPSが普及した現在でも、目視やレーダーによる船位確認は重要なスキルです。</p>
+
+  <h3>クロスベアリング（交差方位法）</h3>
+  <p>最も基本的な船位測定法です。2つ以上の物標の方位を測定し、海図上でその方位線を引いて交点を求めます。</p>
+
+  <div class="box box-example">
+    <h4>手順</h4>
+    <ol>
+      <li>コンパスで物標A（灯台など）の方位を測定 → 例: 045&deg;(T)</li>
+      <li>コンパスで物標B（別の灯台など）の方位を測定 → 例: 135&deg;(T)</li>
+      <li>海図上で物標Aから045度の逆方位（225度）の線を引く</li>
+      <li>海図上で物標Bから135度の逆方位（315度）の線を引く</li>
+      <li>2本の線の交点が自船の位置</li>
+    </ol>
+    <p>※ できれば3つの物標を使い、3本の方位線で確認するとより正確です。3本が一点で交われば信頼性が高いと判断できます。</p>
+  </div>
+
+  <!-- SVG: クロスベアリングの図解 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="クロスベアリング（交差方位法）の図解">
+      <!-- 海 -->
+      <rect x="0" y="0" width="700" height="450" fill="#ebf8ff"/>
+
+      <!-- 陸地（上部） -->
+      <path d="M0,0 L0,120 Q100,80 200,100 Q300,120 350,60 Q400,30 500,50 Q550,60 600,40 L700,0 Z" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5"/>
+
+      <!-- 灯台A -->
+      <rect x="145" y="75" width="10" height="30" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+      <circle cx="150" cy="70" r="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="2" class="animate-pulse"/>
+      <text x="150" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a365d">灯台A</text>
+
+      <!-- 灯台B -->
+      <rect x="445" y="40" width="10" height="30" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+      <circle cx="450" cy="35" r="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="2" class="animate-pulse"/>
+      <text x="450" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a365d">灯台B</text>
+
+      <!-- 灯台C（3つ目） -->
+      <rect x="595" y="30" width="10" height="30" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+      <circle cx="600" cy="25" r="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="2" class="animate-pulse"/>
+      <text x="600" y="10" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a365d">灯台C</text>
+
+      <!-- 船 -->
+      <polygon points="300,330 290,360 310,360" fill="#a0aec0" stroke="#4a5568" stroke-width="2"/>
+      <rect x="290" y="360" width="20" height="10" rx="2" fill="#a0aec0" stroke="#4a5568" stroke-width="1.5"/>
+      <text x="300" y="390" text-anchor="middle" font-size="12" font-weight="bold" fill="#e53e3e">自船</text>
+
+      <!-- 方位線A -->
+      <line x1="300" y1="340" x2="150" y2="90" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="190" y="230" font-size="11" font-weight="bold" fill="#2b6cb0" transform="rotate(-60,190,230)">方位線A: 330&deg;T</text>
+
+      <!-- 方位線B -->
+      <line x1="300" y1="340" x2="450" y2="55" stroke="#e53e3e" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="410" y="210" font-size="11" font-weight="bold" fill="#e53e3e" transform="rotate(-62,410,210)">方位線B: 028&deg;T</text>
+
+      <!-- 方位線C -->
+      <line x1="300" y1="340" x2="600" y2="40" stroke="#38a169" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="500" y="220" font-size="11" font-weight="bold" fill="#38a169" transform="rotate(-45,500,220)">方位線C: 046&deg;T</text>
+
+      <!-- 交点（船位） -->
+      <circle cx="300" cy="340" r="8" fill="none" stroke="#e53e3e" stroke-width="2.5"/>
+      <circle cx="300" cy="340" r="3" fill="#e53e3e"/>
+
+      <!-- 凡例 -->
+      <rect x="20" y="400" width="660" height="40" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="350" y="425" text-anchor="middle" font-size="12" fill="#1a365d">3本の方位線が1点（または小さな三角形）で交われば、信頼性の高い船位となる</text>
+    </svg>
+    <div class="caption">図3-2: クロスベアリング（交差方位法）。3つの灯台の方位線の交点が自船位置</div>
+  </div>
+
+  <h3>その他の船位測定法</h3>
+
+  <h4>重視線（トランシット）</h4>
+  <p><span class="glossary-term" data-def="重視線: 2つの物標が一直線に重なって見える線。導灯（リーディングライト）に利用">重視線（トランシット）</span>とは、手前の物標と奥の物標が一直線に重なって見える方位線のことです。コンパスを使わずに正確な方位線が得られるため、非常に信頼性が高い方法です。港の入口に設置された<strong>導灯（リーディングライト）</strong>は、この原理を利用して安全な進入コースを示しています。</p>
+
+  <h4>レーダー測位</h4>
+  <p>レーダーで物標までの距離と方位を測定して船位を求めます。夜間や視界不良時にも使えるため、内航船では非常に重要です。</p>
+  <ul>
+    <li><strong>距離と方位による測位</strong>: 1つの物標のレーダー距離と方位から船位を求める</li>
+    <li><strong>距離円による測位</strong>: 2つ以上の物標のレーダー距離から、距離円の交点で船位を求める</li>
+  </ul>
+
+  <h4>GPS測位</h4>
+  <p>現在最も一般的な測位手段です。GPS受信機が緯度・経度を直接表示します。ただし、GPSにも誤差はあります（通常10m以内）。また、機器故障やGPS信号障害の可能性もあるため、目視やレーダーによる確認を併用することが重要です。</p>
+
+  <div class="key-point">
+    <p><strong>GPSだけに頼らない</strong>ことが安全航海の鉄則です。内航タンカーは狭い港湾内を航行することが多く、GPS誤差の10mが座礁に直結する場合もあります。GPSの位置を必ず目視やレーダーで裏付けることを習慣にしましょう。これを<strong>「セルフチェック」</strong>と呼びます。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="chart-correction">3-8. 海図の改補</h2>
+
+  <p>海図は刊行後も常に最新の状態に保つ必要があります。新しい航路標識の設置、水深の変化、港湾の改修など、変化は頻繁に起こります。この更新作業を<span class="glossary-term" data-def="海図の改補: 水路通報等に基づき、海図の情報を最新に更新する作業">海図の改補（かいほ）</span>と呼びます。</p>
+
+  <h3>水路通報（Notice to Mariners）</h3>
+  <ul>
+    <li>海上保安庁が毎週発行する情報で、海図の訂正内容が記載されている</li>
+    <li>航行警報（航行安全に関する緊急情報）も含む</li>
+    <li>現在はインターネット（海上保安庁HP）で入手可能</li>
+    <li>海図の改補は航海士の重要な業務の一つ</li>
+  </ul>
+
+  <h3>改補の方法</h3>
+  <ol>
+    <li>水路通報を入手する</li>
+    <li>該当する海図を広げる</li>
+    <li>通報に従って、消しゴムで古い情報を消し、赤インクで新しい情報を書き込む</li>
+    <li>海図の余白に改補番号と日付を記入する</li>
+    <li>改補記録を管理する</li>
+  </ol>
+
+  <div class="box box-info">
+    <h4>電子海図（ECDIS）の場合</h4>
+    <p>電子海図はデータ更新（アップデート）によって改補を行います。通信回線を通じて最新データを取得できるため、紙海図より効率的です。ただし、更新を怠ると古い情報のまま航海することになるので、定期的な更新確認は欠かせません。</p>
+  </div>
+
+  <div class="box box-danger">
+    <h4>改補されていない海図での航海は危険</h4>
+    <p>海図が最新の状態に改補されていないと、新しい障害物や水深変化を見落とし、重大事故につながる可能性があります。船舶検査でも海図の改補状況は確認されます。「古い海図でも大体わかるから大丈夫」という考えは絶対にNGです。</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="practical-use">3-9. 内航航海での実用的な海図の使い方</h2>
+
+  <p>ここまで学んだ知識を、実際の内航タンカーの航海でどう活かすかを見ていきましょう。</p>
+
+  <h3>航海計画（バヤージプラン）の作成</h3>
+  <div class="box box-example">
+    <h4>例: 千葉港 → 大阪港の航海計画</h4>
+    <ol>
+      <li><strong>海図の選定</strong>: 航路全体をカバーする海岸図と、出港・入港用の港泊図を準備</li>
+      <li><strong>航路の設定</strong>: 海図上に鉛筆で針路線を引く。変針点（コースを変える地点）に印を付ける</li>
+      <li><strong>各区間の確認</strong>:
+        <ul>
+          <li>水深: 喫水に対して十分な水深があるか（UKC: Under Keel Clearance）</li>
+          <li>危険物: 航路近くに暗岩・浅所がないか</li>
+          <li>航路標識: 利用できる灯台・浮標を確認</li>
+          <li>航路規制: 東京湾の浦賀水道航路、伊良湖水道等の通航ルール</li>
+        </ul>
+      </li>
+      <li><strong>距離と所要時間</strong>: 各区間の距離を測り、速力から所要時間を計算</li>
+      <li><strong>潮汐・潮流</strong>: 入出港時の潮位を確認。浅い港では潮位が重要</li>
+      <li><strong>気象確認</strong>: 天気予報で海上の風・波を確認</li>
+    </ol>
+  </div>
+
+  <h3>航海中の海図の使い方</h3>
+  <ul>
+    <li><strong>定期的な船位記入</strong>: GPSやレーダー・目視で確認した船位を海図上にプロット（記入）する</li>
+    <li><strong>計画航路との照合</strong>: 計画した針路線と実際の航跡にずれがないか確認</li>
+    <li><strong>先読み</strong>: 現在位置だけでなく、この先の水深や障害物を常に確認</li>
+    <li><strong>変針点の事前確認</strong>: 次の変針点までの距離と方位を把握しておく</li>
+  </ul>
+
+  <!-- SVG: 航海計画の海図イメージ -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="海図上の航海計画イメージ">
+      <!-- 海 -->
+      <rect x="0" y="0" width="700" height="400" fill="#ebf8ff"/>
+
+      <!-- 等深線 -->
+      <path d="M0,300 Q100,280 200,310 Q300,340 400,320 Q500,300 600,330 L700,320" fill="none" stroke="#90cdf4" stroke-width="1" opacity="0.5"/>
+      <path d="M0,250 Q100,230 200,260 Q300,290 400,270 Q500,250 600,280 L700,270" fill="none" stroke="#90cdf4" stroke-width="1" opacity="0.5"/>
+
+      <!-- 水深表示 -->
+      <text x="150" y="350" font-size="10" fill="#90cdf4">15</text>
+      <text x="300" y="370" font-size="10" fill="#90cdf4">22</text>
+      <text x="450" y="355" font-size="10" fill="#90cdf4">18</text>
+      <text x="350" y="300" font-size="10" fill="#90cdf4">8</text>
+      <text x="200" y="280" font-size="10" fill="#90cdf4">12</text>
+      <text x="550" y="310" font-size="10" fill="#90cdf4">25</text>
+
+      <!-- 陸地 -->
+      <path d="M0,0 L0,200 Q50,180 100,190 Q150,200 180,170 Q200,150 250,160 L250,0 Z" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5"/>
+      <path d="M500,0 L500,100 Q530,120 560,110 Q600,90 650,100 Q680,110 700,100 L700,0 Z" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5"/>
+
+      <!-- 港A -->
+      <rect x="80" y="180" width="40" height="8" fill="#718096" stroke="#4a5568" stroke-width="1"/>
+      <text x="100" y="210" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a365d">出発港</text>
+
+      <!-- 港B -->
+      <rect x="600" y="95" width="40" height="8" fill="#718096" stroke="#4a5568" stroke-width="1"/>
+      <text x="620" y="125" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a365d">目的港</text>
+
+      <!-- 灯台 -->
+      <circle cx="180" cy="160" r="5" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5" class="animate-pulse"/>
+      <text x="195" y="158" font-size="9" fill="#718096">Fl(3)15s</text>
+      <circle cx="500" cy="95" r="5" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5" class="animate-pulse"/>
+      <text x="480" y="85" font-size="9" fill="#718096">Fl R 5s</text>
+
+      <!-- 浮標 -->
+      <polygon points="350,200 346,210 354,210" fill="#e53e3e" stroke="#c53030" stroke-width="1"/>
+      <text x="365" y="208" font-size="9" fill="#718096">R Bn</text>
+
+      <!-- 航路（針路線） -->
+      <line x1="120" y1="184" x2="300" y2="230" stroke="#e53e3e" stroke-width="2.5"/>
+      <line x1="300" y1="230" x2="480" y2="180" stroke="#e53e3e" stroke-width="2.5"/>
+      <line x1="480" y1="180" x2="610" y2="103" stroke="#e53e3e" stroke-width="2.5"/>
+
+      <!-- 変針点 -->
+      <circle cx="300" cy="230" r="6" fill="none" stroke="#e53e3e" stroke-width="2"/>
+      <text x="310" y="250" font-size="10" font-weight="bold" fill="#e53e3e">WP1</text>
+      <circle cx="480" cy="180" r="6" fill="none" stroke="#e53e3e" stroke-width="2"/>
+      <text x="490" y="200" font-size="10" font-weight="bold" fill="#e53e3e">WP2</text>
+
+      <!-- 針路と距離の表示 -->
+      <text x="190" y="220" font-size="10" fill="#c53030">C/S 135&deg; 12.5NM</text>
+      <text x="370" y="195" font-size="10" fill="#c53030">C/S 060&deg; 15.0NM</text>
+      <text x="530" y="155" font-size="10" fill="#c53030">C/S 035&deg; 10.5NM</text>
+
+      <!-- 船位プロット -->
+      <circle cx="200" cy="205" r="3" fill="#1a365d"/>
+      <text x="210" y="202" font-size="8" fill="#1a365d">0830</text>
+      <circle cx="260" cy="220" r="3" fill="#1a365d"/>
+      <text x="270" y="217" font-size="8" fill="#1a365d">0900</text>
+
+      <!-- コンパスローズ（簡略） -->
+      <circle cx="580" cy="320" r="30" fill="none" stroke="#718096" stroke-width="1"/>
+      <line x1="580" y1="290" x2="580" y2="295" stroke="#e53e3e" stroke-width="2"/>
+      <text x="580" y="286" text-anchor="middle" font-size="9" fill="#e53e3e">N</text>
+      <line x1="610" y1="320" x2="605" y2="320" stroke="#718096" stroke-width="1"/>
+      <line x1="580" y1="350" x2="580" y2="345" stroke="#718096" stroke-width="1"/>
+      <line x1="550" y1="320" x2="555" y2="320" stroke="#718096" stroke-width="1"/>
+      <text x="580" y="370" text-anchor="middle" font-size="8" fill="#718096">Var 7.5&deg;W (2024)</text>
+
+      <!-- 凡例 -->
+      <rect x="10" y="360" width="250" height="35" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="20" y="382" font-size="10" fill="#4a5568">WP = Waypoint（変針点）　C/S = Course（針路）</text>
+    </svg>
+    <div class="caption">図3-3: 海図上の航海計画イメージ。赤線が計画航路、WPが変針点、黒点が船位プロット</div>
+  </div>
+
+  <div class="box box-info">
+    <h4>UKC（Under Keel Clearance）について</h4>
+    <p><span class="glossary-term" data-def="UKC: 船底と海底の間の余裕水深。安全上必要な最低限の隙間">UKC</span>とは、船底と海底の間の余裕水深のことです。内航タンカーでは通常、最低1m以上のUKCを確保することが求められます。計算式は:</p>
+    <p><strong>UKC = 海図水深 + 潮位 - 喫水</strong></p>
+    <p>例: 海図水深5m、潮位+1.5m、満載喫水4.5mの場合 → UKC = 5 + 1.5 - 4.5 = <strong>2.0m</strong>（安全）</p>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="summary">まとめ</h2>
+
+  <div class="key-point">
+    <ul>
+      <li>海図は航海に必要な水深・航路標識・危険物等を集約した特殊な地図</li>
+      <li>内航船では<strong>海岸図</strong>と<strong>港泊図</strong>を最もよく使う</li>
+      <li><strong>緯度1分 = 1海里 = 1,852m</strong> が距離計算の基本</li>
+      <li>速力の単位は<strong>ノット（= 海里/時）</strong></li>
+      <li>船位の測定法: <strong>クロスベアリング</strong>、重視線、レーダー測位、GPS</li>
+      <li>GPSだけに頼らず、複数の手段で船位を確認する（セルフチェック）</li>
+      <li>海図は<strong>水路通報</strong>で常に最新状態に改補しなければならない</li>
+      <li>航海計画では水深・危険物・航路規制を事前に確認し、UKCを計算する</li>
+    </ul>
+  </div>
+
+
+  <!-- ============================== -->
+  <h2 id="quiz">章末クイズ</h2>
+
+  <div class="quiz">
+    <h4>Q1. 海図上で距離を測るとき、どの目盛りを使うか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('q1')">A. 上下の経度目盛り</li>
+      <li onclick="showAnswer('q1')">B. 左右の緯度目盛り</li>
+      <li onclick="showAnswer('q1')">C. コンパスローズの目盛り</li>
+      <li onclick="showAnswer('q1')">D. どの目盛りでもよい</li>
+    </ul>
+    <div id="q1" class="quiz-answer">
+      <p><strong>正解: B. 左右の緯度目盛り</strong></p>
+      <p>緯度1分 = 1海里（1,852m）であり、この関係は地球上のどこでもほぼ一定です。経度の1分の距離は緯度によって変わるため、距離測定には使えません。</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q2. 速力12ノットの船が36海里先の目的地に到着するまでの所要時間は？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('q2')">A. 2時間</li>
+      <li onclick="showAnswer('q2')">B. 3時間</li>
+      <li onclick="showAnswer('q2')">C. 4時間</li>
+      <li onclick="showAnswer('q2')">D. 2時間30分</li>
+    </ul>
+    <div id="q2" class="quiz-answer">
+      <p><strong>正解: B. 3時間</strong></p>
+      <p>所要時間 = 距離 ÷ 速力 = 36海里 ÷ 12ノット = 3時間</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q3. クロスベアリングで船位の信頼性を高めるためには、何本の方位線が望ましいか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('q3')">A. 1本で十分</li>
+      <li onclick="showAnswer('q3')">B. 2本あれば十分</li>
+      <li onclick="showAnswer('q3')">C. 3本以上が望ましい</li>
+      <li onclick="showAnswer('q3')">D. 4本以上必要</li>
+    </ul>
+    <div id="q3" class="quiz-answer">
+      <p><strong>正解: C. 3本以上が望ましい</strong></p>
+      <p>2本の方位線でも交点（船位）は求まりますが、どちらかの方位に誤差があっても気づけません。3本の方位線を使えば、すべてが1点（または小さな三角形）で交わるかどうかで信頼性を判断できます。方位線の交角は30度〜150度の範囲が理想的で、特に60度〜120度が良いとされています。</p>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <div class="chapter-nav">
+    <a href="nav02_compass.html">&laquo; 前章: 第2章 コンパスと方位</a>
+    <a href="nav04_aids.html">次章: 第4章 航路標識 &raquo;</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+</body>
+</html>

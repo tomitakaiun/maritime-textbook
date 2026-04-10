@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 冷却系統と給気系統 — 機関編 | 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <div class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="eng03_fuel_lube.html">&laquo; 第3章 燃料油と潤滑油</a>
+    <a href="eng05_pumps.html">第5章 ポンプの種類と原理 &raquo;</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第4章 冷却系統と給気系統</h1>
+
+  <p>ディーゼル機関では、燃焼室内の温度は<strong>2,000℃以上</strong>に達します。この高温に機関の金属部品がそのまま晒されると、材料の強度が低下して焼損やひずみが発生します。本章では、機関を適切な温度に保つ「冷却系統」と、燃焼に必要な空気を供給する「給気系統」、そして燃焼ガスを排出する「排気系統」について学びます。</p>
+
+  <!-- ===== 4-1 なぜ冷却が必要か ===== -->
+  <h2>4-1 なぜ冷却が必要か</h2>
+
+  <p>ディーゼル機関の燃焼で発生する熱エネルギーのうち、有効な仕事（推進力）に変換されるのは全体の約<strong>40〜45%</strong>に過ぎません。残りの熱は排気ガス、冷却水、潤滑油、放射などで放散されます。</p>
+
+  <h3>冷却が不十分な場合のトラブル</h3>
+  <ul>
+    <li><strong>シリンダライナの過熱:</strong> 潤滑油膜が切れ、ピストンリングの焼付き・固着が発生</li>
+    <li><strong>排気弁の焼損:</strong> 弁座の変形、シール不良によるガス吹き抜け</li>
+    <li><strong>ピストンの焼損:</strong> ピストンクラウンの亀裂、溶損</li>
+    <li><strong>潤滑油の劣化:</strong> 高温で油が酸化し、スラッジが増加</li>
+    <li><strong>材料強度の低下:</strong> 鋳鉄や鋼の引張強度が高温で低下</li>
+  </ul>
+
+  <div class="box box-info">
+    <h4>冷却しすぎも問題</h4>
+    <p>過冷却になると、燃焼温度が下がって不完全燃焼が増え、カーボンの付着やスラッジの生成が促進されます。また、排気ガス中の硫酸が露点以下で結露し、シリンダライナの<strong>低温腐食</strong>を引き起こします。適切な温度管理が重要です。</p>
+  </div>
+
+  <!-- ===== 4-2 冷却方式の種類 ===== -->
+  <h2>4-2 冷却方式の種類</h2>
+
+  <p>船舶用ディーゼル機関の冷却方式は大きく2種類に分かれます。現在の内航船では<strong>間接冷却方式</strong>が主流です。</p>
+
+  <h3>直接冷却方式（海水冷却）</h3>
+  <p>海水を直接シリンダジャケットに通して冷却する方式です。構造が簡単ですが、海水に含まれる塩分やミネラルがスケール（水垢）として付着し、冷却効率の低下や腐食の原因となります。現在はほとんど使われていません。</p>
+
+  <h3>間接冷却方式（清水冷却）</h3>
+  <p>清水（真水）でエンジンを冷却し、その清水を海水で冷やす二重の冷却ループです。エンジン内部には腐食の少ない清水が循環するため、スケールや腐食の問題が大幅に軽減されます。</p>
+
+  <div class="key-point">
+    <p><strong>間接冷却方式 = 2つの冷却ループ</strong><br>
+    (1) <strong>清水ループ（高温側）:</strong> 清水がエンジンのジャケット・シリンダヘッドを冷却 → 清水クーラーで冷却 → 再びエンジンへ<br>
+    (2) <strong>海水ループ（低温側）:</strong> 海水を取り入れ → 清水クーラーで清水の熱を吸収 → 船外に排出</p>
+  </div>
+
+  <!-- ===== 4-3 清水冷却系統 ===== -->
+  <h2>4-3 清水冷却系統の構成</h2>
+
+  <p>清水冷却系統は以下の主要機器で構成されます。</p>
+
+  <h3>主要構成機器</h3>
+  <ul>
+    <li><strong>清水冷却ポンプ:</strong> 清水を強制循環させるポンプ。機関駆動式が多いが、電動独立ポンプもある</li>
+    <li><strong>清水クーラー（熱交換器）:</strong> 海水との間で熱交換を行い、清水の温度を下げる</li>
+    <li><strong>サーモスタット弁（温度調節弁）:</strong> 清水の温度に応じてクーラーへの流量を自動調節し、適正温度を維持する</li>
+    <li><strong>膨張タンク:</strong> 清水の温度変化による体積膨張を吸収し、系統内の圧力を一定に保つ。系統の最高所に設置</li>
+  </ul>
+
+  <!-- SVG: 清水冷却系統図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="max-width:800px; width:100%;">
+      <defs>
+        <marker id="arrowC" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#e53e3e"/>
+        </marker>
+        <marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#2b6cb0"/>
+        </marker>
+        <linearGradient id="hotWater" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#fc8181"/>
+          <stop offset="100%" stop-color="#e53e3e"/>
+        </linearGradient>
+        <linearGradient id="coldWater" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#63b3ed"/>
+          <stop offset="100%" stop-color="#2b6cb0"/>
+        </linearGradient>
+      </defs>
+
+      <rect x="0" y="0" width="800" height="480" fill="#f7fafc" rx="8"/>
+      <text x="400" y="30" text-anchor="middle" class="svg-title" font-size="15">清水冷却系統図（間接冷却方式）</text>
+
+      <!-- ===== 清水ループ ===== -->
+      <text x="50" y="58" font-size="12" fill="#e53e3e" font-weight="bold">清水ループ（高温側）</text>
+
+      <!-- エンジン -->
+      <rect x="300" y="120" width="200" height="100" rx="12" fill="#1a365d" stroke="#2c5282" stroke-width="2"/>
+      <text x="400" y="160" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">主機関</text>
+      <text x="400" y="180" text-anchor="middle" font-size="10" fill="#bee3f8">（シリンダジャケット）</text>
+      <text x="400" y="198" text-anchor="middle" font-size="9" fill="#fc8181">冷却水出口温度: 約80〜85℃</text>
+
+      <!-- エンジンから出る高温水（右上方向） -->
+      <path d="M500,155 L620,155" stroke="url(#hotWater)" stroke-width="4" marker-end="url(#arrowC)" fill="none"/>
+      <line x1="500" y1="158" x2="620" y2="158" stroke="#fc8181" stroke-width="2" stroke-dasharray="8 4" class="animate-flow"/>
+      <text x="560" y="148" text-anchor="middle" font-size="9" fill="#e53e3e">高温清水 →</text>
+
+      <!-- サーモスタット弁 -->
+      <polygon points="640,135 670,155 640,175" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+      <text x="680" y="140" font-size="10" fill="#975a16" font-weight="bold">サーモ</text>
+      <text x="680" y="153" font-size="10" fill="#975a16" font-weight="bold">スタット弁</text>
+
+      <!-- サーモ → クーラーへ分岐 -->
+      <path d="M670,155 L720,155 L720,280" stroke="#e53e3e" stroke-width="3" marker-end="url(#arrowC)" fill="none"/>
+      <line x1="718" y1="155" x2="718" y2="280" stroke="#fc8181" stroke-width="2" stroke-dasharray="8 4" class="animate-flow"/>
+      <text x="740" y="220" font-size="8" fill="#e53e3e" transform="rotate(90,740,220)">冷却水が高温のとき</text>
+
+      <!-- バイパス（温度低い場合） -->
+      <path d="M670,155 L720,155 L720,80 L200,80 L200,170" stroke="#d69e2e" stroke-width="2" stroke-dasharray="6 3" fill="none"/>
+      <text x="460" y="73" text-anchor="middle" font-size="8" fill="#975a16">バイパス（温度が低いとき → クーラーを通さず直接戻る）</text>
+
+      <!-- 清水クーラー -->
+      <rect x="600" y="285" width="150" height="70" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <!-- 内部プレート表現 -->
+      <line x1="625" y1="295" x2="625" y2="345" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="645" y1="295" x2="645" y2="345" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="665" y1="295" x2="665" y2="345" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="685" y1="295" x2="685" y2="345" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="705" y1="295" x2="705" y2="345" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="725" y1="295" x2="725" y2="345" stroke="#a0aec0" stroke-width="1"/>
+      <text x="675" y="310" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="bold">清水クーラー</text>
+      <text x="675" y="328" text-anchor="middle" font-size="9" fill="#718096">（熱交換器）</text>
+      <text x="675" y="348" text-anchor="middle" font-size="8" fill="#2b6cb0">海水で冷却</text>
+
+      <!-- クーラーから出る冷却水（低温） -->
+      <path d="M600,320 L400,320 L400,380 L200,380 L200,180" stroke="#2b6cb0" stroke-width="3" fill="none"/>
+      <line x1="600" y1="318" x2="400" y2="318" stroke="#63b3ed" stroke-width="2" stroke-dasharray="8 4" class="animate-flow"/>
+      <text x="500" y="335" text-anchor="middle" font-size="9" fill="#2b6cb0">← 冷却された清水</text>
+
+      <!-- 清水ポンプ -->
+      <circle cx="200" cy="210" r="28" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="200" y="207" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="bold">清水</text>
+      <text x="200" y="220" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="bold">ポンプ</text>
+      <!-- ポンプからエンジンへ -->
+      <path d="M228,210 L280,170" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowB)" fill="none"/>
+      <line x1="226" y1="208" x2="278" y2="168" stroke="#63b3ed" stroke-width="2" stroke-dasharray="8 4" class="animate-flow"/>
+      <text x="240" y="178" font-size="9" fill="#2b6cb0">入口: 約70〜75℃</text>
+
+      <!-- 膨張タンク -->
+      <rect x="150" y="60" width="100" height="45" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+      <rect x="155" y="80" width="90" height="20" rx="3" fill="#d6bcfa" opacity="0.4"/>
+      <text x="200" y="76" text-anchor="middle" font-size="10" fill="#6b46c1" font-weight="bold">膨張タンク</text>
+      <text x="200" y="95" text-anchor="middle" font-size="8" fill="#9f7aea">系統最高所に設置</text>
+      <line x1="200" y1="105" x2="200" y2="182" stroke="#9f7aea" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+      <!-- ===== 海水ループ ===== -->
+      <text x="50" y="420" font-size="12" fill="#2b6cb0" font-weight="bold">海水ループ（低温側）</text>
+
+      <!-- シーチェスト -->
+      <rect x="50" y="432" width="90" height="35" rx="6" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="95" y="454" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">シーチェスト</text>
+
+      <!-- 海水ポンプ -->
+      <circle cx="220" cy="450" r="22" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="220" y="447" text-anchor="middle" font-size="8" fill="#1a365d" font-weight="bold">海水</text>
+      <text x="220" y="458" text-anchor="middle" font-size="8" fill="#1a365d" font-weight="bold">ポンプ</text>
+      <line x1="140" y1="450" x2="198" y2="450" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowB)"/>
+      <line x1="140" y1="448" x2="198" y2="448" stroke="#63b3ed" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- 海水 → ストレーナ -->
+      <rect x="280" y="435" width="70" height="30" rx="4" fill="#fff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="315" y="454" text-anchor="middle" font-size="9" fill="#1a365d">ストレーナ</text>
+      <line x1="242" y1="450" x2="280" y2="450" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowB)"/>
+
+      <!-- 海水 → クーラー -->
+      <path d="M350,450 L675,450 L675,355" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowB)" fill="none"/>
+      <line x1="350" y1="448" x2="675" y2="448" stroke="#63b3ed" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+      <text x="510" y="443" text-anchor="middle" font-size="9" fill="#2b6cb0">海水 →</text>
+
+      <!-- 海水排出 -->
+      <path d="M675,285 L675,270 L780,270" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrowB)" fill="none"/>
+      <text x="740" y="263" font-size="9" fill="#718096">船外排出</text>
+
+      <!-- 凡例 -->
+      <rect x="20" y="380" width="350" height="30" rx="6" fill="#fff" stroke="#e2e8f0"/>
+      <line x1="35" y1="395" x2="65" y2="395" stroke="#e53e3e" stroke-width="3"/>
+      <text x="72" y="399" font-size="9" fill="#2d3748">高温清水</text>
+      <line x1="140" y1="395" x2="170" y2="395" stroke="#2b6cb0" stroke-width="3"/>
+      <text x="177" y="399" font-size="9" fill="#2d3748">冷却清水/海水</text>
+      <line x1="268" y1="395" x2="298" y2="395" stroke="#d69e2e" stroke-width="2" stroke-dasharray="6 3"/>
+      <text x="305" y="399" font-size="9" fill="#2d3748">バイパス</text>
+    </svg>
+    <div class="caption">図4-1 清水冷却系統図 ── 清水ループと海水ループの2段階で冷却する</div>
+  </div>
+
+  <h3>サーモスタット弁の動作</h3>
+  <p>サーモスタット弁は<strong>ワックス式</strong>が一般的です。内蔵されたワックスが温度上昇で膨張し、弁を開きます。</p>
+  <ul>
+    <li><strong>温度が低いとき:</strong> 弁が閉じ、清水はクーラーを通らずバイパスして直接エンジンに戻る → 暖機運転時に素早く適温に到達</li>
+    <li><strong>温度が高いとき:</strong> 弁が開き、清水はクーラーを通って冷却されてからエンジンに戻る</li>
+    <li><strong>中間温度:</strong> バイパスとクーラー経由の流量を混合して、適正温度（通常80〜85℃）を維持</li>
+  </ul>
+
+  <!-- ===== 4-4 海水冷却系統 ===== -->
+  <h2>4-4 海水冷却系統</h2>
+
+  <p>海水は船底から取り入れ、各種クーラーを冷却した後に船外へ排出します。海水系統は直接海に接するため、腐食対策と異物除去が重要です。</p>
+
+  <h3>主要構成機器</h3>
+
+  <h4>シーチェスト（海水吸入口）</h4>
+  <p>船底に設けられた海水の取り入れ口です。通常、<strong>高位</strong>と<strong>低位</strong>の2か所があり、喫水の変化や荒天時に切り替えて使用します。格子状のストレーナで大きなゴミや海藻の侵入を防ぎます。</p>
+
+  <h4>海水ストレーナ</h4>
+  <p>シーチェストの格子では防げない細かい異物を除去するフィルターです。定期的にエレメントを清掃して、流量低下を防ぎます。</p>
+
+  <h4>海水ポンプ</h4>
+  <p>遠心式が一般的です。インペラ（羽根車）の材質は、海水による腐食に強い<strong>アルミ青銅</strong>や<strong>ステンレス</strong>が使用されます。</p>
+
+  <!-- SVG: 海水系統図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 320" xmlns="http://www.w3.org/2000/svg" style="max-width:750px; width:100%;">
+      <defs>
+        <marker id="arrowSW" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#2b6cb0"/>
+        </marker>
+        <pattern id="waves" patternUnits="userSpaceOnUse" width="40" height="10">
+          <path d="M0,5 Q10,0 20,5 T40,5" fill="none" stroke="#bee3f8" stroke-width="1"/>
+        </pattern>
+      </defs>
+
+      <rect x="0" y="0" width="750" height="320" fill="#f7fafc" rx="8"/>
+      <text x="375" y="28" text-anchor="middle" class="svg-title" font-size="15">海水冷却系統の概要</text>
+
+      <!-- 海面表現 -->
+      <rect x="0" y="250" width="120" height="70" fill="#ebf8ff" rx="0"/>
+      <rect x="0" y="250" width="120" height="70" fill="url(#waves)" rx="0"/>
+      <text x="60" y="290" text-anchor="middle" font-size="10" fill="#2b6cb0">海水</text>
+
+      <!-- 船体断面 -->
+      <path d="M100,250 L100,200 L130,180 L130,250" fill="#e2e8f0" stroke="#718096" stroke-width="2"/>
+      <text x="115" y="240" text-anchor="middle" font-size="8" fill="#718096">船底</text>
+
+      <!-- シーチェスト（高位） -->
+      <rect x="105" y="195" width="20" height="15" fill="#63b3ed" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="155" y="198" font-size="9" fill="#1a365d">高位シーチェスト</text>
+
+      <!-- シーチェスト（低位） -->
+      <rect x="105" y="230" width="20" height="15" fill="#63b3ed" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="155" y="234" font-size="9" fill="#1a365d">低位シーチェスト</text>
+
+      <!-- 海水取入れライン -->
+      <path d="M125,202 L180,202 L180,140" stroke="#2b6cb0" stroke-width="3" fill="none"/>
+      <path d="M125,237 L170,237 L170,140 L180,140" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="4 2" fill="none"/>
+
+      <!-- 海水ストレーナ -->
+      <rect x="165" y="100" width="60" height="35" rx="6" fill="#fff" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="180" y1="107" x2="180" y2="128" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="190" y1="107" x2="190" y2="128" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="200" y1="107" x2="200" y2="128" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="210" y1="107" x2="210" y2="128" stroke="#a0aec0" stroke-width="1"/>
+      <text x="195" y="120" text-anchor="middle" font-size="9" fill="#1a365d">ストレーナ</text>
+
+      <!-- 海水ポンプ -->
+      <circle cx="290" cy="118" r="25" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="290" y="115" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="bold">海水</text>
+      <text x="290" y="127" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="bold">ポンプ</text>
+      <line x1="225" y1="118" x2="265" y2="118" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowSW)"/>
+      <line x1="225" y1="116" x2="265" y2="116" stroke="#63b3ed" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- 分岐先: 各クーラー -->
+      <line x1="315" y1="118" x2="370" y2="118" stroke="#2b6cb0" stroke-width="3"/>
+      <line x1="315" y1="116" x2="370" y2="116" stroke="#63b3ed" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- 清水クーラー -->
+      <line x1="370" y1="118" x2="370" y2="65" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arrowSW)"/>
+      <rect x="340" y="42" width="100" height="28" rx="4" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="390" y="60" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="bold">清水クーラー</text>
+
+      <!-- 潤滑油クーラー -->
+      <line x1="370" y1="118" x2="490" y2="118" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="490" y1="118" x2="490" y2="65" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arrowSW)"/>
+      <rect x="455" y="42" width="110" height="28" rx="4" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="510" y="60" text-anchor="middle" font-size="9" fill="#276749" font-weight="bold">潤滑油クーラー</text>
+
+      <!-- その他クーラー -->
+      <line x1="490" y1="118" x2="610" y2="118" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="610" y1="118" x2="610" y2="65" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arrowSW)"/>
+      <rect x="572" y="42" width="115" height="28" rx="4" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+      <text x="630" y="60" text-anchor="middle" font-size="9" fill="#6b46c1" font-weight="bold">その他のクーラー</text>
+      <text x="630" y="38" text-anchor="middle" font-size="8" fill="#718096">（給気冷却器など）</text>
+
+      <!-- 排出集合管 -->
+      <path d="M440,55 L440,42 L440,35 L680,35 L680,155 L720,155" stroke="#a0aec0" stroke-width="2" fill="none"/>
+      <path d="M565,55 L565,35" stroke="#a0aec0" stroke-width="2" fill="none"/>
+      <path d="M680,55 L680,35" stroke="#a0aec0" stroke-width="2" fill="none"/>
+      <text x="720" y="150" font-size="10" fill="#718096" font-weight="bold">船外排出</text>
+      <text x="720" y="168" font-size="8" fill="#a0aec0">（オーバーボード）</text>
+
+      <!-- 凡例・注記 -->
+      <text x="200" y="280" font-size="10" fill="#1a365d" font-weight="bold">内航船の海水系統 注意点:</text>
+      <text x="200" y="296" font-size="9" fill="#2d3748">- シーチェストの貝殻除去（ドック時に清掃）</text>
+      <text x="200" y="310" font-size="9" fill="#2d3748">- ストレーナの定期清掃（差圧監視）</text>
+      <text x="500" y="296" font-size="9" fill="#2d3748">- 海水ポンプのインペラ摩耗点検</text>
+      <text x="500" y="310" font-size="9" fill="#2d3748">- 亜鉛板（犠牲陽極）の交換</text>
+    </svg>
+    <div class="caption">図4-2 海水冷却系統 ── シーチェストから取水し、各クーラーを冷やして船外へ排出</div>
+  </div>
+
+  <div class="box box-warning">
+    <h4>実務: シーチェストの管理</h4>
+    <p>シーチェストには海洋生物（フジツボ、ムール貝など）が付着し、流量が低下することがあります。入渠（ドック）時には必ず清掃します。航行中に冷却水温度が異常に上昇した場合、まずシーチェストやストレーナの詰まりを疑いましょう。</p>
+  </div>
+
+  <!-- ===== 4-5 冷却水の管理 ===== -->
+  <h2>4-5 冷却水の管理</h2>
+
+  <p>清水冷却系統の水質管理は、機関の寿命に直結する重要な作業です。</p>
+
+  <h3>防食剤（インヒビター）</h3>
+  <p>清水に<strong>防食剤</strong>を添加し、ジャケット内面やシリンダライナの腐食を防ぎます。代表的な防食剤には亜硝酸塩系やモリブデン酸塩系があります。定期的に濃度を測定し、適正値に維持します。</p>
+
+  <h3>冷却水の管理項目</h3>
+  <table>
+    <thead>
+      <tr><th>項目</th><th>管理基準（一般的な目安）</th><th>問題となる場合</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>pH</td><td>8.0〜9.5（弱アルカリ性）</td><td>pH低下 → 酸性腐食の恐れ</td></tr>
+      <tr><td>防食剤濃度</td><td>メーカー指定値</td><td>低下 → 防食効果が不足</td></tr>
+      <tr><td>塩分（塩素イオン）</td><td>50 ppm以下</td><td>上昇 → 海水混入の疑い</td></tr>
+      <tr><td>硬度</td><td>低い方がよい</td><td>高硬度 → スケール付着</td></tr>
+      <tr><td>冷却水温度</td><td>出口で80〜85℃</td><td>異常高温/低温 → 系統トラブル</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p><strong>海水混入に注意:</strong> 冷却水の塩分が急に上昇した場合、清水クーラーの管（チューブ）に亀裂や穴が発生して海水が混入している可能性があります。発見した場合は速やかにクーラーの点検・修理を行い、冷却水を全量交換して防食剤を再添加します。</p>
+  </div>
+
+  <!-- ===== 4-6 給気系統 ===== -->
+  <h2>4-6 給気系統</h2>
+
+  <p>ディーゼル機関の出力を上げるには、より多くの燃料を燃やす必要があり、そのためにはより多くの空気（酸素）が必要です。<strong>過給機（ターボチャージャー）</strong>は排気ガスのエネルギーを利用して空気を圧縮し、シリンダに大量の空気を送り込む装置です。</p>
+
+  <h3>過給の仕組み</h3>
+  <ol>
+    <li>排気ガスが<strong>タービン</strong>（排気側の羽根車）を回転させる</li>
+    <li>タービンと同軸の<strong>コンプレッサー</strong>（吸気側の羽根車）が回転する</li>
+    <li>コンプレッサーが外気を吸い込み、圧縮して高圧の空気をつくる</li>
+    <li>圧縮された空気は<strong>インタークーラー（給気冷却器）</strong>で冷却される</li>
+    <li>冷却された高密度の空気がシリンダに送られる</li>
+  </ol>
+
+  <div class="box box-info">
+    <h4>なぜ圧縮空気を冷却するのか？</h4>
+    <p>空気を圧縮すると温度が上昇します（約150〜200℃）。高温の空気は密度が低く、同じ体積でも含まれる酸素量が少なくなります。インタークーラーで冷却することで空気密度を高め、より多くの酸素をシリンダに送り込めるため、燃焼効率と出力が向上します。</p>
+  </div>
+
+  <!-- SVG: 給排気系統図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" style="max-width:800px; width:100%;">
+      <defs>
+        <marker id="arrowA" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#38a169"/>
+        </marker>
+        <marker id="arrowE" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#e53e3e"/>
+        </marker>
+        <linearGradient id="airGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#bee3f8"/>
+          <stop offset="100%" stop-color="#38a169"/>
+        </linearGradient>
+        <linearGradient id="exhaustGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#e53e3e"/>
+          <stop offset="100%" stop-color="#718096"/>
+        </linearGradient>
+      </defs>
+
+      <rect x="0" y="0" width="800" height="420" fill="#f7fafc" rx="8"/>
+      <text x="400" y="28" text-anchor="middle" class="svg-title" font-size="15">給排気系統図（過給機付きディーゼル機関）</text>
+
+      <!-- 外気取入口 -->
+      <rect x="20" y="100" width="80" height="50" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+      <text x="60" y="122" text-anchor="middle" font-size="10" fill="#276749" font-weight="bold">外気</text>
+      <text x="60" y="137" text-anchor="middle" font-size="9" fill="#276749">（機関室内）</text>
+
+      <!-- エアフィルター -->
+      <rect x="130" y="107" width="55" height="36" rx="4" fill="#fff" stroke="#38a169" stroke-width="1.5"/>
+      <text x="158" y="122" text-anchor="middle" font-size="8" fill="#276749">エア</text>
+      <text x="158" y="133" text-anchor="middle" font-size="8" fill="#276749">フィルター</text>
+      <line x1="100" y1="125" x2="130" y2="125" stroke="#38a169" stroke-width="3" marker-end="url(#arrowA)"/>
+
+      <!-- 過給機 -->
+      <rect x="220" y="60" width="180" height="130" rx="12" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="310" y="82" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">過給機（ターボチャージャー）</text>
+
+      <!-- コンプレッサー側 -->
+      <circle cx="270" cy="135" r="30" fill="#d6f5d6" stroke="#38a169" stroke-width="2"/>
+      <text x="270" y="131" text-anchor="middle" font-size="9" fill="#276749" font-weight="bold">コンプ</text>
+      <text x="270" y="143" text-anchor="middle" font-size="9" fill="#276749" font-weight="bold">レッサー</text>
+      <!-- 回転アニメーション -->
+      <g transform-origin="270 135" class="animate-rotate" opacity="0.5">
+        <line x1="270" y1="108" x2="270" y2="112" stroke="#38a169" stroke-width="2"/>
+        <line x1="297" y1="135" x2="293" y2="135" stroke="#38a169" stroke-width="2"/>
+        <line x1="270" y1="162" x2="270" y2="158" stroke="#38a169" stroke-width="2"/>
+        <line x1="243" y1="135" x2="247" y2="135" stroke="#38a169" stroke-width="2"/>
+      </g>
+
+      <!-- タービン側 -->
+      <circle cx="350" cy="135" r="30" fill="#fed7d7" stroke="#e53e3e" stroke-width="2"/>
+      <text x="350" y="131" text-anchor="middle" font-size="9" fill="#c53030" font-weight="bold">タービン</text>
+      <text x="350" y="143" text-anchor="middle" font-size="9" fill="#c53030" font-weight="bold">（排気側）</text>
+      <g transform-origin="350 135" class="animate-rotate" opacity="0.5">
+        <line x1="350" y1="108" x2="350" y2="112" stroke="#e53e3e" stroke-width="2"/>
+        <line x1="377" y1="135" x2="373" y2="135" stroke="#e53e3e" stroke-width="2"/>
+        <line x1="350" y1="162" x2="350" y2="158" stroke="#e53e3e" stroke-width="2"/>
+        <line x1="323" y1="135" x2="327" y2="135" stroke="#e53e3e" stroke-width="2"/>
+      </g>
+
+      <!-- 同軸接続 -->
+      <rect x="295" y="130" width="20" height="10" rx="2" fill="#718096"/>
+      <text x="310" y="120" text-anchor="middle" font-size="8" fill="#718096">同軸</text>
+
+      <!-- フィルター → コンプレッサー -->
+      <line x1="185" y1="125" x2="240" y2="130" stroke="#38a169" stroke-width="3" marker-end="url(#arrowA)"/>
+      <line x1="185" y1="123" x2="240" y2="128" stroke="#bee3f8" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- コンプレッサー → インタークーラー -->
+      <path d="M270,165 L270,230" stroke="#38a169" stroke-width="3" marker-end="url(#arrowA)" fill="none"/>
+      <line x1="268" y1="165" x2="268" y2="230" stroke="#c6f6d5" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+      <text x="290" y="200" font-size="9" fill="#38a169">圧縮空気</text>
+      <text x="290" y="212" font-size="8" fill="#718096">（約150〜200℃）</text>
+
+      <!-- インタークーラー -->
+      <rect x="220" y="235" width="100" height="50" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="237" y1="245" x2="237" y2="275" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="252" y1="245" x2="252" y2="275" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="267" y1="245" x2="267" y2="275" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="282" y1="245" x2="282" y2="275" stroke="#a0aec0" stroke-width="1"/>
+      <line x1="297" y1="245" x2="297" y2="275" stroke="#a0aec0" stroke-width="1"/>
+      <text x="270" y="257" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">インター</text>
+      <text x="270" y="272" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">クーラー</text>
+      <text x="210" y="265" text-anchor="end" font-size="8" fill="#2b6cb0">海水で冷却</text>
+
+      <!-- インタークーラー → 給気管 -->
+      <path d="M270,285 L270,320 L450,320" stroke="#38a169" stroke-width="3" marker-end="url(#arrowA)" fill="none"/>
+      <line x1="268" y1="285" x2="268" y2="320" stroke="#c6f6d5" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+      <text x="360" y="314" text-anchor="middle" font-size="9" fill="#38a169">冷却された給気</text>
+      <text x="360" y="335" text-anchor="middle" font-size="8" fill="#718096">（約40〜50℃）</text>
+
+      <!-- 給気マニホールド → シリンダ -->
+      <rect x="450" y="250" width="60" height="140" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="480" y="310" text-anchor="middle" font-size="9" fill="#276749" font-weight="bold" transform="rotate(-90,480,310)">給気マニホールド</text>
+
+      <!-- シリンダ群 -->
+      <rect x="540" y="240" width="140" height="160" rx="10" fill="#1a365d" stroke="#2c5282" stroke-width="2"/>
+      <text x="610" y="280" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">シリンダ</text>
+      <text x="610" y="300" text-anchor="middle" font-size="10" fill="#bee3f8">（燃焼室）</text>
+      <!-- 給気入り -->
+      <line x1="510" y1="300" x2="540" y2="300" stroke="#38a169" stroke-width="3" marker-end="url(#arrowA)"/>
+      <line x1="510" y1="298" x2="540" y2="298" stroke="#c6f6d5" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+      <!-- 排気出口 -->
+      <text x="610" y="330" text-anchor="middle" font-size="10" fill="#fc8181">燃焼温度: 約2,000℃</text>
+
+      <!-- 排気マニホールド -->
+      <rect x="540" y="150" width="140" height="40" rx="6" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="610" y="174" text-anchor="middle" font-size="10" fill="#c53030" font-weight="bold">排気マニホールド</text>
+      <!-- シリンダ → 排気マニホールド -->
+      <line x1="610" y1="240" x2="610" y2="190" stroke="#e53e3e" stroke-width="3" marker-end="url(#arrowE)"/>
+      <line x1="608" y1="240" x2="608" y2="190" stroke="#fc8181" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+      <text x="630" y="220" font-size="8" fill="#e53e3e">排気ガス↑</text>
+
+      <!-- 排気マニホールド → タービン -->
+      <line x1="540" y1="170" x2="380" y2="145" stroke="#e53e3e" stroke-width="3" marker-end="url(#arrowE)"/>
+      <line x1="540" y1="168" x2="380" y2="143" stroke="#fc8181" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+      <text x="470" y="146" font-size="8" fill="#e53e3e">排気 → タービンへ</text>
+
+      <!-- タービン出口 → 排気管 -->
+      <path d="M350,105 L350,55 L700,55" stroke="#718096" stroke-width="3" marker-end="url(#arrowE)" fill="none"/>
+      <line x1="350" y1="53" x2="700" y2="53" stroke="#a0aec0" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- 排ガスエコノマイザ（省略表示） -->
+      <rect x="620" y="40" width="80" height="30" rx="4" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="660" y="57" text-anchor="middle" font-size="8" fill="#975a16">排ガスエコノマイザ</text>
+      <text x="660" y="38" text-anchor="middle" font-size="7" fill="#718096">（あれば）</text>
+
+      <!-- サイレンサー・ファンネル -->
+      <rect x="720" y="35" width="60" height="40" rx="6" fill="#e2e8f0" stroke="#718096" stroke-width="1.5"/>
+      <text x="750" y="52" text-anchor="middle" font-size="8" fill="#718096">サイレンサー</text>
+      <text x="750" y="65" text-anchor="middle" font-size="8" fill="#718096">→ 煙突へ</text>
+
+      <!-- 凡例 -->
+      <rect x="20" y="380" width="350" height="30" rx="6" fill="#fff" stroke="#e2e8f0"/>
+      <line x1="35" y1="395" x2="65" y2="395" stroke="#38a169" stroke-width="3"/>
+      <text x="72" y="399" font-size="9" fill="#2d3748">給気（空気）</text>
+      <line x1="160" y1="395" x2="190" y2="395" stroke="#e53e3e" stroke-width="3"/>
+      <text x="197" y="399" font-size="9" fill="#2d3748">排気ガス</text>
+      <line x1="268" y1="395" x2="298" y2="395" stroke="#718096" stroke-width="2"/>
+      <text x="305" y="399" font-size="9" fill="#2d3748">排気（冷却後）</text>
+    </svg>
+    <div class="caption">図4-3 給排気系統図 ── 過給機で圧縮された空気がインタークーラーで冷却されシリンダへ送られる</div>
+  </div>
+
+  <!-- ===== 4-7 排気系統 ===== -->
+  <h2>4-7 排気系統</h2>
+
+  <p>シリンダ内で燃焼したガスは高温・高圧のまま排出され、以下の経路を辿ります。</p>
+
+  <ol>
+    <li><strong>排気弁:</strong> 排気行程で開き、燃焼ガスをシリンダ外へ排出</li>
+    <li><strong>排気マニホールド:</strong> 各シリンダからの排気を集合させる管</li>
+    <li><strong>過給機タービン:</strong> 排気エネルギーでタービンを回転させる（エネルギー回収）</li>
+    <li><strong>排気管:</strong> タービン通過後の排気を煙突へ導く</li>
+    <li><strong>排ガスエコノマイザ（あれば）:</strong> 排気の余熱で蒸気やお湯をつくる</li>
+    <li><strong>サイレンサー（消音器）:</strong> 排気音を低減</li>
+    <li><strong>煙突（ファンネル）:</strong> 排気を大気中に放出</li>
+  </ol>
+
+  <div class="box box-warning">
+    <h4>排気管の火災（ファンネルファイア）</h4>
+    <p>排気管内部にカーボン（すす）が堆積すると、高温時に着火して排気管火災が発生することがあります。これを<strong>ファンネルファイア</strong>と呼びます。定期的なすす吹き（スートブロー）や排気管のドレン抜きで予防します。煙突から火の粉が出た場合は、速やかに機関出力を下げ、消火対応を行います。</p>
+  </div>
+
+  <!-- ===== 4-8 排ガスエコノマイザ ===== -->
+  <h2>4-8 排ガスエコノマイザの概要</h2>
+
+  <p>排ガスエコノマイザは、排気ガスの余熱を利用して温水や蒸気を生成する<strong>廃熱回収装置</strong>です。排気ガスの温度は過給機タービンを出た後でもまだ<strong>250〜350℃</strong>程度あり、この熱を有効活用します。</p>
+
+  <h3>用途</h3>
+  <ul>
+    <li>燃料油の加温（C重油使用船の場合）</li>
+    <li>居住区の暖房・給湯</li>
+    <li>カーゴタンクの加温（タンカーの場合）</li>
+    <li>補助ボイラーの負荷軽減</li>
+  </ul>
+
+  <p>航海中は主機関が連続運転しているため排気ガスの熱が利用でき、ボイラーの燃料消費を削減できます。ただし、停泊中は主機関が停止しているため、補助ボイラーに切り替えます。</p>
+
+  <!-- ===== 4-9 清水冷却器の構造 ===== -->
+  <h2>4-9 清水冷却器の構造</h2>
+
+  <p>清水クーラー（熱交換器）には主に2つの型式があります。</p>
+
+  <h3>プレート式熱交換器</h3>
+  <p>波型に成形された薄い金属板（プレート）を多数重ねた構造です。プレート間の交互の隙間に清水と海水を流して熱交換します。</p>
+  <ul>
+    <li><strong>利点:</strong> 小型で伝熱効率が高い。プレートの追加・交換が容易</li>
+    <li><strong>欠点:</strong> ガスケット（パッキン）の劣化により漏れが発生しやすい</li>
+    <li>内航船では主流の型式</li>
+  </ul>
+
+  <h3>シェルアンドチューブ式熱交換器</h3>
+  <p>円筒形の外殻（シェル）の中に多数の細管（チューブ）を束ねた構造です。チューブ内に一方の流体、シェル側にもう一方の流体を流して熱交換します。</p>
+  <ul>
+    <li><strong>利点:</strong> 頑丈で高圧に耐える。チューブの部分補修が可能</li>
+    <li><strong>欠点:</strong> プレート式に比べて大型。掃除がやや面倒</li>
+    <li>大型船や高圧系統で採用されることが多い</li>
+  </ul>
+
+  <!-- SVG: 熱交換器の比較断面図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" style="max-width:800px; width:100%;">
+      <rect x="0" y="0" width="800" height="360" fill="#f7fafc" rx="8"/>
+      <text x="400" y="28" text-anchor="middle" class="svg-title" font-size="15">熱交換器の構造比較</text>
+
+      <!-- ===== プレート式（左） ===== -->
+      <text x="200" y="55" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="bold">プレート式</text>
+
+      <!-- 外枠 -->
+      <rect x="80" y="70" width="240" height="200" rx="4" fill="#e2e8f0" stroke="#718096" stroke-width="2"/>
+
+      <!-- プレート群 -->
+      <g>
+        <!-- プレート1 -->
+        <path d="M120,80 Q130,100 120,120 Q130,140 120,160 Q130,180 120,200 Q130,220 120,240 Q130,260 120,265" fill="none" stroke="#718096" stroke-width="2"/>
+        <!-- プレート2 -->
+        <path d="M160,80 Q170,100 160,120 Q170,140 160,160 Q170,180 160,200 Q170,220 160,240 Q170,260 160,265" fill="none" stroke="#718096" stroke-width="2"/>
+        <!-- プレート3 -->
+        <path d="M200,80 Q210,100 200,120 Q210,140 200,160 Q210,180 200,200 Q210,220 200,240 Q210,260 200,265" fill="none" stroke="#718096" stroke-width="2"/>
+        <!-- プレート4 -->
+        <path d="M240,80 Q250,100 240,120 Q250,140 240,160 Q250,180 240,200 Q250,220 240,240 Q250,260 240,265" fill="none" stroke="#718096" stroke-width="2"/>
+        <!-- プレート5 -->
+        <path d="M280,80 Q290,100 280,120 Q290,140 280,160 Q290,180 280,200 Q290,220 280,240 Q290,260 280,265" fill="none" stroke="#718096" stroke-width="2"/>
+      </g>
+
+      <!-- 清水の流れ（赤系、奇数隙間: 下→上） -->
+      <line x1="140" y1="260" x2="140" y2="85" stroke="#e53e3e" stroke-width="3" stroke-dasharray="6 4" class="animate-flow"/>
+      <line x1="220" y1="260" x2="220" y2="85" stroke="#e53e3e" stroke-width="3" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- 海水の流れ（青系、偶数隙間: 上→下） -->
+      <line x1="180" y1="85" x2="180" y2="260" stroke="#2b6cb0" stroke-width="3" stroke-dasharray="6 4" class="animate-flow"/>
+      <line x1="260" y1="85" x2="260" y2="260" stroke="#2b6cb0" stroke-width="3" stroke-dasharray="6 4" class="animate-flow"/>
+
+      <!-- ラベル -->
+      <rect x="85" y="275" width="70" height="18" rx="3" fill="#fc8181" opacity="0.3"/>
+      <text x="120" y="288" text-anchor="middle" font-size="9" fill="#e53e3e">清水（高温）</text>
+      <rect x="230" y="275" width="70" height="18" rx="3" fill="#63b3ed" opacity="0.3"/>
+      <text x="265" y="288" text-anchor="middle" font-size="9" fill="#2b6cb0">海水（低温）</text>
+
+      <text x="200" y="315" text-anchor="middle" font-size="9" fill="#718096">プレート間を交互に流れて</text>
+      <text x="200" y="330" text-anchor="middle" font-size="9" fill="#718096">効率よく熱交換する</text>
+
+      <!-- ===== シェルアンドチューブ式（右） ===== -->
+      <text x="600" y="55" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="bold">シェルアンドチューブ式</text>
+
+      <!-- シェル（外殻） -->
+      <ellipse cx="600" cy="100" rx="120" ry="25" fill="#e2e8f0" stroke="#718096" stroke-width="2"/>
+      <rect x="480" y="100" width="240" height="160" fill="#e2e8f0" stroke="#718096" stroke-width="2"/>
+      <ellipse cx="600" cy="260" rx="120" ry="25" fill="#d6d6d6" stroke="#718096" stroke-width="2"/>
+      <!-- シェル側面の継ぎ -->
+      <line x1="480" y1="100" x2="480" y2="260" stroke="#718096" stroke-width="2"/>
+      <line x1="720" y1="100" x2="720" y2="260" stroke="#718096" stroke-width="2"/>
+
+      <!-- チューブ群 -->
+      <line x1="520" y1="78" x2="520" y2="282" stroke="#e53e3e" stroke-width="3"/>
+      <line x1="555" y1="78" x2="555" y2="282" stroke="#e53e3e" stroke-width="3"/>
+      <line x1="590" y1="78" x2="590" y2="282" stroke="#e53e3e" stroke-width="3"/>
+      <line x1="625" y1="78" x2="625" y2="282" stroke="#e53e3e" stroke-width="3"/>
+      <line x1="660" y1="78" x2="660" y2="282" stroke="#e53e3e" stroke-width="3"/>
+      <line x1="695" y1="78" x2="695" y2="282" stroke="#e53e3e" stroke-width="3"/>
+
+      <!-- チューブ内の流れ（清水: 上→下） -->
+      <line x1="518" y1="82" x2="518" y2="278" stroke="#fc8181" stroke-width="1.5" stroke-dasharray="5 3" class="animate-flow"/>
+      <line x1="553" y1="82" x2="553" y2="278" stroke="#fc8181" stroke-width="1.5" stroke-dasharray="5 3" class="animate-flow"/>
+      <line x1="588" y1="82" x2="588" y2="278" stroke="#fc8181" stroke-width="1.5" stroke-dasharray="5 3" class="animate-flow"/>
+      <line x1="623" y1="82" x2="623" y2="278" stroke="#fc8181" stroke-width="1.5" stroke-dasharray="5 3" class="animate-flow"/>
+      <line x1="658" y1="82" x2="658" y2="278" stroke="#fc8181" stroke-width="1.5" stroke-dasharray="5 3" class="animate-flow"/>
+      <line x1="693" y1="82" x2="693" y2="278" stroke="#fc8181" stroke-width="1.5" stroke-dasharray="5 3" class="animate-flow"/>
+
+      <!-- シェル側の流れ表示（海水: ジグザグ） -->
+      <path d="M485,130 L715,160 L485,190 L715,220 L485,250" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="8 4" class="animate-flow"/>
+
+      <!-- 入出口ラベル -->
+      <text x="475" y="125" text-anchor="end" font-size="9" fill="#2b6cb0">海水入口→</text>
+      <text x="475" y="255" text-anchor="end" font-size="9" fill="#2b6cb0">←海水出口</text>
+      <text x="600" y="75" text-anchor="middle" font-size="9" fill="#e53e3e">清水入口↓（チューブ内）</text>
+      <text x="600" y="300" text-anchor="middle" font-size="9" fill="#e53e3e">↓清水出口</text>
+
+      <text x="600" y="325" text-anchor="middle" font-size="9" fill="#718096">チューブ内を清水、シェル側を</text>
+      <text x="600" y="340" text-anchor="middle" font-size="9" fill="#718096">海水が流れて熱交換する</text>
+    </svg>
+    <div class="caption">図4-4 熱交換器の構造比較 ── プレート式（左）とシェルアンドチューブ式（右）</div>
+  </div>
+
+  <!-- ===== 4-10 冷却水温度異常時の対応 ===== -->
+  <h2>4-10 実務: 冷却水温度異常時の対応手順</h2>
+
+  <p>冷却水温度の異常上昇は、放置すると重大な機関損傷につながります。以下の手順で対応します。</p>
+
+  <h3>温度上昇時の確認手順</h3>
+  <div class="box box-danger">
+    <h4>緊急対応フロー</h4>
+    <ol>
+      <li><strong>警報確認:</strong> どの系統（清水/海水）のどの温度計が異常値を示しているか確認</li>
+      <li><strong>機関出力の低下:</strong> 発熱量を減らすため、回転数を下げる</li>
+      <li><strong>海水系統の確認:</strong>
+        <ul>
+          <li>海水ポンプは正常に作動しているか（圧力計確認）</li>
+          <li>海水ストレーナが詰まっていないか → 詰まりがあれば切替・清掃</li>
+          <li>シーチェストの弁が全開か確認</li>
+        </ul>
+      </li>
+      <li><strong>清水系統の確認:</strong>
+        <ul>
+          <li>清水ポンプは正常か（圧力計、異音確認）</li>
+          <li>サーモスタット弁は正しく動作しているか</li>
+          <li>膨張タンクの水位は適正か（清水不足でないか）</li>
+          <li>清水クーラーの性能低下がないか</li>
+        </ul>
+      </li>
+      <li><strong>原因特定と処置:</strong> 原因を特定し、修理・清掃等を実施</li>
+      <li><strong>報告:</strong> 機関長および船長に状況と対応を報告。航海日誌・機関日誌に記録</li>
+    </ol>
+  </div>
+
+  <h3>よくある原因と対策</h3>
+  <table>
+    <thead>
+      <tr><th>原因</th><th>症状</th><th>対策</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>海水ストレーナの詰まり</td>
+        <td>海水圧力低下、清水温度上昇</td>
+        <td>ストレーナを切替えて清掃</td>
+      </tr>
+      <tr>
+        <td>海水ポンプのインペラ摩耗</td>
+        <td>海水流量低下（圧力低下）</td>
+        <td>インペラの交換</td>
+      </tr>
+      <tr>
+        <td>清水クーラーの汚損</td>
+        <td>冷却効率低下、温度差が大きい</td>
+        <td>クーラーの開放清掃</td>
+      </tr>
+      <tr>
+        <td>サーモスタット弁の故障</td>
+        <td>温度が安定しない、バイパス固定</td>
+        <td>弁の交換</td>
+      </tr>
+      <tr>
+        <td>清水の不足</td>
+        <td>膨張タンク水位低下</td>
+        <td>清水の補給、漏洩箇所の調査</td>
+      </tr>
+      <tr>
+        <td>シーチェストの生物付着</td>
+        <td>海水流量の全体的な低下</td>
+        <td>入渠時に清掃（航海中は高位/低位切替）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p><strong>温度異常は「まず海水側から確認」が基本です。</strong>内航船の冷却トラブルの多くは海水系統に起因します。ストレーナの詰まりが最も多い原因であり、差圧計の日常チェックが予防につながります。清水側の問題は、防食剤の管理不良によるスケール蓄積や、クーラーの海水リークが代表的です。</p>
+  </div>
+
+  <!-- ===== クイズ ===== -->
+  <div class="quiz">
+    <h4>章末確認クイズ</h4>
+
+    <h4>Q1. 現在の内航船で主流の冷却方式はどれですか？</h4>
+    <ul class="quiz-options">
+      <li>A. 直接冷却方式（海水をエンジンに直接通す）</li>
+      <li>B. 間接冷却方式（清水でエンジンを冷却し、海水で清水を冷やす）</li>
+      <li>C. 空冷方式（空気で冷却する）</li>
+    </ul>
+    <button onclick="showAnswer('ans4-1')" style="margin:0.5rem 0; padding:0.4rem 1rem; border-radius:6px; border:1px solid #9f7aea; background:#faf5ff; cursor:pointer;">解答を見る</button>
+    <div id="ans4-1" class="quiz-answer">
+      <p><strong>正解: B. 間接冷却方式</strong></p>
+      <p>清水でエンジンを冷却し、その清水を海水で冷やす二重のループです。エンジン内部に海水を通さないため、塩分による腐食やスケールの問題が大幅に軽減されます。</p>
+    </div>
+
+    <h4 style="margin-top:1.5rem;">Q2. 過給機のインタークーラーの役割として正しいものはどれですか？</h4>
+    <ul class="quiz-options">
+      <li>A. 排気ガスの温度を下げる</li>
+      <li>B. 圧縮された給気を冷却して密度を高め、酸素量を増やす</li>
+      <li>C. 潤滑油の温度を調整する</li>
+    </ul>
+    <button onclick="showAnswer('ans4-2')" style="margin:0.5rem 0; padding:0.4rem 1rem; border-radius:6px; border:1px solid #9f7aea; background:#faf5ff; cursor:pointer;">解答を見る</button>
+    <div id="ans4-2" class="quiz-answer">
+      <p><strong>正解: B. 圧縮された給気を冷却して密度を高め、酸素量を増やす</strong></p>
+      <p>コンプレッサーで圧縮された空気は150〜200℃に上昇しています。インタークーラーで40〜50℃程度まで冷却することで空気密度が高まり、同じ体積でもより多くの酸素がシリンダに入ります。これにより燃焼効率と機関出力が向上します。</p>
+    </div>
+
+    <h4 style="margin-top:1.5rem;">Q3. 冷却水温度が異常上昇したとき、最初に確認すべきはどこですか？</h4>
+    <ul class="quiz-options">
+      <li>A. 潤滑油系統</li>
+      <li>B. 燃料油系統</li>
+      <li>C. 海水系統（ストレーナ、海水ポンプ、シーチェスト）</li>
+    </ul>
+    <button onclick="showAnswer('ans4-3')" style="margin:0.5rem 0; padding:0.4rem 1rem; border-radius:6px; border:1px solid #9f7aea; background:#faf5ff; cursor:pointer;">解答を見る</button>
+    <div id="ans4-3" class="quiz-answer">
+      <p><strong>正解: C. 海水系統</strong></p>
+      <p>内航船の冷却トラブルの多くは海水系統に起因します。特にストレーナの詰まりが最も多い原因です。まず海水系統の圧力・流量を確認し、ストレーナの詰まり、ポンプの異常、シーチェストの弁の状態を確認します。</p>
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="eng03_fuel_lube.html">&laquo; 第3章 燃料油と潤滑油</a>
+    <a href="eng05_pumps.html">第5章 ポンプの種類と原理 &raquo;</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

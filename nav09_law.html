@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第9章: 港則法と海上交通安全法 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@keyframes ship-move {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(60px, 0); }
+  100% { transform: translate(120px, 0); }
+}
+@keyframes ship-move-reverse {
+  0% { transform: translate(120px, 0); }
+  50% { transform: translate(60px, 0); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes tide-arrow {
+  0% { opacity: 0.3; transform: translateX(-5px); }
+  50% { opacity: 1; transform: translateX(5px); }
+  100% { opacity: 0.3; transform: translateX(-5px); }
+}
+@keyframes blink-signal {
+  0%, 100% { fill: #e53e3e; }
+  50% { fill: #fc8181; }
+}
+@keyframes kurushima-ship {
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第9章: 港則法と海上交通安全法</h1>
+  <div class="subtitle">内航船員のための海技教材 — 航海編</div>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="nav08_colreg.html">← 第8章: 海上衝突予防法</a>
+    <a href="nav10_safety.html">第10章: 船員の安全 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <p>港の中や特定の海域では、海上衝突予防法だけでは安全な航行を確保できません。船舶が集中する港や狭い海峡では、<strong>港則法</strong>と<strong>海上交通安全法</strong>という特別な法律が適用されます。内航タンカーは危険物を積載して港に出入りするため、これらの法律を正確に理解することが極めて重要です。</p>
+
+  <!-- ===== 1. 港則法の目的と適用範囲 ===== -->
+  <h2>1. 港則法の目的と適用範囲</h2>
+
+  <p><strong>港則法</strong>は、港内における船舶の交通の安全と港内の整頓を図ることを目的としています。全国の主要な港に適用され、港の区域は港則法施行令で定められています。</p>
+
+  <div class="key-point">
+    <p><strong>港則法の三つの柱:</strong></p>
+    <ol>
+      <li><strong>交通安全</strong> — 港内での航法・速力の規制</li>
+      <li><strong>港内の整頓</strong> — 投錨場所・係留場所の指定</li>
+      <li><strong>危険防止</strong> — 危険物荷役の規制（タンカーに特に重要）</li>
+    </ol>
+  </div>
+
+  <p>港則法は、港の区域内にある<strong>すべての船舶</strong>に適用されます。ただし、適用される規定の内容は「特定港」と「非特定港」で異なります。</p>
+
+  <!-- ===== 2. 特定港と非特定港 ===== -->
+  <h2>2. 特定港と非特定港の違い</h2>
+
+  <p>港則法では、港を<strong>特定港</strong>と<strong>非特定港（その他の港）</strong>の2種類に分類しています。</p>
+
+  <table>
+    <thead>
+      <tr><th>区分</th><th>特定港</th><th>非特定港</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>定義</strong></td>
+        <td>喫水の深い船舶が出入りできる港<br>または外国船舶が常時出入りする港</td>
+        <td>特定港以外の港</td>
+      </tr>
+      <tr>
+        <td><strong>管理者</strong></td>
+        <td>港長（海上保安部長等）</td>
+        <td>港長の設置なし</td>
+      </tr>
+      <tr>
+        <td><strong>入出港届</strong></td>
+        <td>必要</td>
+        <td>不要</td>
+      </tr>
+      <tr>
+        <td><strong>危険物荷役</strong></td>
+        <td>港長の許可が必要</td>
+        <td>届出のみ</td>
+      </tr>
+      <tr>
+        <td><strong>びょう地指定</strong></td>
+        <td>港長が指定</td>
+        <td>規定なし</td>
+      </tr>
+      <tr>
+        <td><strong>主な港の例</strong></td>
+        <td>東京、横浜、名古屋、大阪、<br>神戸、下関、北九州 など</td>
+        <td>小規模な港</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box box-warning">
+    <h4>内航タンカーの実務ポイント</h4>
+    <p>内航タンカーが石油製品を積んで入港する際、特定港では<strong>入港届</strong>に加え、<strong>危険物荷役許可申請</strong>を港長に行う必要があります。荷役開始前に許可を得なければ荷役を開始できません。航海計画の段階で申請のタイミングを考慮しておくことが重要です。</p>
+  </div>
+
+  <!-- ===== 3. 港内での航法規定 ===== -->
+  <h2>3. 港内での航法規定</h2>
+
+  <h3>3.1 防波堤入口付近での航法</h3>
+
+  <p>防波堤の入口または入口付近では、以下のルールが適用されます。</p>
+
+  <ul>
+    <li><strong>入航船</strong>は、出航船の進路を避けなければならない（出航船優先）</li>
+    <li>防波堤の入口付近では、他の船舶と<strong>行き会うおそれのあるとき</strong>は右側を航行する</li>
+    <li>防波堤の入口付近で<strong>投錨</strong>してはならない</li>
+  </ul>
+
+  <!-- SVG: 防波堤入口の航法 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <!-- 海域 -->
+      <rect x="0" y="0" width="600" height="350" fill="#e6f3ff" rx="8"/>
+      <!-- 港内エリア -->
+      <rect x="0" y="80" width="200" height="190" fill="#d4e8ff"/>
+      <text x="100" y="170" text-anchor="middle" font-size="14" fill="#1a365d" font-weight="bold">港 内</text>
+      <!-- 防波堤（上） -->
+      <rect x="180" y="60" width="180" height="18" fill="#718096" rx="3"/>
+      <text x="270" y="52" text-anchor="middle" font-size="11" fill="#718096">防波堤</text>
+      <!-- 防波堤（下） -->
+      <rect x="180" y="272" width="180" height="18" fill="#718096" rx="3"/>
+      <text x="270" y="306" text-anchor="middle" font-size="11" fill="#718096">防波堤</text>
+      <!-- 入口 -->
+      <rect x="355" y="78" width="4" height="194" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="6,4"/>
+      <!-- 右側通行の表示 -->
+      <line x1="270" y1="78" x2="270" y2="272" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="8,4"/>
+      <text x="275" y="178" font-size="10" fill="#e53e3e">中央線</text>
+      <!-- 出航船（上側・優先） -->
+      <g>
+        <polygon points="0,-12 30,0 0,12" fill="#e53e3e" transform="translate(240, 130)"/>
+        <text x="200" y="125" font-size="11" fill="#e53e3e" font-weight="bold">出航船</text>
+        <text x="200" y="140" font-size="9" fill="#e53e3e">（優先）</text>
+        <!-- 矢印 -->
+        <line x1="270" y1="130" x2="420" y2="130" stroke="#e53e3e" stroke-width="2" marker-end="url(#arrowRed)"/>
+      </g>
+      <!-- 入航船（下側） -->
+      <g>
+        <polygon points="0,-12 -30,0 0,12" fill="#2b6cb0" transform="translate(420, 220)"/>
+        <text x="430" y="215" font-size="11" fill="#2b6cb0" font-weight="bold">入航船</text>
+        <text x="430" y="230" font-size="9" fill="#2b6cb0">（避航義務）</text>
+        <!-- 矢印 -->
+        <line x1="415" y1="220" x2="280" y2="220" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      </g>
+      <!-- 外海ラベル -->
+      <text x="500" y="175" text-anchor="middle" font-size="14" fill="#1a365d" font-weight="bold">外 海</text>
+      <!-- 矢印マーカー -->
+      <defs>
+        <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#e53e3e"/>
+        </marker>
+        <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+      <!-- 説明テキスト -->
+      <text x="300" y="335" text-anchor="middle" font-size="12" fill="#4a5568">防波堤入口: 出航船が優先、右側通行</text>
+    </svg>
+    <div class="caption">図9-1: 防波堤入口付近での航法（出航船優先・右側通行）</div>
+  </div>
+
+  <h3>3.2 港内での速力制限</h3>
+
+  <p>港内では、他の船舶に危険を及ぼさないような速力で航行しなければなりません。これは<strong>港内全域</strong>に適用される一般的な義務です。</p>
+
+  <div class="box box-info">
+    <h4>実務での速力</h4>
+    <p>法律では具体的な数値は定めていませんが、実務上、港内では<strong>4〜6ノット程度</strong>の微速が一般的です。特にタンカーは制動距離が長いため、十分に余裕を持った速力で航行します。引き波（ウェーク）による他船への影響も考慮が必要です。</p>
+  </div>
+
+  <h3>3.3 港内での投錨・係留</h3>
+
+  <ul>
+    <li>特定港では、港長が指定した<strong>びょう地</strong>以外に投錨してはならない</li>
+    <li>特定港では、港長の指定する場所に<strong>係留</strong>しなければならない</li>
+    <li>修繕や係船のため港内に長期間停泊する場合は、港長の許可が必要</li>
+  </ul>
+
+  <h3>3.4 危険物荷役の規制（タンカーに特に重要）</h3>
+
+  <p>石油類などの危険物を積載するタンカーには、特に厳しい規制が適用されます。</p>
+
+  <div class="key-point">
+    <p><strong>危険物荷役に関する主な規制:</strong></p>
+    <ul>
+      <li>特定港で危険物の<strong>荷役</strong>をするには、港長の<strong>許可</strong>が必要</li>
+      <li>危険物積載船は、<strong>紅旗</strong>（昼間）または<strong>紅灯</strong>（夜間）を掲げなければならない</li>
+      <li>荷役中は<strong>火気厳禁</strong>の標識を掲示する</li>
+      <li>危険物積載船の付近では、<strong>喫煙・火気の使用</strong>が禁止される</li>
+      <li>危険物荷役中は、港長が定める安全距離内に他船が進入することが制限される</li>
+    </ul>
+  </div>
+
+  <div class="box box-danger">
+    <h4>タンカー乗組員の心得</h4>
+    <p>荷役許可書に記載された条件（荷役時間帯、安全措置等）を厳守すること。荷役中の火気管理は乗組員全員の責任であり、喫煙場所の制限や来船者への注意喚起も怠ってはなりません。</p>
+  </div>
+
+  <!-- ===== 4. 入出港届・移動届 ===== -->
+  <h2>4. 入出港届・移動届</h2>
+
+  <p>特定港に入港・出港しようとする船舶は、港長に届け出なければなりません。</p>
+
+  <table>
+    <thead>
+      <tr><th>届出の種類</th><th>提出時期</th><th>届出先</th><th>対象</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>入港届</strong></td>
+        <td>入港後遅滞なく</td>
+        <td>港長</td>
+        <td>特定港に入港する船舶</td>
+      </tr>
+      <tr>
+        <td><strong>出港届</strong></td>
+        <td>出港前</td>
+        <td>港長</td>
+        <td>特定港を出港する船舶</td>
+      </tr>
+      <tr>
+        <td><strong>移動届</strong></td>
+        <td>移動前</td>
+        <td>港長</td>
+        <td>港内で停泊場所を移動する船舶</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box box-example">
+    <h4>実務例: 内航タンカーの入港手続き</h4>
+    <p>石油製品を積載した内航タンカーが横浜港（特定港）に入港する場合:</p>
+    <ol>
+      <li>入港前に代理店を通じて<strong>危険物荷役許可申請</strong>を港長に提出</li>
+      <li>入港後、遅滞なく<strong>入港届</strong>を提出</li>
+      <li>港長から荷役許可が下りてから荷役を開始</li>
+      <li>荷役完了後、出港前に<strong>出港届</strong>を提出</li>
+    </ol>
+  </div>
+
+  <!-- ===== 5. 信号 ===== -->
+  <h2>5. 信号（入出港信号・台風信号）</h2>
+
+  <h3>5.1 入出港信号</h3>
+
+  <p>特定港の港長は、船舶の入出港を整理するため、信号所で<strong>入出港信号</strong>を発することがあります。</p>
+
+  <table>
+    <thead>
+      <tr><th>信号</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>入港信号</td><td>入港してよい</td></tr>
+      <tr><td>出港信号</td><td>出港してよい</td></tr>
+      <tr><td>入出港禁止信号</td><td>入出港してはならない</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.2 台風信号（気象警報信号）</h3>
+
+  <p>港長は、台風の接近等により港内の船舶に危険が生じるおそれがある場合、<strong>気象警報信号</strong>を発します。信号を受けた船舶は、必要な安全措置（増し舫い、錨の増し打ち等）を講じなければなりません。</p>
+
+  <div class="box box-warning">
+    <h4>台風接近時のタンカーの対応</h4>
+    <p>タンカーは荷役中であっても、台風信号が発せられた場合は<strong>荷役を中止</strong>して避難態勢を取ることがあります。荷役ホース・アームの切り離し、舫いの増強、錨泊の準備など、迅速な対応が求められます。</p>
+  </div>
+
+  <!-- ===== 6. 海上交通安全法の目的と適用海域 ===== -->
+  <h2>6. 海上交通安全法の目的と適用海域</h2>
+
+  <p><strong>海上交通安全法（海交法）</strong>は、船舶交通が特にふくそうする海域（東京湾、伊勢湾、瀬戸内海）における船舶交通の安全を図ることを目的としています。</p>
+
+  <div class="key-point">
+    <p><strong>海交法の3つの適用海域:</strong></p>
+    <ol>
+      <li><strong>東京湾</strong> — 浦賀水道付近を中心とする海域</li>
+      <li><strong>伊勢湾</strong> — 伊良湖水道付近を中心とする海域</li>
+      <li><strong>瀬戸内海</strong> — 明石海峡から豊後水道・関門海峡に至る海域</li>
+    </ol>
+  </div>
+
+  <!-- SVG: 適用海域の概略地図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+      <!-- 背景（海） -->
+      <rect x="0" y="0" width="700" height="420" fill="#d4e8ff" rx="8"/>
+      <!-- 本州 簡略形 -->
+      <path d="M80,160 Q120,130 200,125 Q300,100 380,110 Q440,115 500,130 Q560,140 620,170 Q650,190 660,220 Q640,240 600,250 Q540,260 480,245 Q420,235 360,240 Q300,250 250,240 Q200,235 160,250 Q120,260 90,240 Q70,220 80,190 Z" fill="#a0c4a0" stroke="#4a7c59" stroke-width="1.5"/>
+      <text x="350" y="180" text-anchor="middle" font-size="16" fill="#2d3748" font-weight="bold">本 州</text>
+      <!-- 四国 -->
+      <path d="M240,290 Q300,270 360,275 Q420,280 450,300 Q440,320 400,330 Q340,340 280,330 Q250,320 240,305 Z" fill="#a0c4a0" stroke="#4a7c59" stroke-width="1.5"/>
+      <text x="345" y="310" text-anchor="middle" font-size="13" fill="#2d3748" font-weight="bold">四国</text>
+      <!-- 九州 -->
+      <path d="M100,280 Q130,260 170,270 Q190,290 185,320 Q170,350 140,360 Q110,350 95,330 Q90,310 100,280 Z" fill="#a0c4a0" stroke="#4a7c59" stroke-width="1.5"/>
+      <text x="140" y="320" text-anchor="middle" font-size="12" fill="#2d3748" font-weight="bold">九州</text>
+      <!-- 房総半島（東京湾の右側） -->
+      <path d="M600,170 Q620,190 625,220 Q620,250 610,260 Q600,250 595,230 Q590,210 595,190 Z" fill="#a0c4a0" stroke="#4a7c59" stroke-width="1.5"/>
+
+      <!-- 東京湾エリア -->
+      <ellipse cx="585" cy="210" rx="35" ry="40" fill="#e53e3e" opacity="0.25" stroke="#e53e3e" stroke-width="2"/>
+      <text x="585" y="205" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="bold">東京湾</text>
+      <text x="585" y="220" text-anchor="middle" font-size="9" fill="#c53030">浦賀水道</text>
+      <text x="585" y="232" text-anchor="middle" font-size="9" fill="#c53030">中ノ瀬航路</text>
+
+      <!-- 伊勢湾エリア -->
+      <ellipse cx="470" cy="225" rx="35" ry="40" fill="#ed8936" opacity="0.25" stroke="#ed8936" stroke-width="2"/>
+      <text x="470" y="220" text-anchor="middle" font-size="11" fill="#c05621" font-weight="bold">伊勢湾</text>
+      <text x="470" y="235" text-anchor="middle" font-size="9" fill="#c05621">伊良湖水道</text>
+
+      <!-- 瀬戸内海エリア -->
+      <path d="M170,248 Q250,255 350,258 Q430,255 450,260" fill="none" stroke="#2b6cb0" stroke-width="2.5" stroke-dasharray="6,3"/>
+      <rect x="200" y="248" width="200" height="25" fill="#2b6cb0" opacity="0.12" rx="8"/>
+      <text x="300" y="265" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="bold">瀬戸内海</text>
+
+      <!-- 主要航路マーカー -->
+      <!-- 明石海峡 -->
+      <circle cx="280" cy="255" r="6" fill="#2b6cb0" opacity="0.6"/>
+      <text x="280" y="285" text-anchor="middle" font-size="9" fill="#1a365d">明石海峡</text>
+      <!-- 備讃瀬戸 -->
+      <circle cx="340" cy="260" r="6" fill="#2b6cb0" opacity="0.6"/>
+      <text x="340" y="285" text-anchor="middle" font-size="9" fill="#1a365d">備讃瀬戸</text>
+      <!-- 来島海峡 -->
+      <circle cx="390" cy="268" r="6" fill="#2b6cb0" opacity="0.6"/>
+      <text x="390" y="295" text-anchor="middle" font-size="9" fill="#1a365d">来島海峡</text>
+      <!-- 関門海峡 -->
+      <circle cx="170" cy="268" r="6" fill="#2b6cb0" opacity="0.6"/>
+      <text x="170" y="290" text-anchor="middle" font-size="9" fill="#1a365d">関門海峡</text>
+
+      <!-- 凡例 -->
+      <rect x="15" y="370" width="250" height="40" fill="white" opacity="0.8" rx="6"/>
+      <circle cx="35" cy="383" r="6" fill="#e53e3e" opacity="0.4"/>
+      <text x="48" y="387" font-size="10" fill="#2d3748">東京湾</text>
+      <circle cx="105" cy="383" r="6" fill="#ed8936" opacity="0.4"/>
+      <text x="118" y="387" font-size="10" fill="#2d3748">伊勢湾</text>
+      <circle cx="175" cy="383" r="6" fill="#2b6cb0" opacity="0.4"/>
+      <text x="188" y="387" font-size="10" fill="#2d3748">瀬戸内海</text>
+      <text x="35" y="402" font-size="9" fill="#718096">● = 主要航路の位置</text>
+    </svg>
+    <div class="caption">図9-2: 海上交通安全法の適用海域と主要航路の概略位置</div>
+  </div>
+
+  <!-- ===== 7. 航路の種類 ===== -->
+  <h2>7. 航路の種類</h2>
+
+  <p>海上交通安全法では、以下の<strong>11の航路</strong>が定められています。内航タンカーが頻繁に通航する航路も多くあります。</p>
+
+  <table>
+    <thead>
+      <tr><th>海域</th><th>航路名</th><th>特徴</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2"><strong>東京湾</strong></td>
+        <td>浦賀水道航路</td>
+        <td>東京湾の入口。北航・南航の分離通航方式</td>
+      </tr>
+      <tr>
+        <td>中ノ瀬航路</td>
+        <td>東京湾中央部。北航（北向き一方通行）</td>
+      </tr>
+      <tr>
+        <td><strong>伊勢湾</strong></td>
+        <td>伊良湖水道航路</td>
+        <td>伊勢湾の入口。右側通行</td>
+      </tr>
+      <tr>
+        <td rowspan="8"><strong>瀬戸内海</strong></td>
+        <td>明石海峡航路</td>
+        <td>大阪湾と播磨灘の間。潮流が強い</td>
+      </tr>
+      <tr>
+        <td>備讃瀬戸東航路</td>
+        <td>備讃瀬戸の東側</td>
+      </tr>
+      <tr>
+        <td>備讃瀬戸北航路</td>
+        <td>備讃瀬戸の北側</td>
+      </tr>
+      <tr>
+        <td>備讃瀬戸南航路</td>
+        <td>備讃瀬戸の南側</td>
+      </tr>
+      <tr>
+        <td>水島航路</td>
+        <td>水島港への航路</td>
+      </tr>
+      <tr>
+        <td>来島海峡航路</td>
+        <td>特殊な航法（順中逆西）が適用される</td>
+      </tr>
+      <tr>
+        <td>宇高東航路</td>
+        <td>宇野～高松間の東側</td>
+      </tr>
+      <tr>
+        <td>宇高西航路</td>
+        <td>宇野～高松間の西側</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box box-info">
+    <h4>内航タンカーの航路利用</h4>
+    <p>内航タンカーは、京浜地区の製油所から各地へ石油製品を輸送する際、浦賀水道航路を頻繁に利用します。また、瀬戸内海を横断する際は明石海峡航路、備讃瀬戸航路、来島海峡航路などを通航します。各航路の特性（潮流、通航量、制限事項）を事前に確認しておくことが安全航海の基本です。</p>
+  </div>
+
+  <!-- ===== 8. 航路航行の一般規定 ===== -->
+  <h2>8. 航路航行の一般規定</h2>
+
+  <p>海上交通安全法で定められた航路を航行する際には、以下の一般規定が適用されます。</p>
+
+  <h3>8.1 航路の航行義務</h3>
+  <ul>
+    <li>航路を横断する場合は、<strong>できるだけ直角に近い角度</strong>で速やかに横断する</li>
+    <li>航路内では<strong>並列航行</strong>（横に並んで航行）をしてはならない</li>
+    <li>航路内では原則として<strong>投錨</strong>してはならない</li>
+  </ul>
+
+  <h3>8.2 右側通行</h3>
+  <p>航路を航行する船舶は、原則として<strong>航路の右側</strong>を航行しなければなりません（一部の航路では分離通航方式が適用）。</p>
+
+  <h3>8.3 速力の制限</h3>
+  <p>航路やその付近では、他の船舶に危険を及ぼさないような速力で航行する義務があります。また、一部の航路では具体的な速力制限が定められることがあります。</p>
+
+  <h3>8.4 追越しの制限</h3>
+  <p>航路内での追越しは、原則として<strong>禁止</strong>されています。ただし、速力の著しく異なる船舶間では、安全に追い越せる場合に限り認められることがあります。</p>
+
+  <div class="key-point">
+    <p><strong>航路航行の基本原則まとめ:</strong></p>
+    <ul>
+      <li>右側通行</li>
+      <li>追越し禁止（原則）</li>
+      <li>横断は直角に近い角度で速やかに</li>
+      <li>並列航行の禁止</li>
+      <li>航路内での投錨の禁止</li>
+    </ul>
+  </div>
+
+  <!-- ===== 9. 巨大船等の航行 ===== -->
+  <h2>9. 巨大船等の航行</h2>
+
+  <p>海上交通安全法では、長さ200メートル以上の船舶を<strong>巨大船</strong>と定義し、特別な規定を設けています。</p>
+
+  <h3>9.1 航路通報</h3>
+  <p>巨大船が航路を航行しようとするときは、あらかじめ<strong>海上保安庁長官</strong>に通報しなければなりません。通報内容には航行予定日時、航路名、船舶の長さ・喫水などが含まれます。</p>
+
+  <h3>9.2 巨大船等に対する他船の義務</h3>
+  <ul>
+    <li>巨大船が航路を航行中は、他の船舶は巨大船の<strong>進路を避けなければならない</strong></li>
+    <li>巨大船が航路に入ろうとする際は、他船はこれを<strong>妨げてはならない</strong></li>
+  </ul>
+
+  <h3>9.3 信号</h3>
+  <p>巨大船は、航路航行中に所定の<strong>信号</strong>を表示しなければなりません（形象物・灯火等）。</p>
+
+  <div class="box box-info">
+    <h4>内航船と巨大船の関係</h4>
+    <p>内航タンカーは通常200メートル未満なので巨大船には該当しませんが、航路内で巨大船（VLCCや大型コンテナ船等）と遭遇することは珍しくありません。巨大船を見かけたら、その進路を避けることが法律上の義務であることを忘れないでください。VHFでの情報交換も有効です。</p>
+  </div>
+
+  <!-- ===== 10. 来島海峡の特殊な航法 ===== -->
+  <h2>10. 来島海峡の特殊な航法（順中逆西）</h2>
+
+  <p>来島海峡航路は、瀬戸内海で最も航行の難しい海域の一つです。潮流が非常に強く（最大10ノット以上）、通常の右側通行では安全な航行が困難なため、<strong>潮流の方向に応じて通航路が変わる</strong>世界的にも珍しい航法が採用されています。</p>
+
+  <div class="key-point">
+    <p><strong>「順中逆西」（じゅんちゅうぎゃくにし）の原則:</strong></p>
+    <ul>
+      <li><strong>順潮</strong>（潮流に乗る場合）→ <strong>中水道</strong>を航行</li>
+      <li><strong>逆潮</strong>（潮流に逆らう場合）→ <strong>西水道</strong>を航行</li>
+    </ul>
+    <p>※ 転流時（潮流の向きが変わる前後）は、右側通行となります。</p>
+  </div>
+
+  <h3>来島海峡の3つの水道</h3>
+  <ul>
+    <li><strong>西水道</strong> — 大島と大三島の間（最も西側）</li>
+    <li><strong>中水道</strong> — 大島と馬島の間（中央）</li>
+    <li><strong>東水道</strong> — 馬島と今治側の間（最も東側、小型船向け）</li>
+  </ul>
+
+  <!-- SVG: 来島海峡の順中逆西アニメーション -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+      <!-- 背景（海） -->
+      <rect x="0" y="0" width="700" height="500" fill="#d4e8ff" rx="8"/>
+
+      <!-- タイトル -->
+      <text x="350" y="30" text-anchor="middle" font-size="16" fill="#1a365d" font-weight="bold">来島海峡「順中逆西」の航法</text>
+
+      <!-- ===== 上段: 北流（西→東の潮流）===== -->
+      <text x="350" y="60" text-anchor="middle" font-size="13" fill="#2b6cb0" font-weight="bold">【北流時】潮流: 西 → 東</text>
+
+      <!-- 島（上段） -->
+      <rect x="180" y="80" width="80" height="140" fill="#a0c4a0" stroke="#4a7c59" rx="10"/>
+      <text x="220" y="155" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">大島</text>
+      <rect x="310" y="100" width="50" height="60" fill="#a0c4a0" stroke="#4a7c59" rx="8"/>
+      <text x="335" y="135" text-anchor="middle" font-size="10" fill="#2d3748">馬島</text>
+      <rect x="430" y="80" width="90" height="140" fill="#a0c4a0" stroke="#4a7c59" rx="10"/>
+      <text x="475" y="155" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">今治側</text>
+
+      <!-- 水道ラベル（上段） -->
+      <text x="140" y="155" text-anchor="middle" font-size="10" fill="#718096">西水道</text>
+      <text x="280" y="135" text-anchor="middle" font-size="10" fill="#718096">中水道</text>
+      <text x="385" y="135" text-anchor="middle" font-size="10" fill="#718096">東水道</text>
+
+      <!-- 潮流矢印（上段） -->
+      <g style="animation: tide-arrow 1.5s ease-in-out infinite;">
+        <line x1="50" y1="225" x2="130" y2="225" stroke="#2b6cb0" stroke-width="2"/>
+        <polygon points="130,220 140,225 130,230" fill="#2b6cb0"/>
+      </g>
+      <g style="animation: tide-arrow 1.5s ease-in-out infinite; animation-delay: 0.3s;">
+        <line x1="550" y1="225" x2="630" y2="225" stroke="#2b6cb0" stroke-width="2"/>
+        <polygon points="630,220 640,225 630,230" fill="#2b6cb0"/>
+      </g>
+      <text x="90" y="245" text-anchor="middle" font-size="10" fill="#2b6cb0">潮流→</text>
+      <text x="600" y="245" text-anchor="middle" font-size="10" fill="#2b6cb0">潮流→</text>
+
+      <!-- 順潮船（西→東、中水道）赤 -->
+      <line x1="80" y1="130" x2="280" y2="130" stroke="#e53e3e" stroke-width="3" stroke-dasharray="8,4"/>
+      <polygon points="280,125 295,130 280,135" fill="#e53e3e"/>
+      <text x="170" y="118" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">順潮船→中水道</text>
+
+      <!-- 逆潮船（東→西、西水道）青 -->
+      <line x1="530" y1="175" x2="140" y2="175" stroke="#38a169" stroke-width="3" stroke-dasharray="8,4"/>
+      <polygon points="140,170 125,175 140,180" fill="#38a169"/>
+      <text x="400" y="198" text-anchor="middle" font-size="10" fill="#38a169" font-weight="bold">逆潮船→西水道</text>
+
+      <!-- 区切り線 -->
+      <line x1="30" y1="265" x2="670" y2="265" stroke="#e2e8f0" stroke-width="2"/>
+
+      <!-- ===== 下段: 南流（東→西の潮流）===== -->
+      <text x="350" y="295" text-anchor="middle" font-size="13" fill="#2b6cb0" font-weight="bold">【南流時】潮流: 東 → 西</text>
+
+      <!-- 島（下段） -->
+      <rect x="180" y="315" width="80" height="140" fill="#a0c4a0" stroke="#4a7c59" rx="10"/>
+      <text x="220" y="390" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">大島</text>
+      <rect x="310" y="335" width="50" height="60" fill="#a0c4a0" stroke="#4a7c59" rx="8"/>
+      <text x="335" y="370" text-anchor="middle" font-size="10" fill="#2d3748">馬島</text>
+      <rect x="430" y="315" width="90" height="140" fill="#a0c4a0" stroke="#4a7c59" rx="10"/>
+      <text x="475" y="390" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">今治側</text>
+
+      <!-- 水道ラベル（下段） -->
+      <text x="140" y="390" text-anchor="middle" font-size="10" fill="#718096">西水道</text>
+      <text x="280" y="370" text-anchor="middle" font-size="10" fill="#718096">中水道</text>
+      <text x="385" y="370" text-anchor="middle" font-size="10" fill="#718096">東水道</text>
+
+      <!-- 潮流矢印（下段、逆方向） -->
+      <g style="animation: tide-arrow 1.5s ease-in-out infinite; animation-delay: 0.5s;">
+        <line x1="640" y1="460" x2="560" y2="460" stroke="#2b6cb0" stroke-width="2"/>
+        <polygon points="560,455 548,460 560,465" fill="#2b6cb0"/>
+      </g>
+      <g style="animation: tide-arrow 1.5s ease-in-out infinite; animation-delay: 0.8s;">
+        <line x1="130" y1="460" x2="50" y2="460" stroke="#2b6cb0" stroke-width="2"/>
+        <polygon points="50,455 38,460 50,465" fill="#2b6cb0"/>
+      </g>
+      <text x="600" y="480" text-anchor="middle" font-size="10" fill="#2b6cb0">←潮流</text>
+      <text x="90" y="480" text-anchor="middle" font-size="10" fill="#2b6cb0">←潮流</text>
+
+      <!-- 順潮船（東→西、中水道）赤 -->
+      <line x1="530" y1="365" x2="280" y2="365" stroke="#e53e3e" stroke-width="3" stroke-dasharray="8,4"/>
+      <polygon points="280,360 265,365 280,370" fill="#e53e3e"/>
+      <text x="430" y="353" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">順潮船→中水道</text>
+
+      <!-- 逆潮船（西→東、西水道）緑 -->
+      <line x1="80" y1="410" x2="165" y2="410" stroke="#38a169" stroke-width="3" stroke-dasharray="8,4"/>
+      <polygon points="165,405 180,410 165,415" fill="#38a169"/>
+      <text x="120" y="435" text-anchor="middle" font-size="10" fill="#38a169" font-weight="bold">逆潮船→西水道</text>
+
+      <!-- 凡例 -->
+      <rect x="530" y="295" width="155" height="55" fill="white" opacity="0.85" rx="6"/>
+      <line x1="540" y1="310" x2="575" y2="310" stroke="#e53e3e" stroke-width="3" stroke-dasharray="6,3"/>
+      <text x="580" y="314" font-size="10" fill="#2d3748">順潮船（中水道）</text>
+      <line x1="540" y1="332" x2="575" y2="332" stroke="#38a169" stroke-width="3" stroke-dasharray="6,3"/>
+      <text x="580" y="336" font-size="10" fill="#2d3748">逆潮船（西水道）</text>
+    </svg>
+    <div class="caption">図9-3: 来島海峡「順中逆西」の航法 — 潮流の方向に応じて通航路が変わる</div>
+  </div>
+
+  <div class="box box-danger">
+    <h4>来島海峡航行の実務上の注意</h4>
+    <ul>
+      <li>来島海峡海上交通センター（来島マーチス）へ通航予定を<strong>通報</strong>する</li>
+      <li><strong>潮流情報</strong>をVHFや電光表示板で常時確認する</li>
+      <li>転流前後は航法が右側通行に切り替わるため、<strong>他船の動向</strong>に特に注意</li>
+      <li>潮流に乗る場合は<strong>速力が増す</strong>ため、前方の船舶との距離に注意</li>
+      <li>内航タンカーは操縦性が貨物の状態で大きく変わるため、<strong>バラスト状態</strong>と<strong>満載状態</strong>での違いを把握しておく</li>
+    </ul>
+  </div>
+
+  <!-- ===== 11. 内航タンカーが特に注意すべき規定 ===== -->
+  <h2>11. 内航タンカーが特に注意すべき規定</h2>
+
+  <p>港則法と海上交通安全法のうち、内航タンカーの運航に特に関係する規定をまとめます。</p>
+
+  <h3>11.1 港則法関連</h3>
+
+  <table>
+    <thead>
+      <tr><th>規定</th><th>内容</th><th>タンカーへの影響</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>危険物荷役許可</td>
+        <td>特定港での危険物荷役には港長の許可が必要</td>
+        <td>荷役の都度、事前申請が必要</td>
+      </tr>
+      <tr>
+        <td>紅旗・紅灯の掲揚</td>
+        <td>危険物積載船は所定の標識を掲揚</td>
+        <td>入港中は常時掲揚</td>
+      </tr>
+      <tr>
+        <td>火気制限</td>
+        <td>危険物積載船付近での火気使用禁止</td>
+        <td>荷役中の厳格な火気管理</td>
+      </tr>
+      <tr>
+        <td>停泊場所の指定</td>
+        <td>港長がびょう地・係留場所を指定</td>
+        <td>指定場所以外での停泊不可</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>11.2 海上交通安全法関連</h3>
+
+  <table>
+    <thead>
+      <tr><th>規定</th><th>内容</th><th>タンカーへの影響</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>航路の航行</td>
+        <td>右側通行、追越し制限等</td>
+        <td>狭い航路での安全操船が必須</td>
+      </tr>
+      <tr>
+        <td>巨大船への避航</td>
+        <td>巨大船の進路を避ける義務</td>
+        <td>航路内で巨大船との遭遇時に注意</td>
+      </tr>
+      <tr>
+        <td>来島海峡の航法</td>
+        <td>順中逆西の特殊航法</td>
+        <td>潮流情報の事前確認が不可欠</td>
+      </tr>
+      <tr>
+        <td>海上交通センターへの通報</td>
+        <td>一定以上の船舶は航行予定を通報</td>
+        <td>通報義務の有無を事前確認</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box box-success">
+    <h4>まとめ: 安全な入出港・航路通航のために</h4>
+    <ul>
+      <li>入港先が<strong>特定港</strong>か否かを確認し、必要な届出・申請を事前に準備する</li>
+      <li>港内では<strong>微速</strong>で航行し、出航船の進路を優先する</li>
+      <li>海交法の航路では<strong>右側通行</strong>と<strong>追越し禁止</strong>を遵守する</li>
+      <li>来島海峡では<strong>潮流情報を必ず確認</strong>し、順中逆西を守る</li>
+      <li><strong>危険物積載船</strong>としての標識掲揚と火気管理を徹底する</li>
+      <li><strong>海上交通センター（マーチス）</strong>との通信を活用し、最新情報を得る</li>
+    </ul>
+  </div>
+
+  <!-- ===== クイズセクション ===== -->
+  <h2>章末クイズ</h2>
+
+  <div class="quiz">
+    <h4>Q1. 港則法において、防波堤の入口付近で出航船と入航船が行き会う場合、どちらが優先されますか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('ans1')">A) 入航船が優先</li>
+      <li onclick="showAnswer('ans1')">B) 出航船が優先</li>
+      <li onclick="showAnswer('ans1')">C) 大きい船が優先</li>
+      <li onclick="showAnswer('ans1')">D) 右舷側の船が優先</li>
+    </ul>
+    <div id="ans1" class="quiz-answer">
+      <strong>正解: B) 出航船が優先</strong><br>
+      港則法では、防波堤の入口付近において、入航船は出航船の進路を避けなければなりません。出航船は港を出る際に操船の自由度が制限されるため、優先されます。
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q2. 特定港において、石油を積載したタンカーが荷役を行う場合に必要な手続きはどれですか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('ans2')">A) 船長の判断で自由に荷役できる</li>
+      <li onclick="showAnswer('ans2')">B) 港長への届出のみで足りる</li>
+      <li onclick="showAnswer('ans2')">C) 港長の許可が必要</li>
+      <li onclick="showAnswer('ans2')">D) 海上保安庁長官の許可が必要</li>
+    </ul>
+    <div id="ans2" class="quiz-answer">
+      <strong>正解: C) 港長の許可が必要</strong><br>
+      特定港で危険物（石油類を含む）の荷役を行う場合は、港長の許可を受けなければなりません。非特定港の場合は届出で足ります。内航タンカーの乗組員は、入港前に代理店を通じて申請を行います。
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q3. 来島海峡航路で採用されている特殊な航法「順中逆西」の意味として正しいものはどれですか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('ans3')">A) 順潮のときは西水道、逆潮のときは中水道を航行する</li>
+      <li onclick="showAnswer('ans3')">B) 順潮のときは中水道、逆潮のときは西水道を航行する</li>
+      <li onclick="showAnswer('ans3')">C) 常に中水道を航行し、西水道は使用しない</li>
+      <li onclick="showAnswer('ans3')">D) 北流のときは東水道、南流のときは西水道を航行する</li>
+    </ul>
+    <div id="ans3" class="quiz-answer">
+      <strong>正解: B) 順潮のときは中水道、逆潮のときは西水道を航行する</strong><br>
+      「順中逆西」とは、潮流に乗る（順潮）場合は中水道を、潮流に逆らう（逆潮）場合は西水道を航行するという航法です。これにより、対向する船舶を分離し、強い潮流下での衝突リスクを低減しています。転流時は右側通行に切り替わります。
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="nav08_colreg.html">← 第8章: 海上衝突予防法</a>
+    <a href="nav10_safety.html">第10章: 船員の安全 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

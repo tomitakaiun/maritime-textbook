@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8章 海上衝突予防法 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@keyframes ship-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(var(--dx, 0), var(--dy, 0)); }
+}
+.ship-anim {
+  animation: ship-move 4s ease-in-out infinite alternate;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第8章 海上衝突予防法</h1>
+  <p class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</p>
+  <nav>
+    <a href="index.html">目次へ戻る</a>
+    <a href="nav07_shiphandling.html">← 前章: 操船の基礎</a>
+    <a href="nav09_law.html">次章: 港則法と海上交通安全法 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <p><strong>海上衝突予防法</strong>（International Regulations for Preventing Collisions at Sea: COLREGs）は、海上における船舶同士の衝突を防ぐための国際的なルールです。すべての船員が確実に理解し、実行しなければならない最も重要な法規の一つです。</p>
+
+  <!-- ========== 1. 目的と適用範囲 ========== -->
+  <h2 id="purpose">1. 海上衝突予防法の目的と適用範囲</h2>
+
+  <p>この法律は、海上における船舶の衝突を予防するために航法、灯火・形象物、音響信号等のルールを定めたものです。</p>
+  <ul>
+    <li><strong>適用範囲:</strong> 公海及びこれに接続する航行可能なすべての水域に適用される</li>
+    <li><strong>適用対象:</strong> 大きさに関わらず全ての船舶（ヨット、漁船、大型船全て）</li>
+    <li>港則法や海上交通安全法などの特別法がある場合、その水域ではそちらが優先される</li>
+  </ul>
+
+  <!-- ========== 2. 見張り ========== -->
+  <h2 id="lookout">2. 見張り（第5条）</h2>
+
+  <p>すべての船舶は、常時適切な<strong>見張り</strong>を行わなければなりません。見張りは視覚・聴覚のほか、レーダーやAIS等あらゆる手段を使って行います。</p>
+
+  <div class="key-point">
+    <p><strong>見張りの3要素:</strong> (1) <strong>視覚</strong> — 目視による周囲の監視、(2) <strong>聴覚</strong> — 霧中信号やエンジン音の聴取、(3) <strong>その他利用可能な全ての手段</strong> — レーダー、AIS、VHF等の活用。見張りは当直者の最も重要な任務です。</p>
+  </div>
+
+  <div class="box box-danger">
+    <h4>内航タンカーでの見張り</h4>
+    <p>内航船では少人数で運航するため、当直者が操舵と見張りを兼ねることがあります。しかし、見張りが疎かになると衝突事故に直結します。特に夜間、霧中、狭水道では見張りの強化が不可欠です。少しでも不安を感じたら船長を呼ぶことを躊躇しないでください。</p>
+  </div>
+
+  <!-- ========== 3. 安全な速力 ========== -->
+  <h2 id="safe-speed">3. 安全な速力（第6条）</h2>
+
+  <p>すべての船舶は、衝突を避けるための適切かつ有効な動作をとれるよう、常に<strong>安全な速力</strong>で航行しなければなりません。安全な速力の判断には以下の要素を考慮します。</p>
+
+  <ul>
+    <li>視界の状態（昼・夜・霧中）</li>
+    <li>船舶交通の混雑度</li>
+    <li>船舶の停止距離と旋回性能</li>
+    <li>風、海面の状態、潮流の影響</li>
+    <li>喫水と水深の関係</li>
+    <li>レーダーの有無と性能</li>
+  </ul>
+
+  <p>「安全な速力」とは具体的に何ノットという規定はなく、<strong>その時の状況に応じて判断</strong>します。</p>
+
+  <!-- ========== 4. 衝突のおそれ ========== -->
+  <h2 id="risk-of-collision">4. 衝突のおそれ（第7条）</h2>
+
+  <p>他の船舶との衝突のおそれがあるかどうかは、<strong>コンパスベアリング（方位）の変化</strong>によって判断します。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 450" width="650" height="450" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="cr-arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#2d3748"/>
+        </marker>
+        <marker id="cr-arr-r" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#e53e3e"/>
+        </marker>
+      </defs>
+
+      <text x="325" y="25" text-anchor="middle" class="svg-title">コンパスベアリングによる衝突のおそれの判断</text>
+
+      <!-- 左側: 衝突のおそれあり -->
+      <rect x="20" y="40" width="290" height="370" rx="10" fill="#fff5f5" fill-opacity="0.5" stroke="#e53e3e" stroke-width="1"/>
+      <text x="165" y="65" text-anchor="middle" font-size="13" fill="#c53030" font-weight="bold">衝突のおそれあり</text>
+      <text x="165" y="82" text-anchor="middle" font-size="10" fill="#c53030">方位が変わらず距離が縮まる</text>
+
+      <!-- 自船 -->
+      <polygon points="80,380 90,350 100,380" fill="#1a365d" stroke="#1a365d" stroke-width="1"/>
+      <text x="90" y="398" text-anchor="middle" font-size="10" fill="#1a365d">自船</text>
+      <line x1="90" y1="350" x2="90" y2="120" stroke="#1a365d" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+      <!-- 相手船の3つの位置（方位一定） -->
+      <polygon points="230,330 240,300 250,330" fill="#e53e3e" stroke="#e53e3e" stroke-width="1"/>
+      <text x="260" y="325" font-size="9" fill="#e53e3e">t₁</text>
+      <polygon points="210,250 220,220 230,250" fill="#e53e3e" stroke="#e53e3e" stroke-width="1" opacity="0.7"/>
+      <text x="240" y="245" font-size="9" fill="#e53e3e">t₂</text>
+      <polygon points="190,170 200,140 210,170" fill="#e53e3e" stroke="#e53e3e" stroke-width="1" opacity="0.4"/>
+      <text x="220" y="165" font-size="9" fill="#e53e3e">t₃</text>
+
+      <!-- 方位線（一定） -->
+      <line x1="90" y1="350" x2="240" y2="310" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <line x1="90" y1="280" x2="220" y2="230" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <line x1="90" y1="200" x2="200" y2="150" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+      <text x="160" y="130" text-anchor="middle" font-size="11" fill="#c53030" font-weight="bold">方位一定 ＝ 衝突!</text>
+
+      <!-- 右側: 衝突のおそれなし -->
+      <rect x="340" y="40" width="290" height="370" rx="10" fill="#f0fff4" fill-opacity="0.5" stroke="#38a169" stroke-width="1"/>
+      <text x="485" y="65" text-anchor="middle" font-size="13" fill="#276749" font-weight="bold">衝突のおそれなし</text>
+      <text x="485" y="82" text-anchor="middle" font-size="10" fill="#276749">方位が変化している</text>
+
+      <!-- 自船 -->
+      <polygon points="400,380 410,350 420,380" fill="#1a365d" stroke="#1a365d" stroke-width="1"/>
+      <text x="410" y="398" text-anchor="middle" font-size="10" fill="#1a365d">自船</text>
+      <line x1="410" y1="350" x2="410" y2="120" stroke="#1a365d" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+      <!-- 相手船の3つの位置（方位変化） -->
+      <polygon points="530,330 540,300 550,330" fill="#38a169" stroke="#38a169" stroke-width="1"/>
+      <text x="560" y="325" font-size="9" fill="#38a169">t₁</text>
+      <polygon points="550,240 560,210 570,240" fill="#38a169" stroke="#38a169" stroke-width="1" opacity="0.7"/>
+      <text x="580" y="235" font-size="9" fill="#38a169">t₂</text>
+      <polygon points="570,160 580,130 590,160" fill="#38a169" stroke="#38a169" stroke-width="1" opacity="0.4"/>
+      <text x="600" y="155" font-size="9" fill="#38a169">t₃</text>
+
+      <!-- 方位線（変化あり） -->
+      <line x1="410" y1="350" x2="540" y2="310" stroke="#38a169" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <line x1="410" y1="270" x2="560" y2="220" stroke="#38a169" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <line x1="410" y1="190" x2="580" y2="140" stroke="#38a169" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+      <text x="485" y="130" text-anchor="middle" font-size="11" fill="#276749" font-weight="bold">方位変化 ＝ 通過</text>
+    </svg>
+    <p class="caption">図8-1: コンパスベアリングの変化で衝突のおそれを判断する方法</p>
+  </div>
+
+  <div class="key-point">
+    <p><strong>方位変化の判断法:</strong> 接近する他船のコンパスベアリング（方位）が「ほとんど変化しない」場合は衝突のおそれがあります。方位が前方に変化すれば相手船は自船の前方を通過し、後方に変化すれば後方を通過します。疑わしい場合は「衝突のおそれがある」と判断してください。</p>
+  </div>
+
+  <!-- ========== 5. 衝突を避けるための動作 ========== -->
+  <h2 id="action-to-avoid">5. 衝突を避けるための動作（第8条）</h2>
+
+  <ul>
+    <li>避航動作は<strong>十分に早期に</strong>、かつ<strong>大幅に</strong>行うこと</li>
+    <li>針路の変更は、他の船舶からレーダーで容易に認識できるよう<strong>大きく</strong>行うこと</li>
+    <li>小刻みな針路変更は避ける（相手船に意図が伝わらない）</li>
+    <li>やむを得ない場合を除き、他の船舶の<strong>船首方向を横切ることは避ける</strong></li>
+    <li>動作の結果、安全な距離で通過できるか確認する（動作後も継続監視）</li>
+  </ul>
+
+  <!-- ========== 6. 狭い水道 ========== -->
+  <h2 id="narrow-channel">6. 狭い水道（第9条）</h2>
+
+  <p>狭い水道では、以下のルールが適用されます。</p>
+  <ul>
+    <li>水道の<strong>右側端</strong>に寄って航行する</li>
+    <li>長さ20m未満の船舶や帆船は、狭い水道でなければ安全に航行できない船舶の通航を妨げてはならない</li>
+    <li>漁ろうに従事している船舶も、狭い水道を航行中の他の船舶の通航を妨げてはならない</li>
+    <li>やむを得ない場合を除き、水道内に<strong>錨泊してはならない</strong></li>
+  </ul>
+
+  <!-- ========== 7. 航法の基本ルール ========== -->
+  <h2 id="steering-rules">7. 航法の基本ルール</h2>
+
+  <h3>7-1. 行会い船（第14条）</h3>
+  <p>2隻の動力船が真向かい又はほぼ真向かいに行き会う場合、<strong>各船はそれぞれ右に転舵</strong>して、互いに左舷側を通過します。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 500 350" width="500" height="350" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="hd-arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#1a365d"/>
+        </marker>
+        <marker id="hd-arr-r" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#e53e3e"/>
+        </marker>
+      </defs>
+
+      <text x="250" y="25" text-anchor="middle" class="svg-title">行会い船（第14条）</text>
+
+      <!-- 中央線 -->
+      <line x1="250" y1="50" x2="250" y2="330" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="5,5"/>
+
+      <!-- 自船（下から上） -->
+      <g>
+        <polygon points="210,280 220,250 230,280" fill="#1a365d"/>
+        <text x="220" y="300" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="bold">A船</text>
+        <line x1="220" y1="250" x2="220" y2="180" stroke="#1a365d" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#hd-arr)"/>
+        <!-- 避航動作 -->
+        <path d="M220,180 Q240,160 270,150" fill="none" stroke="#e53e3e" stroke-width="2.5" marker-end="url(#hd-arr-r)"/>
+        <text x="275" y="145" font-size="10" fill="#e53e3e" font-weight="bold">右転</text>
+      </g>
+
+      <!-- 相手船（上から下） -->
+      <g>
+        <polygon points="270,100 280,130 290,100" fill="#2b6cb0"/>
+        <text x="280" y="85" text-anchor="middle" font-size="11" fill="#2b6cb0" font-weight="bold">B船</text>
+        <line x1="280" y1="130" x2="280" y2="200" stroke="#2b6cb0" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#hd-arr)"/>
+        <!-- 避航動作 -->
+        <path d="M280,200 Q260,220 230,230" fill="none" stroke="#e53e3e" stroke-width="2.5" marker-end="url(#hd-arr-r)"/>
+        <text x="215" y="240" font-size="10" fill="#e53e3e" font-weight="bold">右転</text>
+      </g>
+
+      <!-- 説明 -->
+      <rect x="320" y="160" width="165" height="50" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+      <text x="402" y="180" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="bold">両船とも右に転舵</text>
+      <text x="402" y="198" text-anchor="middle" font-size="10" fill="#1a365d">左舷同士で通過</text>
+    </svg>
+    <p class="caption">図8-2: 行会い船の航法 — 両船とも右に転舵し左舷側を通過する</p>
+  </div>
+
+  <h3>7-2. 横切り船（第15条）</h3>
+  <p>2隻の動力船が互いに進路を横切る場合、<strong>他の船舶を右舷側に見る船舶</strong>が避航船となります。避航船は、相手船の船首方向を横切ることを避け、右に転舵するか減速して相手船の船尾側を通過します。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 500" width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="xc-arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#1a365d"/>
+        </marker>
+        <marker id="xc-arr-g" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#38a169"/>
+        </marker>
+        <marker id="xc-arr-r" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#e53e3e"/>
+        </marker>
+      </defs>
+
+      <text x="300" y="25" text-anchor="middle" class="svg-title">横切り船（第15条）</text>
+
+      <!-- 保持船（上から下に進行） -->
+      <g>
+        <polygon points="350,80 360,110 370,80" fill="#38a169" transform="rotate(180,360,95)"/>
+        <rect x="355" y="80" width="10" height="25" fill="#38a169"/>
+        <text x="360" y="65" text-anchor="middle" font-size="12" fill="#38a169" font-weight="bold">保持船</text>
+        <text x="360" y="50" text-anchor="middle" font-size="10" fill="#38a169">（針路速力を保持）</text>
+        <!-- 進行方向 -->
+        <line x1="360" y1="110" x2="360" y2="350" stroke="#38a169" stroke-width="2.5" stroke-dasharray="8,5" marker-end="url(#xc-arr-g)"/>
+        <!-- 緑灯表示 -->
+        <circle cx="370" cy="90" r="4" fill="#38a169">
+          <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <text x="385" y="94" font-size="9" fill="#38a169">緑灯</text>
+      </g>
+
+      <!-- 避航船（左から右に進行） -->
+      <g>
+        <polygon points="80,290 110,280 80,270" fill="#e53e3e"/>
+        <rect x="80" y="275" width="25" height="10" fill="#e53e3e"/>
+        <text x="70" y="260" font-size="12" fill="#e53e3e" font-weight="bold">避航船</text>
+        <text x="70" y="248" font-size="10" fill="#e53e3e">（右舷に相手船を見る）</text>
+        <!-- 元の針路 -->
+        <line x1="110" y1="280" x2="280" y2="280" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <!-- 避航動作（右転して船尾を通過） -->
+        <path d="M200,280 Q260,280 300,320 Q340,360 360,400" fill="none" stroke="#e53e3e" stroke-width="2.5" marker-end="url(#xc-arr-r)">
+          <animate attributeName="stroke-dashoffset" values="20;0" dur="1.5s" repeatCount="indefinite"/>
+        </path>
+        <!-- 赤灯表示 -->
+        <circle cx="95" cy="270" r="4" fill="#e53e3e">
+          <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <text x="78" y="313" font-size="9" fill="#e53e3e">赤灯が見える</text>
+      </g>
+
+      <!-- 交差点 -->
+      <circle cx="360" cy="280" r="8" fill="none" stroke="#d69e2e" stroke-width="2"/>
+      <text x="375" y="278" font-size="9" fill="#d69e2e">衝突点</text>
+
+      <!-- 覚え方ボックス -->
+      <rect x="70" y="400" width="460" height="80" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+      <text x="300" y="425" text-anchor="middle" font-size="13" fill="#6b46c1" font-weight="bold">覚え方</text>
+      <text x="300" y="448" text-anchor="middle" font-size="12" fill="#2d3748">相手船の「赤灯（左舷灯）」が見える → 自船が避航船</text>
+      <text x="300" y="468" text-anchor="middle" font-size="12" fill="#2d3748">相手船の「緑灯（右舷灯）」が見える → 自船が保持船</text>
+    </svg>
+    <p class="caption">図8-3: 横切り船の航法 — 相手を右舷に見る船が避航する（アニメーション付き）</p>
+  </div>
+
+  <h3>7-3. 追越し船（第13条）</h3>
+  <p>他の船舶を追い越す船舶は、<strong>追越し船</strong>として避航義務があります。追越し船とは、相手船の正横後22.5度を超える後方の位置から接近する船舶です。追越し船はどちら側からでも追い越せますが、十分な距離をとって安全に追い越す必要があります。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 500 300" width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ot-arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#2d3748"/>
+        </marker>
+      </defs>
+
+      <text x="250" y="25" text-anchor="middle" class="svg-title">追越し船（第13条）</text>
+
+      <!-- 前方の船（被追越し船） -->
+      <polygon points="240,130 250,100 260,130" fill="#38a169"/>
+      <text x="250" y="150" text-anchor="middle" font-size="11" fill="#38a169" font-weight="bold">前方船（保持船）</text>
+      <line x1="250" y1="100" x2="250" y2="50" stroke="#38a169" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ot-arr)"/>
+
+      <!-- 船尾灯の範囲（135度） -->
+      <path d="M250,130 L160,210 A120,120 0 0,0 340,210 Z" fill="#d69e2e" fill-opacity="0.15" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="250" y="200" text-anchor="middle" font-size="10" fill="#975a16">船尾灯の範囲（135°）</text>
+      <text x="250" y="215" text-anchor="middle" font-size="10" fill="#975a16">この範囲から接近 = 追越し船</text>
+
+      <!-- 追越し船 -->
+      <polygon points="140,270 150,240 160,270" fill="#e53e3e"/>
+      <text x="150" y="290" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="bold">追越し船（避航船）</text>
+      <!-- 避航経路 -->
+      <path d="M150,240 Q130,180 100,140 Q80,110 80,70" fill="none" stroke="#e53e3e" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ot-arr)"/>
+      <text x="65" y="150" font-size="9" fill="#e53e3e">左舷側追越し</text>
+
+      <!-- 22.5度の線 -->
+      <text x="155" y="195" font-size="9" fill="#975a16">正横後22.5°</text>
+      <text x="305" y="195" font-size="9" fill="#975a16">正横後22.5°</text>
+    </svg>
+    <p class="caption">図8-4: 追越し船の定義 — 船尾灯が見える範囲（135度）から接近する船</p>
+  </div>
+
+  <!-- ========== 8. 灯火と形象物 ========== -->
+  <h2 id="lights">8. 灯火と形象物</h2>
+
+  <p>船舶は夜間に<strong>灯火</strong>を、日中に<strong>形象物</strong>を表示して、他船に自船の種類や状態を知らせます。</p>
+
+  <h3>8-1. 動力船の基本灯火</h3>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 400" width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+      <text x="300" y="25" text-anchor="middle" class="svg-title">動力船の灯火配置（長さ50m未満）</text>
+
+      <!-- 船体（上から見た図） -->
+      <path d="M250,80 L200,160 L200,300 L400,300 L400,160 Z" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+      <text x="300" y="250" text-anchor="middle" font-size="12" fill="#718096">船体（上面図）</text>
+
+      <!-- 船首方向 -->
+      <text x="250" y="65" font-size="10" fill="#718096">船首 ↑</text>
+
+      <!-- マスト灯（白） -->
+      <circle cx="300" cy="140" r="10" fill="#fff" stroke="#d69e2e" stroke-width="2">
+        <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="320" y="135" font-size="11" fill="#d69e2e" font-weight="bold">マスト灯（白）</text>
+      <text x="320" y="150" font-size="9" fill="#718096">225° 前方照射</text>
+
+      <!-- 舷灯 - 左舷（赤） -->
+      <circle cx="210" cy="160" r="8" fill="#e53e3e" stroke="#c53030" stroke-width="2">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="130" y="160" font-size="11" fill="#e53e3e" font-weight="bold">左舷灯（赤）</text>
+      <text x="140" y="175" font-size="9" fill="#718096">112.5°</text>
+
+      <!-- 舷灯 - 右舷（緑） -->
+      <circle cx="290" cy="115" r="8" fill="#38a169" stroke="#276749" stroke-width="2">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="380" y="110" font-size="11" fill="#38a169" font-weight="bold">右舷灯（緑）</text>
+      <text x="390" y="125" font-size="9" fill="#718096">112.5°</text>
+
+      <!-- 船尾灯（白） -->
+      <circle cx="300" cy="300" r="8" fill="#fff" stroke="#718096" stroke-width="2">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="320" y="310" font-size="11" fill="#718096" font-weight="bold">船尾灯（白）</text>
+      <text x="320" y="325" font-size="9" fill="#718096">135° 後方照射</text>
+
+      <!-- 照射範囲の説明 -->
+      <rect x="50" y="350" width="500" height="40" rx="6" fill="#fffff0" stroke="#d69e2e" stroke-width="1"/>
+      <text x="300" y="370" text-anchor="middle" font-size="11" fill="#2d3748">マスト灯225° + 船尾灯135° = 360°（全周をカバー）</text>
+      <text x="300" y="385" text-anchor="middle" font-size="11" fill="#2d3748">左舷灯112.5° + 右舷灯112.5° = 225°（前方をカバー）= マスト灯と同じ範囲</text>
+    </svg>
+    <p class="caption">図8-5: 動力船の灯火配置（長さ50m未満の場合）</p>
+  </div>
+
+  <h3>8-2. 主な灯火の一覧</h3>
+  <table>
+    <thead>
+      <tr><th>灯火</th><th>色</th><th>照射範囲</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>マスト灯</td><td>白</td><td>225°（前方）</td><td>動力船が航行中であること</td></tr>
+      <tr><td>左舷灯</td><td>赤</td><td>112.5°（左舷側前方）</td><td>船の左舷側を示す</td></tr>
+      <tr><td>右舷灯</td><td>緑</td><td>112.5°（右舷側前方）</td><td>船の右舷側を示す</td></tr>
+      <tr><td>船尾灯</td><td>白</td><td>135°（後方）</td><td>船の後方を示す</td></tr>
+      <tr><td>引き船灯</td><td>黄</td><td>135°（後方）</td><td>曳航中の船</td></tr>
+      <tr><td>全周灯</td><td>各色</td><td>360°</td><td>錨泊灯（白）、操縦不自由船（赤×2）等</td></tr>
+    </tbody>
+  </table>
+
+  <h3>8-3. 特殊な灯火・形象物</h3>
+  <table>
+    <thead>
+      <tr><th>船舶の状態</th><th>夜間灯火</th><th>昼間形象物</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>錨泊中</td><td>白色全周灯（船首部に1個、50m以上は船尾にも1個）</td><td>球形1個</td></tr>
+      <tr><td>操縦不自由船</td><td>紅色全周灯 縦2個</td><td>球形 縦2個</td></tr>
+      <tr><td>操縦性能制限船</td><td>紅白紅 全周灯 縦3個</td><td>球菱球 縦3個</td></tr>
+      <tr><td>喫水制限船</td><td>紅色全周灯 縦3個</td><td>円筒形1個</td></tr>
+      <tr><td>漁ろうに従事中</td><td>紅白 全周灯 縦2個（トロール以外）</td><td>三角形2個（上下逆に重ね合わせ）</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ========== 9. 音響信号 ========== -->
+  <h2 id="sound-signals">9. 音響信号</h2>
+
+  <h3>9-1. 音響信号の基本</h3>
+  <ul>
+    <li><strong>短音:</strong> 約1秒間の吹鳴</li>
+    <li><strong>長音:</strong> 4〜6秒間の吹鳴</li>
+  </ul>
+
+  <h3>9-2. 操船信号（互いに視野の内にある船舶間）</h3>
+  <table>
+    <thead>
+      <tr><th>信号</th><th>吹鳴パターン</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>短音1回</td><td>・</td><td>私は針路を右に転じている</td></tr>
+      <tr><td>短音2回</td><td>・・</td><td>私は針路を左に転じている</td></tr>
+      <tr><td>短音3回</td><td>・・・</td><td>私は機関を後進にかけている</td></tr>
+      <tr><td>長音2回+短音1回</td><td>— — ・</td><td>私は貴船を右舷側に追い越そうとしている</td></tr>
+      <tr><td>長音2回+短音2回</td><td>— — ・・</td><td>私は貴船を左舷側に追い越そうとしている</td></tr>
+      <tr><td>長音+短音+長音+短音</td><td>— ・ — ・</td><td>同意信号（追越しに同意する）</td></tr>
+      <tr><td>短音5回以上</td><td>・・・・・</td><td>疑問信号（相手の意図が不明、又は衝突の危険）</td></tr>
+    </tbody>
+  </table>
+
+  <h3>9-3. 霧中信号</h3>
+  <table>
+    <thead>
+      <tr><th>船舶の状態</th><th>信号</th><th>間隔</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>航行中の動力船（対水速力あり）</td><td>長音1回</td><td>2分以内</td></tr>
+      <tr><td>航行中の動力船（停止中）</td><td>長音2回</td><td>2分以内</td></tr>
+      <tr><td>操縦不自由船・漁船等</td><td>長音1回+短音2回</td><td>2分以内</td></tr>
+      <tr><td>錨泊船</td><td>急速に号鐘を5秒間</td><td>1分以内</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-info">
+    <h4>内航タンカーの実務と音響信号</h4>
+    <p>内航タンカーでは、港内や狭水道で追越し・行会い時の音響信号をしっかり使用します。特に瀬戸内海の狭水道部では、音響信号とVHFによる意思疎通を併用して安全を確保します。疑問信号（短音5回以上）は「危ない！」という最も強い警告であり、躊躇なく使用してください。</p>
+  </div>
+
+  <!-- ========== 10. 注意喚起信号と遭難信号 ========== -->
+  <h2 id="distress-signals">10. 注意喚起信号と遭難信号</h2>
+
+  <h3>10-1. 注意喚起信号</h3>
+  <p>他の船舶の注意を喚起するために、長音1回以上の発光信号を行うことができます。また、探照灯（サーチライト）で危険を照射して注意を促すこともできます。</p>
+
+  <h3>10-2. 遭難信号</h3>
+  <p>遭難信号は生命の危険がある場合にのみ使用します。主な遭難信号は以下の通りです。</p>
+
+  <ul>
+    <li>発砲または爆発信号（約1分間隔）</li>
+    <li>霧中信号器による連続音響</li>
+    <li>赤色の火炎（紅炎）</li>
+    <li>SOS（モールス信号）</li>
+    <li>無線電話による「MAYDAY」の送信</li>
+    <li>国際信号旗「NC」の掲揚</li>
+    <li>球形の上に四角形を掲揚</li>
+    <li>オレンジ色の煙（発煙信号）</li>
+    <li>両腕を繰り返しゆっくりと上下に振る</li>
+    <li>EPIRB（衛星非常用位置指示無線標識）の発信</li>
+  </ul>
+
+  <div class="key-point">
+    <p><strong>海上衝突予防法の核心:</strong> この法律の全てのルールは「衝突を防ぐ」という一つの目的に集約されます。規則を暗記するだけでなく、「なぜそのルールがあるのか」を理解し、実務で確実に実行することが重要です。ルール通りにいかない場面（相手船が避航しない等）では、<strong>切迫した危険を避けるためにあらゆる適切な動作をとる</strong>義務があります（第2条、第17条3項）。</p>
+  </div>
+
+  <!-- ========== クイズ ========== -->
+  <div class="quiz">
+    <h4>章末クイズ — 理解度チェック</h4>
+
+    <p><strong>Q1.</strong> 2隻の動力船が互いに進路を横切る場合、どちらの船舶が避航義務を負うか？</p>
+    <button onclick="showAnswer('a1')">答えを表示</button>
+    <div id="a1" class="quiz-answer">
+      <p><strong>答え:</strong> 他の船舶を右舷側に見る船舶（つまり、相手船の赤灯が見える方の船）が避航船となります。「右に見たら避ける」と覚えましょう。</p>
+    </div>
+
+    <p style="margin-top:1.2rem;"><strong>Q2.</strong> 操船信号で「短音3回」は何を意味するか？</p>
+    <button onclick="showAnswer('a2')">答えを表示</button>
+    <div id="a2" class="quiz-answer">
+      <p><strong>答え:</strong> 「私は機関を後進にかけている」を意味します。短音1回は右転、短音2回は左転です。</p>
+    </div>
+
+    <p style="margin-top:1.2rem;"><strong>Q3.</strong> 接近する他船のコンパスベアリングが「ほとんど変化しない」場合、何を意味するか？</p>
+    <button onclick="showAnswer('a3')">答えを表示</button>
+    <div id="a3" class="quiz-answer">
+      <p><strong>答え:</strong> 衝突のおそれがあることを意味します（第7条）。方位が変化しないまま距離が縮まっている場合、そのまま進むと衝突に至ります。直ちに避航動作をとる必要があります。</p>
+    </div>
+  </div>
+
+  <!-- ========== 章末ナビ ========== -->
+  <div class="chapter-nav">
+    <a href="nav07_shiphandling.html">← 第7章 操船の基礎</a>
+    <a href="nav09_law.html">第9章 港則法と海上交通安全法 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

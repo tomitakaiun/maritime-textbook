@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 航路標識 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  @keyframes light-flash {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 1; }
+  }
+  @keyframes light-occulting {
+    0%, 100% { opacity: 1; }
+    40%, 60% { opacity: 0.05; }
+  }
+  @keyframes light-iso {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.05; }
+  }
+  @keyframes light-quick {
+    0%, 100% { opacity: 0.1; }
+    30%, 70% { opacity: 1; }
+  }
+  @keyframes light-fixed {
+    0%, 100% { opacity: 1; }
+  }
+  .anim-flash { animation: light-flash 3s ease-in-out infinite; }
+  .anim-occulting { animation: light-occulting 4s ease-in-out infinite; }
+  .anim-iso { animation: light-iso 2s step-end infinite; }
+  .anim-quick { animation: light-quick 0.6s ease-in-out infinite; }
+  .anim-fixed { opacity: 1; }
+  .anim-fl-group-2 {
+    animation: light-flash 0.5s ease-in-out 2;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-name: grp-flash2;
+  }
+  @keyframes grp-flash2 {
+    0%, 20% { opacity: 1; }
+    25%, 35% { opacity: 0.05; }
+    40%, 60% { opacity: 1; }
+    65%, 100% { opacity: 0.05; }
+  }
+  @keyframes beacon-glow {
+    0%, 100% { filter: drop-shadow(0 0 3px rgba(255,200,0,0.3)); }
+    50% { filter: drop-shadow(0 0 12px rgba(255,200,0,0.9)); }
+  }
+  .beacon-glow { animation: beacon-glow 2s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第4章 航路標識</h1>
+  <div class="subtitle">Aids to Navigation — 安全な航海を導く標識を学ぶ</div>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="nav03_chart.html">&laquo; 第3章 海図の読み方</a>
+    <a href="nav05_tide.html">第5章 潮汐と潮流 &raquo;</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <!-- ===== 4-1 航路標識の種類 ===== -->
+  <h2 id="s4-1">4-1. 航路標識の種類</h2>
+
+  <p>航路標識とは、船舶が安全に航行するために設置された標識の総称です。航路標識法では、以下の3種類に大別されています。</p>
+
+  <h3>（1）光波標識</h3>
+  <p>光を利用して船舶に位置や危険を知らせる標識です。最も一般的で、夜間の航海には欠かせません。</p>
+  <ul>
+    <li><strong>灯台</strong> — 岬や島に設置される固定灯火施設。最も重要な光波標識</li>
+    <li><strong>灯標</strong>（とうひょう） — 浅瀬や暗岩の上に建てられる小型の灯火付き構造物</li>
+    <li><strong>灯浮標</strong>（とうふひょう） — 海面に浮かぶブイに灯火を備えたもの</li>
+    <li><strong>照射灯</strong> — 特定の水域や障害物を照らす投光器</li>
+    <li><strong>導灯・導標</strong> — 2基の灯火を一直線上に並べ、安全な進入路を示すもの</li>
+  </ul>
+
+  <h3>（2）電波標識</h3>
+  <p>電波を利用して船舶の位置決定を支援する標識です。</p>
+  <ul>
+    <li><strong><span class="glossary-term" data-def="Radar Beacon の略。レーダー画面上に識別信号を表示する装置">レーコン（RACON）</span></strong> — レーダーに応答信号を返す装置</li>
+    <li><strong>ディファレンシャルGPS基準局</strong> — GPS精度を向上させる補正信号を送信</li>
+    <li><strong>AIS信号所</strong> — AISを使って航路情報を送信</li>
+  </ul>
+
+  <h3>（3）その他の標識</h3>
+  <ul>
+    <li><strong>浮標</strong>（ふひょう） — 灯火のないブイ。昼間のみ有効</li>
+    <li><strong>立標</strong> — 陸上や浅所に立てた柱状の標識</li>
+    <li><strong>霧信号所</strong> — 霧の時に音で位置を知らせる（ダイアフラムホーン等）</li>
+    <li><strong>潮流信号所</strong> — 潮流の方向・速さを電光表示する</li>
+  </ul>
+
+  <div class="key-point">
+    <p>内航タンカーの航海では、<strong>灯台・灯浮標・灯標</strong>の3つが最も頻繁に使用する光波標識です。特に瀬戸内海の狭水道では、灯浮標と導灯が航路の中心線を示す重要な手がかりとなります。</p>
+  </div>
+
+  <!-- ===== 4-2 灯台 ===== -->
+  <h2 id="s4-2">4-2. 灯台</h2>
+
+  <h3>灯台の構造</h3>
+  <p>灯台は、岬の先端や離島など航海上の目標となる場所に設置されます。主な構成要素は以下のとおりです。</p>
+  <ul>
+    <li><strong>灯塔</strong> — コンクリートや鋼製の塔体。白色に塗装されることが多い</li>
+    <li><strong>灯器</strong> — 光源（現在はほぼLED）とレンズを組み合わせたもの</li>
+    <li><strong>レンズ</strong> — フレネルレンズが伝統的に使用されてきた。光を水平方向に集中させる</li>
+    <li><strong>灯籠</strong>（とうろう） — 灯器を収めるガラス張りの部屋</li>
+  </ul>
+
+  <h3>灯質（Light Character）</h3>
+  <p><span class="glossary-term" data-def="灯火の光り方のパターン。灯台や灯浮標を識別するための最も重要な要素">灯質</span>とは、灯火がどのようなパターンで光るかを示すもので、各灯台を識別する最大の手がかりです。</p>
+
+  <!-- SVG: 灯質パターン -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 420" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="350" y="30" text-anchor="middle" class="svg-title" font-size="16">主要な灯質パターン</text>
+
+      <!-- 不動光 F -->
+      <text x="20" y="75" class="svg-label" font-weight="bold">不動光 (F)</text>
+      <rect x="150" y="58" width="500" height="24" rx="3" fill="#1a365d" opacity="0.1"/>
+      <rect x="150" y="58" width="500" height="24" rx="3" fill="#FFD700" class="anim-fixed"/>
+      <text x="660" y="75" class="svg-label" font-size="11">Fixed</text>
+
+      <!-- 閃光 Fl -->
+      <text x="20" y="135" class="svg-label" font-weight="bold">閃光 (Fl)</text>
+      <rect x="150" y="118" width="500" height="24" rx="3" fill="#1a365d" opacity="0.1"/>
+      <rect x="150" y="118" width="500" height="24" rx="3" fill="#FFD700" class="anim-flash"/>
+      <text x="660" y="135" class="svg-label" font-size="11">Flashing</text>
+
+      <!-- 明暗光 Oc -->
+      <text x="20" y="195" class="svg-label" font-weight="bold">明暗光 (Oc)</text>
+      <rect x="150" y="178" width="500" height="24" rx="3" fill="#1a365d" opacity="0.1"/>
+      <rect x="150" y="178" width="500" height="24" rx="3" fill="#FFD700" class="anim-occulting"/>
+      <text x="660" y="195" class="svg-label" font-size="11">Occulting</text>
+
+      <!-- 等明暗光 Iso -->
+      <text x="20" y="255" class="svg-label" font-weight="bold">等明暗光 (Iso)</text>
+      <rect x="150" y="238" width="500" height="24" rx="3" fill="#1a365d" opacity="0.1"/>
+      <rect x="150" y="238" width="500" height="24" rx="3" fill="#FFD700" class="anim-iso"/>
+      <text x="660" y="255" class="svg-label" font-size="11">Isophase</text>
+
+      <!-- 急閃光 Q -->
+      <text x="20" y="315" class="svg-label" font-weight="bold">急閃光 (Q)</text>
+      <rect x="150" y="298" width="500" height="24" rx="3" fill="#1a365d" opacity="0.1"/>
+      <rect x="150" y="298" width="500" height="24" rx="3" fill="#FFD700" class="anim-quick"/>
+      <text x="660" y="315" class="svg-label" font-size="11">Quick</text>
+
+      <!-- 群閃光 Fl(2) -->
+      <text x="20" y="375" class="svg-label" font-weight="bold">群閃光 Fl(2)</text>
+      <rect x="150" y="358" width="500" height="24" rx="3" fill="#1a365d" opacity="0.1"/>
+      <rect x="150" y="358" width="500" height="24" rx="3" fill="#FFD700" class="anim-fl-group-2"/>
+      <text x="660" y="375" class="svg-label" font-size="11">Gp Flash</text>
+
+      <!-- 説明文 -->
+      <text x="350" y="410" text-anchor="middle" font-size="12" fill="#718096">暗背景が消灯、黄色が点灯を表します（実際の色は灯台により異なります）</text>
+    </svg>
+    <div class="caption">図4-1: 主要な灯質パターン（CSSアニメーションで実際の点滅を再現）</div>
+  </div>
+
+  <h3>光達距離</h3>
+  <p><span class="glossary-term" data-def="灯火が見える最大距離。光力光達距離と地理的光達距離がある">光達距離</span>には2種類あります。</p>
+  <ul>
+    <li><strong>光力光達距離</strong> — 灯火の明るさ（光度）によって決まる距離。大気の透明度が標準的な場合に肉眼で見える距離</li>
+    <li><strong>地理的光達距離</strong> — 地球の曲率と灯火の高さ、観測者の眼高によって決まる距離</li>
+  </ul>
+  <p>海図に記載されている光達距離は<strong>公称光達距離</strong>（nominal range）で、気象視程10海里の条件での光力光達距離です。</p>
+
+  <div class="box box-example">
+    <h4>内航実務: 光達距離の活用</h4>
+    <p>内航タンカーで瀬戸内海を航行する場合、視程が悪化した夜間は灯台の光達距離を強く意識します。例えば、光達距離15海里の灯台でも、霧で視程が3海里に落ちれば、実際には3海里程度まで近づかないと視認できません。レーダーと併用した航海が必須です。</p>
+  </div>
+
+  <!-- ===== 4-3 灯浮標と灯標 ===== -->
+  <h2 id="s4-3">4-3. 灯浮標と灯標</h2>
+
+  <h3>灯浮標（Light Buoy）</h3>
+  <p>灯浮標は、海面に浮かべて係留したブイの上に灯器を取り付けたものです。航路の境界、浅瀬の位置、障害物の存在を示します。</p>
+  <ul>
+    <li>鉄製またはFRP製の浮体に灯器を搭載</li>
+    <li>チェーンとアンカー（沈錘）で海底に係留</li>
+    <li>太陽電池パネルでバッテリーを充電し、自動点灯する</li>
+    <li><span class="glossary-term" data-def="浮標の塗色、灯質、頭標（トップマーク）の組み合わせで意味が決まる">塗色・灯質・頭標</span>の組み合わせでIALA浮標式に基づく意味を持つ</li>
+  </ul>
+
+  <h3>灯標（Light Beacon）</h3>
+  <p>灯標は、浅瀬や暗岩の上に直接建てられた小型の構造物で、灯火を備えています。灯浮標と異なり固定されているため、位置が正確で信頼性が高いのが特徴です。</p>
+
+  <div class="key-point">
+    <p>灯浮標は風や潮流によって<strong>振れ回り</strong>（スイング）するため、表示位置から実際に数十メートルずれていることがあります。灯浮標を至近距離で避ける操船は危険です。十分な距離を保ちましょう。</p>
+  </div>
+
+  <!-- ===== 4-4 IALA海上浮標式 ===== -->
+  <h2 id="s4-4">4-4. IALA海上浮標式</h2>
+
+  <p><span class="glossary-term" data-def="International Association of Marine Aids to Navigation and Lighthouse Authorities（国際航路標識協会）">IALA</span>は、世界共通の浮標式を定めています。日本は<strong>A方式（A地域）</strong>を採用しています。</p>
+
+  <p>A方式の基本原則: 船舶が港に<strong>入港する方向</strong>（外海から港へ向かう方向）に見て、左舷側が赤、右舷側が緑です。</p>
+
+  <!-- SVG: IALA浮標式 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 700" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="400" y="30" text-anchor="middle" class="svg-title" font-size="16">IALA海上浮標式（A方式 — 日本採用）</text>
+
+      <!-- 側面標識 -->
+      <text x="200" y="65" text-anchor="middle" font-size="14" fill="#1a365d" font-weight="bold">側面標識（Lateral Marks）</text>
+
+      <!-- 左舷標識（赤） -->
+      <g transform="translate(80, 80)">
+        <text x="60" y="0" text-anchor="middle" font-size="12" fill="#e53e3e" font-weight="bold">左舷標識</text>
+        <!-- 缶型ブイ -->
+        <rect x="30" y="15" width="60" height="80" rx="3" fill="#e53e3e" stroke="#c53030" stroke-width="2"/>
+        <!-- トップマーク: 円筒 -->
+        <rect x="45" y="5" width="30" height="15" rx="2" fill="#e53e3e" stroke="#c53030" stroke-width="1.5"/>
+        <text x="60" y="115" text-anchor="middle" font-size="11" fill="#2d3748">色: 赤</text>
+        <text x="60" y="130" text-anchor="middle" font-size="11" fill="#2d3748">形: 缶型</text>
+        <text x="60" y="145" text-anchor="middle" font-size="11" fill="#2d3748">頭標: 円筒</text>
+        <text x="60" y="160" text-anchor="middle" font-size="11" fill="#2d3748">灯色: 赤</text>
+        <!-- 灯火アニメーション -->
+        <circle cx="60" cy="20" r="8" fill="#ff0000" opacity="0.7" class="anim-flash"/>
+      </g>
+
+      <!-- 右舷標識（緑） -->
+      <g transform="translate(260, 80)">
+        <text x="60" y="0" text-anchor="middle" font-size="12" fill="#38a169" font-weight="bold">右舷標識</text>
+        <!-- 円錐型ブイ -->
+        <polygon points="60,15 90,95 30,95" fill="#38a169" stroke="#276749" stroke-width="2"/>
+        <!-- トップマーク: 円錐 -->
+        <polygon points="60,2 75,15 45,15" fill="#38a169" stroke="#276749" stroke-width="1.5"/>
+        <text x="60" y="115" text-anchor="middle" font-size="11" fill="#2d3748">色: 緑</text>
+        <text x="60" y="130" text-anchor="middle" font-size="11" fill="#2d3748">形: 円錐型</text>
+        <text x="60" y="145" text-anchor="middle" font-size="11" fill="#2d3748">頭標: 円錐</text>
+        <text x="60" y="160" text-anchor="middle" font-size="11" fill="#2d3748">灯色: 緑</text>
+        <circle cx="60" cy="20" r="8" fill="#00ff00" opacity="0.7" class="anim-flash"/>
+      </g>
+
+      <!-- 入港方向の矢印 -->
+      <g transform="translate(140, 260)">
+        <line x1="0" y1="10" x2="180" y2="10" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+        <text x="90" y="35" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="bold">入港方向</text>
+        <text x="0" y="-5" font-size="11" fill="#e53e3e">左舷側</text>
+        <text x="150" y="-5" font-size="11" fill="#38a169">右舷側</text>
+      </g>
+
+      <!-- 方位標識 -->
+      <text x="620" y="65" text-anchor="middle" font-size="14" fill="#1a365d" font-weight="bold">方位標識（Cardinal Marks）</text>
+
+      <!-- N方位 -->
+      <g transform="translate(580, 80)">
+        <text x="30" y="0" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">北 (N)</text>
+        <rect x="10" y="10" width="40" height="50" fill="#FFD700" stroke="#2d3748" stroke-width="1.5"/>
+        <rect x="10" y="10" width="40" height="25" fill="#2d3748"/>
+        <!-- 頭標: 上上 -->
+        <polygon points="25,5 30,0 35,5" fill="#2d3748"/>
+        <polygon points="25,-2 30,-7 35,-2" fill="#2d3748"/>
+        <text x="30" y="78" text-anchor="middle" font-size="9" fill="#2d3748">黒上・黄下</text>
+      </g>
+
+      <!-- E方位 -->
+      <g transform="translate(680, 80)">
+        <text x="30" y="0" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">東 (E)</text>
+        <rect x="10" y="10" width="40" height="50" fill="#2d3748" stroke="#2d3748" stroke-width="1.5"/>
+        <rect x="10" y="10" width="40" height="17" fill="#FFD700"/>
+        <rect x="10" y="43" width="40" height="17" fill="#FFD700"/>
+        <!-- 頭標: 上下（底対底） -->
+        <polygon points="25,5 30,0 35,5" fill="#2d3748"/>
+        <polygon points="25,-2 30,-7 35,-2" fill="#2d3748" transform="rotate(180,30,-4.5)"/>
+        <text x="30" y="78" text-anchor="middle" font-size="9" fill="#2d3748">黄黒黄</text>
+      </g>
+
+      <!-- S方位 -->
+      <g transform="translate(580, 190)">
+        <text x="30" y="0" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">南 (S)</text>
+        <rect x="10" y="10" width="40" height="50" fill="#FFD700" stroke="#2d3748" stroke-width="1.5"/>
+        <rect x="10" y="35" width="40" height="25" fill="#2d3748"/>
+        <!-- 頭標: 下下 -->
+        <polygon points="25,5 30,10 35,5" fill="#2d3748"/>
+        <polygon points="25,-2 30,3 35,-2" fill="#2d3748"/>
+        <text x="30" y="78" text-anchor="middle" font-size="9" fill="#2d3748">黄上・黒下</text>
+      </g>
+
+      <!-- W方位 -->
+      <g transform="translate(680, 190)">
+        <text x="30" y="0" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">西 (W)</text>
+        <rect x="10" y="10" width="40" height="50" fill="#FFD700" stroke="#2d3748" stroke-width="1.5"/>
+        <rect x="10" y="27" width="40" height="17" fill="#2d3748"/>
+        <!-- 頭標: 上下（頂対頂） -->
+        <polygon points="25,-2 30,-7 35,-2" fill="#2d3748"/>
+        <polygon points="25,5 30,10 35,5" fill="#2d3748"/>
+        <text x="30" y="78" text-anchor="middle" font-size="9" fill="#2d3748">黄黒黄</text>
+      </g>
+
+      <text x="650" y="310" text-anchor="middle" font-size="10" fill="#718096">灯色: すべて白</text>
+
+      <!-- 特殊標識セクション -->
+      <text x="200" y="330" text-anchor="middle" font-size="14" fill="#1a365d" font-weight="bold">特殊な標識</text>
+
+      <!-- 孤立障害標識 -->
+      <g transform="translate(30, 350)">
+        <text x="50" y="0" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">孤立障害標識</text>
+        <rect x="25" y="10" width="50" height="70" fill="#2d3748" stroke="#2d3748" stroke-width="1.5"/>
+        <rect x="25" y="25" width="50" height="15" fill="#e53e3e"/>
+        <rect x="25" y="55" width="50" height="15" fill="#e53e3e"/>
+        <!-- 頭標: 球2つ -->
+        <circle cx="50" cy="3" r="6" fill="#2d3748"/>
+        <circle cx="50" cy="-9" r="6" fill="#2d3748"/>
+        <text x="50" y="100" text-anchor="middle" font-size="9" fill="#2d3748">黒赤黒の横帯</text>
+        <text x="50" y="112" text-anchor="middle" font-size="9" fill="#2d3748">灯色: 白 Fl(2)</text>
+      </g>
+
+      <!-- 安全水域標識 -->
+      <g transform="translate(180, 350)">
+        <text x="50" y="0" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">安全水域標識</text>
+        <circle cx="50" cy="45" r="35" fill="#e53e3e" stroke="#c53030" stroke-width="1.5"/>
+        <!-- 赤白縦帯 -->
+        <rect x="27" y="15" width="10" height="60" fill="#ffffff" rx="1"/>
+        <rect x="40" y="12" width="10" height="65" fill="#ffffff" rx="1"/>
+        <rect x="53" y="12" width="10" height="65" fill="#ffffff" rx="1"/>
+        <rect x="65" y="15" width="10" height="60" fill="#ffffff" rx="1"/>
+        <!-- 頭標: 球1つ -->
+        <circle cx="50" cy="3" r="6" fill="#e53e3e"/>
+        <text x="50" y="100" text-anchor="middle" font-size="9" fill="#2d3748">赤白の縦帯</text>
+        <text x="50" y="112" text-anchor="middle" font-size="9" fill="#2d3748">灯色: 白 Iso/Oc/LFl</text>
+      </g>
+
+      <!-- 特殊標識 -->
+      <g transform="translate(340, 350)">
+        <text x="50" y="0" text-anchor="middle" font-size="11" fill="#2d3748" font-weight="bold">特殊標識</text>
+        <rect x="25" y="10" width="50" height="70" rx="5" fill="#FFD700" stroke="#d69e2e" stroke-width="1.5"/>
+        <text x="50" y="52" text-anchor="middle" font-size="20" fill="#2d3748">&#215;</text>
+        <!-- 頭標: X -->
+        <text x="50" y="5" text-anchor="middle" font-size="16" fill="#FFD700" font-weight="bold">&#215;</text>
+        <text x="50" y="100" text-anchor="middle" font-size="9" fill="#2d3748">黄色</text>
+        <text x="50" y="112" text-anchor="middle" font-size="9" fill="#2d3748">灯色: 黄</text>
+      </g>
+
+      <!-- 凡例 -->
+      <rect x="20" y="640" width="760" height="45" rx="6" fill="#ebf8ff" stroke="#bee3f8" stroke-width="1"/>
+      <text x="400" y="660" text-anchor="middle" font-size="11" fill="#2d3748">A方式（日本採用）: 入港方向に見て左舷=赤・缶型、右舷=緑・円錐型</text>
+      <text x="400" y="676" text-anchor="middle" font-size="11" fill="#718096">※B方式（米国等）は左右の色が逆になります</text>
+
+      <defs>
+        <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+    </svg>
+    <div class="caption">図4-2: IALA海上浮標式（A方式）の主要標識</div>
+  </div>
+
+  <h3>方位標識の覚え方</h3>
+  <p>方位標識は、その標識の示す方位側が<strong>安全な水域</strong>であることを意味します。つまり、北方位標識の北側を通過すれば安全です。</p>
+
+  <div class="box box-info">
+    <h4>頭標（トップマーク）の覚え方</h4>
+    <ul>
+      <li><strong>北 (N)</strong> — 三角2つ上向き（上を指す）→ 北へ行け</li>
+      <li><strong>南 (S)</strong> — 三角2つ下向き（下を指す）→ 南へ行け</li>
+      <li><strong>東 (E)</strong> — 三角が底辺で向き合う（卵型）→ 東の「E」の真ん中のイメージ</li>
+      <li><strong>西 (W)</strong> — 三角が頂点で向き合う（ワイングラス型）→「W」の形</li>
+    </ul>
+  </div>
+
+  <h3>方位標識の灯質</h3>
+  <table>
+    <thead>
+      <tr><th>方位</th><th>灯質</th><th>覚え方</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>北 (N)</td><td>Q（連続急閃光）または VQ</td><td>北は切れ目なし</td></tr>
+      <tr><td>東 (E)</td><td>Q(3) または VQ(3) 5s/10s</td><td>3時の方向 = 東</td></tr>
+      <tr><td>南 (S)</td><td>Q(6)+LFl または VQ(6)+LFl</td><td>6時の方向 = 南</td></tr>
+      <tr><td>西 (W)</td><td>Q(9) または VQ(9) 10s/15s</td><td>9時の方向 = 西</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 4-5 灯質の表記と識別 ===== -->
+  <h2 id="s4-5">4-5. 灯質の表記と識別</h2>
+
+  <p>灯質は<strong>海図</strong>や<strong>灯台表</strong>に略号で記載されます。以下が主要な灯質略語です。</p>
+
+  <table>
+    <thead>
+      <tr><th>略号</th><th>日本語名</th><th>英語名</th><th>特徴</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>F</strong></td><td>不動光</td><td>Fixed</td><td>常時点灯。消えない</td></tr>
+      <tr><td><strong>Fl</strong></td><td>閃光</td><td>Flashing</td><td>明間 &lt; 暗間。ピカッと光る</td></tr>
+      <tr><td><strong>Oc</strong></td><td>明暗光</td><td>Occulting</td><td>明間 &gt; 暗間。基本点灯で一瞬消える</td></tr>
+      <tr><td><strong>Iso</strong></td><td>等明暗光</td><td>Isophase</td><td>明間 = 暗間。均等に点滅</td></tr>
+      <tr><td><strong>Q</strong></td><td>急閃光</td><td>Quick</td><td>毎分50〜79回の閃光</td></tr>
+      <tr><td><strong>VQ</strong></td><td>超急閃光</td><td>Very Quick</td><td>毎分80〜159回の閃光</td></tr>
+      <tr><td><strong>LFl</strong></td><td>長閃光</td><td>Long Flashing</td><td>明間2秒以上の閃光</td></tr>
+      <tr><td><strong>Mo(A)</strong></td><td>モールス符号光</td><td>Morse Code</td><td>モールス符号で識別文字を送る</td></tr>
+      <tr><td><strong>Fl(2)</strong></td><td>群閃光</td><td>Group Flashing</td><td>2回ピカピカと光って暗間</td></tr>
+      <tr><td><strong>Al</strong></td><td>互光</td><td>Alternating</td><td>異なる色が交互に光る</td></tr>
+    </tbody>
+  </table>
+
+  <h3>灯質の読み方の例</h3>
+  <div class="box box-example">
+    <h4>例: Fl(3) W 15s 80m 20M</h4>
+    <ul>
+      <li><strong>Fl(3)</strong> — 群閃光（3回連続して閃光）</li>
+      <li><strong>W</strong> — 白色灯（White）</li>
+      <li><strong>15s</strong> — 周期15秒（3回の閃光+暗間で合計15秒）</li>
+      <li><strong>80m</strong> — 灯火の高さ（平均水面から80メートル）</li>
+      <li><strong>20M</strong> — 光達距離20海里（公称光達距離）</li>
+    </ul>
+  </div>
+
+  <!-- SVG: 灯質タイムチャート -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="350" y="25" text-anchor="middle" class="svg-title" font-size="15">灯質タイムチャート</text>
+      <text x="30" y="50" font-size="10" fill="#718096">光 ON</text>
+      <text x="30" y="90" font-size="10" fill="#718096">光 OFF</text>
+
+      <!-- Fl 5s -->
+      <text x="50" y="70" font-size="12" fill="#1a365d" font-weight="bold">Fl 5s</text>
+      <line x1="110" y1="85" x2="650" y2="85" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="110" y1="55" x2="650" y2="55" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4"/>
+      <!-- 周期表示 -->
+      <rect x="110" y="55" width="30" height="30" fill="#FFD700" rx="2"/>
+      <rect x="140" y="85" width="0" height="0"/>
+      <line x1="140" y1="55" x2="140" y2="85" stroke="#2d3748" stroke-width="1"/>
+      <line x1="140" y1="85" x2="290" y2="85" stroke="#2d3748" stroke-width="2"/>
+      <rect x="290" y="55" width="30" height="30" fill="#FFD700" rx="2"/>
+      <line x1="320" y1="85" x2="470" y2="85" stroke="#2d3748" stroke-width="2"/>
+      <rect x="470" y="55" width="30" height="30" fill="#FFD700" rx="2"/>
+      <!-- 周期矢印 -->
+      <line x1="110" y1="100" x2="290" y2="100" stroke="#2b6cb0" stroke-width="1.5" marker-start="url(#arrowLeftB)" marker-end="url(#arrowRightB)"/>
+      <text x="200" y="115" text-anchor="middle" font-size="11" fill="#2b6cb0">5秒</text>
+
+      <!-- Oc 4s -->
+      <text x="50" y="160" font-size="12" fill="#1a365d" font-weight="bold">Oc 4s</text>
+      <line x1="110" y1="175" x2="650" y2="175" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="110" y1="145" x2="650" y2="145" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4"/>
+      <rect x="110" y="145" width="100" height="30" fill="#FFD700" rx="2"/>
+      <line x1="210" y1="175" x2="250" y2="175" stroke="#2d3748" stroke-width="2"/>
+      <rect x="250" y="145" width="100" height="30" fill="#FFD700" rx="2"/>
+      <line x1="350" y1="175" x2="390" y2="175" stroke="#2d3748" stroke-width="2"/>
+      <rect x="390" y="145" width="100" height="30" fill="#FFD700" rx="2"/>
+      <line x1="490" y1="175" x2="530" y2="175" stroke="#2d3748" stroke-width="2"/>
+      <rect x="530" y="145" width="100" height="30" fill="#FFD700" rx="2"/>
+      <line x1="110" y1="190" x2="250" y2="190" stroke="#2b6cb0" stroke-width="1.5" marker-start="url(#arrowLeftB)" marker-end="url(#arrowRightB)"/>
+      <text x="180" y="205" text-anchor="middle" font-size="11" fill="#2b6cb0">4秒</text>
+
+      <!-- Fl(2) 10s -->
+      <text x="50" y="250" font-size="12" fill="#1a365d" font-weight="bold">Fl(2) 10s</text>
+      <line x1="110" y1="265" x2="650" y2="265" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="110" y1="235" x2="650" y2="235" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4"/>
+      <rect x="110" y="235" width="25" height="30" fill="#FFD700" rx="2"/>
+      <rect x="155" y="235" width="25" height="30" fill="#FFD700" rx="2"/>
+      <line x1="180" y1="265" x2="380" y2="265" stroke="#2d3748" stroke-width="2"/>
+      <rect x="380" y="235" width="25" height="30" fill="#FFD700" rx="2"/>
+      <rect x="425" y="235" width="25" height="30" fill="#FFD700" rx="2"/>
+      <line x1="110" y1="280" x2="380" y2="280" stroke="#2b6cb0" stroke-width="1.5" marker-start="url(#arrowLeftB)" marker-end="url(#arrowRightB)"/>
+      <text x="245" y="295" text-anchor="middle" font-size="11" fill="#2b6cb0">10秒</text>
+
+      <defs>
+        <marker id="arrowRightB" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2b6cb0"/></marker>
+        <marker id="arrowLeftB" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto"><polygon points="8 0, 0 3, 8 6" fill="#2b6cb0"/></marker>
+      </defs>
+    </svg>
+    <div class="caption">図4-3: 灯質タイムチャート（黄色=点灯、線=消灯、青矢印=周期）</div>
+  </div>
+
+  <!-- ===== 4-6 レーコン ===== -->
+  <h2 id="s4-6">4-6. レーコン（RACON）</h2>
+
+  <p><span class="glossary-term" data-def="Radar Beacon。船舶のレーダー電波を受信し、応答信号を返す装置。レーダー画面上に固有の符号が表示される">レーコン（RACON）</span>は、<strong>Radar Beacon</strong>の略で、船舶のレーダー電波を受信して自動的に応答信号を送り返す装置です。</p>
+
+  <h3>レーコンの仕組み</h3>
+  <ol>
+    <li>船舶のレーダーが電波（Xバンド: 9GHz帯 または Sバンド: 3GHz帯）を発射</li>
+    <li>レーコンがその電波を受信</li>
+    <li>レーコンが固有のモールス符号（例: 「M」= ーー）で応答電波を送信</li>
+    <li>船舶のレーダー画面上に、レーコンの方位・距離にモールス符号状の輝線が表示される</li>
+  </ol>
+
+  <div class="box box-info">
+    <h4>レーコンの利点</h4>
+    <ul>
+      <li>視界不良時でもレーダーで確実に識別できる</li>
+      <li>他のレーダー映像と区別しやすい（固有の符号が出る）</li>
+      <li>方位・距離が正確に得られる</li>
+    </ul>
+    <p>海図上では「<strong>Racon(M)</strong>」のように、レーコンの識別符号とともに記載されています。</p>
+  </div>
+
+  <div class="box box-warning">
+    <h4>注意: レーコンの表示遅延</h4>
+    <p>レーコンは受信から応答までにわずかな時間がかかるため、レーダー画面上での距離表示は<strong>実際よりやや遠方</strong>にずれることがあります（通常数十メートル以内）。精密な測位には補正が必要です。</p>
+  </div>
+
+  <!-- ===== 4-7 内航航海で注意すべき標識 ===== -->
+  <h2 id="s4-7">4-7. 内航航海で特に注意すべき標識</h2>
+
+  <h3>瀬戸内海の主要航路標識</h3>
+  <p>内航タンカーが最も頻繁に航行する瀬戸内海には、数多くの航路標識が設置されています。特に重要なものを挙げます。</p>
+
+  <h4>来島海峡</h4>
+  <p><span class="glossary-term" data-def="瀬戸内海の中でも特に潮流が強い海峡。順中逆西の特殊航法が適用される">来島海峡</span>は日本有数の難所であり、以下の標識が重要です。</p>
+  <ul>
+    <li><strong>来島海峡潮流信号所</strong> — 中渡島と馬島に設置。潮流の方向と強弱を電光表示</li>
+    <li><strong>導灯</strong> — 各航路（西水道・中水道・東水道）の推薦航路を示す</li>
+    <li><strong>灯浮標</strong> — 航路の境界とわずかな可航域を示す多数の灯浮標</li>
+  </ul>
+
+  <h4>備讃瀬戸</h4>
+  <ul>
+    <li><strong>備讃瀬戸東航路・北航路・南航路</strong>の灯浮標群 — 交通量が多く、航路標識に従った航行が必須</li>
+    <li><strong>男木島灯台</strong> — 備讃瀬戸のシンボル的灯台。全国的にも珍しい御影石造り</li>
+  </ul>
+
+  <h4>明石海峡</h4>
+  <ul>
+    <li><strong>明石海峡航路の灯浮標</strong> — 航路の東口・西口を示す大型灯浮標</li>
+    <li><strong>江埼灯台</strong> — 淡路島北端。明石海峡の進入目標</li>
+  </ul>
+
+  <h4>鳴門海峡</h4>
+  <ul>
+    <li><strong>孫埼灯台</strong>、<strong>鳴門灯台</strong> — 海峡両端の主要灯台</li>
+    <li>渦潮の影響が大きいため、灯浮標ではなく灯標が使用されることが多い</li>
+  </ul>
+
+  <!-- SVG: 瀬戸内海主要航路標識マップ -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 350" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="375" y="25" text-anchor="middle" class="svg-title" font-size="15">瀬戸内海 主要航路と標識（概念図）</text>
+
+      <!-- 海域 -->
+      <rect x="20" y="40" width="710" height="270" rx="15" fill="#bee3f8" opacity="0.3"/>
+
+      <!-- 本州側（上） -->
+      <path d="M 20,80 Q 100,50 200,65 Q 350,40 500,55 Q 600,50 730,75" fill="#d4c5a9" stroke="#a0895e" stroke-width="2" opacity="0.6"/>
+      <text x="250" y="58" font-size="11" fill="#718096">本州</text>
+
+      <!-- 四国側（下） -->
+      <path d="M 20,270 Q 100,290 200,280 Q 350,300 500,285 Q 600,295 730,275" fill="#d4c5a9" stroke="#a0895e" stroke-width="2" opacity="0.6"/>
+      <text x="250" y="295" font-size="11" fill="#718096">四国</text>
+
+      <!-- 航路（点線） -->
+      <path d="M 40,170 Q 200,160 375,170 Q 550,180 720,170" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="8 4" class="animate-flow"/>
+
+      <!-- 明石海峡 -->
+      <circle cx="120" cy="160" r="6" fill="#ed8936" class="beacon-glow"/>
+      <text x="120" y="145" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">明石海峡</text>
+      <text x="120" y="185" text-anchor="middle" font-size="9" fill="#718096">潮流信号所</text>
+
+      <!-- 備讃瀬戸 -->
+      <circle cx="330" cy="165" r="6" fill="#ed8936" class="beacon-glow"/>
+      <text x="330" y="150" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">備讃瀬戸</text>
+      <text x="330" y="185" text-anchor="middle" font-size="9" fill="#718096">航路灯浮標群</text>
+
+      <!-- 来島海峡 -->
+      <circle cx="540" cy="200" r="8" fill="#e53e3e" class="beacon-glow"/>
+      <text x="540" y="185" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">来島海峡</text>
+      <text x="540" y="225" text-anchor="middle" font-size="9" fill="#718096">潮流信号所・導灯</text>
+      <text x="540" y="237" text-anchor="middle" font-size="9" fill="#e53e3e">※順中逆西航法</text>
+
+      <!-- 鳴門海峡 -->
+      <circle cx="180" cy="250" r="6" fill="#ed8936" class="beacon-glow"/>
+      <text x="180" y="240" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">鳴門海峡</text>
+      <text x="180" y="268" text-anchor="middle" font-size="9" fill="#718096">灯台・灯標</text>
+
+      <!-- 関門海峡 -->
+      <circle cx="680" cy="150" r="6" fill="#ed8936" class="beacon-glow"/>
+      <text x="680" y="135" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="bold">関門海峡</text>
+      <text x="680" y="170" text-anchor="middle" font-size="9" fill="#718096">管制信号所</text>
+
+      <!-- 凡例 -->
+      <rect x="20" y="315" width="710" height="30" rx="4" fill="#fff" stroke="#e2e8f0"/>
+      <circle cx="50" cy="330" r="5" fill="#e53e3e"/>
+      <text x="65" y="334" font-size="10" fill="#2d3748">特に注意が必要な海域</text>
+      <circle cx="240" cy="330" r="5" fill="#ed8936"/>
+      <text x="255" y="334" font-size="10" fill="#2d3748">主要航路標識</text>
+      <line x1="410" y1="330" x2="440" y2="330" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="6 3"/>
+      <text x="450" y="334" font-size="10" fill="#2d3748">主要航路</text>
+    </svg>
+    <div class="caption">図4-4: 瀬戸内海の主要航路と航路標識（概念図）</div>
+  </div>
+
+  <div class="key-point">
+    <p>内航タンカーの船長・航海士は、定期的に航行する海域の航路標識を<strong>暗記に近いレベル</strong>で把握しておくことが重要です。特に来島海峡は潮流信号の意味（S流・N流の区別、順中逆西の判断）を確実に理解しておかなければなりません。</p>
+  </div>
+
+  <h3>潮流信号所の表示</h3>
+  <p>来島海峡潮流信号所は、電光表示板で潮流情報を発信しています。</p>
+  <table>
+    <thead>
+      <tr><th>表示</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>S（白色灯）</td><td>南流（瀬戸内海側から太平洋側へ）</td></tr>
+      <tr><td>N（白色灯）</td><td>北流（太平洋側から瀬戸内海側へ）</td></tr>
+      <tr><td>表示の下に矢印</td><td>潮流の強弱（矢印の大きさで示す）</td></tr>
+    </tbody>
+  </table>
+
+  <h3>航路標識の変更情報</h3>
+  <p>航路標識は新設・移動・廃止されることがあります。変更情報は以下で入手できます。</p>
+  <ul>
+    <li><strong>水路通報</strong>（海上保安庁） — 毎週発行。航路標識の変更を含む</li>
+    <li><strong>航行警報</strong> — 緊急の変更（灯台の消灯等）を速報</li>
+    <li><strong>灯台表</strong> — 全国の灯台・灯標・灯浮標の諸元一覧</li>
+  </ul>
+
+  <div class="box box-danger">
+    <h4>実務上の注意: 灯火の消灯・故障</h4>
+    <p>航路標識の灯火が故障等で消灯している場合があります。特に灯浮標はバッテリー切れや衝突による損傷で消灯するケースが内航航路でも年に数回発生します。「灯火が見えないから灯浮標がない」と判断するのは大変危険です。常にレーダーと海図で位置を確認しましょう。</p>
+  </div>
+
+  <!-- ===== クイズ ===== -->
+  <h2 id="quiz">章末確認クイズ</h2>
+
+  <div class="quiz">
+    <h4>Q1. IALA海上浮標式A方式において、入港方向に見て左舷側の側面標識の色と形は？</h4>
+    <button onclick="showAnswer('a1')" style="background:#9f7aea;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:6px;cursor:pointer;margin-top:0.5rem;">答えを見る</button>
+    <div class="quiz-answer" id="a1">
+      <p><strong>赤色・缶型（円筒型）</strong>です。頭標（トップマーク）も赤い円筒形で、灯色は赤です。B方式（米国等）では左舷が緑になるので混同しないよう注意しましょう。日本はA方式を採用しています。</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q2. 灯質略号「Fl(3) R 15s」が意味する内容を述べてください。</h4>
+    <button onclick="showAnswer('a2')" style="background:#9f7aea;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:6px;cursor:pointer;margin-top:0.5rem;">答えを見る</button>
+    <div class="quiz-answer" id="a2">
+      <p><strong>赤色の群閃光で、15秒周期で3回連続して閃光を発する</strong>灯質です。Fl(3)は群閃光で3回光る、Rは赤（Red）、15sは1周期が15秒であることを示します。</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q3. 方位標識の「東方位標識」は何を意味し、船はどちら側を通過すべきですか？</h4>
+    <button onclick="showAnswer('a3')" style="background:#9f7aea;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:6px;cursor:pointer;margin-top:0.5rem;">答えを見る</button>
+    <div class="quiz-answer" id="a3">
+      <p>東方位標識は、<strong>その標識の東側が安全な水域</strong>であることを示します。船はこの標識の<strong>東側を通過</strong>すべきです。灯質はQ(3)またはVQ(3)で、3時の方向＝東と覚えます。頭標は三角2つが底辺で向き合った形です。</p>
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="nav03_chart.html">&laquo; 第3章 海図の読み方</a>
+    <a href="nav05_tide.html">第5章 潮汐と潮流 &raquo;</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

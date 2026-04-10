@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第7章 操船の基礎 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第7章 操船の基礎</h1>
+  <p class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</p>
+  <nav>
+    <a href="index.html">目次へ戻る</a>
+    <a href="nav06_weather.html">← 前章: 気象と海象</a>
+    <a href="nav08_colreg.html">次章: 海上衝突予防法 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <p>操船は、船舶を安全かつ効率的に動かすための技術と判断力の総合です。舵やプロペラの原理を理解し、風・潮流の影響を考慮しながら出入港・係留・錨泊を行います。本章では、内航タンカーの操船に必要な基礎知識を解説します。</p>
+
+  <!-- ========== 1. 舵の仕組みと効き方 ========== -->
+  <h2 id="rudder">1. 舵の仕組みと効き方</h2>
+
+  <h3>1-1. 舵の基本原理</h3>
+  <p><strong>舵</strong>（ラダー）は船尾に取り付けられた板状の装置で、舵を切ることで水流の方向を変え、船を旋回させます。舵の効きは<strong>船速</strong>と<strong>舵角</strong>に依存します。船速が速いほど、また舵角が大きいほど旋回力は強くなります。</p>
+  <p>一般的な内航船の最大舵角は<strong>左右35度</strong>です。ただし、大舵角をとると速力が大幅に低下するため、通常の航行では5〜15度程度の舵角で操舵します。</p>
+
+  <h3>1-2. プロペラの横圧力（サイドスラスト）</h3>
+  <p>プロペラが回転すると、推進力のほかに船尾を左右に押す力が生じます。これを<strong>横圧力（サイドスラスト）</strong>といいます。一般的な右回り固定ピッチプロペラの場合、前進時は船尾が<strong>右</strong>に振れ、後進時は船尾が<strong>左</strong>に振れます。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 400" width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="sh-arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#2d3748"/>
+        </marker>
+        <marker id="sh-arr-r" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#e53e3e"/>
+        </marker>
+        <marker id="sh-arr-b" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+
+      <text x="350" y="25" text-anchor="middle" class="svg-title">プロペラ横圧力（右回り1軸船）</text>
+
+      <!-- ===== 前進時（左側） ===== -->
+      <text x="175" y="55" text-anchor="middle" font-size="15" fill="#1a365d" font-weight="bold">前進時</text>
+
+      <!-- 船体 -->
+      <path d="M120,130 L120,280 Q120,310 175,310 Q230,310 230,280 L230,130 Q230,110 175,100 Q120,110 120,130Z" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+      <text x="175" y="200" text-anchor="middle" font-size="11" fill="#718096">船体</text>
+
+      <!-- プロペラ（右回り） -->
+      <ellipse cx="175" cy="290" rx="25" ry="10" fill="none" stroke="#718096" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <g transform="translate(175,290)">
+        <line x1="-20" y1="0" x2="20" y2="0" stroke="#2d3748" stroke-width="3">
+          <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="-15" x2="0" y2="15" stroke="#2d3748" stroke-width="3">
+          <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2s" repeatCount="indefinite"/>
+        </line>
+      </g>
+
+      <!-- 推進力矢印 -->
+      <line x1="175" y1="120" x2="175" y2="70" stroke="#38a169" stroke-width="3" marker-end="url(#sh-arr)"/>
+      <text x="195" y="85" font-size="10" fill="#38a169" font-weight="bold">推進力</text>
+
+      <!-- 横圧力（船尾右へ） -->
+      <line x1="235" y1="280" x2="280" y2="280" stroke="#e53e3e" stroke-width="3" marker-end="url(#sh-arr-r)"/>
+      <text x="240" y="270" font-size="10" fill="#e53e3e" font-weight="bold">横圧力</text>
+      <text x="240" y="300" font-size="9" fill="#e53e3e">船尾→右へ</text>
+
+      <!-- 船首は左へ -->
+      <line x1="115" y1="140" x2="80" y2="140" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#sh-arr-b)"/>
+      <text x="55" y="133" font-size="9" fill="#2b6cb0">船首←左へ</text>
+
+      <!-- ===== 後進時（右側） ===== -->
+      <text x="525" y="55" text-anchor="middle" font-size="15" fill="#1a365d" font-weight="bold">後進時</text>
+
+      <!-- 船体 -->
+      <path d="M470,130 L470,280 Q470,310 525,310 Q580,310 580,280 L580,130 Q580,110 525,100 Q470,110 470,130Z" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+      <text x="525" y="200" text-anchor="middle" font-size="11" fill="#718096">船体</text>
+
+      <!-- プロペラ（逆回転） -->
+      <ellipse cx="525" cy="290" rx="25" ry="10" fill="none" stroke="#718096" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <g transform="translate(525,290)">
+        <line x1="-20" y1="0" x2="20" y2="0" stroke="#2d3748" stroke-width="3">
+          <animateTransform attributeName="transform" type="rotate" values="360;0" dur="2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="-15" x2="0" y2="15" stroke="#2d3748" stroke-width="3">
+          <animateTransform attributeName="transform" type="rotate" values="360;0" dur="2s" repeatCount="indefinite"/>
+        </line>
+      </g>
+
+      <!-- 後進力矢印 -->
+      <line x1="525" y1="310" x2="525" y2="360" stroke="#38a169" stroke-width="3" marker-end="url(#sh-arr)"/>
+      <text x="545" y="350" font-size="10" fill="#38a169" font-weight="bold">後進力</text>
+
+      <!-- 横圧力（船尾左へ） -->
+      <line x1="465" y1="280" x2="420" y2="280" stroke="#e53e3e" stroke-width="3" marker-end="url(#sh-arr-r)"/>
+      <text x="395" y="270" font-size="10" fill="#e53e3e" font-weight="bold">横圧力</text>
+      <text x="400" y="300" font-size="9" fill="#e53e3e">船尾→左へ</text>
+
+      <!-- 船首は右へ -->
+      <line x1="585" y1="140" x2="625" y2="140" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#sh-arr-b)"/>
+      <text x="590" y="133" font-size="9" fill="#2b6cb0">船首→右へ</text>
+
+      <!-- 注記 -->
+      <rect x="100" y="370" width="500" height="25" rx="5" fill="#fffff0" stroke="#d69e2e" stroke-width="1"/>
+      <text x="350" y="388" text-anchor="middle" font-size="11" fill="#975a16">※ 右回り固定ピッチプロペラの場合（内航船の多くがこの仕様）</text>
+    </svg>
+    <p class="caption">図7-1: プロペラ横圧力 — 前進時と後進時の船体への影響（アニメーション付き）</p>
+  </div>
+
+  <div class="key-point">
+    <p><strong>キック:</strong> 舵を大きく切った直後、船体は舵を切った反対方向に横移動します。これを「キック」といいます。例えば右舵を切ると、最初に船体は左にわずかに移動してから右に旋回を始めます。狭い水域では要注意です。</p>
+  </div>
+
+  <!-- ========== 2. 旋回圏 ========== -->
+  <h2 id="turning-circle">2. 旋回圏</h2>
+
+  <p>舵を一定角度に保って旋回したとき、船が描く軌跡を<strong>旋回圏</strong>といいます。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 500" width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="tc-arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#2d3748"/>
+        </marker>
+      </defs>
+
+      <text x="300" y="25" text-anchor="middle" class="svg-title">旋回圏（右旋回の例）</text>
+
+      <!-- 原針路（直進線） -->
+      <line x1="150" y1="480" x2="150" y2="50" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4"/>
+      <text x="130" y="45" font-size="10" fill="#718096">原針路</text>
+
+      <!-- 旋回圏の円 -->
+      <circle cx="330" cy="260" r="180" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="8,4"/>
+
+      <!-- 旋回径 -->
+      <line x1="150" y1="260" x2="510" y2="260" stroke="#e53e3e" stroke-width="2"/>
+      <text x="330" y="250" text-anchor="middle" font-size="12" fill="#e53e3e" font-weight="bold">旋回径（Tactical Diameter）</text>
+
+      <!-- 船の軌跡 -->
+      <path d="M150,480 Q150,400 160,350 Q175,280 220,220 Q270,160 340,120 Q420,90 480,120 Q520,150 520,200 Q520,280 480,340 Q430,410 360,440 Q280,460 210,430 Q160,400 150,340" fill="none" stroke="#1a365d" stroke-width="3"/>
+
+      <!-- 転舵点 -->
+      <circle cx="150" cy="480" r="6" fill="#ed8936"/>
+      <text x="165" y="485" font-size="11" fill="#ed8936" font-weight="bold">転舵点</text>
+
+      <!-- アドバンス -->
+      <line x1="60" y1="480" x2="60" y2="80" stroke="#38a169" stroke-width="2" marker-end="url(#tc-arr)"/>
+      <line x1="55" y1="480" x2="65" y2="480" stroke="#38a169" stroke-width="2"/>
+      <line x1="55" y1="80" x2="150" y2="80" stroke="#38a169" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="30" y="280" font-size="12" fill="#38a169" font-weight="bold" writing-mode="tb">アドバンス</text>
+
+      <!-- トランスファー -->
+      <line x1="150" y1="70" x2="510" y2="70" stroke="#805ad5" stroke-width="2" marker-end="url(#tc-arr)"/>
+      <line x1="510" y1="65" x2="510" y2="80" stroke="#805ad5" stroke-width="2"/>
+      <line x1="510" y1="80" x2="510" y2="260" stroke="#805ad5" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="330" y="63" text-anchor="middle" font-size="12" fill="#805ad5" font-weight="bold">トランスファー</text>
+
+      <!-- 90度回頭位置 -->
+      <circle cx="510" cy="200" r="5" fill="#805ad5"/>
+      <text x="520" y="195" font-size="10" fill="#805ad5">90°回頭</text>
+
+      <!-- 180度回頭位置 -->
+      <circle cx="360" cy="440" r="5" fill="#e53e3e"/>
+      <text x="370" y="448" font-size="10" fill="#e53e3e">180°回頭</text>
+
+      <!-- 凡例 -->
+      <rect x="350" y="460" width="230" height="35" rx="5" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="365" y="478" font-size="10" fill="#38a169">■ アドバンス: 原針路方向の前進距離</text>
+      <text x="365" y="491" font-size="10" fill="#805ad5">■ トランスファー: 原針路と直角方向の移動距離</text>
+    </svg>
+    <p class="caption">図7-2: 旋回圏の各要素（アドバンス・トランスファー・旋回径）</p>
+  </div>
+
+  <ul>
+    <li><strong>アドバンス:</strong> 転舵してから90度回頭するまでに、原針路方向に進んだ距離</li>
+    <li><strong>トランスファー:</strong> 転舵してから90度回頭するまでに、原針路と直角方向に移動した距離</li>
+    <li><strong>旋回径（タクティカルダイアメーター）:</strong> 転舵してから180度回頭するまでに、原針路と直角方向に移動した距離</li>
+  </ul>
+
+  <p>一般的な貨物船では、旋回径は船の長さの3〜5倍程度です。内航タンカーの場合、満載状態では旋回径が大きくなり、空船状態では小さくなる傾向があります。</p>
+
+  <!-- ========== 3. 出港操船 ========== -->
+  <h2 id="departure">3. 出港操船</h2>
+
+  <h3>3-1. 出港前の準備</h3>
+  <ul>
+    <li>機関の準備完了を確認（エンジンスタンバイ）</li>
+    <li>舵の動作テスト</li>
+    <li>レーダー、GPS、AIS等の航海計器の動作確認</li>
+    <li>出港時の風向風速、潮流を確認</li>
+    <li>タグボートを使用する場合はその手配と通信確認</li>
+  </ul>
+
+  <h3>3-2. 係留索の取り外し順序</h3>
+  <p>出港時は風や潮流の状況に応じて係留索を順番に放します。一般的には、<strong>船体を岸壁に押し付ける力が弱い方から</strong>外していきます。</p>
+
+  <div class="box box-info">
+    <h4>内航タンカーの出港</h4>
+    <p>油送船では荷役完了後の出港前に、積荷管（ローディングアーム又はカーゴホース）の切り離しと甲板上の残油確認が必要です。積荷管切り離し前に全てのカーゴバルブが閉まっていることを確認してください。バウスラスターを装備している船では、出港時にスラスターを積極的に活用して安全に離桟します。</p>
+  </div>
+
+  <!-- ========== 4. 入港操船 ========== -->
+  <h2 id="arrival">4. 入港操船</h2>
+
+  <h3>4-1. アプローチ</h3>
+  <p>着桟する岸壁に対して、浅い角度（10〜20度程度）でアプローチするのが基本です。速力は十分に落とし、機関とスラスター（装備している場合）を使ってコントロールします。</p>
+
+  <h3>4-2. 減速と着桟</h3>
+  <p>岸壁に平行に近づいたら、後進をかけて船を停止させます。このとき横圧力の影響を考慮することが重要です。右回りプロペラの船で後進をかけると船尾が左に振れるため、<strong>左舷付け</strong>のほうが着桟しやすくなります。</p>
+
+  <div class="key-point">
+    <p><strong>着桟時の3原則:</strong> (1) 十分に減速してからアプローチする、(2) 岸壁に対して平行に近い角度で接近する、(3) 風下側から着桟する（可能な場合）。無理な着桟は船体と岸壁の双方を損傷させます。</p>
+  </div>
+
+  <!-- ========== 5. 係留方法 ========== -->
+  <h2 id="mooring">5. 係留方法</h2>
+
+  <h3>5-1. 係留索の種類と配置</h3>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 350" width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="m-arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="5" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#2d3748"/>
+        </marker>
+      </defs>
+
+      <text x="350" y="25" text-anchor="middle" class="svg-title">係留索の配置</text>
+
+      <!-- 岸壁 -->
+      <rect x="50" y="200" width="600" height="50" fill="#a0aec0" stroke="#718096" stroke-width="2"/>
+      <text x="350" y="230" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">岸 壁</text>
+
+      <!-- 船体 -->
+      <path d="M150,100 L150,190 L550,190 L550,100 Q550,75 500,70 L200,70 Q150,75 150,100Z" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+      <text x="350" y="140" text-anchor="middle" font-size="13" fill="#718096">船 体</text>
+      <text x="170" y="120" font-size="10" fill="#718096">船首</text>
+      <text x="520" y="120" font-size="10" fill="#718096">船尾</text>
+
+      <!-- ヘッドライン -->
+      <line x1="175" y1="80" x2="100" y2="200" stroke="#e53e3e" stroke-width="3"/>
+      <circle cx="100" cy="200" r="4" fill="#e53e3e"/>
+      <text x="70" y="150" font-size="11" fill="#e53e3e" font-weight="bold">①ヘッドライン</text>
+
+      <!-- フォアスプリング -->
+      <line x1="200" y1="190" x2="380" y2="200" stroke="#2b6cb0" stroke-width="3"/>
+      <circle cx="380" cy="200" r="4" fill="#2b6cb0"/>
+      <text x="240" y="185" font-size="11" fill="#2b6cb0" font-weight="bold">③フォアスプリング</text>
+
+      <!-- フォアブレスト -->
+      <line x1="230" y1="190" x2="230" y2="200" stroke="#38a169" stroke-width="3"/>
+      <circle cx="230" cy="200" r="4" fill="#38a169"/>
+      <text x="230" y="175" font-size="10" fill="#38a169" font-weight="bold">⑤フォアブレスト</text>
+
+      <!-- アフタースプリング -->
+      <line x1="480" y1="190" x2="300" y2="200" stroke="#805ad5" stroke-width="3"/>
+      <circle cx="300" cy="200" r="4" fill="#805ad5"/>
+      <text x="340" y="185" font-size="11" fill="#805ad5" font-weight="bold">④アフタースプリング</text>
+
+      <!-- アフターブレスト -->
+      <line x1="470" y1="190" x2="470" y2="200" stroke="#d69e2e" stroke-width="3"/>
+      <circle cx="470" cy="200" r="4" fill="#d69e2e"/>
+      <text x="450" y="175" font-size="10" fill="#d69e2e" font-weight="bold">⑥アフターブレスト</text>
+
+      <!-- スターンライン -->
+      <line x1="530" y1="80" x2="600" y2="200" stroke="#ed8936" stroke-width="3"/>
+      <circle cx="600" cy="200" r="4" fill="#ed8936"/>
+      <text x="580" y="150" font-size="11" fill="#ed8936" font-weight="bold">②スターンライン</text>
+
+      <!-- 凡例 -->
+      <rect x="50" y="265" width="600" height="75" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="70" y="285" font-size="11" fill="#e53e3e">① ヘッドライン: 前方への移動を防止</text>
+      <text x="70" y="300" font-size="11" fill="#ed8936">② スターンライン: 後方への移動を防止</text>
+      <text x="70" y="315" font-size="11" fill="#2b6cb0">③ フォアスプリング: 前方移動を防止（船首側から後方の岸壁へ）</text>
+      <text x="70" y="330" font-size="11" fill="#805ad5">④ アフタースプリング: 後方移動を防止（船尾側から前方の岸壁へ）</text>
+    </svg>
+    <p class="caption">図7-3: 係留索の種類と配置（6本取りの基本形）</p>
+  </div>
+
+  <h3>5-2. 各係留索の役割</h3>
+  <table>
+    <thead>
+      <tr><th>係留索</th><th>取り方</th><th>主な役割</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>ヘッドライン</strong></td><td>船首から前方岸壁へ</td><td>船の前方移動防止、船首の横移動防止</td></tr>
+      <tr><td><strong>スターンライン</strong></td><td>船尾から後方岸壁へ</td><td>船の後方移動防止、船尾の横移動防止</td></tr>
+      <tr><td><strong>フォアスプリング</strong></td><td>船首付近から後方岸壁へ</td><td>船の前方移動防止</td></tr>
+      <tr><td><strong>アフタースプリング</strong></td><td>船尾付近から前方岸壁へ</td><td>船の後方移動防止</td></tr>
+      <tr><td><strong>ブレストライン</strong></td><td>船体から真横の岸壁へ</td><td>船の岸壁からの離れ防止</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-warning">
+    <h4>係留索の管理（タンカーの実務）</h4>
+    <p>タンカーが荷役中は、積荷量の変化により船の喫水が変わります。積み荷をしていくと喫水が深くなり、揚げ荷をすると浅くなります。これに伴い係留索のテンションが変化するため、<strong>荷役中は定期的に係留索を調整</strong>する必要があります。特に大潮の時期は潮位変化も大きく、一層の注意が必要です。</p>
+  </div>
+
+  <!-- ========== 6. 錨泊 ========== -->
+  <h2 id="anchoring">6. 錨泊</h2>
+
+  <h3>6-1. 投錨法</h3>
+  <p>錨泊する際は、海図で底質と水深を確認し、振れ回りの範囲を考慮して投錨位置を決めます。</p>
+  <ul>
+    <li><strong>投錨準備:</strong> 錨を「用意」の状態にし、ウインドラスのブレーキを確認する</li>
+    <li><strong>投錨:</strong> 船を風上（または潮上）に向けて微速で進み、行き足が止まるか僅かに後退を始めたところでブレーキを緩めて錨を投下する</li>
+    <li><strong>錨鎖の伸出:</strong> 一般的に水深の3〜5倍の錨鎖を伸出する（荒天時はさらに多く）</li>
+    <li><strong>把駐力の確認:</strong> 機関を後進に入れて錨が効いていることを確認する</li>
+  </ul>
+
+  <h3>6-2. 走錨の判断</h3>
+  <p><strong>走錨</strong>とは、錨が海底を引きずって船が流される状態です。以下の方法で走錨を判断します。</p>
+  <ul>
+    <li>GPSで船位を継続的に監視し、移動していないか確認する</li>
+    <li>陸上の目標物の方位を繰り返し測定し、変化がないか確認する</li>
+    <li>錨鎖の振動を手で確認する（走錨時はゴリゴリとした振動がある）</li>
+    <li>レーダーのEBL・VRMを陸上目標に合わせて監視する</li>
+  </ul>
+
+  <div class="key-point">
+    <p><strong>走錨への対応:</strong> 走錨を確認したら直ちに機関を使用し、錨鎖を増し伸ばしするか、揚錨して安全な場所へ移動します。風下に他の船舶や障害物がある場合は特に迅速な対応が必要です。</p>
+  </div>
+
+  <!-- ========== 7. 狭水道航行 ========== -->
+  <h2 id="narrow-channel">7. 狭水道航行の注意点</h2>
+
+  <p>内航船が頻繁に航行する瀬戸内海には、来島海峡、明石海峡、備讃瀬戸など多くの狭水道があります。</p>
+
+  <ul>
+    <li><strong>潮流:</strong> 海峡部では3〜10ノットに達する強潮流があります。潮流に逆らう場合は速力が大幅に低下し、操舵が困難になることがあります</li>
+    <li><strong>通航方法:</strong> 来島海峡は日本で唯一「順中逆西」（潮流の方向によって通航路が変わる）が採用されています</li>
+    <li><strong>交通量:</strong> 狭水道では船舶が集中するため、AISやレーダーで周囲の船舶を十分把握する必要があります</li>
+    <li><strong>浅瀬・暗礁:</strong> 航路からの逸脱は座礁に直結します。GPSと海図を常に確認してください</li>
+    <li><strong>バンク効果・吸引効果:</strong> 狭い水路や浅い水域では、船体が岸壁や他船に引き寄せられる現象が発生します</li>
+  </ul>
+
+  <!-- ========== 8. 荒天操船 ========== -->
+  <h2 id="heavy-weather">8. 荒天操船の基礎</h2>
+
+  <h3>8-1. 向かい波（船首方向から）</h3>
+  <p>向かい波の場合、船首が波に突っ込む<strong>パンチング</strong>や、船首が波の上に出て落下する<strong>スラミング</strong>が発生します。対策としては減速し、波に対して斜めに進む（斜め追い）ことで衝撃を緩和します。</p>
+
+  <h3>8-2. 追い波（船尾方向から）</h3>
+  <p>追い波の場合、波に乗って船が加速し操舵不能になる<strong>サーフィング</strong>や、波の谷で舵効きが悪くなり船が横を向く<strong>ブローチング</strong>の危険があります。速力を調整し、波の速度と合わないようにすることが重要です。</p>
+
+  <h3>8-3. 横波</h3>
+  <p>横波は<strong>ローリング（横揺れ）</strong>を激しくし、最も危険です。特に波の周期と船の固有周期が一致すると<strong>同調横揺れ</strong>が発生し、大傾斜の原因になります。針路や速力を変えて同調を避けてください。</p>
+
+  <!-- ========== 9. 内航タンカーの操船特性 ========== -->
+  <h2 id="tanker-handling">9. 内航タンカーの操船特性</h2>
+
+  <h3>9-1. 満載時と空船時の違い</h3>
+  <table>
+    <thead>
+      <tr><th>項目</th><th>満載時</th><th>空船時（バラスト状態）</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>喫水</td><td>深い（水面が船体に対して高い）</td><td>浅い（プロペラの一部が水面上に出ることも）</td></tr>
+      <tr><td>風圧面積</td><td>小さい（受風面積が少ない）</td><td>大きい（船体が水面上に多く出る）</td></tr>
+      <tr><td>風の影響</td><td>比較的少ない</td><td>非常に大きい（風に流されやすい）</td></tr>
+      <tr><td>舵効き</td><td>良好</td><td>悪い（プロペラの没水が不十分な場合）</td></tr>
+      <tr><td>旋回径</td><td>大きい</td><td>小さい</td></tr>
+      <tr><td>停止距離</td><td>長い（慣性が大きい）</td><td>短い</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-danger">
+    <h4>空船タンカーの操船上の注意</h4>
+    <p>空船（バラスト航海）の内航タンカーは風圧面積が大きく、強風時には操船が非常に困難になります。特に横風を受けながらの着桟は危険です。風速が強い場合はタグボートの支援を要請するか、入港を見合わせる判断が求められます。また、プロペラの没水が浅くなるため、プロペラレーシング（空回り）にも注意が必要です。</p>
+  </div>
+
+  <div class="key-point">
+    <p><strong>操船の心得:</strong> 操船に「絶対の正解」はありません。風、潮流、船の状態、港の形状、周囲の状況は毎回異なります。基本原理を理解した上で、経験を積み重ね、常に余裕のある操船を心がけてください。困ったときは遠慮なくタグボートを使いましょう。</p>
+  </div>
+
+  <!-- ========== クイズ ========== -->
+  <div class="quiz">
+    <h4>章末クイズ — 理解度チェック</h4>
+
+    <p><strong>Q1.</strong> 右回り固定ピッチプロペラの船が後進をかけると、船尾はどちらに振れるか？</p>
+    <button onclick="showAnswer('a1')">答えを表示</button>
+    <div id="a1" class="quiz-answer">
+      <p><strong>答え:</strong> 船尾は左に振れます。これはプロペラの横圧力（サイドスラスト）によるもので、後進時に顕著に現れます。このため左舷付けの着桟が比較的容易になります。</p>
+    </div>
+
+    <p style="margin-top:1.2rem;"><strong>Q2.</strong> 旋回圏における「アドバンス」とは何か？</p>
+    <button onclick="showAnswer('a2')">答えを表示</button>
+    <div id="a2" class="quiz-answer">
+      <p><strong>答え:</strong> 転舵してから90度回頭するまでに、原針路方向に進んだ距離のことです。アドバンスが大きいと、旋回を始めてもすぐには曲がらず前方に進んでしまうことを意味します。</p>
+    </div>
+
+    <p style="margin-top:1.2rem;"><strong>Q3.</strong> 走錨の判断方法を2つ挙げよ。</p>
+    <button onclick="showAnswer('a3')">答えを表示</button>
+    <div id="a3" class="quiz-answer">
+      <p><strong>答え:</strong> (1) GPSで船位を継続的に監視し、位置が移動していないか確認する。(2) 陸上の目標物をコンパスで繰り返し測定し、方位が変化しないか確認する。他にも、錨鎖の振動を手で確認する方法やレーダーのEBL/VRMで監視する方法があります。</p>
+    </div>
+  </div>
+
+  <!-- ========== 章末ナビ ========== -->
+  <div class="chapter-nav">
+    <a href="nav06_weather.html">← 第6章 気象と海象</a>
+    <a href="nav08_colreg.html">第8章 海上衝突予防法 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

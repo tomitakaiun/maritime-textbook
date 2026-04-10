@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第10章 タンカー特有の機器 — 機関編</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@keyframes pump-impeller {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-impeller { animation: pump-impeller 2s linear infinite; transform-origin: center; }
+@keyframes gas-flow {
+  0% { opacity: 0.2; transform: translateY(0); }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.2; transform: translateY(-15px); }
+}
+.animate-gas { animation: gas-flow 2s ease-in-out infinite; }
+@keyframes oil-flow {
+  0% { stroke-dashoffset: 30; }
+  100% { stroke-dashoffset: 0; }
+}
+.animate-oil { stroke-dasharray: 12 6; animation: oil-flow 1.5s linear infinite; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <p class="subtitle">内航船員のための海技教材</p>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="eng09_deck_machinery.html">前章: 甲板機械と舵取機</a>
+    <a href="eng11_maintenance.html">次章: 日常整備とトラブル対応</a>
+  </nav>
+</header>
+
+<div class="content">
+
+<h1>第10章 タンカー特有の機器</h1>
+
+<p>タンカーは液体貨物（原油、石油製品、ケミカル等）を運ぶ船であり、一般の貨物船とは異なる専用の荷役設備や安全装置を備えています。内航タンカーの機関士として、これらの機器の構造と作動原理を理解し、安全に運用することが求められます。</p>
+
+<!-- ===== 1. 荷役系統概要 ===== -->
+<h2>1. タンカーの荷役系統概要</h2>
+
+<p>タンカーの荷役系統は、陸上のタンクから船のカーゴタンクへ（積荷）、または船から陸上へ（揚荷）貨物油を移送するための一連の配管・ポンプ・弁のシステムです。</p>
+
+<h3>荷役系統の流れ</h3>
+<ol>
+  <li><strong>マニホールド:</strong> 船と陸上の接続点。左右舷の中央部に設置</li>
+  <li><strong>デッキ配管（甲板管）:</strong> マニホールドから各タンクへつながる配管</li>
+  <li><strong>ドロップバルブ（ドロップライン弁）:</strong> 甲板からタンク内へ油を導く弁</li>
+  <li><strong>カーゴタンク:</strong> 貨物油を貯蔵するタンク</li>
+  <li><strong>荷役ポンプ:</strong> 揚荷時にタンクから油を送り出すポンプ</li>
+</ol>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 750 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr10a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#c05621"/>
+      </marker>
+      <marker id="arr10b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#2d3748"/>
+      </marker>
+    </defs>
+    <text x="375" y="25" text-anchor="middle" class="svg-title" font-size="15">タンカー荷役系統 概略図</text>
+    <!-- 船体外形 -->
+    <path d="M 30 180 L 30 350 Q 375 380 720 350 L 720 180 Z" fill="#e2e8f0" stroke="#4a5568" stroke-width="2"/>
+    <!-- 甲板 -->
+    <line x1="30" y1="180" x2="720" y2="180" stroke="#4a5568" stroke-width="3"/>
+    <text x="375" y="175" text-anchor="middle" font-size="10" fill="#718096">甲板</text>
+    <!-- カーゴタンク -->
+    <rect x="60" y="200" width="150" height="130" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="2"/>
+    <text x="135" y="265" text-anchor="middle" font-size="13" fill="#975a16" font-weight="700">No.1タンク</text>
+    <rect x="230" y="200" width="150" height="130" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="2"/>
+    <text x="305" y="265" text-anchor="middle" font-size="13" fill="#975a16" font-weight="700">No.2タンク</text>
+    <rect x="400" y="200" width="150" height="130" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="2"/>
+    <text x="475" y="265" text-anchor="middle" font-size="13" fill="#975a16" font-weight="700">No.3タンク</text>
+    <!-- ポンプ室 -->
+    <rect x="570" y="200" width="130" height="130" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+    <text x="635" y="255" text-anchor="middle" font-size="11" fill="#c53030" font-weight="700">ポンプ室</text>
+    <circle cx="635" cy="285" r="20" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+    <text x="635" y="289" text-anchor="middle" font-size="9" fill="#c53030">P</text>
+    <!-- デッキ配管（甲板上） -->
+    <line x1="135" y1="155" x2="635" y2="155" stroke="#c05621" stroke-width="4" class="animate-oil"/>
+    <text x="375" y="148" text-anchor="middle" font-size="10" fill="#c05621" font-weight="600">デッキ配管（メインライン）</text>
+    <!-- ドロップライン -->
+    <line x1="135" y1="155" x2="135" y2="200" stroke="#c05621" stroke-width="2"/>
+    <line x1="305" y1="155" x2="305" y2="200" stroke="#c05621" stroke-width="2"/>
+    <line x1="475" y1="155" x2="475" y2="200" stroke="#c05621" stroke-width="2"/>
+    <line x1="635" y1="155" x2="635" y2="200" stroke="#c05621" stroke-width="2"/>
+    <!-- バルブ記号 -->
+    <g fill="#c05621">
+      <polygon points="130,185 140,185 135,195"/>
+      <polygon points="130,195 140,195 135,185"/>
+      <polygon points="300,185 310,185 305,195"/>
+      <polygon points="300,195 310,195 305,185"/>
+      <polygon points="470,185 480,185 475,195"/>
+      <polygon points="470,195 480,195 475,185"/>
+    </g>
+    <!-- マニホールド -->
+    <rect x="340" y="100" width="70" height="50" rx="6" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="375" y="122" text-anchor="middle" font-size="10" fill="#2b6cb0" font-weight="700">マニ</text>
+    <text x="375" y="137" text-anchor="middle" font-size="10" fill="#2b6cb0" font-weight="700">ホールド</text>
+    <line x1="375" y1="150" x2="375" y2="155" stroke="#2b6cb0" stroke-width="2"/>
+    <!-- 陸上接続 -->
+    <line x1="375" y1="100" x2="375" y2="60" stroke="#2b6cb0" stroke-width="3" stroke-dasharray="6 3"/>
+    <text x="375" y="50" text-anchor="middle" font-size="11" fill="#2b6cb0" font-weight="600">陸上ローディングアーム</text>
+    <!-- タンク底配管 -->
+    <line x1="135" y1="330" x2="635" y2="330" stroke="#ed8936" stroke-width="3" class="animate-oil"/>
+    <text x="375" y="358" text-anchor="middle" font-size="10" fill="#ed8936" font-weight="600">タンク底部配管（サクションライン）</text>
+    <line x1="135" y1="330" x2="135" y2="325" stroke="#ed8936" stroke-width="2"/>
+    <line x1="305" y1="330" x2="305" y2="325" stroke="#ed8936" stroke-width="2"/>
+    <line x1="475" y1="330" x2="475" y2="325" stroke="#ed8936" stroke-width="2"/>
+    <line x1="635" y1="300" x2="635" y2="330" stroke="#ed8936" stroke-width="2"/>
+  </svg>
+  <div class="caption">図10-1: タンカー荷役系統の概略図（積荷時は上部配管、揚荷時は下部サクションラインを使用）</div>
+</div>
+
+<!-- ===== 2. 荷役ポンプ ===== -->
+<h2>2. 荷役ポンプの種類</h2>
+
+<p>タンカーの荷役ポンプは、大量の貨物油を効率よく移送するための重要な機器です。内航タンカーでは主に以下の3種類が使われます。</p>
+
+<table>
+  <thead>
+    <tr><th>種類</th><th>特徴</th><th>適用</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>遠心式ポンプ</strong></td>
+      <td>大流量、構造が単純、自吸性なし</td>
+      <td>大型タンカーのメインカーゴポンプ</td>
+    </tr>
+    <tr>
+      <td><strong>スクリュー式ポンプ</strong></td>
+      <td>脈動が少なく、粘度の高い油にも対応</td>
+      <td>内航タンカーで広く使用</td>
+    </tr>
+    <tr>
+      <td><strong>ディープウェル式ポンプ</strong></td>
+      <td>タンク内に設置、ポンプ室不要</td>
+      <td>ケミカルタンカーで多用</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+    <text x="350" y="25" text-anchor="middle" class="svg-title" font-size="15">遠心式荷役ポンプの構造</text>
+    <!-- ケーシング -->
+    <circle cx="300" cy="190" r="100" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="3"/>
+    <text x="300" y="310" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="600">渦巻ケーシング</text>
+    <!-- インペラ -->
+    <g class="animate-impeller" style="transform-origin: 300px 190px;">
+      <circle cx="300" cy="190" r="55" fill="none" stroke="#c53030" stroke-width="2"/>
+      <path d="M 300 135 Q 330 160 300 190" stroke="#c53030" stroke-width="2.5" fill="none"/>
+      <path d="M 300 245 Q 270 220 300 190" stroke="#c53030" stroke-width="2.5" fill="none"/>
+      <path d="M 355 190 Q 330 220 300 190" stroke="#c53030" stroke-width="2.5" fill="none"/>
+      <path d="M 245 190 Q 270 160 300 190" stroke="#c53030" stroke-width="2.5" fill="none"/>
+    </g>
+    <circle cx="300" cy="190" r="12" fill="#c53030"/>
+    <text x="300" y="194" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">軸</text>
+    <!-- 吸込口 -->
+    <rect x="130" y="175" width="70" height="30" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="2"/>
+    <text x="165" y="195" text-anchor="middle" font-size="10" fill="#975a16">吸込口</text>
+    <line x1="70" y1="190" x2="130" y2="190" stroke="#ed8936" stroke-width="4" class="animate-oil"/>
+    <text x="50" y="190" font-size="10" fill="#ed8936">IN</text>
+    <!-- 吐出口 -->
+    <rect x="390" y="100" width="30" height="60" rx="4" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+    <text x="405" y="85" text-anchor="middle" font-size="10" fill="#38a169">吐出口</text>
+    <line x1="405" y1="100" x2="405" y2="50" stroke="#38a169" stroke-width="4" class="animate-oil"/>
+    <text x="420" y="45" font-size="10" fill="#38a169">OUT</text>
+    <!-- 説明パネル -->
+    <rect x="480" y="80" width="200" height="180" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="580" y="105" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="700">作動原理</text>
+    <text x="490" y="130" font-size="10" fill="#2d3748">1. インペラが高速回転</text>
+    <text x="490" y="150" font-size="10" fill="#2d3748">2. 遠心力で油を外周へ</text>
+    <text x="490" y="170" font-size="10" fill="#2d3748">3. ケーシングで速度→</text>
+    <text x="490" y="190" font-size="10" fill="#2d3748">   圧力に変換</text>
+    <text x="490" y="215" font-size="10" fill="#e53e3e" font-weight="600">注意: 自吸性がないため</text>
+    <text x="490" y="235" font-size="10" fill="#e53e3e">ポンプ内を油で満たして</text>
+    <text x="490" y="255" font-size="10" fill="#e53e3e">から起動する（呼び水）</text>
+  </svg>
+  <div class="caption">図10-2: 遠心式荷役ポンプの構造とインペラ回転アニメーション</div>
+</div>
+
+<!-- ===== 3. ストリッピング装置 ===== -->
+<h2>3. ストリッピング装置</h2>
+
+<p><strong>ストリッピング</strong>とは、荷役ポンプでは排出しきれないタンク底部の残油を、さらに小型の専用ポンプで吸い出す作業です。</p>
+
+<ul>
+  <li><strong>ストリッピングポンプ:</strong> 容積式（ピストン式やスクリュー式）が多い。自吸性があり、少量の油でも吸い上げられる</li>
+  <li><strong>エダクター:</strong> ジェットポンプの一種。高圧の油や水をノズルから噴射し、その引き込み力で残油を吸い出す。可動部がなく故障が少ない</li>
+  <li>ストリッピングの完了は、タンク内の液面計やサイトグラスで確認する</li>
+</ul>
+
+<div class="key-point">
+  <p><strong>ストリッピングの重要性:</strong> 異なる油種を積む場合、前の貨物の残油が混入すると品質問題となります（コンタミネーション）。また、環境保護の観点からも、タンク内の残油を可能な限り排出することが重要です。</p>
+</div>
+
+<!-- ===== 4. バルブの種類 ===== -->
+<h2>4. バルブの種類と操作</h2>
+
+<p>タンカーの配管系統には多数のバルブが使われています。バルブの特性を理解し、正しく操作することが安全荷役の基本です。</p>
+
+<table>
+  <thead>
+    <tr><th>バルブ名</th><th>構造</th><th>特徴</th><th>主な用途</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>バタフライ弁</strong></td>
+      <td>円盤が配管内で90度回転</td>
+      <td>軽量・コンパクト、操作が速い。半開で流量調整可能</td>
+      <td>カーゴライン、バラストライン</td>
+    </tr>
+    <tr>
+      <td><strong>ゲート弁</strong></td>
+      <td>板状のゲートが上下して開閉</td>
+      <td>全開時の圧力損失が小さい。半開使用は不可（弁体が損傷）</td>
+      <td>主配管の仕切り弁</td>
+    </tr>
+    <tr>
+      <td><strong>ボール弁</strong></td>
+      <td>球体が90度回転して開閉</td>
+      <td>開閉が迅速、シール性が良い</td>
+      <td>マニホールド、計装配管</td>
+    </tr>
+    <tr>
+      <td><strong>グローブ弁</strong></td>
+      <td>弁体が弁座に押し付けられて閉止</td>
+      <td>流量調整に適する。圧力損失が大きい</td>
+      <td>流量調整が必要な箇所</td>
+    </tr>
+    <tr>
+      <td><strong>逆止弁（チェック弁）</strong></td>
+      <td>一方向のみ流体を通す</td>
+      <td>逆流防止。自動的に開閉</td>
+      <td>ポンプ吐出側</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="box box-warning">
+  <h4>バルブ操作の注意点</h4>
+  <ul>
+    <li>急激な開閉は<strong>ウォーターハンマー</strong>（水撃作用）を起こし、配管を破損するおそれがある</li>
+    <li>バルブの開閉は必ず<strong>ゆっくり</strong>行う。特に大口径のバルブは要注意</li>
+    <li>操作後は必ず<strong>開閉状態を確認</strong>し、バルブの位置表示を正しくする</li>
+    <li>長期間動かしていないバルブは固着していることがあるため、無理な力をかけない</li>
+  </ul>
+</div>
+
+<!-- ===== 5. IGS ===== -->
+<h2>5. イナートガス装置（IGS）</h2>
+
+<h3>5-1. なぜ必要か</h3>
+<p>タンカーのカーゴタンク内には、貨物油から蒸発したガス（炭化水素ガス）が充満しています。このガスが空気と混合すると、<strong>爆発性混合気</strong>となり、何らかの着火源（静電気、摩擦火花等）により爆発する危険があります。</p>
+
+<div class="box box-danger">
+  <h4>爆発の3条件</h4>
+  <p>爆発が起きるには、以下の3つが同時に存在する必要があります（ファイアトライアングル）:</p>
+  <ol>
+    <li><strong>可燃性ガス</strong>（炭化水素ガス）— 爆発限界内の濃度</li>
+    <li><strong>酸素</strong>（空気中の約21%）</li>
+    <li><strong>着火源</strong>（静電気、火花、高温面等）</li>
+  </ol>
+  <p>イナートガス装置は、<strong>酸素濃度を下げる</strong>ことで爆発を防止します。タンク内の酸素濃度を8%以下（通常5%以下を目標）に維持することで、可燃性ガスがあっても爆発しない状態を作ります。</p>
+</div>
+
+<h3>5-2. IGSの構成</h3>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 750 380" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr10c" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#4a5568"/>
+      </marker>
+    </defs>
+    <text x="375" y="25" text-anchor="middle" class="svg-title" font-size="15">イナートガス装置（IGS）系統図</text>
+    <!-- ボイラー排ガス取り出し -->
+    <rect x="30" y="60" width="100" height="70" rx="8" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+    <text x="80" y="92" text-anchor="middle" font-size="11" fill="#c53030" font-weight="700">ボイラー</text>
+    <text x="80" y="110" text-anchor="middle" font-size="9" fill="#c53030">排ガス取出</text>
+    <!-- スクラバー -->
+    <rect x="160" y="50" width="80" height="90" rx="8" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="200" y="85" text-anchor="middle" font-size="10" fill="#2b6cb0" font-weight="700">スクラバー</text>
+    <text x="200" y="102" text-anchor="middle" font-size="9" fill="#2b6cb0">冷却・洗浄</text>
+    <text x="200" y="118" text-anchor="middle" font-size="9" fill="#2b6cb0">SO₂除去</text>
+    <line x1="130" y1="95" x2="160" y2="95" stroke="#4a5568" stroke-width="2" marker-end="url(#arr10c)"/>
+    <!-- ガス分析計 -->
+    <rect x="270" y="65" width="70" height="50" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+    <text x="305" y="87" text-anchor="middle" font-size="9" fill="#38a169" font-weight="700">O₂分析計</text>
+    <text x="305" y="103" text-anchor="middle" font-size="9" fill="#38a169">≦8%確認</text>
+    <line x1="240" y1="90" x2="270" y2="90" stroke="#4a5568" stroke-width="2" marker-end="url(#arr10c)"/>
+    <!-- ブロワー -->
+    <circle cx="390" cy="90" r="30" fill="#e9d8fd" stroke="#6b46c1" stroke-width="2"/>
+    <text x="390" y="87" text-anchor="middle" font-size="10" fill="#6b46c1" font-weight="700">IG</text>
+    <text x="390" y="102" text-anchor="middle" font-size="10" fill="#6b46c1" font-weight="700">ブロワ</text>
+    <line x1="340" y1="90" x2="360" y2="90" stroke="#4a5568" stroke-width="2" marker-end="url(#arr10c)"/>
+    <!-- デッキウォーターシール -->
+    <rect x="450" y="65" width="80" height="50" rx="6" fill="#fefcbf" stroke="#975a16" stroke-width="2"/>
+    <text x="490" y="85" text-anchor="middle" font-size="9" fill="#975a16" font-weight="700">デッキ</text>
+    <text x="490" y="100" text-anchor="middle" font-size="9" fill="#975a16" font-weight="700">ウォーターシール</text>
+    <line x1="420" y1="90" x2="450" y2="90" stroke="#4a5568" stroke-width="2" marker-end="url(#arr10c)"/>
+    <!-- メイン配管 -->
+    <line x1="530" y1="90" x2="600" y2="90" stroke="#4a5568" stroke-width="3" marker-end="url(#arr10c)"/>
+    <text x="565" y="80" text-anchor="middle" font-size="9" fill="#4a5568">IG主管</text>
+    <!-- 分岐→各タンク -->
+    <line x1="600" y1="90" x2="600" y2="180" stroke="#4a5568" stroke-width="2"/>
+    <line x1="600" y1="180" x2="100" y2="180" stroke="#4a5568" stroke-width="2"/>
+    <!-- タンク -->
+    <rect x="80" y="200" width="130" height="100" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="1.5"/>
+    <text x="145" y="250" text-anchor="middle" font-size="11" fill="#975a16" font-weight="600">No.1 Tank</text>
+    <rect x="240" y="200" width="130" height="100" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="1.5"/>
+    <text x="305" y="250" text-anchor="middle" font-size="11" fill="#975a16" font-weight="600">No.2 Tank</text>
+    <rect x="400" y="200" width="130" height="100" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="1.5"/>
+    <text x="465" y="250" text-anchor="middle" font-size="11" fill="#975a16" font-weight="600">No.3 Tank</text>
+    <!-- IG→タンク分岐 -->
+    <line x1="145" y1="180" x2="145" y2="200" stroke="#a0aec0" stroke-width="2"/>
+    <line x1="305" y1="180" x2="305" y2="200" stroke="#a0aec0" stroke-width="2"/>
+    <line x1="465" y1="180" x2="465" y2="200" stroke="#a0aec0" stroke-width="2"/>
+    <!-- ガスのアニメーション -->
+    <g class="animate-gas">
+      <circle cx="145" cy="230" r="5" fill="#a0aec0" opacity="0.4"/>
+      <circle cx="155" cy="240" r="4" fill="#a0aec0" opacity="0.3"/>
+      <circle cx="135" cy="245" r="3" fill="#a0aec0" opacity="0.5"/>
+    </g>
+    <g class="animate-gas" style="animation-delay: 0.5s;">
+      <circle cx="305" cy="228" r="5" fill="#a0aec0" opacity="0.4"/>
+      <circle cx="315" cy="238" r="4" fill="#a0aec0" opacity="0.3"/>
+      <circle cx="295" cy="243" r="3" fill="#a0aec0" opacity="0.5"/>
+    </g>
+    <g class="animate-gas" style="animation-delay: 1s;">
+      <circle cx="465" cy="232" r="5" fill="#a0aec0" opacity="0.4"/>
+      <circle cx="475" cy="242" r="4" fill="#a0aec0" opacity="0.3"/>
+      <circle cx="455" cy="247" r="3" fill="#a0aec0" opacity="0.5"/>
+    </g>
+    <!-- P/Vバルブ -->
+    <polygon points="140,195 150,195 145,185" fill="#38a169" stroke="#38a169" stroke-width="1"/>
+    <polygon points="300,195 310,195 305,185" fill="#38a169" stroke="#38a169" stroke-width="1"/>
+    <polygon points="460,195 470,195 465,185" fill="#38a169" stroke="#38a169" stroke-width="1"/>
+    <!-- 凡例 -->
+    <rect x="560" y="200" width="170" height="100" rx="6" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="645" y="220" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="700">装置の流れ</text>
+    <text x="570" y="240" font-size="9" fill="#2d3748">排ガス → 洗浄冷却 →</text>
+    <text x="570" y="258" font-size="9" fill="#2d3748">O₂チェック → 送風 →</text>
+    <text x="570" y="276" font-size="9" fill="#2d3748">逆流防止 → タンクへ</text>
+    <text x="570" y="294" font-size="9" fill="#38a169" font-weight="600">▲ = P/Vバルブ</text>
+  </svg>
+  <div class="caption">図10-3: イナートガス装置（IGS）の系統図</div>
+</div>
+
+<h3>5-3. 酸素濃度の管理</h3>
+<ul>
+  <li>タンク内の酸素濃度は<strong>常時8%以下</strong>を維持する（IMO基準）</li>
+  <li>運用上は<strong>5%以下</strong>を目標とする</li>
+  <li>O₂分析計で常時モニタリングし、高酸素アラームを設定する</li>
+  <li>IG供給中は、タンク内を<strong>正圧</strong>（大気圧よりわずかに高い状態）に保つ</li>
+</ul>
+
+<!-- ===== 6. P/Vバルブ ===== -->
+<h2>6. P/Vバルブ（圧力/真空弁）の役割</h2>
+
+<p>P/Vバルブ（Pressure/Vacuum Valve）は、カーゴタンクの圧力を適正範囲に保つための安全装置です。各タンクの甲板上に設置されています。</p>
+
+<ul>
+  <li><strong>加圧時（P側）:</strong> タンク内圧力が設定値を超えると弁が開き、ガスを大気に放出してタンクの破裂を防ぐ</li>
+  <li><strong>真空時（V側）:</strong> タンク内圧力が大気圧より下がると弁が開き、空気（またはIG）を取り込んでタンクの潰れを防ぐ</li>
+</ul>
+
+<div class="key-point">
+  <p><strong>P/Vバルブの重要性:</strong> 荷役中は油面の上昇・下降に伴いタンク内の圧力が変動します。P/Vバルブが正常に作動しないと、タンクの過圧による変形・破裂や、負圧による陥没が発生します。定期的な作動テストと清掃が不可欠です。凍結や汚れによる固着に特に注意してください。</p>
+</div>
+
+<!-- ===== 7. COW ===== -->
+<h2>7. COWシステム（原油洗浄）</h2>
+
+<div class="box box-info">
+  <h4>参考知識（大型タンカー向け）</h4>
+  <p>COW（Crude Oil Washing）は、揚荷中に原油自体をタンク洗浄液として使用し、タンク壁面に付着した高粘度の残油を洗い流すシステムです。MARPOL条約により、20,000DWT以上の原油タンカーに装備が義務付けられています。</p>
+  <p>内航タンカーでは一般的に該当しませんが、大型船への転船や海技士試験の出題範囲として知っておくべき知識です。</p>
+  <ul>
+    <li>タンク内に固定された洗浄機（タンククリーニングマシン）から高圧の原油を噴射する</li>
+    <li>洗浄中はIGSで不活性雰囲気を維持する</li>
+    <li>環境保護（スロップタンクへの残油削減）と経済的効果（油の回収）がある</li>
+  </ul>
+</div>
+
+<!-- ===== 8. ガスフリー ===== -->
+<h2>8. ガスフリー作業と密閉区画の安全</h2>
+
+<p><strong>ガスフリー</strong>とは、タンク内の有害ガス・可燃性ガスを除去し、人が安全に入れる状態にする作業です。タンク検査や修理の前に必ず行います。</p>
+
+<h3>ガスフリーの手順</h3>
+<ol>
+  <li><strong>イナーティング:</strong> まずIGSでタンク内を不活性化（O₂ 8%以下）</li>
+  <li><strong>パージング:</strong> IGの供給を止め、ブロワーで新鮮な空気を送り込み、不活性ガスと炭化水素ガスを排出する</li>
+  <li><strong>ベンチレーション:</strong> 十分な換気を行い、酸素濃度21%、炭化水素ガス濃度1%LEL以下にする</li>
+  <li><strong>ガス検知:</strong> 入槽前にポータブルガス検知器でO₂濃度（21%）、可燃性ガス（1%LEL以下）、有毒ガス（H₂S等）を測定</li>
+  <li><strong>入槽許可:</strong> 責任者（船長または一等航海士）の許可を得て入槽する</li>
+</ol>
+
+<div class="box box-danger">
+  <h4>密閉区画への入槽における安全対策</h4>
+  <ul>
+    <li>必ず<strong>入槽許可書</strong>を発行してから作業を開始する</li>
+    <li>入槽者以外に必ず<strong>監視員</strong>を配置する</li>
+    <li>連絡手段（無線機）を確保する</li>
+    <li>救助用の<strong>ハーネス・救命索</strong>を装着する</li>
+    <li>ガス検知は<strong>複数のレベル</strong>（上部・中部・底部）で実施する</li>
+    <li>作業中も<strong>継続的に換気</strong>し、定期的にガス測定を行う</li>
+    <li>少しでも異常を感じたら<strong>直ちに退避</strong>する</li>
+  </ul>
+</div>
+
+<!-- ===== 9. 油濁防止設備 ===== -->
+<h2>9. 油濁防止設備</h2>
+
+<p>海洋汚染防止は船舶の最も重要な義務の一つです。タンカーには以下の油濁防止設備が装備されています。</p>
+
+<h3>油水分離器（OWS: Oil Water Separator）</h3>
+<ul>
+  <li>機関室のビルジ（底に溜まった油混じりの水）を処理する装置</li>
+  <li>油分濃度を<strong>15ppm以下</strong>に分離してから船外へ排出する（MARPOL条約規定）</li>
+  <li>油分濃度計（OCM）と連動し、15ppmを超えると自動的に排出を停止（3方弁が閉）</li>
+</ul>
+
+<h3>スロップタンク</h3>
+<ul>
+  <li>タンク洗浄水や残油を一時的に貯蔵するタンク</li>
+  <li>油水分離後、水層は適切に処理し、油層は次航の積荷に混合するか陸揚げする</li>
+</ul>
+
+<h3>油記録簿</h3>
+<ul>
+  <li>すべての油の積み込み・排出・移送・処分を記録する法定書類</li>
+  <li><strong>パートI:</strong> 機関区域に関する記録（ビルジ排出等）</li>
+  <li><strong>パートII:</strong> 貨物区域に関する記録（荷役、タンク洗浄等）— タンカーのみ</li>
+  <li>3年間の保存義務あり。PSC（ポートステートコントロール）で確認される</li>
+</ul>
+
+<!-- ===== 10. 実務 ===== -->
+<h2>10. 実務: 荷役の基本手順</h2>
+
+<h3>積荷（ローディング）の基本フロー</h3>
+<div class="box box-success">
+  <ol>
+    <li><strong>荷役前ミーティング:</strong> 陸上側と船側で荷役計画を確認（油種、量、積付順序、積荷速度）</li>
+    <li><strong>配管・弁のラインアップ:</strong> 積荷するタンクのバルブを開き、不要なバルブは閉鎖。配管経路を確認</li>
+    <li><strong>マニホールド接続:</strong> ローディングアーム（またはホース）を接続し、漏洩がないか確認</li>
+    <li><strong>アーシング（接地）:</strong> 静電気除去のため、船と陸上を接地線で接続</li>
+    <li><strong>積荷開始:</strong> 低流量で開始し、漏洩がないことを確認後、所定の流量まで上げる</li>
+    <li><strong>液面監視:</strong> タンクの液面を常時監視。オーバーフロー防止のためハイレベルアラームを確認</li>
+    <li><strong>トッピングオフ:</strong> 目標量に近づいたら流量を落とし、慎重に最終調整</li>
+    <li><strong>積荷完了:</strong> バルブを閉止、マニホールドを切り離し、配管をドレン</li>
+  </ol>
+</div>
+
+<h3>揚荷（アンローディング）の基本フロー</h3>
+<div class="box box-info">
+  <ol>
+    <li><strong>荷役前ミーティング:</strong> 揚荷計画の確認（揚荷順序、速度、ストリッピング）</li>
+    <li><strong>配管・弁のラインアップ:</strong> 揚荷するタンクのサクション弁・デッキ弁を開く</li>
+    <li><strong>マニホールド接続・アーシング:</strong> 積荷時と同様</li>
+    <li><strong>荷役ポンプ起動:</strong> 低速で起動し、徐々に回転数を上げる</li>
+    <li><strong>揚荷中の監視:</strong> ポンプの圧力・温度、タンク液面、配管の漏洩を監視</li>
+    <li><strong>ストリッピング:</strong> タンクの油面が下がったらストリッピングポンプに切り替え、残油を排出</li>
+    <li><strong>揚荷完了:</strong> ポンプ停止、バルブ閉止、配管ドレン、マニホールド切り離し</li>
+    <li><strong>タンク検尺:</strong> 空タンクの検尺を行い、揚荷量を確認</li>
+  </ol>
+</div>
+
+<!-- ===== クイズ ===== -->
+<div class="quiz">
+  <h4>章末確認クイズ</h4>
+
+  <p><strong>Q1.</strong> イナートガス装置（IGS）でタンク内の酸素濃度を何%以下に維持するか？</p>
+  <button onclick="showAnswer('q10-1')">解答を表示</button>
+  <div id="q10-1" class="quiz-answer">
+    <p><strong>答え: 8%以下（運用上は5%以下を目標）</strong></p>
+    <p>IMO基準では8%以下と定められていますが、安全マージンを考慮して通常は5%以下を目標に運用します。酸素濃度が低いほど爆発リスクは低くなります。</p>
+  </div>
+
+  <p><strong>Q2.</strong> 油水分離器（OWS）で処理した排水の油分濃度は、何ppm以下でなければ船外に排出できないか？</p>
+  <button onclick="showAnswer('q10-2')">解答を表示</button>
+  <div id="q10-2" class="quiz-answer">
+    <p><strong>答え: 15ppm以下</strong></p>
+    <p>MARPOL条約の規定により、油分濃度が15ppmを超える排水は船外に排出できません。油分濃度計が15ppmを超えると自動的に排出を停止する仕組みになっています。</p>
+  </div>
+
+  <p><strong>Q3.</strong> ガスフリー作業で、タンクに入る前に測定すべきガスの項目を3つ挙げよ。</p>
+  <button onclick="showAnswer('q10-3')">解答を表示</button>
+  <div id="q10-3" class="quiz-answer">
+    <p><strong>答え: (1) 酸素濃度（21%であること）、(2) 可燃性ガス濃度（1%LEL以下）、(3) 有毒ガス濃度（H₂S等が許容濃度以下）</strong></p>
+    <p>3種類すべてを上部・中部・底部の各レベルで測定する必要があります。いずれか1つでも基準を満たさない場合は入槽できません。</p>
+  </div>
+</div>
+
+<!-- ===== 章末ナビ ===== -->
+<div class="chapter-nav">
+  <a href="eng09_deck_machinery.html">&larr; 第9章: 甲板機械と舵取機</a>
+  <a href="eng11_maintenance.html">第11章: 日常整備とトラブル対応 &rarr;</a>
+</div>
+
+</div>
+
+<script>
+function showAnswer(id) { var el = document.getElementById(id); el.classList.toggle('show'); }
+</script>
+</body>
+</html>

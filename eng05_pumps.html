@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5章 ポンプの種類と原理 — 機関編 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <div class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="eng04_cooling.html">← 第4章 冷却系統</a>
+    <a href="eng06_boiler.html">第6章 ボイラー →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第5章 ポンプの種類と原理</h1>
+
+  <p>船舶の機関室では、燃料油、潤滑油、冷却水、ビルジ、バラスト水など、さまざまな液体を移送・循環させる必要があります。これらの役割を担うのが<strong>ポンプ</strong>です。内航タンカーでは荷役用のカーゴポンプも含め、多数のポンプが使用されており、機関士にとってポンプの知識は不可欠です。</p>
+
+  <!-- ===== 1. ポンプの分類 ===== -->
+  <h2>1. ポンプの分類</h2>
+
+  <p>ポンプは液体にエネルギーを与えて輸送する機械であり、そのエネルギーの与え方によって大きく2つに分類されます。</p>
+
+  <h3>容積式ポンプ（Positive Displacement Pump）</h3>
+  <p>密閉された空間の容積変化を利用して液体を押し出す方式です。一定量の液体を確実に送ることができ、<strong>粘度の高い液体</strong>（重油、潤滑油など）の移送に適しています。</p>
+  <ul>
+    <li><strong>往復ポンプ</strong>: ピストンポンプ、プランジャポンプ</li>
+    <li><strong>回転ポンプ</strong>: 歯車ポンプ、ねじポンプ（スクリューポンプ）、ベーンポンプ</li>
+  </ul>
+
+  <h3>ターボ式ポンプ（Turbo Pump / 非容積式）</h3>
+  <p>羽根車（インペラ）の回転による遠心力や揚力を利用して液体にエネルギーを与える方式です。大量の液体を連続的に送ることに優れ、<strong>粘度の低い液体</strong>（清水、海水など）の移送に適しています。</p>
+  <ul>
+    <li><strong>遠心ポンプ</strong>（渦巻ポンプ）: 最も一般的</li>
+    <li><strong>軸流ポンプ</strong>: 大流量・低揚程の用途</li>
+    <li><strong>斜流ポンプ</strong>: 遠心と軸流の中間</li>
+  </ul>
+
+  <!-- ポンプ分類図 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ポンプの分類体系図">
+      <!-- タイトル -->
+      <text x="350" y="30" text-anchor="middle" class="svg-title" font-size="16">ポンプの分類</text>
+      <!-- ルート -->
+      <rect x="280" y="45" width="140" height="36" rx="8" fill="#2b6cb0" />
+      <text x="350" y="68" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">ポンプ</text>
+      <!-- 分岐線 -->
+      <line x1="350" y1="81" x2="350" y2="100" stroke="#2d3748" stroke-width="2"/>
+      <line x1="175" y1="100" x2="525" y2="100" stroke="#2d3748" stroke-width="2"/>
+      <line x1="175" y1="100" x2="175" y2="115" stroke="#2d3748" stroke-width="2"/>
+      <line x1="525" y1="100" x2="525" y2="115" stroke="#2d3748" stroke-width="2"/>
+      <!-- 容積式 -->
+      <rect x="100" y="115" width="150" height="36" rx="8" fill="#ed8936" />
+      <text x="175" y="138" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">容積式ポンプ</text>
+      <line x1="175" y1="151" x2="175" y2="170" stroke="#2d3748" stroke-width="2"/>
+      <line x1="100" y1="170" x2="250" y2="170" stroke="#2d3748" stroke-width="2"/>
+      <!-- 往復 -->
+      <line x1="100" y1="170" x2="100" y2="185" stroke="#2d3748" stroke-width="2"/>
+      <rect x="30" y="185" width="140" height="32" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <text x="100" y="205" text-anchor="middle" font-size="11" fill="#2d3748">往復ポンプ</text>
+      <text x="100" y="235" text-anchor="middle" font-size="10" fill="#718096">ピストン／プランジャ</text>
+      <!-- 回転 -->
+      <line x1="250" y1="170" x2="250" y2="185" stroke="#2d3748" stroke-width="2"/>
+      <rect x="180" y="185" width="140" height="32" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <text x="250" y="205" text-anchor="middle" font-size="11" fill="#2d3748">回転ポンプ</text>
+      <text x="250" y="235" text-anchor="middle" font-size="10" fill="#718096">歯車／ねじ／ベーン</text>
+      <!-- ターボ式 -->
+      <rect x="450" y="115" width="150" height="36" rx="8" fill="#38a169" />
+      <text x="525" y="138" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">ターボ式ポンプ</text>
+      <line x1="525" y1="151" x2="525" y2="170" stroke="#2d3748" stroke-width="2"/>
+      <line x1="420" y1="170" x2="630" y2="170" stroke="#2d3748" stroke-width="2"/>
+      <!-- 遠心 -->
+      <line x1="420" y1="170" x2="420" y2="185" stroke="#2d3748" stroke-width="2"/>
+      <rect x="360" y="185" width="120" height="32" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1"/>
+      <text x="420" y="205" text-anchor="middle" font-size="11" fill="#2d3748">遠心ポンプ</text>
+      <text x="420" y="235" text-anchor="middle" font-size="10" fill="#718096">渦巻ポンプ</text>
+      <!-- 軸流 -->
+      <line x1="525" y1="170" x2="525" y2="185" stroke="#2d3748" stroke-width="2"/>
+      <rect x="475" y="185" width="100" height="32" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1"/>
+      <text x="525" y="205" text-anchor="middle" font-size="11" fill="#2d3748">軸流ポンプ</text>
+      <!-- 斜流 -->
+      <line x1="630" y1="170" x2="630" y2="185" stroke="#2d3748" stroke-width="2"/>
+      <rect x="580" y="185" width="100" height="32" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1"/>
+      <text x="630" y="205" text-anchor="middle" font-size="11" fill="#2d3748">斜流ポンプ</text>
+      <!-- 凡例 -->
+      <rect x="40" y="275" width="16" height="16" rx="3" fill="#ed8936"/>
+      <text x="62" y="288" font-size="11" fill="#2d3748">粘度の高い液体向き（重油、潤滑油等）</text>
+      <rect x="350" y="275" width="16" height="16" rx="3" fill="#38a169"/>
+      <text x="372" y="288" font-size="11" fill="#2d3748">粘度の低い液体向き（清水、海水等）</text>
+    </svg>
+    <div class="caption">図5-1: ポンプの分類体系</div>
+  </div>
+
+  <div class="key-point">
+    <ul>
+      <li><strong>容積式ポンプ</strong>は吐出量が回転数にほぼ比例し、高圧が得られる。粘度の高い液体に適する。</li>
+      <li><strong>ターボ式ポンプ</strong>は大流量を連続的に送れるが、粘度の高い液体には効率が低下する。</li>
+      <li>船舶では用途に応じて両方のタイプが使い分けられている。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 2. 遠心ポンプ ===== -->
+  <h2>2. 遠心ポンプ（渦巻ポンプ）</h2>
+
+  <p>遠心ポンプは、船舶で最も多く使用されるポンプです。冷却海水ポンプ、ビルジポンプ、バラストポンプ、消防ポンプなど、幅広い用途に用いられます。</p>
+
+  <h3>構造と原理</h3>
+  <p>遠心ポンプは、<strong>インペラ（羽根車）</strong>をケーシング内で高速回転させ、液体に遠心力を与えることで圧力エネルギーと速度エネルギーを付与します。液体はインペラの中心（吸込口）から入り、遠心力によって外周に向かって押し出されます。ケーシング（渦巻室）は断面積が次第に広がる渦巻形状をしており、速度エネルギーを圧力エネルギーに変換します。</p>
+
+  <h4>主要部品</h4>
+  <ul>
+    <li><strong>インペラ（羽根車）</strong>: 液体にエネルギーを与える回転部品</li>
+    <li><strong>ケーシング（渦巻室）</strong>: インペラを囲み、速度→圧力変換を行う</li>
+    <li><strong>軸封装置</strong>: 軸貫通部からの漏れを防ぐ（メカニカルシール、グランドパッキン）</li>
+    <li><strong>軸受</strong>: 回転軸を支持する</li>
+    <li><strong>ウェアリング</strong>: インペラとケーシング間の隙間を保ち、内部漏れを防ぐ</li>
+  </ul>
+
+  <!-- 遠心ポンプ構造図 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="遠心ポンプの構造図">
+      <defs>
+        <marker id="arrowBlue" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,3 L0,6 Z" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+      <text x="300" y="25" text-anchor="middle" class="svg-title" font-size="15">遠心ポンプの構造</text>
+
+      <!-- ケーシング（渦巻形状） -->
+      <ellipse cx="300" cy="220" rx="160" ry="140" fill="none" stroke="#1a365d" stroke-width="3"/>
+      <!-- 渦巻の拡大部（吐出口方向） -->
+      <path d="M460,220 Q470,220 475,200 L500,180" fill="none" stroke="#1a365d" stroke-width="3"/>
+      <path d="M460,220 Q470,220 475,240 L500,180" fill="none" stroke="#1a365d" stroke-width="3"/>
+      <!-- 吐出口 -->
+      <rect x="480" y="160" width="60" height="40" rx="4" fill="#bee3f8" stroke="#1a365d" stroke-width="2"/>
+      <text x="510" y="183" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">吐出口</text>
+      <line x1="540" y1="180" x2="575" y2="180" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+      <!-- 吸込口 -->
+      <line x1="60" y1="220" x2="140" y2="220" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+      <rect x="20" y="200" width="50" height="40" rx="4" fill="#bee3f8" stroke="#1a365d" stroke-width="2"/>
+      <text x="45" y="223" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">吸込口</text>
+
+      <!-- インペラ（回転アニメーション付き） -->
+      <g transform="translate(300,220)" class="animate-rotate" style="transform-origin:0 0;">
+        <circle cx="0" cy="0" r="70" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+        <!-- 羽根 -->
+        <path d="M0,0 Q20,-20 10,-65" fill="none" stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M0,0 Q-20,20 -10,65" fill="none" stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M0,0 Q20,20 65,10" fill="none" stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M0,0 Q-20,-20 -65,-10" fill="none" stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M0,0 Q-5,25 -60,35" fill="none" stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M0,0 Q5,-25 60,-35" fill="none" stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="0" cy="0" r="8" fill="#2b6cb0"/>
+      </g>
+
+      <!-- 軸 -->
+      <rect x="290" y="340" width="20" height="60" rx="3" fill="#a0aec0" stroke="#2d3748" stroke-width="1.5"/>
+      <text x="300" y="415" text-anchor="middle" font-size="11" fill="#2d3748">回転軸（モーターへ）</text>
+
+      <!-- 軸封装置 -->
+      <rect x="275" y="330" width="50" height="20" rx="3" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="300" y="344" text-anchor="middle" font-size="9" fill="#2d3748">軸封装置</text>
+
+      <!-- ラベル -->
+      <text x="300" y="155" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="600">インペラ（羽根車）</text>
+      <path d="M300,158 L300,165" stroke="#2b6cb0" stroke-width="1"/>
+
+      <text x="170" y="105" text-anchor="middle" font-size="11" fill="#1a365d">ケーシング（渦巻室）</text>
+      <path d="M210,108 L240,140" stroke="#1a365d" stroke-width="1"/>
+
+      <!-- 流れの矢印 -->
+      <text x="105" y="250" font-size="10" fill="#2b6cb0">液体の流れ →</text>
+    </svg>
+    <div class="caption">図5-2: 遠心ポンプの構造（インペラが回転するアニメーション付き）</div>
+  </div>
+
+  <h3>特性曲線</h3>
+  <p>遠心ポンプの性能は<strong>特性曲線（Q-H曲線）</strong>で表されます。横軸に流量（Q）、縦軸に揚程（H）をとったグラフで、流量が増えると揚程が低下する右下がりの曲線になるのが特徴です。</p>
+  <ul>
+    <li><strong>締切揚程</strong>: 吐出弁を閉じた状態での最大揚程</li>
+    <li><strong>設計点</strong>: 効率が最大となる運転点</li>
+    <li>配管の抵抗曲線との交点が<strong>実際の運転点</strong>となる</li>
+  </ul>
+
+  <!-- ===== 3. 歯車ポンプ ===== -->
+  <h2>3. 歯車ポンプ</h2>
+
+  <p>歯車ポンプは容積式回転ポンプの代表格で、船舶では<strong>潤滑油ポンプ</strong>や<strong>燃料油移送ポンプ</strong>として広く使われています。構造が簡単で信頼性が高く、粘度の高い液体を安定して送れるのが利点です。</p>
+
+  <h3>構造と原理</h3>
+  <p>2つの歯車がケーシング内でかみ合いながら回転します。歯車の歯とケーシングの間に閉じ込められた液体が、回転とともに吸込側から吐出側へ運ばれます。歯がかみ合う部分では液体が押し出され、歯が離れる部分では負圧が生じて液体が吸い込まれます。</p>
+
+  <!-- 歯車ポンプ SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="歯車ポンプの動作原理">
+      <text x="300" y="25" text-anchor="middle" class="svg-title" font-size="15">歯車ポンプの動作原理</text>
+
+      <!-- ケーシング -->
+      <rect x="130" y="60" width="340" height="220" rx="20" fill="#f7fafc" stroke="#1a365d" stroke-width="3"/>
+
+      <!-- 吸込口 -->
+      <rect x="50" y="140" width="80" height="40" rx="4" fill="#bee3f8" stroke="#1a365d" stroke-width="2"/>
+      <text x="90" y="163" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">吸込口</text>
+      <!-- 吐出口 -->
+      <rect x="470" y="140" width="80" height="40" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+      <text x="510" y="163" text-anchor="middle" font-size="11" fill="#c53030" font-weight="600">吐出口</text>
+
+      <!-- 駆動歯車（左） -->
+      <g transform="translate(240,170)" class="animate-rotate" style="transform-origin:0 0; animation-duration:4s;">
+        <circle cx="0" cy="0" r="55" fill="none" stroke="#2b6cb0" stroke-width="2"/>
+        <!-- 歯 -->
+        <rect x="-8" y="-65" width="16" height="18" rx="2" fill="#2b6cb0"/>
+        <rect x="-8" y="47" width="16" height="18" rx="2" fill="#2b6cb0"/>
+        <rect x="47" y="-8" width="18" height="16" rx="2" fill="#2b6cb0"/>
+        <rect x="-65" y="-8" width="18" height="16" rx="2" fill="#2b6cb0"/>
+        <rect x="31" y="-42" width="16" height="16" rx="2" fill="#2b6cb0" transform="rotate(45,39,-34)"/>
+        <rect x="-47" y="26" width="16" height="16" rx="2" fill="#2b6cb0" transform="rotate(45,-39,34)"/>
+        <rect x="31" y="26" width="16" height="16" rx="2" fill="#2b6cb0" transform="rotate(-45,39,34)"/>
+        <rect x="-47" y="-42" width="16" height="16" rx="2" fill="#2b6cb0" transform="rotate(-45,-39,-34)"/>
+        <circle cx="0" cy="0" r="12" fill="#1a365d"/>
+        <circle cx="0" cy="0" r="5" fill="#fff"/>
+      </g>
+      <text x="240" y="250" text-anchor="middle" font-size="11" fill="#1a365d">駆動歯車</text>
+
+      <!-- 従動歯車（右） -->
+      <g transform="translate(360,170)" style="transform-origin:0 0; animation: rotate 4s linear infinite reverse;">
+        <circle cx="0" cy="0" r="55" fill="none" stroke="#ed8936" stroke-width="2"/>
+        <rect x="-8" y="-65" width="16" height="18" rx="2" fill="#ed8936"/>
+        <rect x="-8" y="47" width="16" height="18" rx="2" fill="#ed8936"/>
+        <rect x="47" y="-8" width="18" height="16" rx="2" fill="#ed8936"/>
+        <rect x="-65" y="-8" width="18" height="16" rx="2" fill="#ed8936"/>
+        <rect x="31" y="-42" width="16" height="16" rx="2" fill="#ed8936" transform="rotate(45,39,-34)"/>
+        <rect x="-47" y="26" width="16" height="16" rx="2" fill="#ed8936" transform="rotate(45,-39,34)"/>
+        <rect x="31" y="26" width="16" height="16" rx="2" fill="#ed8936" transform="rotate(-45,39,34)"/>
+        <rect x="-47" y="-42" width="16" height="16" rx="2" fill="#ed8936" transform="rotate(-45,-39,-34)"/>
+        <circle cx="0" cy="0" r="12" fill="#c05621"/>
+        <circle cx="0" cy="0" r="5" fill="#fff"/>
+      </g>
+      <text x="360" y="250" text-anchor="middle" font-size="11" fill="#c05621">従動歯車</text>
+
+      <!-- 流れ矢印 -->
+      <path d="M155,110 Q200,80 240,100" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="185" y="85" font-size="10" fill="#2b6cb0">液体の流れ</text>
+      <path d="M360,100 Q400,80 445,110" fill="none" stroke="#c53030" stroke-width="2" stroke-dasharray="5,3"/>
+
+      <path d="M155,230 Q200,260 240,240" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="5,3"/>
+      <path d="M360,240 Q400,260 445,230" fill="none" stroke="#c53030" stroke-width="2" stroke-dasharray="5,3"/>
+
+      <!-- 説明 -->
+      <text x="300" y="310" text-anchor="middle" font-size="11" fill="#718096">歯とケーシングの間に液体を閉じ込めて吸込側→吐出側へ運ぶ</text>
+    </svg>
+    <div class="caption">図5-3: 歯車ポンプの動作原理（歯車回転アニメーション付き）</div>
+  </div>
+
+  <h3>歯車ポンプの特徴</h3>
+  <table>
+    <thead><tr><th>項目</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>構造</td><td>簡単で部品点数が少ない</td></tr>
+      <tr><td>適した液体</td><td>潤滑油、燃料油など粘度の高い液体</td></tr>
+      <tr><td>流量制御</td><td>回転数にほぼ比例して流量が変化</td></tr>
+      <tr><td>圧力</td><td>中〜高圧が得られる</td></tr>
+      <tr><td>注意点</td><td>異物混入に弱い（歯の損傷）、逆転不可（安全弁が必要）</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 4. ねじポンプ ===== -->
+  <h2>4. ねじポンプ（スクリューポンプ）</h2>
+
+  <p>ねじポンプは、ねじ状のローター（スクリュー）の回転によって液体を軸方向に移送する容積式回転ポンプです。船舶では<strong>燃料油供給ポンプ</strong>や<strong>潤滑油ポンプ</strong>として使用されます。</p>
+
+  <h3>構造と特徴</h3>
+  <ul>
+    <li>1本の駆動スクリューと2本の従動スクリューで構成される<strong>3軸ねじポンプ</strong>が一般的</li>
+    <li>スクリューのねじ溝に液体が閉じ込められ、回転に伴い軸方向に移動</li>
+    <li><strong>脈動が少なく</strong>、振動・騒音が小さい</li>
+    <li>歯車ポンプより高い粘度の液体にも対応</li>
+    <li>吐出圧力が高く、連続的で安定した流れが得られる</li>
+  </ul>
+
+  <div class="box box-info">
+    <h4>ねじポンプと歯車ポンプの使い分け</h4>
+    <p>どちらも粘度の高い液体に用いられますが、ねじポンプは脈動が少なく静粛なため、<strong>燃料油のディーゼル機関への供給</strong>など安定した流量が求められる用途に適しています。歯車ポンプは構造が簡単でコストが低いため、<strong>移送用</strong>に多く使われます。</p>
+  </div>
+
+  <!-- ===== 5. ピストンポンプ/プランジャポンプ ===== -->
+  <h2>5. ピストンポンプ・プランジャポンプ</h2>
+
+  <p>ピストンまたはプランジャの往復運動により液体を吸い込み、押し出す容積式往復ポンプです。船舶では<strong>ビルジポンプ</strong>（手動式を含む）、<strong>燃料噴射ポンプ</strong>、<strong>油圧ポンプ</strong>などに使用されます。</p>
+
+  <h3>ピストンポンプとプランジャポンプの違い</h3>
+  <table>
+    <thead><tr><th>項目</th><th>ピストンポンプ</th><th>プランジャポンプ</th></tr></thead>
+    <tbody>
+      <tr><td>可動部形状</td><td>シリンダ内径と同径の短い円盤</td><td>シリンダ内径より小さい長い円柱</td></tr>
+      <tr><td>シール</td><td>ピストンリングで密封</td><td>シリンダ外部のパッキンで密封</td></tr>
+      <tr><td>得られる圧力</td><td>中圧</td><td>非常に高圧</td></tr>
+      <tr><td>用途例</td><td>ビルジポンプ、油圧ポンプ</td><td>燃料噴射ポンプ、高圧洗浄</td></tr>
+    </tbody>
+  </table>
+
+  <h3>吸込弁と吐出弁の働き</h3>
+  <p>往復ポンプには<strong>吸込弁（逆止弁）</strong>と<strong>吐出弁（逆止弁）</strong>が設けられています。ピストンが引かれると吸込弁が開いて液体が吸い込まれ、ピストンが押されると吐出弁が開いて液体が押し出されます。この弁の開閉により一方向への流れが実現されます。</p>
+
+  <!-- ===== 6. 渦巻ポンプとタービンポンプの違い ===== -->
+  <h2>6. 渦巻ポンプとタービンポンプの違い</h2>
+
+  <p>どちらもターボ式ポンプに分類されますが、構造と用途が異なります。</p>
+
+  <table>
+    <thead><tr><th>項目</th><th>渦巻ポンプ</th><th>タービンポンプ</th></tr></thead>
+    <tbody>
+      <tr><td>ケーシング形状</td><td>渦巻形（スパイラル）</td><td>円筒形＋案内羽根（ディフューザ）</td></tr>
+      <tr><td>段数</td><td>通常は単段</td><td>多段にしやすい</td></tr>
+      <tr><td>揚程</td><td>中程度</td><td>高揚程が得られる</td></tr>
+      <tr><td>効率</td><td>設計点付近で高い</td><td>広い範囲で安定</td></tr>
+      <tr><td>船舶での用途</td><td>冷却水、ビルジ、バラスト</td><td>ボイラー給水ポンプ等</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>タービンポンプ</strong>はディフューザ（案内羽根）を持ち、多段にすることで高い揚程が得られるため、ボイラー給水など高圧が必要な用途に使われます。</p>
+
+  <!-- ===== 7. ポンプの故障と対策 ===== -->
+  <h2>7. ポンプの故障と対策</h2>
+
+  <h3>キャビテーション</h3>
+  <p><strong>キャビテーション</strong>とは、ポンプの吸込側で液体の圧力が飽和蒸気圧以下に低下し、液体中に気泡が発生する現象です。気泡がインペラの高圧部で急激に潰れる際に、衝撃波が生じてインペラやケーシングを損傷（壊食＝エロージョン）させます。</p>
+
+  <h4>キャビテーションの原因</h4>
+  <ul>
+    <li>吸込管の抵抗が大きい（管が長い、弁が絞られている、ストレーナ詰まり）</li>
+    <li>吸込揚程が高すぎる（ポンプとタンクの液面の高低差）</li>
+    <li>液体温度が高すぎる（蒸気圧が上昇）</li>
+    <li>回転数が過大</li>
+  </ul>
+
+  <h4>キャビテーションの兆候と対策</h4>
+  <div class="box box-warning">
+    <h4>キャビテーション発生時の兆候</h4>
+    <ul>
+      <li>異常な振動・騒音（ガラガラ、パチパチという音）</li>
+      <li>吐出圧力の低下・変動</li>
+      <li>流量の低下</li>
+    </ul>
+    <h4>対策</h4>
+    <ul>
+      <li>吸込ストレーナの清掃</li>
+      <li>吸込弁を全開にする</li>
+      <li>液体温度を下げる</li>
+      <li>NPSH（有効吸込ヘッド）を確保する</li>
+    </ul>
+  </div>
+
+  <h3>エアロック（空気かみ）</h3>
+  <p>ポンプ内に空気が滞留し、液体を吸い込めなくなる状態です。遠心ポンプは自吸能力が低いため、特に発生しやすくなります。</p>
+  <ul>
+    <li><strong>原因</strong>: 吸込管の接続部からの空気漏れ、液面低下、グランドパッキンの緩み</li>
+    <li><strong>対策</strong>: エア抜き弁を開けて空気を排出、吸込管の気密確認、ポンプの呼び水（プライミング）</li>
+  </ul>
+
+  <h3>軸封部漏れ</h3>
+  <p>回転軸が貫通する部分（軸封部）からの液体漏れは、グランドパッキンの摩耗やメカニカルシールの損傷が原因です。</p>
+  <ul>
+    <li><strong>グランドパッキン</strong>: 締め付けナット（グランドナット）を少しずつ締め込む。滴下が完全に止まるまで締めると過熱・焼付きの原因になるため、<strong>毎分数滴程度の漏れは正常</strong>。</li>
+    <li><strong>メカニカルシール</strong>: 摩耗した場合は交換が必要。Oリングの劣化にも注意。</li>
+  </ul>
+
+  <div class="key-point">
+    <ul>
+      <li><strong>キャビテーション</strong>は吸込側の圧力低下が原因。兆候は異音・振動・圧力変動。</li>
+      <li><strong>エアロック</strong>は遠心ポンプで多発。プライミング（呼び水）で対処。</li>
+      <li>グランドパッキンは<strong>完全に締めてはならない</strong>（毎分数滴の漏れが正常）。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 8. 実務 ===== -->
+  <h2>8. 実務: 内航タンカーで使われる主要ポンプ一覧</h2>
+
+  <p>内航タンカーでは、機関室の補機ポンプに加え、荷役に関わるカーゴポンプやストリッピングポンプなど、多くのポンプが搭載されています。以下に主要なポンプとその概要を示します。</p>
+
+  <table>
+    <thead><tr><th>ポンプ名称</th><th>種類</th><th>主な用途</th></tr></thead>
+    <tbody>
+      <tr><td>主機潤滑油ポンプ</td><td>歯車ポンプ</td><td>主機関の各部への潤滑油供給</td></tr>
+      <tr><td>燃料油移送ポンプ</td><td>歯車ポンプ</td><td>貯蔵タンクからセットリングタンクへの移送</td></tr>
+      <tr><td>燃料油供給ポンプ</td><td>ねじポンプ</td><td>セットリングタンクから機関への燃料供給</td></tr>
+      <tr><td>冷却海水ポンプ</td><td>遠心ポンプ</td><td>清水冷却器への海水供給</td></tr>
+      <tr><td>冷却清水ポンプ</td><td>遠心ポンプ</td><td>シリンダ・ピストンの冷却</td></tr>
+      <tr><td>ビルジポンプ</td><td>遠心ポンプ/ピストンポンプ</td><td>機関室のビルジ排出</td></tr>
+      <tr><td>バラストポンプ</td><td>遠心ポンプ</td><td>バラストタンクへの海水出入</td></tr>
+      <tr><td>消防ポンプ</td><td>遠心ポンプ</td><td>消火用海水の供給</td></tr>
+      <tr><td>ボイラー給水ポンプ</td><td>タービンポンプ/遠心ポンプ</td><td>ボイラーへの清水供給</td></tr>
+      <tr><td>カーゴポンプ（荷役ポンプ）</td><td>遠心ポンプ（水中式など）</td><td>貨物油の積揚荷</td></tr>
+      <tr><td>ストリッピングポンプ</td><td>往復ポンプ/スクリューポンプ</td><td>タンク内残油の掻き出し</td></tr>
+      <tr><td>油圧ポンプ</td><td>ピストンポンプ/ベーンポンプ</td><td>舵取機、ハッチカバー等の駆動</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-success">
+    <h4>実務のポイント</h4>
+    <ul>
+      <li>各ポンプの<strong>入口・出口弁の開閉状態</strong>は運転前に必ず確認する。弁を閉じたまま運転すると過熱や損傷の原因になる。</li>
+      <li>ストレーナ（こし器）の<strong>差圧管理</strong>を日常的に行い、詰まりを早期発見する。</li>
+      <li>ポンプの<strong>軸受温度</strong>と<strong>振動</strong>は異常の早期発見に重要。定期的に手で触れて確認する習慣をつける。</li>
+      <li>タンカーの荷役ポンプは大容量であり、<strong>荷役中のポンプ監視</strong>は最重要業務の一つ。</li>
+    </ul>
+  </div>
+
+  <!-- ===== クイズ ===== -->
+  <div class="quiz">
+    <h4>章末クイズ — 第5章 ポンプの種類と原理</h4>
+
+    <p><strong>問1:</strong> 粘度の高い潤滑油の移送に最も適したポンプの種類はどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 遠心ポンプ</li>
+      <li>B. 軸流ポンプ</li>
+      <li>C. 歯車ポンプ</li>
+    </ul>
+    <button onclick="showAnswer('a5-1')">解答を見る</button>
+    <div id="a5-1" class="quiz-answer">
+      <p><strong>正解: C. 歯車ポンプ</strong></p>
+      <p>歯車ポンプは容積式ポンプであり、粘度の高い液体でも安定して吐出できます。遠心ポンプや軸流ポンプはターボ式で、粘度が高いと効率が著しく低下します。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問2:</strong> 遠心ポンプで異常な振動・騒音が発生し、吐出圧力が不安定になった場合、最も疑われる現象は何か。</p>
+    <ul class="quiz-options">
+      <li>A. ウォーターハンマー</li>
+      <li>B. キャビテーション</li>
+      <li>C. サージング</li>
+    </ul>
+    <button onclick="showAnswer('a5-2')">解答を見る</button>
+    <div id="a5-2" class="quiz-answer">
+      <p><strong>正解: B. キャビテーション</strong></p>
+      <p>吸込側の圧力低下により気泡が発生・崩壊する現象です。異音（ガラガラ音）と圧力変動が特徴的な兆候です。ストレーナ清掃、吸込弁全開、液温低下などで対処します。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問3:</strong> グランドパッキンを使用した遠心ポンプの軸封部について、正しいものはどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 漏れが完全に止まるまでグランドナットを締め込む</li>
+      <li>B. 毎分数滴程度の漏れは正常であり、完全に締めてはならない</li>
+      <li>C. グランドパッキンは消耗品ではないため交換不要である</li>
+    </ul>
+    <button onclick="showAnswer('a5-3')">解答を見る</button>
+    <div id="a5-3" class="quiz-answer">
+      <p><strong>正解: B. 毎分数滴程度の漏れは正常であり、完全に締めてはならない</strong></p>
+      <p>グランドパッキンは軸との摩擦で発熱するため、冷却と潤滑のためにわずかな漏れが必要です。完全に締めると過熱・焼付きの原因になります。パッキンは摩耗する消耗品であり、定期交換が必要です。</p>
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="eng04_cooling.html">← 第4章 冷却系統と給気系統</a>
+    <a href="eng06_boiler.html">第6章 ボイラーと蒸気系統 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) { var el = document.getElementById(id); el.classList.toggle('show'); }
+</script>
+
+</body>
+</html>

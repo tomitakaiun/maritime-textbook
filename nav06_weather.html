@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6章 気象と海象 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第6章 気象と海象</h1>
+  <p class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</p>
+  <nav>
+    <a href="index.html">目次へ戻る</a>
+    <a href="nav05_tide.html">← 前章: 潮汐と潮流</a>
+    <a href="nav07_shiphandling.html">次章: 操船の基礎 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <p>安全な航海のためには、気象と海象に関する正しい知識が欠かせません。特に内航タンカーは、瀬戸内海や伊勢湾、東京湾など沿岸域を航行するため、局地的な気象変化にも対応する必要があります。本章では、大気の基礎から天気図の読み方、風と波の関係、台風・霧への対処、そして実務における天候判断までを解説します。</p>
+
+  <!-- ========== 1. 大気の基礎 ========== -->
+  <h2 id="atmosphere">1. 大気の基礎</h2>
+
+  <h3>1-1. 気圧</h3>
+  <p><strong>気圧</strong>とは、大気の重さによって生じる圧力のことです。単位はヘクトパスカル（hPa）で、標準大気圧は<strong>1013.25 hPa</strong>です。気圧が高い場所から低い場所へ空気が流れ、これが「風」となります。</p>
+  <p>気圧は高度が上がるにつれて低くなります。船舶に設置されたアネロイド気圧計（金属製の気圧計）で気圧を定期的に観測することで、天候の変化を予測できます。</p>
+
+  <div class="box box-info">
+    <h4>内航タンカーでの実務</h4>
+    <p>当直中は3時間ごとに気圧を記録します。気圧が急激に下降するとき（3時間で3 hPa以上）は、低気圧の接近や天候悪化の兆候です。船長へ直ちに報告しましょう。</p>
+  </div>
+
+  <h3>1-2. 気温と湿度</h3>
+  <p><strong>気温</strong>は太陽の放射エネルギーで暖められた地表面からの熱で上昇します。海上では陸上に比べて気温の日較差が小さくなります。これは海水の比熱（熱を蓄える力）が大きいためです。</p>
+  <p><strong>湿度</strong>は空気中に含まれる水蒸気の量を表します。相対湿度100%で空気は飽和状態となり、さらに冷却されると水蒸気が凝結して霧や雲が発生します。この凝結が始まる温度を<strong>露点温度</strong>といいます。</p>
+
+  <h3>1-3. 風の発生原理</h3>
+  <p>風は気圧の差によって発生します。気圧の高い場所から低い場所へ空気が流れますが、地球の自転による<strong>コリオリの力</strong>の影響を受けて、北半球では進行方向に対して右に曲がります。</p>
+  <p>地上付近では地表との摩擦の影響もあり、風は等圧線を斜めに横切るように吹きます。上空では摩擦がないため、等圧線に平行に吹く<strong>地衡風</strong>となります。</p>
+
+  <div class="key-point">
+    <p><strong>等圧線の間隔と風速の関係:</strong> 等圧線の間隔が狭いほど気圧の傾きが急で、風が強くなります。天気図を見るとき、等圧線が密集している場所は強風域です。</p>
+  </div>
+
+  <!-- ========== 2. 天気図の読み方 ========== -->
+  <h2 id="weather-chart">2. 天気図の読み方</h2>
+
+  <h3>2-1. 高気圧と低気圧</h3>
+  <p><strong>高気圧</strong>は周囲より気圧が高い領域で、北半球では時計回りに風が吹き出します。中心付近では下降気流が生じるため、天気は概ね晴れです。</p>
+  <p><strong>低気圧</strong>は周囲より気圧が低い領域で、北半球では反時計回りに風が吹き込みます。中心付近では上昇気流が生じ、雲が発生して天気は悪くなります。</p>
+
+  <h3>2-2. 前線の種類</h3>
+  <p>異なる性質の空気のかたまり（気団）がぶつかる境界を<strong>前線</strong>といいます。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 320" width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="wf-tri" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8">
+          <polygon points="0,0 10,5 0,10" fill="#e53e3e"/>
+        </marker>
+        <marker id="cf-semi" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8">
+          <circle cx="5" cy="5" r="4" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+      <text x="350" y="25" text-anchor="middle" class="svg-title">前線の種類</text>
+
+      <!-- 温暖前線 -->
+      <text x="50" y="70" class="svg-label" font-weight="bold" font-size="14">温暖前線</text>
+      <line x1="50" y1="85" x2="350" y2="85" stroke="#e53e3e" stroke-width="4"/>
+      <polygon points="120,77 120,93 135,85" fill="#e53e3e"/>
+      <polygon points="200,77 200,93 215,85" fill="#e53e3e"/>
+      <polygon points="280,77 280,93 295,85" fill="#e53e3e"/>
+      <text x="380" y="89" class="svg-label" font-size="11">暖かい空気が冷たい空気の上に乗り上げる</text>
+      <text x="380" y="105" class="svg-label" font-size="11">→ 広範囲の弱い雨が長時間続く</text>
+
+      <!-- 寒冷前線 -->
+      <text x="50" y="150" class="svg-label" font-weight="bold" font-size="14">寒冷前線</text>
+      <line x1="50" y1="165" x2="350" y2="165" stroke="#2b6cb0" stroke-width="4"/>
+      <circle cx="120" cy="157" r="5" fill="#2b6cb0"/>
+      <circle cx="200" cy="157" r="5" fill="#2b6cb0"/>
+      <circle cx="280" cy="157" r="5" fill="#2b6cb0"/>
+      <text x="380" y="169" class="svg-label" font-size="11">冷たい空気が暖かい空気の下にもぐり込む</text>
+      <text x="380" y="185" class="svg-label" font-size="11">→ 狭い範囲で強い雨、突風に注意</text>
+
+      <!-- 停滞前線 -->
+      <text x="50" y="230" class="svg-label" font-weight="bold" font-size="14">停滞前線</text>
+      <line x1="50" y1="245" x2="350" y2="245" stroke="#718096" stroke-width="4"/>
+      <polygon points="100,237 100,253 115,245" fill="#e53e3e"/>
+      <circle cx="160" cy="237" r="5" fill="#2b6cb0"/>
+      <polygon points="210,237 210,253 225,245" fill="#e53e3e"/>
+      <circle cx="270" cy="237" r="5" fill="#2b6cb0"/>
+      <text x="380" y="249" class="svg-label" font-size="11">暖気と寒気の勢力が拮抗して停滞</text>
+      <text x="380" y="265" class="svg-label" font-size="11">→ 梅雨前線・秋雨前線がこれに該当</text>
+
+      <!-- 閉塞前線 -->
+      <text x="50" y="300" class="svg-label" font-weight="bold" font-size="14">閉塞前線</text>
+      <line x1="50" y1="310" x2="350" y2="310" stroke="#805ad5" stroke-width="4"/>
+      <polygon points="120,302 120,318 135,310" fill="#805ad5"/>
+      <circle cx="200" cy="302" r="5" fill="#805ad5"/>
+      <polygon points="260,302 260,318 275,310" fill="#805ad5"/>
+      <text x="380" y="310" class="svg-label" font-size="11">寒冷前線が温暖前線に追いついた状態</text>
+    </svg>
+    <p class="caption">図6-1: 天気図における前線記号と各前線の特徴</p>
+  </div>
+
+  <div class="box box-warning">
+    <h4>寒冷前線通過時の注意</h4>
+    <p>寒冷前線が通過するとき、風向が急変し突風が吹くことがあります。内航タンカーが荷役中の場合、係留索のテンション管理に十分注意してください。前線通過後は風向が南寄りから北寄りに急変します。</p>
+  </div>
+
+  <!-- ========== 3. 風と波の関係 ========== -->
+  <h2 id="wind-wave">3. 風と波の関係</h2>
+
+  <h3>3-1. ビューフォート風力階級</h3>
+  <p>風力を統一的に表現するために<strong>ビューフォート風力階級</strong>が使われます。海上では波の状態と組み合わせて風力を推定します。</p>
+
+  <table>
+    <thead>
+      <tr><th>風力</th><th>名称</th><th>風速 (m/s)</th><th>波高 (m)</th><th>海面の状態</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0</td><td>平穏</td><td>0〜0.2</td><td>0</td><td>鏡のような海面</td></tr>
+      <tr><td>1</td><td>至軽風</td><td>0.3〜1.5</td><td>0〜0.1</td><td>うろこ状のさざ波</td></tr>
+      <tr><td>2</td><td>軽風</td><td>1.6〜3.3</td><td>0.1〜0.3</td><td>小さいさざ波、白波なし</td></tr>
+      <tr><td>3</td><td>軟風</td><td>3.4〜5.4</td><td>0.3〜1.0</td><td>波頭が砕け始める</td></tr>
+      <tr><td>4</td><td>和風</td><td>5.5〜7.9</td><td>1.0〜1.5</td><td>白波がかなり多くなる</td></tr>
+      <tr><td>5</td><td>疾風</td><td>8.0〜10.7</td><td>1.5〜2.5</td><td>波頭に水煙が吹き飛ぶ</td></tr>
+      <tr><td>6</td><td>雄風</td><td>10.8〜13.8</td><td>2.5〜4.0</td><td>大波が立ち白い泡が広がる</td></tr>
+      <tr><td>7</td><td>強風</td><td>13.9〜17.1</td><td>4.0〜5.5</td><td>波頭が砕け泡が風に流される</td></tr>
+      <tr><td>8</td><td>疾強風</td><td>17.2〜20.7</td><td>5.5〜7.5</td><td>大波のしぶきで視界が悪くなる</td></tr>
+      <tr><td>9</td><td>大強風</td><td>20.8〜24.4</td><td>7.0〜10.0</td><td>波頭が崩れ落ち海面は白い泡で覆われる</td></tr>
+      <tr><td>10</td><td>全強風</td><td>24.5〜28.4</td><td>9.0〜12.5</td><td>海面は白い泡で覆い尽くされる</td></tr>
+      <tr><td>11</td><td>暴風</td><td>28.5〜32.6</td><td>11.5〜16.0</td><td>山のような大波、視界極めて悪い</td></tr>
+      <tr><td>12</td><td>台風</td><td>32.7以上</td><td>14.0以上</td><td>海面は白い飛沫と泡で完全に覆われる</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-info">
+    <h4>内航タンカーの運航基準（参考）</h4>
+    <p>一般的な内航タンカー（499GT型）では、風力6（風速約11〜14 m/s）を超える場合は荷役中止の判断が必要になります。風力7以上の予報が出ている場合は、出港を見合わせるか荒天避難を検討します。ただし、船舶の大きさや航路によって基準は異なります。</p>
+  </div>
+
+  <!-- ========== 4. 波の基礎 ========== -->
+  <h2 id="waves">4. 波の基礎</h2>
+
+  <h3>4-1. 風浪とうねり</h3>
+  <p><strong>風浪（ふうろう）</strong>は、その場で吹いている風によって直接発生する波です。波形は不規則で尖っています。</p>
+  <p><strong>うねり</strong>は、遠くの海域で発生した風浪が伝わってきたものです。波長が長く波形が丸みを帯びており、風浪より周期が長いのが特徴です。うねりは風が止んだ後も長時間残ります。</p>
+
+  <h3>4-2. 波の要素</h3>
+  <ul>
+    <li><strong>波高:</strong> 波の山（波頂）から谷（波底）までの垂直距離</li>
+    <li><strong>波長:</strong> 隣り合う波頂間の水平距離</li>
+    <li><strong>波の周期:</strong> 一つの波が通過する時間（秒）</li>
+    <li><strong>有義波高:</strong> 観測した波の高い方から1/3の波の平均波高（気象情報で使用）</li>
+  </ul>
+
+  <div class="key-point">
+    <p><strong>波高を大きくする3つの要素:</strong> (1) 風速が強いほど、(2) 吹続時間（風が吹き続ける時間）が長いほど、(3) 吹送距離（フェッチ：風が海面上を吹き渡る距離）が長いほど、波高は大きくなります。</p>
+  </div>
+
+  <h3>4-3. 三角波</h3>
+  <p>異なる方向からの波が重なると<strong>三角波</strong>が発生します。潮流と風向が逆のとき、海峡の出入口付近でよく発生し、小型船には非常に危険です。内航船の航行海域では、明石海峡や来島海峡の潮流転流時に注意が必要です。</p>
+
+  <!-- ========== 5. 台風 ========== -->
+  <h2 id="typhoon">5. 台風</h2>
+
+  <h3>5-1. 台風の発生と構造</h3>
+  <p>台風は、熱帯の海上（海水温27℃以上）で発生する熱帯低気圧のうち、最大風速が17.2 m/s以上に発達したものです。中心付近の「目」は無風で晴れていますが、その周囲の「目の壁」では猛烈な暴風雨となります。</p>
+
+  <h3>5-2. 台風の進路</h3>
+  <p>台風は発生後、貿易風に流されて北西に進みます。北緯25〜30度付近で偏西風の影響を受けて北東に転向します。この転向する地点を<strong>転向点</strong>といいます。</p>
+
+  <h3>5-3. 危険半円と可航半円</h3>
+  <p>台風の進行方向に向かって<strong>右側</strong>を<strong>危険半円</strong>、<strong>左側</strong>を<strong>可航半円</strong>といいます。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 550" width="600" height="550" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr-w" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+          <polygon points="0,0 10,4 0,8" fill="#2d3748"/>
+        </marker>
+        <radialGradient id="eye-grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff"/>
+          <stop offset="100%" stop-color="#bee3f8"/>
+        </radialGradient>
+      </defs>
+
+      <text x="300" y="25" text-anchor="middle" class="svg-title">台風の危険半円と可航半円</text>
+
+      <!-- 進行方向矢印 -->
+      <line x1="300" y1="60" x2="300" y2="110" stroke="#2d3748" stroke-width="3" marker-end="url(#arr-w)"/>
+      <text x="320" y="80" class="svg-label" font-size="13" font-weight="bold">進行方向</text>
+
+      <!-- 危険半円（右側） -->
+      <path d="M300,280 A150,150 0 0,1 300,280" fill="none" stroke="transparent"/>
+      <ellipse cx="300" cy="280" rx="150" ry="150" fill="none" stroke="#718096" stroke-width="1" stroke-dasharray="5,5"/>
+
+      <!-- 右半円（危険半円） -->
+      <path d="M300,130 A150,150 0 0,1 300,430" fill="#fed7d7" fill-opacity="0.6" stroke="#e53e3e" stroke-width="2"/>
+      <text x="400" y="260" class="svg-label" font-size="15" font-weight="bold" fill="#c53030">危険半円</text>
+      <text x="390" y="280" class="svg-label" font-size="11" fill="#c53030">（右半円）</text>
+      <text x="380" y="310" class="svg-label" font-size="10" fill="#e53e3e">台風自身の風速＋</text>
+      <text x="380" y="325" class="svg-label" font-size="10" fill="#e53e3e">進行速度が加わり</text>
+      <text x="380" y="340" class="svg-label" font-size="10" fill="#e53e3e">風がより強い</text>
+
+      <!-- 左半円（可航半円） -->
+      <path d="M300,430 A150,150 0 0,1 300,130" fill="#ebf8ff" fill-opacity="0.6" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="170" y="260" class="svg-label" font-size="15" font-weight="bold" fill="#2b6cb0">可航半円</text>
+      <text x="170" y="280" class="svg-label" font-size="11" fill="#2b6cb0">（左半円）</text>
+      <text x="160" y="310" class="svg-label" font-size="10" fill="#2b6cb0">台風自身の風速から</text>
+      <text x="160" y="325" class="svg-label" font-size="10" fill="#2b6cb0">進行速度が差し引かれ</text>
+      <text x="160" y="340" class="svg-label" font-size="10" fill="#2b6cb0">風がやや弱い</text>
+
+      <!-- 台風の目 -->
+      <circle cx="300" cy="280" r="30" fill="url(#eye-grad)" stroke="#718096" stroke-width="1"/>
+      <text x="300" y="284" text-anchor="middle" class="svg-label" font-size="11">目</text>
+
+      <!-- 反時計回りの風の矢印 -->
+      <path d="M370,175 Q430,210 420,280" fill="none" stroke="#e53e3e" stroke-width="2" marker-end="url(#arr-w)"/>
+      <path d="M420,340 Q400,410 340,410" fill="none" stroke="#718096" stroke-width="2" marker-end="url(#arr-w)"/>
+      <path d="M230,390 Q170,350 175,280" fill="none" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arr-w)"/>
+      <path d="M180,210 Q200,160 265,155" fill="none" stroke="#718096" stroke-width="2" marker-end="url(#arr-w)"/>
+
+      <text x="445" y="245" class="svg-label" font-size="10">風向</text>
+
+      <!-- 避航法の説明 -->
+      <rect x="30" y="460" width="540" height="75" rx="8" fill="#fffff0" stroke="#d69e2e" stroke-width="1"/>
+      <text x="50" y="482" class="svg-label" font-size="12" font-weight="bold" fill="#975a16">避航法:</text>
+      <text x="50" y="500" class="svg-label" font-size="11">危険半円にいる場合 → 風を右舷船首に受けて全速で避航</text>
+      <text x="50" y="518" class="svg-label" font-size="11">可航半円にいる場合 → 風を右舷船尾に受けて全速で遠ざかる</text>
+    </svg>
+    <p class="caption">図6-2: 台風の危険半円（右）と可航半円（左）及び避航法</p>
+  </div>
+
+  <h3>5-4. 台風接近時の実務対応</h3>
+  <ul>
+    <li>気象情報を頻繁にチェックし、進路予報を把握する</li>
+    <li>荷役中であれば荷役を中止し、早期に安全な港へ避難する</li>
+    <li>錨泊中の場合は走錨に備え、機関をスタンバイにしておく</li>
+    <li>甲板上の可動物を固縛し、水密扉・ハッチを閉鎖する</li>
+    <li>タンカーの場合、カーゴタンクのベント弁とPVバルブの確認を徹底する</li>
+  </ul>
+
+  <!-- ========== 6. 霧 ========== -->
+  <h2 id="fog">6. 霧</h2>
+
+  <h3>6-1. 霧の発生条件</h3>
+  <p>霧は、空気中の水蒸気が冷却されて凝結し、微小な水滴が浮遊して視程が<strong>1,000m未満</strong>になった状態です。視程1,000m以上で霞んでいる場合は「もや」といいます。</p>
+
+  <h3>6-2. 霧の種類</h3>
+  <table>
+    <thead>
+      <tr><th>種類</th><th>発生メカニズム</th><th>発生しやすい海域・時期</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>移流霧</strong></td><td>暖かく湿った空気が冷たい海面上を移動して冷却される</td><td>三陸沖（親潮域）、春〜夏</td></tr>
+      <tr><td><strong>放射霧</strong></td><td>夜間の放射冷却で地表付近の空気が冷却される</td><td>港湾内、秋〜冬の早朝</td></tr>
+      <tr><td><strong>蒸気霧</strong></td><td>冷たい空気が暖かい海面上を移動し、海面からの蒸発で発生</td><td>冬季の日本海側</td></tr>
+      <tr><td><strong>前線霧</strong></td><td>前線付近の降雨が蒸発して発生</td><td>温暖前線の前方</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-danger">
+    <h4>霧中航行の注意点</h4>
+    <ul>
+      <li>レーダーを最大限に活用し、ARPA機能があれば使用する</li>
+      <li><strong>安全な速力</strong>まで減速する（海上衝突予防法 第6条）</li>
+      <li><strong>霧中信号</strong>を鳴らす（航行中の動力船: 2分を超えない間隔で長音1回）</li>
+      <li>見張りを増員する（船首に見張り員を配置）</li>
+      <li>VHFでの情報交換を活用する</li>
+      <li>船長を船橋に呼ぶ（マスターコール）</li>
+    </ul>
+  </div>
+
+  <div class="key-point">
+    <p><strong>内航タンカーと霧:</strong> 瀬戸内海では春から初夏にかけて放射霧・移流霧が発生しやすくなります。特に備讃瀬戸や来島海峡では、霧と狭水道が重なるため非常に危険です。視程不良時は無理に航行せず、安全な場所で待機する判断も重要です。</p>
+  </div>
+
+  <!-- ========== 7. 気象情報の入手方法 ========== -->
+  <h2 id="weather-info">7. 気象情報の入手方法</h2>
+
+  <h3>7-1. 主な気象情報源</h3>
+  <table>
+    <thead>
+      <tr><th>情報源</th><th>内容</th><th>特徴</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>気象庁天気予報</strong></td><td>地方ごとの天気、風、波浪予報</td><td>テレビ・ラジオ・インターネットで入手可能</td></tr>
+      <tr><td><strong>海上気象予報</strong></td><td>海域ごとの風、波浪、視程の予報</td><td>NHKラジオ第2で定時放送</td></tr>
+      <tr><td><strong>NAVTEX</strong></td><td>航行警報、気象警報</td><td>自動受信、文字情報</td></tr>
+      <tr><td><strong>インターネット</strong></td><td>天気図、波浪図、衛星画像、レーダー</td><td>詳細な情報をリアルタイムで入手可能</td></tr>
+      <tr><td><strong>VHF</strong></td><td>ポートラジオからの情報</td><td>港内・近海での情報入手</td></tr>
+      <tr><td><strong>海の安全情報</strong></td><td>海上保安庁による情報提供</td><td>ウェブサイトで緊急情報を確認可能</td></tr>
+    </tbody>
+  </table>
+
+  <h3>7-2. 天気図の入手と活用</h3>
+  <p>船舶は気象庁が発表する<strong>地上天気図</strong>（速報天気図）を定期的に確認します。現在はインターネット経由で容易に入手でき、気象庁のウェブサイトから実況天気図や予想天気図（24時間先・48時間先）を閲覧できます。</p>
+  <p>天気図からは、低気圧の位置と進路、前線の位置、風向風速の推定、天候変化の予測などが読み取れます。</p>
+
+  <!-- ========== 8. 内航航海での天候判断 ========== -->
+  <h2 id="weather-decision">8. 内航航海での天候判断</h2>
+
+  <h3>8-1. 荒天避難の判断</h3>
+  <p>内航船では、以下の要素を総合的に判断して荒天避難を決定します。</p>
+  <ul>
+    <li><strong>気象・海象の予報:</strong> 風力、波高、視程の予報値</li>
+    <li><strong>船舶の状態:</strong> 積荷量（満載か空船か）、船齢、船体状態</li>
+    <li><strong>航路の特性:</strong> 外洋航行か沿岸航行か、避難港の有無</li>
+    <li><strong>乗組員の経験:</strong> 荒天航行の経験と技量</li>
+    <li><strong>荷主・オペレータとの連絡:</strong> スケジュールへの影響と安全の両立</li>
+  </ul>
+
+  <div class="box box-warning">
+    <h4>瀬戸内海の気象特性</h4>
+    <p>瀬戸内海は周囲を山に囲まれているため、外洋に比べると波は穏やかです。しかし以下の点に注意が必要です。</p>
+    <ul>
+      <li><strong>局地風:</strong> 六甲おろし（神戸）、比叡おろし（琵琶湖→大阪湾）など山からの吹き下ろし</li>
+      <li><strong>霧:</strong> 春〜初夏は放射霧が発生しやすい</li>
+      <li><strong>雷:</strong> 夏季の午後、積乱雲による突風と落雷</li>
+      <li><strong>潮流と風の複合:</strong> 海峡部では潮流と風の組み合わせで三角波が発生</li>
+    </ul>
+  </div>
+
+  <h3>8-2. 観天望気</h3>
+  <p>計器観測や気象情報だけでなく、空や海を観察して天候変化を予測する「<strong>観天望気</strong>」も船乗りの大切な技能です。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 400" width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+      <text x="350" y="25" text-anchor="middle" class="svg-title">観天望気 — 天候悪化の兆候</text>
+
+      <!-- 巻雲 -->
+      <rect x="20" y="50" width="200" height="90" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="120" y="72" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="bold">巻雲（すじ雲）</text>
+      <!-- すじ雲の簡略描画 -->
+      <path d="M50,90 Q80,82 110,90 Q140,82 170,90" fill="none" stroke="#a0aec0" stroke-width="2"/>
+      <path d="M60,100 Q90,92 120,100 Q150,92 180,100" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
+      <text x="120" y="128" text-anchor="middle" font-size="10" fill="#718096">西から広がると天候悪化</text>
+
+      <!-- 巻層雲 -->
+      <rect x="250" y="50" width="200" height="90" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="350" y="72" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="bold">巻層雲（かさ雲）</text>
+      <circle cx="350" cy="95" r="15" fill="none" stroke="#d69e2e" stroke-width="2"/>
+      <circle cx="350" cy="95" r="5" fill="#d69e2e"/>
+      <text x="350" y="128" text-anchor="middle" font-size="10" fill="#718096">太陽・月にかさ→雨の前兆</text>
+
+      <!-- 気圧低下 -->
+      <rect x="480" y="50" width="200" height="90" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="580" y="72" text-anchor="middle" font-size="13" fill="#c53030" font-weight="bold">気圧の急降下</text>
+      <polyline points="510,110 540,105 560,100 575,88 590,80" fill="none" stroke="#e53e3e" stroke-width="2.5"/>
+      <text x="530" y="85" font-size="10" fill="#e53e3e">↘ 急降下</text>
+      <text x="580" y="128" text-anchor="middle" font-size="10" fill="#718096">低気圧・台風の接近</text>
+
+      <!-- うねりの到来 -->
+      <rect x="20" y="180" width="200" height="90" rx="10" fill="#fffff0" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="120" y="202" text-anchor="middle" font-size="13" fill="#975a16" font-weight="bold">うねりの到来</text>
+      <path d="M40,235 Q70,215 100,235 Q130,255 160,235 Q190,215 200,235" fill="none" stroke="#d69e2e" stroke-width="2.5"/>
+      <text x="120" y="258" text-anchor="middle" font-size="10" fill="#718096">遠方の暴風域からの波</text>
+
+      <!-- 風向急変 -->
+      <rect x="250" y="180" width="200" height="90" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.5"/>
+      <text x="350" y="202" text-anchor="middle" font-size="13" fill="#c53030" font-weight="bold">風向の急変</text>
+      <line x1="330" y1="230" x2="350" y2="210" stroke="#718096" stroke-width="2" marker-end="url(#arr-w)"/>
+      <line x1="330" y1="230" x2="370" y2="240" stroke="#e53e3e" stroke-width="2.5" marker-end="url(#arr-w)" stroke-dasharray="4,3"/>
+      <text x="350" y="258" text-anchor="middle" font-size="10" fill="#718096">前線通過の兆候</text>
+
+      <!-- 朝焼け -->
+      <rect x="480" y="180" width="200" height="90" rx="10" fill="#fffff0" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="580" y="202" text-anchor="middle" font-size="13" fill="#975a16" font-weight="bold">朝焼け</text>
+      <circle cx="580" cy="240" r="18" fill="#ed8936" opacity="0.5"/>
+      <rect x="500" y="245" width="160" height="5" rx="2" fill="#ed8936" opacity="0.3"/>
+      <text x="580" y="258" text-anchor="middle" font-size="10" fill="#718096">「朝焼けは雨」の兆候</text>
+
+      <!-- まとめ -->
+      <rect x="100" y="310" width="500" height="70" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+      <text x="350" y="335" text-anchor="middle" font-size="13" fill="#276749" font-weight="bold">観天望気のまとめ</text>
+      <text x="350" y="358" text-anchor="middle" font-size="11" fill="#2d3748">空の変化 + 気圧の変化 + 海面の変化 を総合的に判断し、</text>
+      <text x="350" y="373" text-anchor="middle" font-size="11" fill="#2d3748">気象情報と合わせて天候の悪化を予測する</text>
+    </svg>
+    <p class="caption">図6-3: 天候悪化を予測するための観天望気の主な兆候</p>
+  </div>
+
+  <div class="key-point">
+    <p><strong>天候判断の鉄則:</strong> 「迷ったら安全側に判断する」が鉄則です。スケジュールの遅れよりも、人命と船舶の安全が常に最優先です。オペレータ（旭タンカー等）との連絡を密にし、天候判断の根拠を共有することが重要です。</p>
+  </div>
+
+  <!-- ========== クイズ ========== -->
+  <div class="quiz">
+    <h4>章末クイズ — 理解度チェック</h4>
+
+    <p><strong>Q1.</strong> 標準大気圧は何hPaか？</p>
+    <button onclick="showAnswer('a1')">答えを表示</button>
+    <div id="a1" class="quiz-answer">
+      <p><strong>答え:</strong> 1013.25 hPa<br>アネロイド気圧計でこの値を基準に気圧の変動を観測します。</p>
+    </div>
+
+    <p style="margin-top:1.2rem;"><strong>Q2.</strong> 台風の進行方向に向かって右側を何と呼ぶか？また、なぜ危険なのか？</p>
+    <button onclick="showAnswer('a2')">答えを表示</button>
+    <div id="a2" class="quiz-answer">
+      <p><strong>答え:</strong> 危険半円。台風自身の風速に進行速度が加算されるため、風がより強くなります。また、船舶が台風の中心に向かって吹き寄せられる方向でもあるため、避航が困難になります。</p>
+    </div>
+
+    <p style="margin-top:1.2rem;"><strong>Q3.</strong> 霧中航行時、航行中の動力船はどのような霧中信号を鳴らすか？</p>
+    <button onclick="showAnswer('a3')">答えを表示</button>
+    <div id="a3" class="quiz-answer">
+      <p><strong>答え:</strong> 2分を超えない間隔で長音1回を鳴らします（海上衝突予防法 第35条）。</p>
+    </div>
+  </div>
+
+  <!-- ========== 章末ナビ ========== -->
+  <div class="chapter-nav">
+    <a href="nav05_tide.html">← 第5章 潮汐と潮流</a>
+    <a href="nav07_shiphandling.html">第7章 操船の基礎 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

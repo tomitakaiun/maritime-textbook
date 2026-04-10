@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第7章 電気設備の基礎 — 機関編 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <div class="subtitle">内航船員のための海技教材 — 6級海技士レベル+実務</div>
+  <nav>
+    <a href="index.html">目次へ</a>
+    <a href="eng06_boiler.html">← 第6章 ボイラー</a>
+    <a href="eng08_compressor.html">第8章 空気圧縮機 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第7章 電気設備の基礎</h1>
+
+  <p>現代の船舶はあらゆる機器が電力に依存しています。航海計器、通信設備、照明、ポンプ、ウインチなど、電力なしには船は安全に運航できません。機関士は電気設備の基礎的な原理と保守を理解し、<strong>安全に電気を扱う</strong>能力が求められます。</p>
+
+  <!-- ===== 1. 電気の基礎 ===== -->
+  <h2>1. 電気の基礎</h2>
+
+  <h3>電圧・電流・抵抗</h3>
+  <table>
+    <thead><tr><th>用語</th><th>記号</th><th>単位</th><th>説明（水の流れに例えると）</th></tr></thead>
+    <tbody>
+      <tr><td><strong>電圧</strong>（Voltage）</td><td>V</td><td>ボルト（V）</td><td>水圧に相当。電流を流す「力」</td></tr>
+      <tr><td><strong>電流</strong>（Current）</td><td>I</td><td>アンペア（A）</td><td>水の流量に相当。電気の流れの「量」</td></tr>
+      <tr><td><strong>抵抗</strong>（Resistance）</td><td>R</td><td>オーム（Ω）</td><td>管の狭さに相当。電流の流れを妨げる「度合い」</td></tr>
+    </tbody>
+  </table>
+
+  <h3>オームの法則</h3>
+  <p>電圧・電流・抵抗の関係を示す最も基本的な法則です。</p>
+  <div class="box box-info">
+    <h4>オームの法則</h4>
+    <p style="text-align:center; font-size:1.3rem;"><strong>V = I × R</strong></p>
+    <p style="text-align:center;">電圧（V）＝ 電流（A）× 抵抗（Ω）</p>
+    <p>例: 100Vの回路に20Ωの抵抗があれば、流れる電流は I = 100 ÷ 20 = <strong>5A</strong></p>
+  </div>
+
+  <h3>電力と電力量</h3>
+  <ul>
+    <li><strong>電力</strong>（Power）: P = V × I （単位: ワット W / キロワット kW）</li>
+    <li><strong>電力量</strong>（Energy）: W = P × t （単位: ワット時 Wh / キロワット時 kWh）</li>
+  </ul>
+
+  <h3>交流（AC）と直流（DC）</h3>
+  <table>
+    <thead><tr><th>項目</th><th>交流（AC）</th><th>直流（DC）</th></tr></thead>
+    <tbody>
+      <tr><td>電流の流れ</td><td>周期的に方向が変わる</td><td>常に一方向</td></tr>
+      <tr><td>船内での用途</td><td>主電源（発電機から供給）、電動機、照明</td><td>バッテリー、非常灯、制御回路</td></tr>
+      <tr><td>船内の規格（内航船）</td><td>三相 AC 440V / 単相 AC 220V / 100V（60Hz）</td><td>DC 24V（バッテリー系）</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <ul>
+      <li>船内主電源は<strong>三相交流 440V 60Hz</strong>が標準。照明・コンセントは変圧器で220Vや100Vに降圧。</li>
+      <li>非常用電源は<strong>DC 24V バッテリー</strong>が多い。</li>
+      <li>オームの法則（V = I × R）は電気計算の基本。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 2. 船内電力系統の概要 ===== -->
+  <h2>2. 船内電力系統の概要</h2>
+
+  <p>船内電力は、ディーゼル発電機で生成され、配電盤を経由して各負荷に供給されます。以下に内航船の典型的な電力系統の概要を示します。</p>
+
+  <!-- 単線結線図 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="船内電力系統の単線結線図">
+      <defs>
+        <marker id="arrowE" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,3 L0,6 Z" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+      <text x="350" y="25" text-anchor="middle" class="svg-title" font-size="15">船内電力系統（単線結線図）</text>
+
+      <!-- 発電機1 -->
+      <circle cx="150" cy="80" r="35" fill="#ebf8ff" stroke="#1a365d" stroke-width="2.5"/>
+      <text x="150" y="75" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">D/G</text>
+      <text x="150" y="90" text-anchor="middle" font-size="9" fill="#1a365d">No.1</text>
+      <text x="150" y="130" text-anchor="middle" font-size="10" fill="#718096">ディーゼル発電機</text>
+
+      <!-- 発電機2 -->
+      <circle cx="350" cy="80" r="35" fill="#ebf8ff" stroke="#1a365d" stroke-width="2.5"/>
+      <text x="350" y="75" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="600">D/G</text>
+      <text x="350" y="90" text-anchor="middle" font-size="9" fill="#1a365d">No.2</text>
+      <text x="350" y="130" text-anchor="middle" font-size="10" fill="#718096">ディーゼル発電機</text>
+
+      <!-- 非常発電機 -->
+      <circle cx="570" cy="80" r="35" fill="#fff5f5" stroke="#e53e3e" stroke-width="2.5"/>
+      <text x="570" y="75" text-anchor="middle" font-size="11" fill="#c53030" font-weight="600">E/G</text>
+      <text x="570" y="90" text-anchor="middle" font-size="9" fill="#c53030">非常用</text>
+      <text x="570" y="130" text-anchor="middle" font-size="10" fill="#718096">非常発電機</text>
+
+      <!-- 遮断器 -->
+      <rect x="135" y="145" width="30" height="20" rx="3" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="150" y="158" text-anchor="middle" font-size="8" fill="#975a16">ACB</text>
+      <rect x="335" y="145" width="30" height="20" rx="3" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="350" y="158" text-anchor="middle" font-size="8" fill="#975a16">ACB</text>
+      <rect x="555" y="145" width="30" height="20" rx="3" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+      <text x="570" y="158" text-anchor="middle" font-size="8" fill="#975a16">ACB</text>
+
+      <!-- 接続線 -->
+      <line x1="150" y1="115" x2="150" y2="145" stroke="#1a365d" stroke-width="2"/>
+      <line x1="350" y1="115" x2="350" y2="145" stroke="#1a365d" stroke-width="2"/>
+      <line x1="570" y1="115" x2="570" y2="145" stroke="#1a365d" stroke-width="2"/>
+      <line x1="150" y1="165" x2="150" y2="200" stroke="#1a365d" stroke-width="2"/>
+      <line x1="350" y1="165" x2="350" y2="200" stroke="#1a365d" stroke-width="2"/>
+      <line x1="570" y1="165" x2="570" y2="200" stroke="#1a365d" stroke-width="2"/>
+
+      <!-- 主配電盤（母線） -->
+      <rect x="80" y="200" width="560" height="40" rx="6" fill="#2b6cb0" stroke="#1a365d" stroke-width="2"/>
+      <text x="350" y="224" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">主配電盤（母線 BUS BAR）  AC 440V 60Hz</text>
+      <line x1="570" y1="200" x2="570" y2="200" stroke="#1a365d" stroke-width="2"/>
+
+      <!-- 非常用配電盤 -->
+      <line x1="570" y1="200" x2="620" y2="200" stroke="#e53e3e" stroke-width="2" stroke-dasharray="6,3"/>
+
+      <!-- 各負荷への分岐 -->
+      <!-- 分岐線 -->
+      <line x1="120" y1="240" x2="120" y2="290" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="230" y1="240" x2="230" y2="290" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="340" y1="240" x2="340" y2="290" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="450" y1="240" x2="450" y2="290" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="560" y1="240" x2="560" y2="290" stroke="#2b6cb0" stroke-width="2"/>
+
+      <!-- MCCB (配線用遮断器) -->
+      <rect x="108" y="275" width="24" height="15" rx="2" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <rect x="218" y="275" width="24" height="15" rx="2" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <rect x="328" y="275" width="24" height="15" rx="2" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <rect x="438" y="275" width="24" height="15" rx="2" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <rect x="548" y="275" width="24" height="15" rx="2" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+
+      <line x1="120" y1="290" x2="120" y2="320" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="230" y1="290" x2="230" y2="320" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="340" y1="290" x2="340" y2="320" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="450" y1="290" x2="450" y2="320" stroke="#2b6cb0" stroke-width="2"/>
+      <line x1="560" y1="290" x2="560" y2="320" stroke="#2b6cb0" stroke-width="2"/>
+
+      <!-- 各負荷 -->
+      <!-- ポンプ類 -->
+      <rect x="75" y="320" width="90" height="50" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="120" y="342" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">ポンプ類</text>
+      <text x="120" y="358" text-anchor="middle" font-size="9" fill="#718096">冷却水、燃料油</text>
+      <text x="120" y="370" text-anchor="middle" font-size="9" fill="#718096">ビルジ等</text>
+
+      <!-- 甲板機械 -->
+      <rect x="185" y="320" width="90" height="50" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="230" y="342" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">甲板機械</text>
+      <text x="230" y="358" text-anchor="middle" font-size="9" fill="#718096">ウインドラス</text>
+      <text x="230" y="370" text-anchor="middle" font-size="9" fill="#718096">ウインチ</text>
+
+      <!-- 空調・通風 -->
+      <rect x="295" y="320" width="90" height="50" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="340" y="342" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">空調・通風</text>
+      <text x="340" y="358" text-anchor="middle" font-size="9" fill="#718096">機関室ファン</text>
+      <text x="340" y="370" text-anchor="middle" font-size="9" fill="#718096">居住区空調</text>
+
+      <!-- 変圧器→照明 -->
+      <rect x="405" y="320" width="90" height="50" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="450" y="342" text-anchor="middle" font-size="10" fill="#1a365d" font-weight="600">変圧器</text>
+      <text x="450" y="358" text-anchor="middle" font-size="9" fill="#718096">440V →</text>
+      <text x="450" y="370" text-anchor="middle" font-size="9" fill="#718096">220V / 100V</text>
+
+      <!-- 荷役関連 -->
+      <rect x="515" y="320" width="90" height="50" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="560" y="342" text-anchor="middle" font-size="10" fill="#2d3748" font-weight="600">荷役関連</text>
+      <text x="560" y="358" text-anchor="middle" font-size="9" fill="#718096">カーゴポンプ</text>
+      <text x="560" y="370" text-anchor="middle" font-size="9" fill="#718096">油圧ユニット</text>
+
+      <!-- 変圧器からの降圧先 -->
+      <line x1="450" y1="370" x2="450" y2="400" stroke="#2b6cb0" stroke-width="1.5"/>
+      <line x1="390" y1="400" x2="510" y2="400" stroke="#2b6cb0" stroke-width="1.5"/>
+
+      <line x1="400" y1="400" x2="400" y2="420" stroke="#2b6cb0" stroke-width="1.5"/>
+      <rect x="370" y="420" width="60" height="35" rx="4" fill="#fffff0" stroke="#d69e2e" stroke-width="1"/>
+      <text x="400" y="438" text-anchor="middle" font-size="9" fill="#2d3748">照明</text>
+      <text x="400" y="450" text-anchor="middle" font-size="8" fill="#718096">220V</text>
+
+      <line x1="500" y1="400" x2="500" y2="420" stroke="#2b6cb0" stroke-width="1.5"/>
+      <rect x="470" y="420" width="60" height="35" rx="4" fill="#fffff0" stroke="#d69e2e" stroke-width="1"/>
+      <text x="500" y="438" text-anchor="middle" font-size="9" fill="#2d3748">コンセント</text>
+      <text x="500" y="450" text-anchor="middle" font-size="8" fill="#718096">100V</text>
+
+      <!-- 凡例 -->
+      <rect x="80" y="465" width="12" height="12" rx="2" fill="#fefcbf" stroke="#d69e2e" stroke-width="1"/>
+      <text x="98" y="475" font-size="9" fill="#2d3748">ACB/MCCB = 遮断器</text>
+      <text x="250" y="475" font-size="9" fill="#2d3748">D/G = ディーゼル発電機　E/G = 非常発電機</text>
+    </svg>
+    <div class="caption">図7-1: 船内電力系統の単線結線図（内航船の典型例）</div>
+  </div>
+
+  <!-- ===== 3. ディーゼル発電機の構造 ===== -->
+  <h2>3. ディーゼル発電機の構造</h2>
+
+  <p>船内電力の供給源である<strong>ディーゼル発電機（D/G）</strong>は、ディーゼルエンジンと交流発電機（オルタネーター）を直結したものです。</p>
+
+  <h3>主な構成要素</h3>
+  <ul>
+    <li><strong>ディーゼルエンジン</strong>: 機械的な回転力（原動力）を供給</li>
+    <li><strong>交流発電機</strong>: 電磁誘導により回転力を電力に変換</li>
+    <li><strong>ガバナ（調速機）</strong>: エンジン回転数を一定に保つ。回転数が一定 → 周波数が一定（60Hz）</li>
+    <li><strong>AVR（自動電圧調整器）</strong>: 発電機の出力電圧を一定に保つ</li>
+  </ul>
+
+  <p>内航船では通常2台のディーゼル発電機を搭載し、1台運転・1台予備として使用します。荷役時など電力需要が大きい場合は2台同時運転（並列運転）を行うこともあります。</p>
+
+  <div class="box box-info">
+    <h4>周波数と回転数の関係</h4>
+    <p>交流発電機の周波数 f は、極数 P と回転数 N の関係で決まります。</p>
+    <p style="text-align:center; font-size:1.1rem;"><strong>f = P × N ÷ 120</strong></p>
+    <p>例: 4極の発電機で60Hzを得るには、N = 120 × 60 ÷ 4 = <strong>1,800 rpm</strong> の回転数が必要です。</p>
+  </div>
+
+  <!-- ===== 4. 配電盤の構造と操作 ===== -->
+  <h2>4. 配電盤の構造と操作</h2>
+
+  <p>配電盤は発電機からの電力を受け取り、各負荷に分配する中央制御装置です。機関制御室に設置されています。</p>
+
+  <!-- 配電盤パネル図 SVG -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="配電盤パネルの構成">
+      <text x="325" y="25" text-anchor="middle" class="svg-title" font-size="15">配電盤パネル（正面図）</text>
+
+      <!-- パネル枠 -->
+      <rect x="40" y="40" width="570" height="310" rx="4" fill="#2d3748" stroke="#1a365d" stroke-width="3"/>
+
+      <!-- 発電機盤 No.1 -->
+      <rect x="55" y="55" width="170" height="280" rx="4" fill="#4a5568" stroke="#718096" stroke-width="1"/>
+      <text x="140" y="75" text-anchor="middle" font-size="11" fill="#fff" font-weight="600">No.1 発電機盤</text>
+
+      <!-- 計器類 -->
+      <!-- 電圧計 -->
+      <circle cx="100" cy="115" r="22" fill="#1a365d" stroke="#bee3f8" stroke-width="1.5"/>
+      <text x="100" y="112" text-anchor="middle" font-size="8" fill="#bee3f8">V</text>
+      <text x="100" y="122" text-anchor="middle" font-size="7" fill="#bee3f8">440</text>
+      <text x="100" y="148" text-anchor="middle" font-size="8" fill="#a0aec0">電圧計</text>
+
+      <!-- 電流計 -->
+      <circle cx="180" cy="115" r="22" fill="#1a365d" stroke="#bee3f8" stroke-width="1.5"/>
+      <text x="180" y="112" text-anchor="middle" font-size="8" fill="#bee3f8">A</text>
+      <text x="180" y="122" text-anchor="middle" font-size="7" fill="#bee3f8">125</text>
+      <text x="180" y="148" text-anchor="middle" font-size="8" fill="#a0aec0">電流計</text>
+
+      <!-- 周波数計 -->
+      <circle cx="140" cy="175" r="18" fill="#1a365d" stroke="#bee3f8" stroke-width="1.5"/>
+      <text x="140" y="173" text-anchor="middle" font-size="7" fill="#bee3f8">Hz</text>
+      <text x="140" y="183" text-anchor="middle" font-size="6" fill="#bee3f8">60</text>
+      <text x="140" y="203" text-anchor="middle" font-size="8" fill="#a0aec0">周波数計</text>
+
+      <!-- 表示灯 -->
+      <circle cx="90" cy="225" r="6" fill="#38a169"/>
+      <text x="90" y="242" text-anchor="middle" font-size="7" fill="#a0aec0">運転</text>
+      <circle cx="120" cy="225" r="6" fill="#e53e3e" opacity="0.3"/>
+      <text x="120" y="242" text-anchor="middle" font-size="7" fill="#a0aec0">異常</text>
+      <circle cx="150" cy="225" r="6" fill="#d69e2e" opacity="0.3"/>
+      <text x="150" y="242" text-anchor="middle" font-size="7" fill="#a0aec0">待機</text>
+
+      <!-- 遮断器（ACB） -->
+      <rect x="80" y="260" width="80" height="30" rx="4" fill="#2b6cb0" stroke="#bee3f8" stroke-width="1"/>
+      <text x="120" y="280" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">ACB 投入</text>
+      <text x="140" y="310" text-anchor="middle" font-size="8" fill="#a0aec0">気中遮断器</text>
+
+      <!-- 発電機盤 No.2（右） -->
+      <rect x="240" y="55" width="170" height="280" rx="4" fill="#4a5568" stroke="#718096" stroke-width="1"/>
+      <text x="325" y="75" text-anchor="middle" font-size="11" fill="#fff" font-weight="600">No.2 発電機盤</text>
+
+      <circle cx="285" cy="115" r="22" fill="#1a365d" stroke="#bee3f8" stroke-width="1.5"/>
+      <text x="285" y="112" text-anchor="middle" font-size="8" fill="#bee3f8">V</text>
+      <text x="285" y="122" text-anchor="middle" font-size="7" fill="#bee3f8">440</text>
+
+      <circle cx="365" cy="115" r="22" fill="#1a365d" stroke="#bee3f8" stroke-width="1.5"/>
+      <text x="365" y="112" text-anchor="middle" font-size="8" fill="#bee3f8">A</text>
+      <text x="365" y="122" text-anchor="middle" font-size="7" fill="#bee3f8">0</text>
+
+      <circle cx="325" cy="175" r="18" fill="#1a365d" stroke="#bee3f8" stroke-width="1.5"/>
+      <text x="325" y="175" text-anchor="middle" font-size="7" fill="#bee3f8">Hz</text>
+
+      <circle cx="275" cy="225" r="6" fill="#38a169" opacity="0.3"/>
+      <circle cx="305" cy="225" r="6" fill="#e53e3e" opacity="0.3"/>
+      <circle cx="335" cy="225" r="6" fill="#d69e2e" fill-opacity="1" class="animate-pulse"/>
+
+      <rect x="265" y="260" width="80" height="30" rx="4" fill="#4a5568" stroke="#718096" stroke-width="1"/>
+      <text x="305" y="280" text-anchor="middle" font-size="10" fill="#a0aec0">ACB 開放</text>
+
+      <!-- 負荷盤 -->
+      <rect x="425" y="55" width="170" height="280" rx="4" fill="#4a5568" stroke="#718096" stroke-width="1"/>
+      <text x="510" y="75" text-anchor="middle" font-size="11" fill="#fff" font-weight="600">負荷盤</text>
+
+      <!-- 各回路のMCCB -->
+      <rect x="440" y="95" width="140" height="22" rx="3" fill="#1a365d" stroke="#bee3f8" stroke-width="0.5"/>
+      <text x="510" y="110" text-anchor="middle" font-size="8" fill="#bee3f8">冷却海水ポンプ ■ON</text>
+
+      <rect x="440" y="125" width="140" height="22" rx="3" fill="#1a365d" stroke="#bee3f8" stroke-width="0.5"/>
+      <text x="510" y="140" text-anchor="middle" font-size="8" fill="#bee3f8">LO供給ポンプ ■ON</text>
+
+      <rect x="440" y="155" width="140" height="22" rx="3" fill="#1a365d" stroke="#bee3f8" stroke-width="0.5"/>
+      <text x="510" y="170" text-anchor="middle" font-size="8" fill="#bee3f8">機関室通風機 ■ON</text>
+
+      <rect x="440" y="185" width="140" height="22" rx="3" fill="#1a365d" stroke="#718096" stroke-width="0.5"/>
+      <text x="510" y="200" text-anchor="middle" font-size="8" fill="#a0aec0">ビルジポンプ □OFF</text>
+
+      <rect x="440" y="215" width="140" height="22" rx="3" fill="#1a365d" stroke="#718096" stroke-width="0.5"/>
+      <text x="510" y="230" text-anchor="middle" font-size="8" fill="#a0aec0">バラストポンプ □OFF</text>
+
+      <rect x="440" y="245" width="140" height="22" rx="3" fill="#1a365d" stroke="#718096" stroke-width="0.5"/>
+      <text x="510" y="260" text-anchor="middle" font-size="8" fill="#a0aec0">カーゴポンプ □OFF</text>
+
+      <rect x="440" y="275" width="140" height="22" rx="3" fill="#1a365d" stroke="#718096" stroke-width="0.5"/>
+      <text x="510" y="290" text-anchor="middle" font-size="8" fill="#a0aec0">照明変圧器 ■ON</text>
+
+      <text x="510" y="320" text-anchor="middle" font-size="8" fill="#a0aec0">各回路 MCCB</text>
+    </svg>
+    <div class="caption">図7-2: 配電盤パネルの構成（発電機盤 + 負荷盤）</div>
+  </div>
+
+  <h3>主な計器と操作</h3>
+  <ul>
+    <li><strong>電圧計（V）</strong>: 発電機の出力電圧を表示</li>
+    <li><strong>電流計（A）</strong>: 各発電機の負荷電流を表示</li>
+    <li><strong>周波数計（Hz）</strong>: 周波数（= 回転数）を表示</li>
+    <li><strong>電力計（kW）</strong>: 発電機の出力を表示</li>
+    <li><strong>ACB（気中遮断器）</strong>: 発電機と母線の接続/切離し。過負荷・短絡時は自動トリップ</li>
+    <li><strong>MCCB（配線用遮断器）</strong>: 各回路ごとの遮断器</li>
+  </ul>
+
+  <h3>並列運転（同期投入）</h3>
+  <p>2台の発電機を同時に運転する場合は、<strong>同期条件</strong>を満たす必要があります。</p>
+  <ol>
+    <li><strong>電圧</strong>が等しいこと</li>
+    <li><strong>周波数</strong>が等しいこと</li>
+    <li><strong>位相</strong>が一致していること</li>
+    <li><strong>相回転方向</strong>が同じであること</li>
+  </ol>
+  <p>同期検定器（シンクロスコープ）や同期灯で確認し、位相が一致した瞬間にACBを投入します。最近の船では自動同期装置で行われることが多くなっています。</p>
+
+  <!-- ===== 5. 電動機の種類と用途 ===== -->
+  <h2>5. 電動機の種類と用途</h2>
+
+  <h3>三相誘導電動機（インダクションモーター）</h3>
+  <p>船舶で最も多く使用される電動機です。ポンプ、ファン、コンプレッサーなどの駆動源として幅広く使われます。</p>
+  <ul>
+    <li>構造が簡単で頑丈、保守が容易</li>
+    <li><strong>かご形回転子</strong>が最も一般的（ブラシ不要）</li>
+    <li>始動時に大きな電流（定格の5〜7倍）が流れる → スターデルタ始動器などで対策</li>
+  </ul>
+
+  <h3>直流電動機</h3>
+  <p>速度制御が容易であるため、ウインチやクレーンなど精密な速度制御が必要な用途に使われることがありますが、近年はインバーター制御の交流電動機に置き換わりつつあります。</p>
+
+  <div class="box box-info">
+    <h4>インバーター制御</h4>
+    <p>交流電源の周波数を変換して電動機の回転数を自在に制御する技術です。ポンプやファンの回転数を負荷に合わせて調整でき、<strong>大幅な省エネ</strong>効果があります。近年の内航船でも採用が増えています。</p>
+  </div>
+
+  <!-- ===== 6. バッテリー ===== -->
+  <h2>6. バッテリー（蓄電池）の種類と管理</h2>
+
+  <p>船内では非常用電源や制御回路の電源としてバッテリーが使用されます。</p>
+
+  <table>
+    <thead><tr><th>種類</th><th>電解液</th><th>特徴</th><th>船舶での用途</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>鉛蓄電池</strong></td>
+        <td>希硫酸</td>
+        <td>安価、大電流放電可能、重い</td>
+        <td>非常灯、起動用バッテリー</td>
+      </tr>
+      <tr>
+        <td><strong>アルカリ蓄電池</strong></td>
+        <td>水酸化カリウム</td>
+        <td>長寿命、過放電に強い、高価</td>
+        <td>非常用電源、制御用電源</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>バッテリー管理の注意点</h3>
+  <ul>
+    <li>充電中に<strong>水素ガス</strong>が発生する → 換気が必要、火気厳禁</li>
+    <li>電解液（希硫酸）は腐食性がある → 保護具の着用</li>
+    <li>定期的に<strong>比重</strong>と<strong>電圧</strong>を測定して充電状態を確認</li>
+    <li>端子の腐食を防ぐため、グリースを塗布する</li>
+  </ul>
+
+  <!-- ===== 7. 照明設備、航海灯 ===== -->
+  <h2>7. 照明設備、航海灯の電気系統</h2>
+
+  <h3>船内照明</h3>
+  <p>居住区、機関室、甲板の照明は通常 AC 220V で供給されます。LED照明の採用が増えており、省エネと長寿命の効果があります。防水型照明器具は甲板上や機関室で使用されます。</p>
+
+  <h3>航海灯</h3>
+  <p>海上衝突予防法で定められた灯火で、船舶の種類・状態・進行方向を他船に示します。</p>
+  <ul>
+    <li><strong>マスト灯</strong>（白）: 船首方向を示す</li>
+    <li><strong>舷灯</strong>（右舷: 緑、左舷: 赤）</li>
+    <li><strong>船尾灯</strong>（白）</li>
+    <li>航海灯は<strong>主電源</strong>と<strong>非常電源</strong>の両方から給電できる二重配線</li>
+    <li>航海灯故障監視盤で球切れを常時監視</li>
+  </ul>
+
+  <!-- ===== 8. 電気安全 ===== -->
+  <h2>8. 電気安全</h2>
+
+  <h3>感電防止</h3>
+  <ul>
+    <li>作業前に必ず<strong>電源を遮断</strong>し、遮断器に「作業中」の札を掛ける（タグアウト・ロックアウト）</li>
+    <li>検電器で<strong>無電圧を確認</strong>してから作業を開始</li>
+    <li>湿潤な環境（機関室）では特に感電の危険が高い</li>
+    <li>船体は海水を通じて接地されているため、1線の接触でも感電の可能性がある</li>
+  </ul>
+
+  <h3>絶縁抵抗測定</h3>
+  <p>電気機器の絶縁性能を確認するための測定です。<strong>メガー（絶縁抵抗計）</strong>を使用します。</p>
+  <ul>
+    <li>測定前に必ず機器の<strong>電源を切り</strong>、残留電荷を放電する</li>
+    <li>定格電圧500V以下の回路: 1MΩ以上が目安</li>
+    <li>絶縁抵抗が低下している場合は、湿気・汚れ・劣化が疑われる</li>
+    <li>定期的な測定記録を残し、傾向管理を行う</li>
+  </ul>
+
+  <h3>接地（アース）</h3>
+  <p>船体は鋼鉄製であり、海水を通じてアース（接地）されています。電気機器の外箱は船体に接地し、<strong>漏電時に感電を防止</strong>します。絶縁監視装置（アースランプ方式など）で漏電を常時監視します。</p>
+
+  <div class="key-point">
+    <ul>
+      <li>電気作業前は必ず<strong>遮断→タグアウト→検電</strong>の手順を守る。</li>
+      <li><strong>絶縁抵抗測定</strong>（メガー）は電気機器の健全性確認に不可欠。</li>
+      <li>バッテリー充電中は<strong>水素ガス</strong>が発生するため、換気と火気管理を徹底。</li>
+      <li>船体は接地体であるため、<strong>1線接触でも感電の危険</strong>がある。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 9. 実務: ブラックアウト対応 ===== -->
+  <h2>9. 実務: 停電（ブラックアウト）時の対応手順</h2>
+
+  <p><strong>ブラックアウト</strong>とは、船内の全電源が喪失した状態です。航海中のブラックアウトは操舵不能・航海計器停止に直結し、極めて危険な状態です。</p>
+
+  <div class="box box-danger">
+    <h4>ブラックアウト発生時の対応手順</h4>
+    <ol>
+      <li><strong>冷静に状況を確認</strong>: 非常灯（バッテリー給電）が点灯していることを確認</li>
+      <li><strong>船橋への連絡</strong>: 機関室から船橋に状況を報告（通常、バッテリー式の内線電話は使用可能）</li>
+      <li><strong>発電機の再起動</strong>: 発電機室に急行し、原因を確認。手動で発電機を起動</li>
+      <li><strong>配電盤の確認</strong>: 遮断器がトリップしていないか確認。必要に応じて重要負荷から順次復電</li>
+      <li><strong>重要負荷の復電優先順位</strong>:
+        <ul>
+          <li>操舵機ポンプ（操舵不能は最も危険）</li>
+          <li>航海灯</li>
+          <li>航海計器（レーダー、GPS等）</li>
+          <li>通信設備</li>
+          <li>主機関の補機類（潤滑油ポンプ、冷却水ポンプ）</li>
+        </ul>
+      </li>
+      <li><strong>原因の究明</strong>: 復電後、ブラックアウトの原因を調査し再発防止策を講じる</li>
+    </ol>
+  </div>
+
+  <div class="box box-info">
+    <h4>ブラックアウト防止策</h4>
+    <ul>
+      <li>大型電動機の同時起動を避ける（始動電流による過負荷）</li>
+      <li>発電機の定期保守と試運転</li>
+      <li>非常発電機の定期試運転（週1回以上が一般的）</li>
+      <li>配電盤の保護装置の動作確認</li>
+      <li>燃料油系統の確実な管理（燃料切れの防止）</li>
+    </ul>
+  </div>
+
+  <!-- ===== クイズ ===== -->
+  <div class="quiz">
+    <h4>章末クイズ — 第7章 電気設備の基礎</h4>
+
+    <p><strong>問1:</strong> 内航船の主電源として一般的な仕様はどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 三相交流 440V 50Hz</li>
+      <li>B. 三相交流 440V 60Hz</li>
+      <li>C. 直流 440V</li>
+    </ul>
+    <button onclick="showAnswer('a7-1')">解答を見る</button>
+    <div id="a7-1" class="quiz-answer">
+      <p><strong>正解: B. 三相交流 440V 60Hz</strong></p>
+      <p>日本の内航船では三相交流440V 60Hzが主電源の標準仕様です。照明やコンセントは変圧器で220Vや100Vに降圧して供給します。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問2:</strong> 2台の発電機を並列運転する際に合わせる必要がない条件はどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 電圧</li>
+      <li>B. 位相</li>
+      <li>C. 電流値</li>
+    </ul>
+    <button onclick="showAnswer('a7-2')">解答を見る</button>
+    <div id="a7-2" class="quiz-answer">
+      <p><strong>正解: C. 電流値</strong></p>
+      <p>並列運転の同期条件は「電圧」「周波数」「位相」「相回転方向」の4つです。電流値は負荷によって変化するものであり、同期条件には含まれません。</p>
+    </div>
+
+    <hr style="margin:1rem 0; border:none; border-top:1px solid #e2e8f0;">
+
+    <p><strong>問3:</strong> 電気作業の安全手順として正しい順序はどれか。</p>
+    <ul class="quiz-options">
+      <li>A. 作業開始 → 検電 → 電源遮断</li>
+      <li>B. 電源遮断 → タグアウト（札掛け）→ 検電 → 作業開始</li>
+      <li>C. タグアウト → 電源遮断 → 作業開始</li>
+    </ul>
+    <button onclick="showAnswer('a7-3')">解答を見る</button>
+    <div id="a7-3" class="quiz-answer">
+      <p><strong>正解: B. 電源遮断 → タグアウト（札掛け）→ 検電 → 作業開始</strong></p>
+      <p>まず電源を遮断し、他者が誤って投入しないよう「作業中」の札を掛け（タグアウト・ロックアウト）、検電器で無電圧を確認してから作業を開始するのが正しい手順です。</p>
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="eng06_boiler.html">← 第6章 ボイラーと蒸気系統</a>
+    <a href="eng08_compressor.html">第8章 空気圧縮機と空気系統 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) { var el = document.getElementById(id); el.classList.toggle('show'); }
+</script>
+
+</body>
+</html>

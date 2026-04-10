@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第2章 ディーゼル機関の構造 — 内航船員教材・機関編</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .parts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    @media (max-width: 768px) { .parts-grid { grid-template-columns: 1fr; } }
+    .part-card {
+      background: var(--white); border-radius: 10px; padding: 1rem 1.2rem;
+      box-shadow: var(--shadow); border-left: 4px solid var(--ocean);
+    }
+    .part-card h4 { margin-top: 0; color: var(--navy); }
+    .part-card p { margin-bottom: 0; font-size: 0.93rem; }
+    .label-line { stroke: #2d3748; stroke-width: 1.5; stroke-dasharray: 4,2; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <p class="subtitle">内航船員のための機関基礎 — 6級海技士レベル+実務</p>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="eng01_diesel_principle.html">&larr; 前章: ディーゼル機関の原理</a>
+    <a href="eng03_fuel_lubrication.html">次章: 燃料と潤滑 &rarr;</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第2章 ディーゼル機関の構造</h1>
+  <p>前章で学んだディーゼルサイクルを実現するために、機関はさまざまな部品で構成されています。本章では、ディーゼル機関を<strong>固定部分</strong>・<strong>運動部分</strong>・<strong>弁装置</strong>・<strong>燃料噴射装置</strong>・<strong>過給機</strong>に分けて、各部の構造と役割を図解付きで詳しく学びます。内航タンカー「裕洋丸」の主機（4サイクル中速ディーゼル、約1,000馬力級）を想定した実務上の注意点も併せて解説します。</p>
+
+  <!-- ==================== 1. 機関の全体構成 ==================== -->
+  <h2>1. 機関の全体構成</h2>
+  <p>4サイクルディーゼル機関は、大きく分けて以下の構成要素からなります。まずは全体の位置関係を把握しましょう。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 520" width="100%" style="max-width:600px;">
+      <!-- 全体外形 -->
+      <!-- 台板 -->
+      <rect x="80" y="420" width="440" height="50" rx="4" fill="#a0aec0" stroke="#2d3748" stroke-width="2"/>
+      <text x="300" y="450" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">台板（ベッドプレート）</text>
+
+      <!-- クランクケース -->
+      <rect x="100" y="330" width="400" height="90" rx="4" fill="#cbd5e0" stroke="#2d3748" stroke-width="2"/>
+      <text x="300" y="380" text-anchor="middle" font-size="12" fill="#2d3748" font-weight="bold">クランクケース</text>
+      <!-- クランク軸（簡略） -->
+      <ellipse cx="200" cy="375" rx="25" ry="25" fill="none" stroke="#e53e3e" stroke-width="3"/>
+      <circle cx="200" cy="375" r="6" fill="#e53e3e"/>
+      <ellipse cx="350" cy="375" rx="25" ry="25" fill="none" stroke="#e53e3e" stroke-width="3"/>
+      <circle cx="350" cy="375" r="6" fill="#e53e3e"/>
+      <line x1="200" y1="375" x2="350" y2="375" stroke="#e53e3e" stroke-width="3"/>
+      <text x="275" y="395" text-anchor="middle" font-size="10" fill="#c53030">クランク軸</text>
+
+      <!-- シリンダブロック -->
+      <rect x="120" y="160" width="360" height="170" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+      <text x="300" y="255" text-anchor="middle" font-size="12" fill="#2d3748" font-weight="bold">シリンダブロック</text>
+
+      <!-- シリンダライナ（2本） -->
+      <rect x="165" y="170" width="60" height="150" rx="3" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="195" y="200" text-anchor="middle" font-size="9" fill="#2b6cb0">ライナ</text>
+      <rect x="330" y="170" width="60" height="150" rx="3" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="360" y="200" text-anchor="middle" font-size="9" fill="#2b6cb0">ライナ</text>
+
+      <!-- ピストン -->
+      <rect x="170" y="230" width="50" height="30" rx="3" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+      <text x="195" y="250" text-anchor="middle" font-size="8" fill="#fff">ピストン</text>
+      <rect x="335" y="230" width="50" height="30" rx="3" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+      <text x="360" y="250" text-anchor="middle" font-size="8" fill="#fff">ピストン</text>
+
+      <!-- コンロッド -->
+      <line x1="195" y1="260" x2="200" y2="350" stroke="#2d3748" stroke-width="4" stroke-linecap="round"/>
+      <line x1="360" y1="260" x2="350" y2="350" stroke="#2d3748" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- シリンダヘッド -->
+      <rect x="120" y="130" width="360" height="35" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+      <text x="300" y="152" text-anchor="middle" font-size="12" fill="#c53030" font-weight="bold">シリンダヘッド（シリンダカバー）</text>
+
+      <!-- 弁 -->
+      <rect x="175" y="126" width="14" height="12" rx="2" fill="#38a169" stroke="#2d3748" stroke-width="1"/>
+      <rect x="200" y="126" width="14" height="12" rx="2" fill="#ed8936" stroke="#2d3748" stroke-width="1"/>
+      <rect x="340" y="126" width="14" height="12" rx="2" fill="#38a169" stroke="#2d3748" stroke-width="1"/>
+      <rect x="365" y="126" width="14" height="12" rx="2" fill="#ed8936" stroke="#2d3748" stroke-width="1"/>
+
+      <!-- 過給機（右上） -->
+      <rect x="500" y="80" width="80" height="70" rx="20" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+      <text x="540" y="110" text-anchor="middle" font-size="10" fill="#975a16" font-weight="bold">過給機</text>
+      <text x="540" y="125" text-anchor="middle" font-size="9" fill="#975a16">T/C</text>
+      <!-- 給気管 -->
+      <path d="M500,115 L480,115 L480,145 L400,145" stroke="#3182ce" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+      <text x="440" y="140" font-size="8" fill="#3182ce">給気</text>
+
+      <!-- フライホイール（左端） -->
+      <circle cx="60" cy="375" r="35" fill="none" stroke="#718096" stroke-width="3"/>
+      <circle cx="60" cy="375" r="5" fill="#718096"/>
+      <text x="60" y="425" text-anchor="middle" font-size="9" fill="#718096">フライホイール</text>
+
+      <!-- 排気管 -->
+      <path d="M400,135 L480,135 L480,95 L500,95" stroke="#e53e3e" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+      <text x="445" y="128" font-size="8" fill="#e53e3e">排気</text>
+
+      <!-- カム軸 -->
+      <line x1="140" y1="120" x2="460" y2="120" stroke="#38a169" stroke-width="2" stroke-dasharray="6,3"/>
+      <text x="460" y="115" font-size="9" fill="#38a169">カム軸</text>
+
+      <!-- タイトル -->
+      <text x="300" y="30" text-anchor="middle" font-size="16" fill="#1a365d" font-weight="bold">4サイクルディーゼル機関 全体構成</text>
+
+      <!-- 凡例 -->
+      <rect x="80" y="480" width="12" height="12" fill="#a0aec0"/>
+      <text x="96" y="491" font-size="10" fill="#2d3748">固定部分</text>
+      <rect x="180" y="480" width="12" height="12" fill="#4a5568"/>
+      <text x="196" y="491" font-size="10" fill="#2d3748">運動部分</text>
+      <rect x="280" y="480" width="12" height="12" fill="#fed7d7"/>
+      <text x="296" y="491" font-size="10" fill="#2d3748">弁・噴射装置</text>
+      <rect x="400" y="480" width="12" height="12" fill="#fefcbf"/>
+      <text x="416" y="491" font-size="10" fill="#2d3748">過給機</text>
+    </svg>
+    <p class="caption">図2-1 4サイクルディーゼル機関の全体構成概略図</p>
+  </div>
+
+  <div class="key-point">
+    <p>ディーゼル機関の構造は大きく<strong>5つのグループ</strong>に分類できます: (1)固定部分（台板・クランクケース・シリンダブロック・シリンダライナ・シリンダヘッド）、(2)運動部分（ピストン・コンロッド・クランク軸・フライホイール）、(3)弁装置、(4)燃料噴射装置、(5)過給機。これらが正しく組み合わさって初めて、ディーゼルサイクルが実現します。</p>
+  </div>
+
+  <!-- ==================== 2. 固定部分 ==================== -->
+  <h2>2. 固定部分</h2>
+  <p>固定部分は機関の骨格となる部品群です。高温・高圧の燃焼に耐え、運動部分を支えるため、十分な強度と剛性が求められます。</p>
+
+  <h3>2-1. 台板（ベッドプレート）</h3>
+  <p>台板は機関の最下部に位置する基盤で、<strong>クランク軸を支える軸受（主軸受）</strong>が取り付けられています。船体の機関室二重底に<strong>ボルトで固定</strong>され、機関全体の荷重を船体に伝えます。</p>
+  <ul>
+    <li><strong>材質</strong>: 鋳鉄または溶接鋼板構造</li>
+    <li><strong>重要性</strong>: 台板の変形やクラックは軸受の焼損に直結するため、定期的にボルトの締め付け確認を行う</li>
+  </ul>
+
+  <h3>2-2. クランクケース</h3>
+  <p>台板の上に取り付けられ、クランク軸を囲む筐体です。内部には潤滑油が飛散しており、<strong>防爆弁</strong>が設置されています。</p>
+
+  <div class="box box-danger">
+    <h4>安全: クランクケース爆発</h4>
+    <p>クランクケース内の潤滑油がミスト状になり、ホットスポット（軸受の焼損箇所など）により引火すると<strong>クランクケース爆発</strong>が発生します。これは非常に危険な事故であり、防爆弁やオイルミスト検知器の点検は欠かさず行う必要があります。異常なオイルミスト警報が出た場合は<strong>直ちに機関を減速・停止</strong>し、原因を調査してください。</p>
+  </div>
+
+  <h3>2-3. シリンダブロック</h3>
+  <p>クランクケースの上に載り、シリンダライナを収容する構造体です。冷却水の通路（ウォータージャケット）が設けられており、シリンダを冷却します。</p>
+
+  <h3>2-4. シリンダライナ</h3>
+  <p>シリンダブロックに嵌め込まれた筒状の部品で、<strong>ピストンが直接摺動する面</strong>を提供します。高温の燃焼ガスと摩擦に耐える特殊な材質で作られています。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 400 400" width="100%" style="max-width:400px;">
+      <!-- シリンダライナ断面 -->
+      <!-- 外側 -->
+      <rect x="120" y="40" width="160" height="300" rx="6" fill="#e2e8f0" stroke="#2d3748" stroke-width="2.5"/>
+      <!-- ライナ壁（左） -->
+      <rect x="130" y="50" width="20" height="280" fill="#718096" stroke="#2d3748" stroke-width="1.5"/>
+      <!-- ライナ壁（右） -->
+      <rect x="250" y="50" width="20" height="280" fill="#718096" stroke="#2d3748" stroke-width="1.5"/>
+      <!-- 内壁面（摺動面） -->
+      <rect x="150" y="50" width="100" height="280" fill="#ebf8ff" stroke="none"/>
+      <!-- ウォータージャケット -->
+      <rect x="110" y="80" width="20" height="200" rx="4" fill="#bee3f8" stroke="#3182ce" stroke-width="1.5"/>
+      <rect x="270" y="80" width="20" height="200" rx="4" fill="#bee3f8" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="95" y="180" text-anchor="middle" font-size="9" fill="#3182ce" transform="rotate(-90,95,180)">冷却水路</text>
+      <text x="305" y="180" text-anchor="middle" font-size="9" fill="#3182ce" transform="rotate(90,305,180)">冷却水路</text>
+
+      <!-- フランジ部（上部） -->
+      <rect x="105" y="40" width="190" height="15" rx="3" fill="#a0aec0" stroke="#2d3748" stroke-width="2"/>
+      <text x="200" y="52" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">フランジ</text>
+
+      <!-- 摺動面表記 -->
+      <line x1="150" y1="60" x2="150" y2="320" stroke="#ed8936" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="250" y1="60" x2="250" y2="320" stroke="#ed8936" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="200" y="75" text-anchor="middle" font-size="10" fill="#c05621">← 摺動面 →</text>
+
+      <!-- Oリング位置 -->
+      <ellipse cx="130" cy="290" rx="8" ry="4" fill="#38a169" stroke="#276749" stroke-width="1.5"/>
+      <ellipse cx="270" cy="290" rx="8" ry="4" fill="#38a169" stroke="#276749" stroke-width="1.5"/>
+      <line x1="130" y1="294" x2="80" y2="310" class="label-line"/>
+      <text x="50" y="318" font-size="9" fill="#276749">Oリング（水密）</text>
+
+      <!-- ライナ上部（燃焼室側） -->
+      <text x="200" y="100" text-anchor="middle" font-size="10" fill="#c53030" font-weight="bold">燃焼室側</text>
+      <text x="200" y="310" text-anchor="middle" font-size="10" fill="#718096">クランク室側</text>
+
+      <!-- 寸法イメージ -->
+      <line x1="155" y1="345" x2="245" y2="345" stroke="#2d3748" stroke-width="1"/>
+      <line x1="155" y1="340" x2="155" y2="350" stroke="#2d3748" stroke-width="1"/>
+      <line x1="245" y1="340" x2="245" y2="350" stroke="#2d3748" stroke-width="1"/>
+      <text x="200" y="360" text-anchor="middle" font-size="10" fill="#2d3748">内径（ボア）</text>
+
+      <!-- タイトル -->
+      <text x="200" y="390" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">シリンダライナ断面図</text>
+    </svg>
+    <p class="caption">図2-2 シリンダライナの断面構造</p>
+  </div>
+
+  <ul>
+    <li><strong>材質</strong>: 特殊鋳鉄（高級鋳鉄）。摺動面にはホーニング加工（細かい格子状の溝）を施し、潤滑油の保持性を高める</li>
+    <li><strong>湿式ライナ</strong>: 外面が直接冷却水に触れる方式。冷却効率が良いが、Oリングによる水密が必要</li>
+    <li><strong>乾式ライナ</strong>: シリンダブロックに密着して嵌め込まれ、冷却水がブロック側を流れる方式</li>
+    <li><strong>摩耗管理</strong>: 定期的にライナ内径を計測し、摩耗限度を超えたら交換する</li>
+  </ul>
+
+  <div class="box box-example">
+    <h4>実務メモ: ライナの摩耗計測</h4>
+    <p>中間検査（2.5年ごと）や定期検査（5年ごと）で、シリンダライナの内径をマイクロメータで計測します。摩耗量が限度値（メーカー指定、通常ボアの0.5〜1%程度）を超えた場合は交換が必要です。<strong>上部（燃焼室付近）の摩耗が最も大きく</strong>なるのが一般的です。</p>
+  </div>
+
+  <h3>2-5. シリンダヘッド（シリンダカバー）</h3>
+  <p>シリンダの上部を密閉する蓋で、<strong>吸気弁・排気弁・燃料噴射弁・始動弁・安全弁</strong>などが取り付けられた重要な部品です。内部には冷却水の通路があり、高温の燃焼ガスから保護されています。</p>
+  <ul>
+    <li><strong>材質</strong>: 鋳鉄またはアルミニウム合金（高速機関）</li>
+    <li><strong>締め付け</strong>: ヘッドボルト（スタッドボルト）で規定トルクにより均一に締め付ける。偏った締め付けはガス漏れや歪みの原因となる</li>
+  </ul>
+
+  <!-- ==================== 3. 運動部分 ==================== -->
+  <h2>3. 運動部分</h2>
+  <p>運動部分は、燃焼ガスのエネルギーを受け取り、<strong>往復運動を回転運動に変換</strong>する部品群です。</p>
+
+  <h3>3-1. ピストン</h3>
+  <p>シリンダライナ内を上下に往復し、燃焼ガスの圧力を受けてコンロッドに伝える部品です。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 380 380" width="100%" style="max-width:380px;">
+      <!-- ピストン本体 -->
+      <rect x="100" y="60" width="180" height="200" rx="10" fill="#4a5568" stroke="#2d3748" stroke-width="2.5"/>
+      <!-- ピストン頂面 -->
+      <rect x="100" y="55" width="180" height="20" rx="6" fill="#718096" stroke="#2d3748" stroke-width="2"/>
+      <text x="190" y="69" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">ピストン頂面（クラウン）</text>
+
+      <!-- ピストンリング溝 -->
+      <!-- 圧力リング1 -->
+      <rect x="93" y="90" width="194" height="8" rx="2" fill="#e53e3e" stroke="#c53030" stroke-width="1.5"/>
+      <line x1="287" y1="94" x2="330" y2="94" class="label-line"/>
+      <text x="335" y="97" font-size="9" fill="#c53030">第1圧力リング</text>
+      <!-- 圧力リング2 -->
+      <rect x="93" y="108" width="194" height="8" rx="2" fill="#ed8936" stroke="#c05621" stroke-width="1.5"/>
+      <line x1="287" y1="112" x2="330" y2="112" class="label-line"/>
+      <text x="335" y="115" font-size="9" fill="#c05621">第2圧力リング</text>
+      <!-- 圧力リング3 -->
+      <rect x="93" y="126" width="194" height="8" rx="2" fill="#ed8936" stroke="#c05621" stroke-width="1.5"/>
+      <line x1="287" y1="130" x2="330" y2="130" class="label-line"/>
+      <text x="335" y="133" font-size="9" fill="#c05621">第3圧力リング</text>
+      <!-- オイルリング -->
+      <rect x="93" y="150" width="194" height="10" rx="2" fill="#3182ce" stroke="#2b6cb0" stroke-width="1.5"/>
+      <line x1="287" y1="155" x2="330" y2="155" class="label-line"/>
+      <text x="335" y="158" font-size="9" fill="#2b6cb0">オイルリング</text>
+
+      <!-- ピストンピン穴 -->
+      <circle cx="140" cy="210" r="12" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+      <circle cx="240" cy="210" r="12" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+      <line x1="140" y1="210" x2="240" y2="210" stroke="#2d3748" stroke-width="3"/>
+      <line x1="152" y1="210" x2="65" y2="230" class="label-line"/>
+      <text x="18" y="234" font-size="9" fill="#2d3748">ピストンピン</text>
+
+      <!-- スカート部 -->
+      <rect x="110" y="240" width="160" height="25" rx="4" fill="#718096" stroke="#2d3748" stroke-width="1.5"/>
+      <text x="190" y="257" text-anchor="middle" font-size="9" fill="#fff">スカート部</text>
+
+      <!-- 冷却方式の説明 -->
+      <rect x="130" y="170" width="120" height="25" rx="3" fill="#bee3f8" stroke="#3182ce" stroke-width="1" opacity="0.6"/>
+      <text x="190" y="186" text-anchor="middle" font-size="9" fill="#2b6cb0">冷却油通路</text>
+
+      <!-- タイトル -->
+      <text x="190" y="310" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">ピストンの構造</text>
+
+      <!-- 凡例 -->
+      <rect x="80" y="330" width="10" height="10" fill="#e53e3e" rx="1"/>
+      <text x="95" y="340" font-size="9" fill="#2d3748">圧力リング: ガスシール</text>
+      <rect x="80" y="348" width="10" height="10" fill="#3182ce" rx="1"/>
+      <text x="95" y="358" font-size="9" fill="#2d3748">オイルリング: 余分な油を掻き落とす</text>
+    </svg>
+    <p class="caption">図2-3 ピストンの構造とピストンリングの配置</p>
+  </div>
+
+  <h4>ピストンリングの役割</h4>
+  <ul>
+    <li><strong>圧力リング（コンプレッションリング）</strong>: 燃焼ガスがクランク室側に漏れるのを防ぐ（ガスシール）。通常2〜4本</li>
+    <li><strong>オイルリング（オイルスクレーパリング）</strong>: シリンダ壁に付着した余分な潤滑油を掻き落とし、油膜を適正に保つ。通常1〜2本</li>
+  </ul>
+
+  <h4>ピストンの冷却方式</h4>
+  <ul>
+    <li><strong>油冷却方式</strong>: ピストン内部に潤滑油を循環させて冷却する。中速機関で多い</li>
+    <li><strong>自然冷却</strong>: 小型・高速機関ではピストン本体からシリンダ壁への伝熱のみで冷却</li>
+  </ul>
+
+  <h3>3-2. コネクティングロッド（連接棒）</h3>
+  <p>ピストンの往復運動をクランク軸に伝える棒状の部品です。</p>
+  <ul>
+    <li><strong>大端部</strong>: クランクピンに接続。二分割式の軸受メタルが入る</li>
+    <li><strong>小端部</strong>: ピストンピンに接続</li>
+    <li><strong>材質</strong>: 鍛造鋼</li>
+    <li><strong>注意点</strong>: 大端部のボルトの伸び計測（定期検査項目）、軸受メタルの点検</li>
+  </ul>
+
+  <h3>3-3. クランク軸</h3>
+  <p>ピストンの往復運動を<strong>回転運動に変換する</strong>機関の心臓部ともいえる部品です。コネクティングロッドからの力を受けて回転し、プロペラ軸（減速ギア経由）へ動力を伝達します。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 500 300" width="100%" style="max-width:500px;">
+      <defs>
+        <marker id="arrowCrank" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+
+      <!-- 主軸（メインジャーナル） -->
+      <line x1="40" y1="150" x2="460" y2="150" stroke="#718096" stroke-width="20" stroke-linecap="round"/>
+      <text x="250" y="178" text-anchor="middle" font-size="11" fill="#4a5568" font-weight="bold">主軸（メインジャーナル）</text>
+
+      <!-- クランクアーム＆ピン 1 -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0,130,150;360,130,150" dur="3s" repeatCount="indefinite"/>
+        <line x1="130" y1="150" x2="130" y2="95" stroke="#2d3748" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="130" cy="90" r="12" fill="#e53e3e" stroke="#c53030" stroke-width="2"/>
+        <text x="130" y="75" text-anchor="middle" font-size="8" fill="#c53030">ピン</text>
+        <!-- コンロッドの動き -->
+        <line x1="130" y1="90" x2="130" y2="40" stroke="#4a5568" stroke-width="4" stroke-linecap="round"/>
+        <rect x="115" y="20" width="30" height="20" rx="3" fill="#4a5568" stroke="#2d3748" stroke-width="1.5"/>
+      </g>
+
+      <!-- クランクアーム＆ピン 2 -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="180,250,150;540,250,150" dur="3s" repeatCount="indefinite"/>
+        <line x1="250" y1="150" x2="250" y2="95" stroke="#2d3748" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="250" cy="90" r="12" fill="#e53e3e" stroke="#c53030" stroke-width="2"/>
+        <line x1="250" y1="90" x2="250" y2="40" stroke="#4a5568" stroke-width="4" stroke-linecap="round"/>
+        <rect x="235" y="20" width="30" height="20" rx="3" fill="#4a5568" stroke="#2d3748" stroke-width="1.5"/>
+      </g>
+
+      <!-- クランクアーム＆ピン 3 -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="90,370,150;450,370,150" dur="3s" repeatCount="indefinite"/>
+        <line x1="370" y1="150" x2="370" y2="95" stroke="#2d3748" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="370" cy="90" r="12" fill="#e53e3e" stroke="#c53030" stroke-width="2"/>
+        <line x1="370" y1="90" x2="370" y2="40" stroke="#4a5568" stroke-width="4" stroke-linecap="round"/>
+        <rect x="355" y="20" width="30" height="20" rx="3" fill="#4a5568" stroke="#2d3748" stroke-width="1.5"/>
+      </g>
+
+      <!-- 回転方向矢印 -->
+      <path d="M460,140 A20,20 0 0,1 460,160" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#arrowCrank)"/>
+      <text x="485" y="155" font-size="10" fill="#2b6cb0" font-weight="bold">回転</text>
+
+      <!-- ラベル -->
+      <text x="130" y="210" text-anchor="middle" font-size="10" fill="#718096">#1シリンダ</text>
+      <text x="250" y="210" text-anchor="middle" font-size="10" fill="#718096">#2シリンダ</text>
+      <text x="370" y="210" text-anchor="middle" font-size="10" fill="#718096">#3シリンダ</text>
+
+      <!-- フライホイール -->
+      <circle cx="40" cy="150" r="30" fill="none" stroke="#d69e2e" stroke-width="4"/>
+      <circle cx="40" cy="150" r="5" fill="#d69e2e"/>
+      <text x="40" y="195" text-anchor="middle" font-size="9" fill="#975a16">FW</text>
+
+      <text x="250" y="250" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="bold">クランク軸の回転運動（アニメーション）</text>
+      <text x="250" y="270" text-anchor="middle" font-size="10" fill="#718096">各シリンダの位相がずれて滑らかな回転を実現</text>
+    </svg>
+    <p class="caption">図2-4 クランク軸の回転運動変換（3シリンダ例）</p>
+  </div>
+
+  <h4>クランク軸の構成要素</h4>
+  <ul>
+    <li><strong>メインジャーナル（主軸部）</strong>: 主軸受に支えられる部分</li>
+    <li><strong>クランクピン</strong>: コネクティングロッド大端部が接続される部分</li>
+    <li><strong>クランクアーム（ウェブ）</strong>: メインジャーナルとクランクピンを結ぶ腕</li>
+    <li><strong>カウンターウェイト</strong>: 回転のバランスをとるためのおもり</li>
+  </ul>
+
+  <div class="box box-warning">
+    <h4>クランク軸の撓み計測（デフレクション）</h4>
+    <p>クランク軸の撓み（たわみ）は、台板の変形や軸受の摩耗を示す重要な指標です。<strong>デフレクションゲージ</strong>を用いて各クランクウェブ間の開きを計測し、規定値内であることを確認します。これは定期検査の必須項目であり、日頃から記録を残しておくことが求められます。</p>
+  </div>
+
+  <h3>3-4. フライホイール</h3>
+  <p>クランク軸の端部に取り付けられた大きな円盤状の質量体です。</p>
+  <ul>
+    <li><strong>目的</strong>: 回転エネルギーを蓄え、燃焼行程以外（吸気・圧縮・排気）でもクランク軸を回し続けるための<strong>慣性力</strong>を提供する</li>
+    <li>特に単気筒や少気筒の機関では、フライホイールなしでは回転が不安定になる</li>
+    <li>ターニングギアとの連結部でもある（整備時に機関を手動で回すため）</li>
+  </ul>
+
+  <!-- ==================== 4. 弁装置 ==================== -->
+  <h2>4. 弁装置</h2>
+  <p>弁装置は、吸気・排気のタイミングを制御する機構です。正確なバルブタイミングが機関性能を左右します。</p>
+
+  <h3>4-1. 吸気弁・排気弁の構造</h3>
+  <div class="parts-grid">
+    <div class="part-card">
+      <h4>吸気弁</h4>
+      <p>新鮮な空気（過給機経由の場合は圧縮空気）をシリンダ内に取り入れるための弁。<strong>弁傘部</strong>がシリンダヘッドの弁座に密着してシールする。吸気弁は排気弁ほど高温にさらされないため、寿命は比較的長い。</p>
+    </div>
+    <div class="part-card">
+      <h4>排気弁</h4>
+      <p>燃焼後の排気ガスを排出するための弁。<strong>800〜900℃</strong>の高温ガスに直接さらされるため、耐熱鋼（ステライト等の盛金あり）が使われる。摩耗・焼損しやすく、定期的な摺り合わせ（ラッピング）や交換が必要。</p>
+    </div>
+  </div>
+
+  <h3>4-2. カム軸と弁駆動機構</h3>
+  <p><strong>カム軸</strong>は、クランク軸からギアまたはチェーンで駆動され、カムの形状に応じて弁を開閉します。</p>
+  <ul>
+    <li>4サイクル機関のカム軸は<strong>クランク軸の1/2の回転数</strong>で回転する（クランク2回転で1サイクル）</li>
+    <li><strong>タペット（バルブリフター）</strong> → <strong>プッシュロッド</strong> → <strong>ロッカーアーム</strong> → <strong>弁</strong>の順に力が伝わる（OHV方式）</li>
+    <li>弁バネが弁を閉じる方向に付勢している</li>
+  </ul>
+
+  <h3>4-3. 弁すき間（バルブクリアランス）の調整</h3>
+
+  <div class="key-point">
+    <p><strong>弁すき間</strong>は、機関が運転温度に達したときに弁が正しく完全に閉まるために設けられた隙間です。金属は熱膨張するため、冷間時にはわずかなすき間が必要です。</p>
+    <ul>
+      <li><strong>すき間が大きすぎる</strong>: 弁の開いている時間が短くなり、吸気量不足・排気不良。カタカタという異音の原因</li>
+      <li><strong>すき間が小さすぎる（またはゼロ）</strong>: 弁が完全に閉じず、燃焼ガスが漏れる。弁と弁座の焼損を招く</li>
+      <li><strong>調整</strong>: すきまゲージを使い、メーカー指定値（通常0.3〜0.5mm程度）に合わせる</li>
+    </ul>
+  </div>
+
+  <div class="box box-example">
+    <h4>実務メモ: バルブクリアランスの調整</h4>
+    <p>バルブクリアランスの調整は、機関が<strong>冷間状態</strong>（冷えた状態）で行うのが一般的です。裕洋丸では中間検査の際に全シリンダのクリアランスを計測し、必要に応じてロッカーアームのアジャストスクリューで調整します。排気弁のクリアランスは吸気弁より大きく設定されているのが普通です（排気弁のほうが高温になるため、膨張量が大きい）。</p>
+  </div>
+
+  <!-- ==================== 5. 燃料噴射装置 ==================== -->
+  <h2>5. 燃料噴射装置</h2>
+  <p>燃料噴射装置は、正確なタイミングで適切な量の燃料を高圧で霧状に噴射する装置です。ディーゼル機関の性能と燃費を大きく左右します。</p>
+
+  <h3>5-1. 噴射ポンプ</h3>
+  <p>カム軸により駆動され、燃料を高圧に昇圧して噴射弁へ送ります。</p>
+  <ul>
+    <li><strong>ジャーク式噴射ポンプ</strong>: プランジャーとバレルの精密なすり合わせにより、高圧を発生。回転数に応じて噴射量を調整</li>
+    <li><strong>噴射圧力</strong>: 中速機関で200〜400 bar（=200〜400気圧相当）</li>
+    <li><strong>噴射時期</strong>: クランク角で上死点前10〜20度付近（機関により異なる）</li>
+  </ul>
+
+  <h3>5-2. 噴射弁（インジェクター・ノズル）</h3>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 360 420" width="100%" style="max-width:360px;">
+      <!-- 噴射弁全体 -->
+      <!-- ノズルホルダー上部 -->
+      <rect x="140" y="30" width="80" height="50" rx="4" fill="#a0aec0" stroke="#2d3748" stroke-width="2"/>
+      <text x="180" y="60" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">燃料入口</text>
+      <!-- 燃料パイプ接続 -->
+      <rect x="230" y="40" width="60" height="20" rx="3" fill="#cbd5e0" stroke="#2d3748" stroke-width="1.5"/>
+      <text x="260" y="55" text-anchor="middle" font-size="8" fill="#2d3748">高圧管へ</text>
+
+      <!-- ホルダー本体 -->
+      <rect x="150" y="80" width="60" height="160" rx="3" fill="#718096" stroke="#2d3748" stroke-width="2"/>
+      <!-- スプリング -->
+      <path d="M170,100 L190,110 L170,120 L190,130 L170,140 L190,150 L170,160" stroke="#38a169" stroke-width="2.5" fill="none"/>
+      <text x="130" y="135" text-anchor="end" font-size="9" fill="#38a169">ノズル</text>
+      <text x="130" y="147" text-anchor="end" font-size="9" fill="#38a169">スプリング</text>
+
+      <!-- ニードル弁 -->
+      <rect x="173" y="165" width="14" height="80" rx="2" fill="#ed8936" stroke="#c05621" stroke-width="1.5"/>
+      <text x="220" y="210" font-size="9" fill="#c05621">ニードル弁</text>
+      <line x1="187" y1="205" x2="215" y2="205" class="label-line"/>
+
+      <!-- ノズル先端 -->
+      <polygon points="160,240 200,240 190,300 170,300" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+      <text x="130" y="275" text-anchor="end" font-size="9" fill="#2d3748">ノズル</text>
+      <text x="130" y="287" text-anchor="end" font-size="9" fill="#2d3748">ボディ</text>
+      <line x1="135" y1="280" x2="160" y2="270" class="label-line"/>
+
+      <!-- 噴霧孔 -->
+      <circle cx="175" cy="300" r="2" fill="#c53030"/>
+      <circle cx="180" cy="302" r="2" fill="#c53030"/>
+      <circle cx="185" cy="300" r="2" fill="#c53030"/>
+
+      <!-- 噴霧 -->
+      <g>
+        <line x1="175" y1="302" x2="150" y2="360" stroke="#c53030" stroke-width="1.5" stroke-dasharray="3,2" class="animate-flow"/>
+        <line x1="180" y1="304" x2="180" y2="365" stroke="#c53030" stroke-width="1.5" stroke-dasharray="3,2" class="animate-flow"/>
+        <line x1="185" y1="302" x2="210" y2="360" stroke="#c53030" stroke-width="1.5" stroke-dasharray="3,2" class="animate-flow"/>
+        <!-- 噴霧円錐 -->
+        <path d="M155,350 Q180,380 205,350" stroke="#c53030" stroke-width="1" fill="#c53030" opacity="0.15"/>
+      </g>
+      <text x="180" y="390" text-anchor="middle" font-size="10" fill="#c53030" font-weight="bold">燃料噴霧</text>
+
+      <!-- タイトル -->
+      <text x="180" y="415" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">燃料噴射弁（ノズル）断面</text>
+    </svg>
+    <p class="caption">図2-5 燃料噴射弁の構造と噴霧パターン</p>
+  </div>
+
+  <h4>噴射弁の動作原理</h4>
+  <ol>
+    <li>噴射ポンプから高圧燃料が送られる</li>
+    <li>燃料圧力がスプリングの力を超えると、<strong>ニードル弁がリフト</strong>（上昇）する</li>
+    <li>ノズル先端の<strong>噴霧孔</strong>から燃料が霧状に噴出される</li>
+    <li>噴射終了後、圧力低下によりニードル弁が着座し、噴射が止まる</li>
+  </ol>
+
+  <h4>噴霧の品質と燃焼</h4>
+  <ul>
+    <li><strong>良好な噴霧</strong>: 燃料が微細な粒子に分散し、空気と均一に混合 → 完全燃焼、排気がクリーン</li>
+    <li><strong>不良な噴霧</strong>: 粒子が大きい、噴霧パターンの偏り → 不完全燃焼、黒煙、排気温度上昇</li>
+    <li>ノズルの摩耗やカーボン詰まりは噴霧品質を悪化させる</li>
+  </ul>
+
+  <div class="box box-example">
+    <h4>実務メモ: 噴射弁のテスト</h4>
+    <p>噴射弁は定期的に取り外し、<strong>噴射弁テスタ（テストポンプ）</strong>で以下を確認します:</p>
+    <ul>
+      <li><strong>開弁圧力</strong>: スプリングの調整が正しいか（規定値は機関メーカー指定）</li>
+      <li><strong>噴霧パターン</strong>: 均一な円錐形に噴霧されるか</li>
+      <li><strong>シート漏れ</strong>: ニードル弁の着座面からの液漏れがないか</li>
+      <li><strong>後だれ</strong>: 噴射終了後にダラダラと燃料が垂れないか</li>
+    </ul>
+    <p>不良が見られた場合はノズルの清掃・摺り合わせ、またはノズルアセンブリの交換を行います。</p>
+  </div>
+
+  <!-- ==================== 6. 過給機 ==================== -->
+  <h2>6. 過給機（ターボチャージャー）</h2>
+  <p>過給機は、排気ガスのエネルギーを利用して<strong>吸入空気を圧縮し、シリンダにより多くの空気を押し込む</strong>装置です。これにより同じシリンダ容積でより多くの燃料を燃焼でき、<strong>出力が30〜50%向上</strong>します。現在の内航船の主機には、ほぼ例外なく過給機が装備されています。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 350" width="100%" style="max-width:600px;">
+      <defs>
+        <marker id="arrowTC" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#2b6cb0"/>
+        </marker>
+        <marker id="arrowTC_red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#e53e3e"/>
+        </marker>
+      </defs>
+
+      <!-- 中央ケーシング -->
+      <rect x="220" y="80" width="160" height="180" rx="30" fill="#fefcbf" stroke="#d69e2e" stroke-width="3"/>
+      <text x="300" y="175" text-anchor="middle" font-size="14" fill="#975a16" font-weight="bold">過給機</text>
+
+      <!-- 軸 -->
+      <line x1="190" y1="170" x2="410" y2="170" stroke="#2d3748" stroke-width="4"/>
+      <text x="300" y="195" text-anchor="middle" font-size="10" fill="#2d3748">共通軸</text>
+
+      <!-- タービン側（右・排気） -->
+      <circle cx="410" cy="170" r="55" fill="none" stroke="#e53e3e" stroke-width="3"/>
+      <g style="transform-origin: 410px 170px;" class="animate-rotate">
+        <line x1="370" y1="170" x2="450" y2="170" stroke="#e53e3e" stroke-width="2"/>
+        <line x1="410" y1="130" x2="410" y2="210" stroke="#e53e3e" stroke-width="2"/>
+        <line x1="382" y1="142" x2="438" y2="198" stroke="#e53e3e" stroke-width="2"/>
+        <line x1="438" y1="142" x2="382" y2="198" stroke="#e53e3e" stroke-width="2"/>
+      </g>
+      <text x="410" y="248" text-anchor="middle" font-size="12" fill="#c53030" font-weight="bold">タービン</text>
+      <text x="410" y="264" text-anchor="middle" font-size="10" fill="#c53030">（排気ガスで回転）</text>
+
+      <!-- コンプレッサー側（左・吸気） -->
+      <circle cx="190" cy="170" r="55" fill="none" stroke="#3182ce" stroke-width="3"/>
+      <g style="transform-origin: 190px 170px;" class="animate-rotate">
+        <line x1="150" y1="170" x2="230" y2="170" stroke="#3182ce" stroke-width="2"/>
+        <line x1="190" y1="130" x2="190" y2="210" stroke="#3182ce" stroke-width="2"/>
+        <line x1="162" y1="142" x2="218" y2="198" stroke="#3182ce" stroke-width="2"/>
+        <line x1="218" y1="142" x2="162" y2="198" stroke="#3182ce" stroke-width="2"/>
+      </g>
+      <text x="190" y="248" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="bold">コンプレッサー</text>
+      <text x="190" y="264" text-anchor="middle" font-size="10" fill="#2b6cb0">（空気を圧縮）</text>
+
+      <!-- 排気ガスの流れ（右下から入って右上へ出る） -->
+      <path d="M520,290 Q500,250 465,200" stroke="#e53e3e" stroke-width="3" fill="none" marker-end="url(#arrowTC_red)"/>
+      <text x="530" y="295" font-size="11" fill="#e53e3e" font-weight="bold">排気ガス入口</text>
+      <text x="530" y="310" font-size="9" fill="#e53e3e">（機関シリンダから）</text>
+      <path d="M445,130 Q460,100 500,80" stroke="#e53e3e" stroke-width="3" fill="none" marker-end="url(#arrowTC_red)" stroke-dasharray="6,3"/>
+      <text x="510" y="78" font-size="10" fill="#e53e3e">排気ガス出口</text>
+      <text x="510" y="92" font-size="9" fill="#e53e3e">（煙突へ）</text>
+
+      <!-- 吸入空気の流れ（左上から入って左下へ出る） -->
+      <path d="M80,80 Q100,100 140,135" stroke="#3182ce" stroke-width="3" fill="none" marker-end="url(#arrowTC)"/>
+      <text x="30" y="75" font-size="11" fill="#3182ce" font-weight="bold">外気吸入</text>
+      <text x="30" y="90" font-size="9" fill="#3182ce">（エアフィルタ経由）</text>
+      <path d="M165,215 Q130,260 100,280" stroke="#3182ce" stroke-width="3" fill="none" marker-end="url(#arrowTC)" stroke-dasharray="6,3"/>
+      <text x="25" y="290" font-size="10" fill="#3182ce" font-weight="bold">圧縮空気出口</text>
+      <text x="25" y="305" font-size="9" fill="#3182ce">→ インタークーラー</text>
+      <text x="25" y="320" font-size="9" fill="#3182ce">→ シリンダへ</text>
+
+      <text x="300" y="340" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">ターボチャージャーの仕組み</text>
+    </svg>
+    <p class="caption">図2-6 過給機（ターボチャージャー）の構造と気体の流れ</p>
+  </div>
+
+  <h3>過給機の動作原理</h3>
+  <ol>
+    <li>機関の<strong>排気ガス</strong>が高速でタービン翼に吹き付けられ、タービンが高速回転する</li>
+    <li>タービンと<strong>共通の軸</strong>で繋がったコンプレッサーが同時に回転する</li>
+    <li>コンプレッサーが外気を吸い込み、<strong>圧縮（過給）</strong>してシリンダ側へ送り出す</li>
+    <li>圧縮された空気は<strong>インタークーラー（給気冷却器）</strong>で冷却されてからシリンダに入る</li>
+  </ol>
+
+  <h3>6-1. インタークーラー（給気冷却器）</h3>
+  <p>過給機で圧縮された空気は温度が上昇しています。高温の空気はそのままだと密度が低く、十分な酸素量を確保できません。そこで<strong>インタークーラー</strong>で冷却し、空気密度を高めます。</p>
+  <ul>
+    <li><strong>冷却媒体</strong>: 海水または清水（間接冷却の場合）</li>
+    <li><strong>効果</strong>: 給気温度を40〜50℃程度まで下げることで、充填効率が向上し出力が増大</li>
+    <li><strong>清掃</strong>: 空気側のフィンに油分やホコリが付着すると冷却効率が低下。定期的な清掃が必要</li>
+  </ul>
+
+  <div class="box box-warning">
+    <h4>注意: 過給機のサージング</h4>
+    <p>コンプレッサーの流量と圧力比のバランスが崩れると、空気が逆流する<strong>サージング</strong>現象が発生します。大きな振動や異音（ドドドド...という音）を伴い、放置すると過給機の損傷に繋がります。急激な負荷変動時に起きやすく、対処としてはスロットルを絞り負荷を下げて安定させます。</p>
+  </div>
+
+  <div class="box box-example">
+    <h4>実務メモ: 過給機の日常管理</h4>
+    <p>裕洋丸では、以下の項目を機関日誌に記録しています:</p>
+    <ul>
+      <li><strong>過給機回転数</strong>（rpm）: 定格負荷で安定しているか</li>
+      <li><strong>給気圧力</strong>（kPa）: 過給機入口・出口の差圧</li>
+      <li><strong>排気温度</strong>: タービン入口と出口の温度差</li>
+      <li><strong>潤滑油圧力・温度</strong></li>
+    </ul>
+    <p>また、コンプレッサー側の水洗い（清水を噴霧して汚れを除去）を運航中にも実施しています。タービン側も同様にドライウォッシュまたはウェットウォッシュを行い、効率低下を防ぎます。</p>
+  </div>
+
+  <div class="key-point">
+    <p>過給機（ターボチャージャー）は、排気ガスの持つエネルギーを利用して吸入空気を圧縮し、<strong>同じ大きさのシリンダでより大きな出力を得る</strong>ための装置です。インタークーラーとセットで機能し、現代のディーゼル機関には不可欠な存在です。日常管理では、<strong>回転数・給気圧力・排気温度</strong>の監視と定期清掃が重要です。</p>
+  </div>
+
+  <!-- ==================== 7. 各部の材質と特性 ==================== -->
+  <h2>7. 各部の材質と特性（概要）</h2>
+  <p>ディーゼル機関は各部が異なる条件（温度・圧力・摩擦・腐食等）にさらされるため、適切な材質が選択されています。</p>
+
+  <table>
+    <thead>
+      <tr><th>部品名</th><th>主な材質</th><th>求められる特性</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>台板</td><td>鋳鉄、溶接鋼板</td><td>高い剛性、振動吸収</td></tr>
+      <tr><td>シリンダブロック</td><td>鋳鉄</td><td>剛性、冷却水路の気密性</td></tr>
+      <tr><td>シリンダライナ</td><td>特殊鋳鉄（高リン鋳鉄等）</td><td>耐摩耗性、耐食性、摺動性</td></tr>
+      <tr><td>シリンダヘッド</td><td>鋳鉄、アルミ合金</td><td>耐熱性、耐圧性、冷却性</td></tr>
+      <tr><td>ピストン</td><td>鋳鉄、アルミ合金、鍛造鋼</td><td>耐熱性、軽量性、熱伝導性</td></tr>
+      <tr><td>ピストンリング</td><td>特殊鋳鉄、クロムメッキ</td><td>耐摩耗性、弾性、シール性</td></tr>
+      <tr><td>コネクティングロッド</td><td>鍛造鋼</td><td>高い引張強度、疲労強度</td></tr>
+      <tr><td>クランク軸</td><td>鍛造鋼</td><td>高い疲労強度、靭性</td></tr>
+      <tr><td>排気弁</td><td>耐熱鋼（ステライト盛金）</td><td>耐高温性、耐食性</td></tr>
+      <tr><td>カム軸</td><td>鍛造鋼（表面焼入れ）</td><td>表面硬度、耐摩耗性</td></tr>
+      <tr><td>噴射弁ノズル</td><td>高速度鋼、窒化鋼</td><td>耐摩耗性、耐高圧性</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-info">
+    <h4>材質を知ることの意味</h4>
+    <p>各部品の材質を知っておくと、<strong>整備時の注意点</strong>が分かります。例えば、アルミ合金製のピストンは鋳鉄製より軽量ですが、熱膨張が大きいため冷間時のクリアランスが広く設定されています。また、クロムメッキされたピストンリングは研磨の際にメッキを傷つけないよう注意が必要です。</p>
+  </div>
+
+  <!-- ==================== 章末まとめ ==================== -->
+  <h2>章末まとめ</h2>
+  <div class="box box-success">
+    <h4>この章で学んだこと</h4>
+    <ol>
+      <li>ディーゼル機関は<strong>固定部分・運動部分・弁装置・燃料噴射装置・過給機</strong>の5つのグループで構成される</li>
+      <li><strong>固定部分</strong>: 台板→クランクケース→シリンダブロック→シリンダライナ→シリンダヘッドの積み上げ構造</li>
+      <li><strong>運動部分</strong>: ピストン→コンロッド→クランク軸の経路で往復運動を回転運動に変換</li>
+      <li><strong>弁装置</strong>: カム軸→タペット→プッシュロッド→ロッカーアーム→弁の駆動チェーン。バルブクリアランスの適正管理が重要</li>
+      <li><strong>燃料噴射装置</strong>: 噴射ポンプと噴射弁により、高圧で微細な噴霧を実現。噴霧品質が燃焼効率を左右する</li>
+      <li><strong>過給機</strong>: 排気ガスエネルギーで吸入空気を圧縮し、出力を大幅に向上。インタークーラーとセットで機能</li>
+      <li>各部品の<strong>材質は求められる特性</strong>（耐熱性・耐摩耗性・強度等）に応じて選択されている</li>
+    </ol>
+  </div>
+
+  <!-- ==================== クイズ ==================== -->
+  <div class="quiz">
+    <h4>章末クイズ</h4>
+
+    <p><strong>Q1.</strong> シリンダライナの摩耗が最も大きくなる箇所はどこか?</p>
+    <ul class="quiz-options">
+      <li>a) ライナ下部（クランク室側）</li>
+      <li>b) ライナ中央部</li>
+      <li>c) ライナ上部（燃焼室付近）</li>
+      <li>d) フランジ部</li>
+    </ul>
+    <button onclick="showAnswer('ans1')" style="margin:0.5rem 0;padding:0.4rem 1rem;border-radius:6px;border:1px solid #9f7aea;background:#faf5ff;color:#6b46c1;cursor:pointer;">解答を見る</button>
+    <div class="quiz-answer" id="ans1">
+      <p><strong>正解: c)</strong> ライナ上部は燃焼ガスの高温・高圧に直接さらされ、また潤滑油膜が薄くなりやすいため、摩耗が最も大きくなります。ピストンリングが上死点付近で反転する際の摩擦も摩耗を助長します。</p>
+    </div>
+
+    <hr style="margin:1rem 0;border:none;border-top:1px solid #e9d8fd;">
+
+    <p><strong>Q2.</strong> バルブクリアランス（弁すき間）が小さすぎるとどのような問題が起きるか?</p>
+    <ul class="quiz-options">
+      <li>a) 弁の開くタイミングが遅くなる</li>
+      <li>b) 弁が完全に閉じず、燃焼ガスが漏れる</li>
+      <li>c) 弁バネが折損する</li>
+      <li>d) カム軸の回転が不安定になる</li>
+    </ul>
+    <button onclick="showAnswer('ans2')" style="margin:0.5rem 0;padding:0.4rem 1rem;border-radius:6px;border:1px solid #9f7aea;background:#faf5ff;color:#6b46c1;cursor:pointer;">解答を見る</button>
+    <div class="quiz-answer" id="ans2">
+      <p><strong>正解: b)</strong> バルブクリアランスが小さすぎると、熱膨張時に弁が弁座から浮き上がり、完全に閉じなくなります。その隙間から燃焼ガスが漏れ、弁と弁座が焼損します。これを「弁の吹き抜け」と呼び、排気温度の上昇や出力低下の原因となります。</p>
+    </div>
+
+    <hr style="margin:1rem 0;border:none;border-top:1px solid #e9d8fd;">
+
+    <p><strong>Q3.</strong> ターボチャージャーのコンプレッサー側で「サージング」が発生した場合、まず何をすべきか?</p>
+    <ul class="quiz-options">
+      <li>a) 機関の回転数を上げて空気量を増やす</li>
+      <li>b) インタークーラーの冷却水を止める</li>
+      <li>c) 負荷を下げて安定させる</li>
+      <li>d) 過給機の潤滑油を交換する</li>
+    </ul>
+    <button onclick="showAnswer('ans3')" style="margin:0.5rem 0;padding:0.4rem 1rem;border-radius:6px;border:1px solid #9f7aea;background:#faf5ff;color:#6b46c1;cursor:pointer;">解答を見る</button>
+    <div class="quiz-answer" id="ans3">
+      <p><strong>正解: c)</strong> サージングは空気の流量不足と圧力のアンバランスが原因で発生します。まず負荷を下げて（スロットルを絞って）コンプレッサーの動作点を安定領域に戻すことが最優先です。その後、原因（エアフィルタの詰まり、コンプレッサーの汚れ等）を調査・対処します。</p>
+    </div>
+  </div>
+
+  <!-- ==================== 章末ナビ ==================== -->
+  <div class="chapter-nav">
+    <a href="eng01_diesel_principle.html">&larr; 前章: ディーゼル機関の原理</a>
+    <a href="eng03_fuel_lubrication.html">次章: 燃料と潤滑 &rarr;</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p>内航船員教材 機関編 | 有限会社トミタ海運</p>
+</footer>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

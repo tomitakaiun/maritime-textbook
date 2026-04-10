@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第10章: 船員の安全 — 内航船員のための海技教材</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+@keyframes williamson-ship {
+  0% { transform: translate(0,0) rotate(0deg); }
+  20% { transform: translate(40px, -20px) rotate(60deg); }
+  50% { transform: translate(60px, -60px) rotate(180deg); }
+  80% { transform: translate(30px, -100px) rotate(240deg); }
+  100% { transform: translate(0px, -130px) rotate(180deg); }
+}
+@keyframes gas-detect-blink {
+  0%, 100% { fill: #38a169; }
+  50% { fill: #e53e3e; }
+}
+@keyframes flame-flicker {
+  0%, 100% { transform: scaleY(1) translateY(0); opacity: 0.9; }
+  25% { transform: scaleY(1.1) translateY(-2px); opacity: 1; }
+  50% { transform: scaleY(0.9) translateY(1px); opacity: 0.8; }
+  75% { transform: scaleY(1.05) translateY(-1px); opacity: 1; }
+}
+@keyframes spray {
+  0% { opacity: 0; transform: translateX(0) scale(0.5); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(30px) scale(1.5); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>第10章: 船員の安全</h1>
+  <div class="subtitle">内航船員のための海技教材 — 航海編</div>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="nav09_law.html">← 第9章: 港則法と海上交通安全法</a>
+    <a href="eng01_diesel_principle.html">機関編 第1章 →</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <p>船舶は海上という特殊な環境で運航されるため、陸上とは異なる安全上のリスクがあります。特に内航タンカーは<strong>引火性の高い石油製品</strong>を輸送しており、火災・爆発のリスクに加え、有毒ガスや酸欠の危険が常に伴います。本章では、船員として身に付けるべき安全知識を包括的に学びます。</p>
+
+  <!-- ===== 1. 安全管理の基本 ===== -->
+  <h2>1. 安全管理の基本</h2>
+
+  <h3>1.1 ISMコードとSMS</h3>
+
+  <p><strong>ISMコード</strong>（International Safety Management Code：国際安全管理コード）は、船舶の安全運航と環境保護を目的とした国際的な基準です。すべての船舶運航会社は、ISMコードに基づく<strong>SMS（Safety Management System：安全管理システム）</strong>を構築し、運用しなければなりません。</p>
+
+  <div class="box box-info">
+    <h4>SMSの主な構成要素</h4>
+    <ul>
+      <li><strong>安全と環境保護の方針</strong> — 会社としての基本姿勢</li>
+      <li><strong>責任と権限</strong> — 陸上管理者・船長・乗組員の役割明確化</li>
+      <li><strong>手順書</strong> — 船上作業の安全手順を文書化</li>
+      <li><strong>緊急時対応</strong> — 火災、油流出、退船等の手順</li>
+      <li><strong>報告・分析</strong> — 事故・ヒヤリハットの報告と再発防止</li>
+      <li><strong>内部監査</strong> — 定期的なシステムの見直し</li>
+    </ul>
+  </div>
+
+  <h3>1.2 KYK活動（危険予知活動）</h3>
+
+  <p><strong>KYK</strong>（危険予知活動）は、作業前にメンバー全員で危険要因を洗い出し、対策を決める活動です。内航船では毎日の作業前ミーティングでKYKを実施することが一般的です。</p>
+
+  <div class="box box-example">
+    <h4>KYKの進め方（4ラウンド法）</h4>
+    <ol>
+      <li><strong>第1R: 現状把握</strong> — 「どんな危険が潜んでいるか？」</li>
+      <li><strong>第2R: 本質追求</strong> — 「最も危険なのはどれか？」</li>
+      <li><strong>第3R: 対策樹立</strong> — 「あなたならどうする？」</li>
+      <li><strong>第4R: 目標設定</strong> — 「私たちはこうする」→ 指差し呼称で確認</li>
+    </ol>
+  </div>
+
+  <div class="box box-warning">
+    <h4>タンカーでのKYK例</h4>
+    <p><strong>作業内容:</strong> カーゴタンクのマンホール開放作業</p>
+    <p><strong>危険要因:</strong> タンク内残留ガスによる中毒・酸欠、静電気火花による引火</p>
+    <p><strong>対策:</strong> ガス検知の実施（O₂ 21%、HC 0%確認）、帯電防止作業着の着用、監視人の配置、救出用ハーネスの準備</p>
+  </div>
+
+  <!-- ===== 2. 救命設備 ===== -->
+  <h2>2. 救命設備</h2>
+
+  <h3>2.1 救命胴衣（ライフジャケット）</h3>
+
+  <p>救命胴衣は、落水時に体を浮かせ、頭部を水面上に保つための最も基本的な救命設備です。</p>
+
+  <table>
+    <thead>
+      <tr><th>種類</th><th>特徴</th><th>用途</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>固型式</strong></td>
+        <td>浮力材（発泡材）が内蔵、常に浮力あり</td>
+        <td>一般用・非常用</td>
+      </tr>
+      <tr>
+        <td><strong>膨脹式</strong></td>
+        <td>CO₂ボンベで膨脹、コンパクト</td>
+        <td>日常作業用（自動・手動）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SVG: 救命胴衣の構造 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 380" xmlns="http://www.w3.org/2000/svg" style="max-width:650px;">
+      <!-- 背景 -->
+      <rect x="0" y="0" width="650" height="380" fill="#f7fafc" rx="8"/>
+      <text x="325" y="28" text-anchor="middle" font-size="15" fill="#1a365d" font-weight="bold">救命胴衣の構造と装備品</text>
+
+      <!-- ===== 固型式（左） ===== -->
+      <text x="170" y="55" text-anchor="middle" font-size="13" fill="#2b6cb0" font-weight="bold">固型式ライフジャケット</text>
+
+      <!-- 胴衣本体 -->
+      <path d="M130,80 L210,80 L220,120 L225,200 L215,260 L185,270 L170,280 L155,270 L125,260 L115,200 L120,120 Z" fill="#ed8936" stroke="#c05621" stroke-width="2"/>
+      <!-- 浮力材（内部） -->
+      <rect x="128" y="95" width="85" height="50" fill="#fbd38d" stroke="#c05621" stroke-width="1" rx="5" opacity="0.6"/>
+      <text x="170" y="123" text-anchor="middle" font-size="9" fill="#744210">浮力材</text>
+      <rect x="128" y="155" width="85" height="50" fill="#fbd38d" stroke="#c05621" stroke-width="1" rx="5" opacity="0.6"/>
+      <text x="170" y="183" text-anchor="middle" font-size="9" fill="#744210">浮力材</text>
+
+      <!-- ベルト -->
+      <rect x="110" y="215" width="120" height="8" fill="#2d3748" rx="2"/>
+      <text x="170" y="240" text-anchor="middle" font-size="9" fill="#4a5568">固定ベルト</text>
+
+      <!-- 笛 -->
+      <circle cx="240" cy="105" r="8" fill="#faf089" stroke="#975a16" stroke-width="1.5"/>
+      <text x="240" y="109" text-anchor="middle" font-size="7" fill="#975a16">笛</text>
+      <line x1="232" y1="105" x2="220" y2="100" stroke="#975a16" stroke-width="1" stroke-dasharray="3,2"/>
+
+      <!-- 反射テープ -->
+      <rect x="130" y="80" width="80" height="6" fill="#c4c4c4" stroke="#a0aec0" stroke-width="0.5"/>
+      <line x1="250" y1="83" x2="214" y2="83" stroke="#718096" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="280" y="87" font-size="9" fill="#718096">反射テープ</text>
+
+      <!-- 自動点灯灯 -->
+      <circle cx="240" cy="150" r="6" fill="#fc8181" stroke="#e53e3e" stroke-width="1.5">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <line x1="234" y1="150" x2="222" y2="160" stroke="#e53e3e" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="268" y="154" font-size="9" fill="#e53e3e">自動点灯灯</text>
+
+      <!-- ===== 膨脹式（右） ===== -->
+      <text x="490" y="55" text-anchor="middle" font-size="13" fill="#2b6cb0" font-weight="bold">膨脹式ライフジャケット</text>
+
+      <!-- 収納状態 -->
+      <rect x="445" y="75" width="90" height="45" fill="#4a5568" stroke="#2d3748" stroke-width="2" rx="6"/>
+      <text x="490" y="95" text-anchor="middle" font-size="9" fill="white">収納状態</text>
+      <text x="490" y="108" text-anchor="middle" font-size="8" fill="#cbd5e0">（コンパクト）</text>
+
+      <!-- 矢印 -->
+      <text x="490" y="140" text-anchor="middle" font-size="14" fill="#2b6cb0">▼ 膨脹後 ▼</text>
+
+      <!-- 膨脹状態 -->
+      <ellipse cx="490" cy="210" rx="65" ry="80" fill="#ed8936" stroke="#c05621" stroke-width="2" opacity="0.8"/>
+      <ellipse cx="490" cy="210" rx="50" ry="65" fill="#fbd38d" stroke="#c05621" stroke-width="1" opacity="0.5"/>
+
+      <!-- CO2ボンベ -->
+      <rect x="540" y="235" width="8" height="35" fill="#a0aec0" stroke="#718096" stroke-width="1" rx="2"/>
+      <line x1="544" y1="250" x2="555" y2="250" stroke="#718096" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="575" y="254" font-size="9" fill="#718096">CO₂ボンベ</text>
+
+      <!-- 手動レバー -->
+      <rect x="430" y="255" width="15" height="25" fill="#e53e3e" stroke="#c53030" stroke-width="1" rx="2"/>
+      <line x1="437" y1="268" x2="415" y2="280" stroke="#c53030" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="390" y="290" font-size="9" fill="#c53030">手動レバー</text>
+
+      <!-- 気室表示 -->
+      <text x="490" y="205" text-anchor="middle" font-size="10" fill="#744210">気室</text>
+      <text x="490" y="218" text-anchor="middle" font-size="8" fill="#744210">（空気で浮力）</text>
+
+      <!-- 注意書き -->
+      <rect x="15" y="320" width="620" height="45" fill="#fff5f5" stroke="#fc8181" stroke-width="1" rx="6"/>
+      <text x="325" y="340" text-anchor="middle" font-size="11" fill="#c53030" font-weight="bold">着用のポイント</text>
+      <text x="325" y="357" text-anchor="middle" font-size="10" fill="#4a5568">① ベルトは体に密着させる  ② 笛と灯火の位置を確認  ③ 膨脹式は定期点検（ボンベ圧力・有効期限）</text>
+    </svg>
+    <div class="caption">図10-1: 固型式・膨脹式救命胴衣の構造と装備品</div>
+  </div>
+
+  <h3>2.2 その他の救命設備</h3>
+
+  <table>
+    <thead>
+      <tr><th>設備</th><th>概要</th><th>ポイント</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>救命浮環</strong></td>
+        <td>リング状の浮き具。落水者に投げ渡す</td>
+        <td>自己点火灯・自己発煙信号を付けたものもある</td>
+      </tr>
+      <tr>
+        <td><strong>救命いかだ</strong></td>
+        <td>膨脹式のいかだ。退船時に使用</td>
+        <td>水面に投下すると自動膨脹。飲料水・食糧・信号具を内蔵</td>
+      </tr>
+      <tr>
+        <td><strong>EPIRB</strong></td>
+        <td>衛星利用非常用位置指示無線標識</td>
+        <td>遭難時に自動的に衛星へ位置を送信。水没時に自動離脱</td>
+      </tr>
+      <tr>
+        <td><strong>SART</strong></td>
+        <td>レーダートランスポンダー</td>
+        <td>捜索船・航空機のレーダーに自船の位置を表示させる</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p><strong>救命設備の配置を把握せよ！</strong></p>
+    <p>乗船したら、まず救命胴衣の保管場所、救命いかだの位置、EPIRB・SARTの格納場所を確認すること。夜間や視界不良時でも迷わずたどり着けるよう、日頃から位置を覚えておきましょう。</p>
+  </div>
+
+  <!-- ===== 3. 消防設備 ===== -->
+  <h2>3. 消防設備</h2>
+
+  <h3>3.1 火災の種類</h3>
+
+  <table>
+    <thead>
+      <tr><th>分類</th><th>燃焼物</th><th>例</th><th>適した消火方法</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>A類火災</strong><br>（普通火災）</td>
+        <td>木材、紙、布など固形物</td>
+        <td>居住区の火災</td>
+        <td>水、泡</td>
+      </tr>
+      <tr>
+        <td><strong>B類火災</strong><br>（油火災）</td>
+        <td>石油、油脂などの液体</td>
+        <td>機関室、カーゴタンク付近</td>
+        <td>泡、粉末、CO₂</td>
+      </tr>
+      <tr>
+        <td><strong>C類火災</strong><br>（電気火災）</td>
+        <td>電気機器・配線</td>
+        <td>配電盤、電動機</td>
+        <td>粉末、CO₂（水は厳禁）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box box-danger">
+    <h4>タンカーで最も注意すべきB類火災</h4>
+    <p>内航タンカーでは、石油蒸気への引火による<strong>B類火災</strong>が最大のリスクです。B類火災に<strong>水を直接放射してはいけません</strong>（油が飛散して火災が拡大する）。泡消火剤で油面を覆い、空気を遮断して消火します。</p>
+  </div>
+
+  <h3>3.2 消火器の種類と使い方</h3>
+
+  <!-- SVG: 消火器の図解 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+      <rect x="0" y="0" width="700" height="400" fill="#f7fafc" rx="8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="15" fill="#1a365d" font-weight="bold">船舶用消火器の種類</text>
+
+      <!-- ===== 粉末消火器 ===== -->
+      <g transform="translate(50, 50)">
+        <text x="70" y="15" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">粉末消火器</text>
+        <!-- 本体 -->
+        <rect x="40" y="30" width="60" height="180" fill="#e53e3e" stroke="#c53030" stroke-width="2" rx="8"/>
+        <rect x="50" y="35" width="40" height="15" fill="#c53030" rx="3"/>
+        <!-- ノズル -->
+        <rect x="100" y="55" width="35" height="6" fill="#2d3748" rx="2"/>
+        <rect x="130" y="48" width="6" height="20" fill="#2d3748" rx="2"/>
+        <!-- ハンドル -->
+        <path d="M55,30 Q55,18 70,18 Q85,18 85,30" fill="none" stroke="#2d3748" stroke-width="3"/>
+        <!-- ラベル -->
+        <rect x="48" y="80" width="44" height="60" fill="white" stroke="#c53030" rx="3"/>
+        <text x="70" y="100" text-anchor="middle" font-size="8" fill="#c53030">ABC</text>
+        <text x="70" y="112" text-anchor="middle" font-size="7" fill="#c53030">粉末</text>
+        <text x="70" y="130" text-anchor="middle" font-size="7" fill="#4a5568">全火災対応</text>
+        <!-- 噴射アニメーション -->
+        <g>
+          <circle cx="150" cy="58" r="4" fill="#fbd38d" opacity="0.6">
+            <animate attributeName="cx" values="150;180;210" dur="1s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0.4;0" dur="1s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="3;6;10" dur="1s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="150" cy="62" r="3" fill="#fbd38d" opacity="0.5">
+            <animate attributeName="cx" values="150;175;200" dur="1.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.7;0.3;0" dur="1.2s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="2;5;8" dur="1.2s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <!-- 説明 -->
+        <text x="70" y="230" text-anchor="middle" font-size="9" fill="#4a5568">A・B・C類に有効</text>
+        <text x="70" y="245" text-anchor="middle" font-size="9" fill="#4a5568">汎用性が最も高い</text>
+      </g>
+
+      <!-- ===== CO2消火器 ===== -->
+      <g transform="translate(270, 50)">
+        <text x="70" y="15" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">CO₂消火器</text>
+        <!-- 本体 -->
+        <rect x="45" y="30" width="50" height="190" fill="#4a5568" stroke="#2d3748" stroke-width="2" rx="6"/>
+        <!-- ノズル（ラッパ型） -->
+        <path d="M95,55 L120,40 L120,70 Z" fill="#718096" stroke="#4a5568" stroke-width="1.5"/>
+        <!-- ハンドル -->
+        <path d="M55,30 Q55,18 70,18 Q85,18 85,30" fill="none" stroke="#2d3748" stroke-width="3"/>
+        <!-- ラベル -->
+        <rect x="50" y="80" width="40" height="55" fill="#a0aec0" stroke="#4a5568" rx="3"/>
+        <text x="70" y="100" text-anchor="middle" font-size="9" fill="white">CO₂</text>
+        <text x="70" y="115" text-anchor="middle" font-size="7" fill="#e2e8f0">二酸化</text>
+        <text x="70" y="127" text-anchor="middle" font-size="7" fill="#e2e8f0">炭素</text>
+        <!-- ガス噴射 -->
+        <g opacity="0.5">
+          <ellipse cx="140" cy="55" rx="15" ry="20" fill="#e2e8f0">
+            <animate attributeName="rx" values="10;25;40" dur="1.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0.2;0" dur="1.5s" repeatCount="indefinite"/>
+          </ellipse>
+        </g>
+        <!-- 説明 -->
+        <text x="70" y="240" text-anchor="middle" font-size="9" fill="#4a5568">B・C類に有効</text>
+        <text x="70" y="255" text-anchor="middle" font-size="9" fill="#4a5568">電気火災に最適</text>
+        <text x="70" y="270" text-anchor="middle" font-size="9" fill="#e53e3e">※密閉空間で使用注意</text>
+      </g>
+
+      <!-- ===== 泡消火器 ===== -->
+      <g transform="translate(490, 50)">
+        <text x="70" y="15" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">泡消火器</text>
+        <!-- 本体 -->
+        <rect x="40" y="30" width="60" height="180" fill="#f6e05e" stroke="#d69e2e" stroke-width="2" rx="8"/>
+        <!-- ノズル -->
+        <rect x="100" y="55" width="30" height="8" fill="#2d3748" rx="2"/>
+        <!-- ハンドル -->
+        <path d="M55,30 Q55,18 70,18 Q85,18 85,30" fill="none" stroke="#2d3748" stroke-width="3"/>
+        <!-- ラベル -->
+        <rect x="48" y="80" width="44" height="55" fill="white" stroke="#d69e2e" rx="3"/>
+        <text x="70" y="98" text-anchor="middle" font-size="9" fill="#975a16">泡</text>
+        <text x="70" y="112" text-anchor="middle" font-size="7" fill="#975a16">FOAM</text>
+        <text x="70" y="128" text-anchor="middle" font-size="7" fill="#4a5568">油面を覆う</text>
+        <!-- 泡噴射 -->
+        <g>
+          <circle cx="145" cy="55" r="5" fill="#fefcbf" stroke="#d69e2e" stroke-width="0.5" opacity="0.7">
+            <animate attributeName="cy" values="55;45;35" dur="1.8s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0.4;0" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="155" cy="60" r="4" fill="#fefcbf" stroke="#d69e2e" stroke-width="0.5" opacity="0.6">
+            <animate attributeName="cy" values="60;48;36" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.7;0.3;0" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="140" cy="62" r="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="0.5" opacity="0.5">
+            <animate attributeName="cy" values="62;50;38" dur="1.6s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0.3;0" dur="1.6s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <!-- 説明 -->
+        <text x="70" y="230" text-anchor="middle" font-size="9" fill="#4a5568">A・B類に有効</text>
+        <text x="70" y="245" text-anchor="middle" font-size="9" fill="#4a5568">油火災に最適</text>
+        <text x="70" y="260" text-anchor="middle" font-size="9" fill="#e53e3e">※電気火災に使用不可</text>
+      </g>
+
+      <!-- 使い方手順 -->
+      <rect x="30" y="330" width="640" height="55" fill="#ebf8ff" stroke="#bee3f8" stroke-width="1" rx="8"/>
+      <text x="350" y="350" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="bold">消火器の使い方 4ステップ</text>
+      <text x="350" y="372" text-anchor="middle" font-size="11" fill="#4a5568">① 安全ピンを抜く → ② ホース（ノズル）を火元に向ける → ③ レバーを握る → ④ 火の根元を狙って左右に掃く</text>
+    </svg>
+    <div class="caption">図10-2: 船舶用消火器の種類と特徴</div>
+  </div>
+
+  <h3>3.3 固定消火装置</h3>
+
+  <p>船舶には、消火器に加え以下の<strong>固定消火装置</strong>が備えられています。</p>
+
+  <table>
+    <thead>
+      <tr><th>装置</th><th>場所</th><th>原理</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>CO₂固定消火装置</strong></td>
+        <td>機関室、カーゴポンプ室</td>
+        <td>CO₂で区画内の酸素を遮断して消火</td>
+      </tr>
+      <tr>
+        <td><strong>泡消火装置</strong></td>
+        <td>甲板上（カーゴタンク周辺）</td>
+        <td>泡で油面を覆い空気を遮断</td>
+      </tr>
+      <tr>
+        <td><strong>スプリンクラー</strong></td>
+        <td>居住区</td>
+        <td>水を自動散布して消火・冷却</td>
+      </tr>
+      <tr>
+        <td><strong>消火栓・消防ポンプ</strong></td>
+        <td>船内各所</td>
+        <td>消防ホースで水を放射</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3.4 火災発見時の行動手順</h3>
+
+  <div class="key-point">
+    <p><strong>火災発見時の行動 — RACE:</strong></p>
+    <ol>
+      <li><strong>R（Report）: 通報</strong> — 「火事だ！」と大声で叫び、火災警報を鳴らす。船橋へ報告</li>
+      <li><strong>A（Alarm）: 警報</strong> — 全船に非常警報を発令</li>
+      <li><strong>C（Contain）: 封じ込め</strong> — 扉・通風口を閉鎖し、延焼を防ぐ</li>
+      <li><strong>E（Extinguish）: 消火</strong> — 適切な消火器・消火装置で消火活動</li>
+    </ol>
+  </div>
+
+  <!-- ===== 4. 非常操練 ===== -->
+  <h2>4. 非常操練</h2>
+
+  <p>船舶では定期的に非常操練を実施し、乗組員全員が緊急時に迅速かつ的確に行動できるよう訓練します。</p>
+
+  <h3>4.1 操練の種類と頻度</h3>
+
+  <table>
+    <thead>
+      <tr><th>操練名</th><th>内容</th><th>頻度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>防火操練</strong></td>
+        <td>火災発生を想定し、消火器・消防ポンプの操作</td>
+        <td>毎月1回以上</td>
+      </tr>
+      <tr>
+        <td><strong>退船操練</strong></td>
+        <td>退船信号で救命胴衣を着用し集合場所へ。救命いかだの操作</td>
+        <td>毎月1回以上</td>
+      </tr>
+      <tr>
+        <td><strong>水密戸閉鎖操練</strong></td>
+        <td>浸水を想定した水密区画の閉鎖</td>
+        <td>毎月1回以上</td>
+      </tr>
+      <tr>
+        <td><strong>落水者救助操練</strong></td>
+        <td>MOB（Man Overboard）対応手順の確認</td>
+        <td>定期的に</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>4.2 非常配置表（ステーションビル）</h3>
+
+  <p>すべての船舶には<strong>非常配置表</strong>が居住区の見やすい場所に掲示されています。各乗組員の非常時の任務（消火班、救命班、通信班等）と集合場所が明記されています。</p>
+
+  <div class="box box-info">
+    <h4>乗船時にまず確認すること</h4>
+    <p>乗船したら、まず非常配置表で自分の<strong>配置と任務</strong>を確認しましょう。集合場所への経路、救命胴衣の保管場所、担当する消火器・設備の位置を実際に歩いて確認することが大切です。</p>
+  </div>
+
+  <!-- ===== 5. 応急処置の基礎 ===== -->
+  <h2>5. 応急処置の基礎</h2>
+
+  <p>海上では救急車を呼ぶことができません。乗組員全員が基本的な応急処置の知識を持つことが、命を救う鍵になります。</p>
+
+  <h3>5.1 心肺蘇生法（CPR）</h3>
+
+  <div class="key-point">
+    <p><strong>心肺蘇生の手順:</strong></p>
+    <ol>
+      <li><strong>安全確認</strong> — 周囲の安全を確認</li>
+      <li><strong>意識確認</strong> — 肩を叩き「大丈夫ですか？」と呼びかけ</li>
+      <li><strong>通報</strong> — 船橋に連絡、AEDを持ってくるよう指示</li>
+      <li><strong>呼吸確認</strong> — 10秒以内で正常な呼吸の有無を確認</li>
+      <li><strong>胸骨圧迫</strong> — 胸の中央を<strong>5cm</strong>の深さで、<strong>毎分100〜120回</strong>のテンポで押す</li>
+      <li><strong>人工呼吸</strong> — 胸骨圧迫30回に対して人工呼吸2回（可能な場合）</li>
+      <li><strong>AED使用</strong> — 到着したら音声ガイドに従い使用</li>
+    </ol>
+  </div>
+
+  <h3>5.2 止血法</h3>
+  <ul>
+    <li><strong>直接圧迫止血</strong> — 清潔なガーゼで傷口を強く押さえる（最も基本的で効果的）</li>
+    <li><strong>間接圧迫止血</strong> — 傷口より心臓に近い動脈を圧迫する</li>
+    <li><strong>止血帯</strong> — 四肢の大量出血時の最終手段（使用は慎重に）</li>
+  </ul>
+
+  <h3>5.3 骨折の応急処置</h3>
+  <ul>
+    <li>骨折部位を<strong>動かさない</strong></li>
+    <li><strong>副木</strong>（添え木）で固定する — 骨折部の上下の関節を含めて固定</li>
+    <li>腫れに対しては<strong>冷却</strong></li>
+  </ul>
+
+  <h3>5.4 やけどの応急処置</h3>
+  <ul>
+    <li>直ちに<strong>流水で冷却</strong>（最低15〜20分）</li>
+    <li>衣服の上からやけどした場合は、<strong>無理に脱がさない</strong></li>
+    <li>水疱（水ぶくれ）は<strong>つぶさない</strong></li>
+    <li>清潔なガーゼで覆い、医療機関への搬送を手配</li>
+  </ul>
+
+  <!-- ===== 6. 落水者救助（MOB） ===== -->
+  <h2>6. 落水者救助（MOB手順）</h2>
+
+  <p>落水者（MOB: Man Overboard）の発見・救助は、一刻を争う事態です。全乗組員が手順を理解し、迅速に行動できるようにしておく必要があります。</p>
+
+  <h3>6.1 落水者発見時の初動</h3>
+  <ol>
+    <li><strong>「落水者！（Man Overboard!）」</strong>と大声で叫ぶ</li>
+    <li>落水者に<strong>救命浮環</strong>を投げる</li>
+    <li>落水者から<strong>目を離さない</strong>（指差し役を指名）</li>
+    <li><strong>船橋に報告</strong> — 落水した舷（右舷・左舷）を伝える</li>
+    <li>GPSの<strong>MOBボタン</strong>を押す（落水位置を記録）</li>
+  </ol>
+
+  <h3>6.2 ウィリアムソンターン</h3>
+
+  <p><strong>ウィリアムソンターン</strong>は、落水者を救助するための操船方法の一つで、元の航跡上に戻ることができるのが特長です。夜間や視界不良時に特に有効です。</p>
+
+  <!-- SVG: ウィリアムソンターンの軌跡 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 450" xmlns="http://www.w3.org/2000/svg" style="max-width:650px;">
+      <rect x="0" y="0" width="650" height="450" fill="#d4e8ff" rx="8"/>
+      <text x="325" y="28" text-anchor="middle" font-size="15" fill="#1a365d" font-weight="bold">ウィリアムソンターンの操船軌跡</text>
+
+      <!-- 元の針路（直進） -->
+      <line x1="100" y1="400" x2="100" y2="100" stroke="#a0aec0" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="75" y="250" text-anchor="middle" font-size="10" fill="#718096" transform="rotate(-90, 75, 250)">元の針路</text>
+
+      <!-- 落水地点 -->
+      <circle cx="100" cy="340" r="12" fill="#e53e3e" opacity="0.3">
+        <animate attributeName="r" values="8;16;8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="100" cy="340" r="5" fill="#e53e3e"/>
+      <text x="125" y="345" font-size="11" fill="#e53e3e" font-weight="bold">落水地点</text>
+
+      <!-- ステップ1: 落水側に転舵 -->
+      <path d="M100,320 Q100,300 120,280 Q150,250 180,240" fill="none" stroke="#2b6cb0" stroke-width="3"/>
+      <circle cx="140" cy="270" r="14" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="140" y="274" text-anchor="middle" font-size="10" fill="#2b6cb0" font-weight="bold">①</text>
+      <text x="200" y="265" font-size="10" fill="#2b6cb0">落水側へ</text>
+      <text x="200" y="280" font-size="10" fill="#2b6cb0">直ちに転舵</text>
+
+      <!-- ステップ2: 原針路から60度まで回頭 -->
+      <path d="M180,240 Q220,220 250,210 Q290,200 310,210" fill="none" stroke="#2b6cb0" stroke-width="3"/>
+      <circle cx="260" cy="210" r="14" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="260" y="214" text-anchor="middle" font-size="10" fill="#2b6cb0" font-weight="bold">②</text>
+      <text x="300" y="190" font-size="10" fill="#2b6cb0">原針路から60°</text>
+      <text x="300" y="205" font-size="10" fill="#2b6cb0">回頭した時点で</text>
+
+      <!-- ステップ3: 反対舷に転舵 -->
+      <path d="M310,210 Q340,225 350,250 Q360,290 340,330 Q320,360 280,380 Q240,395 200,400 Q160,400 120,390" fill="none" stroke="#ed8936" stroke-width="3"/>
+      <circle cx="355" cy="280" r="14" fill="#fff5f5" stroke="#ed8936" stroke-width="1.5"/>
+      <text x="355" y="284" text-anchor="middle" font-size="10" fill="#ed8936" font-weight="bold">③</text>
+      <text x="410" y="280" font-size="10" fill="#ed8936">反対舷に</text>
+      <text x="410" y="295" font-size="10" fill="#ed8936">全速転舵</text>
+
+      <!-- ステップ4: 元の針路の逆方向に向首 -->
+      <circle cx="200" cy="400" r="14" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="200" y="404" text-anchor="middle" font-size="10" fill="#38a169" font-weight="bold">④</text>
+      <text x="250" y="420" font-size="10" fill="#38a169">元の針路の逆に向首</text>
+
+      <!-- 復帰コース -->
+      <line x1="120" y1="390" x2="100" y2="360" stroke="#38a169" stroke-width="3"/>
+      <polygon points="100,365 95,350 105,350" fill="#38a169"/>
+      <text x="60" y="380" font-size="10" fill="#38a169" font-weight="bold">救助</text>
+
+      <!-- 船の形（矢印で方向表示） -->
+      <polygon points="100,320 95,330 105,330" fill="#1a365d"/>
+
+      <!-- 凡例 -->
+      <rect x="430" y="50" width="200" height="120" fill="white" opacity="0.85" rx="6"/>
+      <text x="530" y="70" text-anchor="middle" font-size="11" fill="#1a365d" font-weight="bold">ウィリアムソンターン</text>
+      <text x="445" y="90" font-size="9" fill="#4a5568">① 落水側に直ちに転舵</text>
+      <text x="445" y="107" font-size="9" fill="#4a5568">② 60°回頭したら…</text>
+      <text x="445" y="124" font-size="9" fill="#4a5568">③ 反対舷に全速転舵</text>
+      <text x="445" y="141" font-size="9" fill="#4a5568">④ 元の航跡に戻り救助</text>
+      <text x="445" y="162" font-size="8" fill="#718096">※夜間・視界不良時に有効</text>
+    </svg>
+    <div class="caption">図10-3: ウィリアムソンターンの操船軌跡 — 落水地点の元の航跡上に戻る旋回法</div>
+  </div>
+
+  <div class="box box-info">
+    <h4>その他の救助操船法</h4>
+    <ul>
+      <li><strong>シングルターン</strong> — 落水側へ即座に旋回（昼間・視界良好時に有効。最も速い）</li>
+      <li><strong>シャルノウターン（ダブルターン）</strong> — 大型船向け。2回旋回して戻る</li>
+    </ul>
+    <p>いずれの方法でも、<strong>落水者を見失わないこと</strong>が最優先です。</p>
+  </div>
+
+  <!-- ===== 7. タンカー特有の安全対策 ===== -->
+  <h2>7. タンカー特有の安全対策</h2>
+
+  <p>タンカーは引火性液体を大量に輸送するため、他の船種にはない<strong>固有の安全リスク</strong>があります。これらを理解し、対策を徹底することがタンカー乗組員の最重要責務です。</p>
+
+  <h3>7.1 静電気による引火防止</h3>
+
+  <p>石油製品の流動・噴霧・撹拌によって<strong>静電気</strong>が発生します。帯電した静電気が放電（スパーク）すると、可燃性ガスに引火する危険があります。</p>
+
+  <div class="box box-danger">
+    <h4>静電気防止の基本ルール</h4>
+    <ul>
+      <li>荷役開始時の<strong>初速を遅く</strong>する（タンク底面が油で覆われるまで低速荷役）</li>
+      <li><strong>金属製測深テープ</strong>をタンク内に降ろす際は、静電気の放電に注意</li>
+      <li>合成繊維の衣服は<strong>着用しない</strong>（帯電防止作業着を着用）</li>
+      <li>荷役中は甲板上で<strong>水洗い作業を行わない</strong>（水のミストが帯電する）</li>
+    </ul>
+  </div>
+
+  <h3>7.2 ガス検知（爆発下限界LEL）</h3>
+
+  <p>カーゴタンクやポンプ室の作業前には、必ず<strong>ガス検知</strong>を実施します。</p>
+
+  <table>
+    <thead>
+      <tr><th>測定項目</th><th>安全基準</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>酸素濃度</strong></td>
+        <td>20.9%（通常大気）</td>
+        <td>18%未満は酸欠危険</td>
+      </tr>
+      <tr>
+        <td><strong>可燃性ガス（LEL）</strong></td>
+        <td>0% LEL</td>
+        <td>LEL=爆発下限界。1%以上は危険</td>
+      </tr>
+      <tr>
+        <td><strong>有毒ガス（H₂S等）</strong></td>
+        <td>検出されないこと</td>
+        <td>硫化水素は10ppmで許容限界</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p><strong>LEL（Lower Explosive Limit：爆発下限界）とは？</strong></p>
+    <p>可燃性ガスと空気の混合気が燃焼（爆発）する最低濃度のことです。例えばガソリン蒸気のLELは約1.4%です。ガス検知器で測定した値が<strong>LELの1%</strong>でも検出された場合は、その区画への立入・火気使用は禁止です。</p>
+  </div>
+
+  <h3>7.3 閉鎖区画への入域手順</h3>
+
+  <p>カーゴタンク、バラストタンク、二重底、ポンプ室など<strong>閉鎖区画</strong>に入る際は、以下の手順を厳守します。</p>
+
+  <ol>
+    <li><strong>入域許可</strong> — 船長または責任者の許可を得る（入域許可書の発行）</li>
+    <li><strong>換気</strong> — 十分な換気を行う（機械換気）</li>
+    <li><strong>ガス検知</strong> — 酸素濃度、可燃性ガス、有毒ガスを測定</li>
+    <li><strong>監視人の配置</strong> — 入口に常時監視人を配置</li>
+    <li><strong>通信手段</strong> — 内部と外部の通信手段を確保</li>
+    <li><strong>救出準備</strong> — ハーネス・三脚・ウインチ等の救出機材を準備</li>
+    <li><strong>継続監視</strong> — 作業中も定期的にガス検知を実施</li>
+  </ol>
+
+  <h3>7.4 ボンディングとアーシング</h3>
+
+  <p>荷役中の静電気対策として、<strong>ボンディング</strong>と<strong>アーシング</strong>が重要です。</p>
+
+  <table>
+    <thead>
+      <tr><th>用語</th><th>意味</th><th>目的</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>ボンディング</strong></td>
+        <td>船体と荷役設備（ホース、アーム等）を電気的に接続</td>
+        <td>電位差によるスパークを防止</td>
+      </tr>
+      <tr>
+        <td><strong>アーシング</strong></td>
+        <td>船体を接地（アース）に接続</td>
+        <td>帯電した静電気を安全に逃がす</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SVG: タンカー安全設備の概念図 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+      <rect x="0" y="0" width="700" height="380" fill="#f7fafc" rx="8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" fill="#1a365d" font-weight="bold">タンカー荷役時の安全管理ポイント</text>
+
+      <!-- 船体 -->
+      <path d="M80,200 L120,280 L580,280 L620,200 L600,180 L100,180 Z" fill="#a0aec0" stroke="#718096" stroke-width="2"/>
+      <!-- カーゴタンク -->
+      <rect x="160" y="190" width="120" height="80" fill="#fbd38d" stroke="#d69e2e" stroke-width="1.5" rx="3"/>
+      <text x="220" y="235" text-anchor="middle" font-size="10" fill="#744210">カーゴタンク1</text>
+      <rect x="290" y="190" width="120" height="80" fill="#fbd38d" stroke="#d69e2e" stroke-width="1.5" rx="3"/>
+      <text x="350" y="235" text-anchor="middle" font-size="10" fill="#744210">カーゴタンク2</text>
+      <rect x="420" y="190" width="120" height="80" fill="#fbd38d" stroke="#d69e2e" stroke-width="1.5" rx="3"/>
+      <text x="480" y="235" text-anchor="middle" font-size="10" fill="#744210">カーゴタンク3</text>
+
+      <!-- ガス蒸気（可燃性ガス） -->
+      <g opacity="0.4">
+        <ellipse cx="220" cy="170" rx="25" ry="10" fill="#fc8181">
+          <animate attributeName="cy" values="170;160;170" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="350" cy="165" rx="30" ry="12" fill="#fc8181">
+          <animate attributeName="cy" values="165;152;165" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3.5s" repeatCount="indefinite"/>
+        </ellipse>
+      </g>
+
+      <!-- 荷役ホース -->
+      <path d="M160,210 Q120,200 90,170 Q70,140 60,100" fill="none" stroke="#4a5568" stroke-width="6" stroke-linecap="round"/>
+      <text x="45" y="90" font-size="10" fill="#4a5568" font-weight="bold">荷役ホース</text>
+      <text x="45" y="103" font-size="9" fill="#4a5568">（陸上施設へ）</text>
+
+      <!-- ボンディングケーブル -->
+      <line x1="90" y1="175" x2="140" y2="195" stroke="#38a169" stroke-width="3" stroke-dasharray="6,3"/>
+      <text x="80" y="155" font-size="9" fill="#38a169" font-weight="bold">ボンディング</text>
+      <text x="80" y="167" font-size="8" fill="#38a169">ケーブル</text>
+
+      <!-- 紅旗 -->
+      <line x1="350" y1="180" x2="350" y2="110" stroke="#2d3748" stroke-width="2"/>
+      <rect x="352" y="110" width="30" height="20" fill="#e53e3e"/>
+      <text x="367" y="100" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="bold">紅旗 (B旗)</text>
+
+      <!-- ガス検知器 -->
+      <rect x="555" y="120" width="50" height="35" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5" rx="4"/>
+      <circle cx="580" cy="132" r="6" fill="#38a169">
+        <animate attributeName="fill" values="#38a169;#e53e3e;#38a169" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <text x="580" y="150" text-anchor="middle" font-size="7" fill="#2b6cb0">ガス検知器</text>
+      <line x1="555" y1="140" x2="500" y2="185" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- 消火器 -->
+      <rect x="600" y="165" width="16" height="40" fill="#e53e3e" stroke="#c53030" stroke-width="1" rx="3"/>
+      <text x="635" y="190" font-size="8" fill="#c53030">消火器</text>
+
+      <!-- 火気厳禁マーク -->
+      <circle cx="480" cy="145" r="18" fill="none" stroke="#e53e3e" stroke-width="2.5"/>
+      <line x1="468" y1="158" x2="492" y2="132" stroke="#e53e3e" stroke-width="2.5"/>
+      <g transform="translate(480, 145)" style="animation: flame-flicker 1s ease-in-out infinite;">
+        <path d="M-4,5 Q-2,-5 0,-10 Q2,-5 4,5 Q2,8 0,8 Q-2,8 -4,5 Z" fill="#ed8936" opacity="0.6"/>
+      </g>
+      <text x="480" y="170" text-anchor="middle" font-size="7" fill="#e53e3e">火気厳禁</text>
+
+      <!-- 注意事項 -->
+      <rect x="40" y="305" width="620" height="60" fill="#fff5f5" stroke="#fc8181" stroke-width="1" rx="8"/>
+      <text x="350" y="325" text-anchor="middle" font-size="11" fill="#c53030" font-weight="bold">荷役中の安全チェックリスト</text>
+      <text x="350" y="345" text-anchor="middle" font-size="10" fill="#4a5568">✓ ボンディング接続  ✓ 紅旗掲揚  ✓ ガス検知実施  ✓ 消火器配置  ✓ 通風口閉鎖  ✓ 火気厳禁表示</text>
+      <text x="350" y="360" text-anchor="middle" font-size="10" fill="#4a5568">✓ 荷役当直配置  ✓ 油流出防止措置（スカッパープラグ）  ✓ 通信手段確保</text>
+    </svg>
+    <div class="caption">図10-4: タンカー荷役時の安全管理ポイント</div>
+  </div>
+
+  <!-- ===== 8. 個人防護具（PPE） ===== -->
+  <h2>8. 個人防護具（PPE）</h2>
+
+  <p><strong>PPE（Personal Protective Equipment）</strong>は、作業者を危険から守る最後の砦です。作業内容に応じた適切なPPEを着用することが義務付けられています。</p>
+
+  <table>
+    <thead>
+      <tr><th>PPE</th><th>用途</th><th>タンカーでの使用場面</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>保護帽（ヘルメット）</strong></td>
+        <td>頭部の保護</td>
+        <td>甲板作業、荷役作業、機関室作業</td>
+      </tr>
+      <tr>
+        <td><strong>安全靴</strong></td>
+        <td>足の保護（落下物・滑り防止）</td>
+        <td>常時着用（甲板上は帯電防止靴）</td>
+      </tr>
+      <tr>
+        <td><strong>保護眼鏡（ゴーグル）</strong></td>
+        <td>目の保護</td>
+        <td>ケミカル取扱い、グラインダー作業</td>
+      </tr>
+      <tr>
+        <td><strong>保護手袋</strong></td>
+        <td>手の保護</td>
+        <td>荷役作業（耐油手袋）、係留作業</td>
+      </tr>
+      <tr>
+        <td><strong>呼吸保護具</strong></td>
+        <td>有害ガス・粉塵からの保護</td>
+        <td>タンク入域、塗装作業</td>
+      </tr>
+      <tr>
+        <td><strong>耳栓・イヤーマフ</strong></td>
+        <td>騒音からの保護</td>
+        <td>機関室作業</td>
+      </tr>
+      <tr>
+        <td><strong>安全帯（ハーネス）</strong></td>
+        <td>高所からの墜落防止</td>
+        <td>マスト上作業、タンク内作業</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box box-warning">
+    <h4>タンカーのPPE注意点</h4>
+    <ul>
+      <li>甲板上では<strong>帯電防止作業着・帯電防止靴</strong>を着用する（静電気火花防止）</li>
+      <li>呼吸保護具は<strong>作業内容に合ったフィルター</strong>を選択する</li>
+      <li>タンク入域時は<strong>自給式呼吸装置（SCBA）</strong>を待機させる</li>
+      <li>PPEの<strong>点検と管理</strong>は日常的に行い、劣化したものは速やかに交換する</li>
+    </ul>
+  </div>
+
+  <!-- ===== 9. 船内の安全行動 ===== -->
+  <h2>9. 船内の安全行動</h2>
+
+  <h3>9.1 昇降時の安全</h3>
+  <ul>
+    <li>はしご（ラダー）の昇降は<strong>3点支持</strong>（両手両足のうち3つで支持）</li>
+    <li>荷物を持ったままはしごを昇降<strong>しない</strong>（ロープで上げ下ろし）</li>
+    <li>動揺する船内では<strong>手すりをつかむ</strong>ことを習慣化</li>
+    <li>急な階段では<strong>後ろ向き</strong>に降りる</li>
+  </ul>
+
+  <h3>9.2 重量物の取扱い</h3>
+  <ul>
+    <li>持ち上げるときは<strong>腰を落として膝で持ち上げる</strong>（腰痛防止）</li>
+    <li>一人で持てない重量は<strong>無理をせず</strong>、複数人で作業する</li>
+    <li>ワイヤーやチェーンブロックを使用する場合は、<strong>安全荷重</strong>（SWL）を確認する</li>
+  </ul>
+
+  <h3>9.3 甲板上作業の注意</h3>
+  <ul>
+    <li>荒天時の甲板作業は<strong>原則禁止</strong>（やむを得ない場合はライフラインを張る）</li>
+    <li>舫い作業中は<strong>ロープの跳ね返り範囲</strong>に入らない</li>
+    <li>ウインチやウインドラス操作中は<strong>ドラム周辺</strong>に近づかない</li>
+    <li>滑りやすい甲板では<strong>油や水を速やかに除去</strong>する</li>
+  </ul>
+
+  <div class="key-point">
+    <p><strong>安全の基本は「Stop, Think, Act」</strong></p>
+    <ul>
+      <li><strong>Stop（止まる）</strong> — 作業を始める前に一旦立ち止まる</li>
+      <li><strong>Think（考える）</strong> — 危険は何か？ 安全な方法は？ PPEは適切か？</li>
+      <li><strong>Act（行動する）</strong> — 安全を確認してから作業開始</li>
+    </ul>
+    <p>「急がば回れ」— 安全を省略して得られる時間はわずかですが、事故が起きれば取り返しがつきません。</p>
+  </div>
+
+  <div class="box box-success">
+    <h4>まとめ: 船員の安全は全員の責任</h4>
+    <ul>
+      <li><strong>SMSとKYK</strong>を理解し、安全管理を日常業務の一部にする</li>
+      <li><strong>救命設備</strong>の位置と使い方を熟知し、操練に真剣に取り組む</li>
+      <li>火災の種類に応じた<strong>適切な消火方法</strong>を選択できるようにする</li>
+      <li><strong>応急処置</strong>の基本を身に付け、いざという時に行動できるようにする</li>
+      <li><strong>MOB手順</strong>は全乗組員が理解し、迅速に対応できるよう訓練する</li>
+      <li>タンカー特有の<strong>静電気対策、ガス検知、閉鎖区画入域手順</strong>を厳守する</li>
+      <li><strong>PPE</strong>を正しく着用し、安全行動を習慣化する</li>
+    </ul>
+  </div>
+
+  <!-- ===== クイズセクション ===== -->
+  <h2>章末クイズ</h2>
+
+  <div class="quiz">
+    <h4>Q1. 油火災（B類火災）に対して最も適切な消火方法はどれですか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('ans1')">A) 水を直接放射する</li>
+      <li onclick="showAnswer('ans1')">B) 泡消火剤で油面を覆う</li>
+      <li onclick="showAnswer('ans1')">C) 窓を開けて換気する</li>
+      <li onclick="showAnswer('ans1')">D) 砂をかける</li>
+    </ul>
+    <div id="ans1" class="quiz-answer">
+      <strong>正解: B) 泡消火剤で油面を覆う</strong><br>
+      油火災に水を直接かけると、油が飛散して火災が拡大する危険があります。泡消火剤で油面を覆い、酸素を遮断することで消火します。粉末消火器やCO₂消火器も有効ですが、タンカーの甲板上での油火災には泡消火装置が最も効果的です。
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q2. 閉鎖区画（カーゴタンク等）に入域する前に必ず実施すべきことはどれですか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('ans2')">A) 入域許可は不要で、換気だけすればよい</li>
+      <li onclick="showAnswer('ans2')">B) ガス検知のみ行えばよい</li>
+      <li onclick="showAnswer('ans2')">C) 入域許可の取得、換気、ガス検知、監視人の配置</li>
+      <li onclick="showAnswer('ans2')">D) 自分の判断で入域してよい</li>
+    </ul>
+    <div id="ans2" class="quiz-answer">
+      <strong>正解: C) 入域許可の取得、換気、ガス検知、監視人の配置</strong><br>
+      閉鎖区画への入域は、①入域許可（責任者の許可・許可書の発行）、②十分な換気、③ガス検知（酸素・可燃性ガス・有毒ガス）、④監視人の配置を必ず行ってから入域します。一つでも省略すると重大事故につながる可能性があります。
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h4>Q3. ウィリアムソンターンの特長として正しいものはどれですか？</h4>
+    <ul class="quiz-options">
+      <li onclick="showAnswer('ans3')">A) 最も速く落水者に到達できる方法である</li>
+      <li onclick="showAnswer('ans3')">B) 元の航跡上に戻ることができるため、夜間や視界不良時に有効</li>
+      <li onclick="showAnswer('ans3')">C) 旋回せずに直接後進して戻る方法である</li>
+      <li onclick="showAnswer('ans3')">D) 大型船では使用できない方法である</li>
+    </ul>
+    <div id="ans3" class="quiz-answer">
+      <strong>正解: B) 元の航跡上に戻ることができるため、夜間や視界不良時に有効</strong><br>
+      ウィリアムソンターンは、落水側へ転舵→60°回頭したら反対舷へ転舵、という手順で元の航跡上に戻ることができます。落水者が目視できない夜間や視界不良時に特に有効です。最速の方法はシングルターンですが、ウィリアムソンターンは確実に落水地点に戻れる利点があります。
+    </div>
+  </div>
+
+  <!-- ===== 章末ナビ ===== -->
+  <div class="chapter-nav">
+    <a href="nav09_law.html">← 第9章: 港則法と海上交通安全法</a>
+    <a href="eng01_diesel_principle.html">機関編 第1章: ディーゼル機関の原理 →</a>
+  </div>
+
+</div>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第9章 甲板機械と舵取機 — 機関編</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@keyframes rudder-swing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(35deg); }
+  75% { transform: rotate(-35deg); }
+}
+.animate-rudder { animation: rudder-swing 4s ease-in-out infinite; transform-origin: 50% 20%; }
+@keyframes hydraulic-push {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(30px); }
+}
+.animate-hydraulic { animation: hydraulic-push 2s ease-in-out infinite; }
+@keyframes chain-move {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -40; }
+}
+.animate-chain { stroke-dasharray: 8 4; animation: chain-move 1s linear infinite; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <p class="subtitle">内航船員のための海技教材</p>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="eng08_compressor.html">前章: 空気圧縮機</a>
+    <a href="eng10_tanker.html">次章: タンカー特有の機器</a>
+  </nav>
+</header>
+
+<div class="content">
+
+<h1>第9章 甲板機械と舵取機</h1>
+
+<p>甲板機械は、船の錨泊・係留・荷役など甲板上の作業を支える重要な機器です。また舵取機は船の操縦に直結するため、その構造と保守は機関士にとって必須の知識です。本章では、内航船で使われる代表的な甲板機械と舵取機について学びます。</p>
+
+<!-- ===== 1. ウインドラス ===== -->
+<h2>1. ウインドラス（揚錨機）の構造と操作</h2>
+
+<p><strong>ウインドラス</strong>（揚錨機）は、錨と錨鎖（アンカーチェーン）の巻き上げ・繰り出しを行う甲板機械です。船首（フォクスル）に設置され、投錨・揚錨作業の中心となります。</p>
+
+<h3>ウインドラスの主要構成部品</h3>
+<ul>
+  <li><strong>チェーンホイール（ワイルドキャット）:</strong> 錨鎖と噛み合う星形の歯車。鎖のリンクに合わせた形状をしている</li>
+  <li><strong>ウォーピングドラム:</strong> ロープを巻き取るための円筒形ドラム。係留作業にも使用</li>
+  <li><strong>チェーンストッパー:</strong> 錨鎖を固定するための制動装置。投錨時の速度制御にも使用</li>
+  <li><strong>バンドブレーキ:</strong> チェーンホイールの回転を制動する帯状のブレーキ</li>
+  <li><strong>クラッチ:</strong> チェーンホイールと駆動軸を接続・切り離す機構</li>
+  <li><strong>駆動装置:</strong> 電動機または油圧モーターで駆動する</li>
+</ul>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr9" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#2d3748"/>
+      </marker>
+    </defs>
+    <!-- 船首甲板 -->
+    <rect x="20" y="250" width="660" height="20" rx="3" fill="#a0aec0"/>
+    <text x="350" y="290" text-anchor="middle" class="svg-label" fill="#718096">船首甲板</text>
+    <!-- ウインドラス本体 -->
+    <rect x="200" y="160" width="300" height="90" rx="10" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+    <text x="350" y="210" text-anchor="middle" class="svg-title">ウインドラス本体</text>
+    <!-- チェーンホイール（左） -->
+    <circle cx="150" cy="180" r="45" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+    <circle cx="150" cy="180" r="20" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+    <!-- 歯の表現 -->
+    <g stroke="#c53030" stroke-width="2">
+      <line x1="150" y1="135" x2="150" y2="145"/>
+      <line x1="182" y1="148" x2="175" y2="155"/>
+      <line x1="195" y1="180" x2="185" y2="180"/>
+      <line x1="182" y1="212" x2="175" y2="205"/>
+      <line x1="150" y1="225" x2="150" y2="215"/>
+      <line x1="118" y1="212" x2="125" y2="205"/>
+      <line x1="105" y1="180" x2="115" y2="180"/>
+      <line x1="118" y1="148" x2="125" y2="155"/>
+    </g>
+    <text x="150" y="245" text-anchor="middle" font-size="11" fill="#c53030" font-weight="700">チェーンホイール</text>
+    <!-- ウォーピングドラム（右） -->
+    <ellipse cx="550" cy="180" rx="35" ry="45" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+    <ellipse cx="550" cy="180" rx="15" ry="20" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="550" y="245" text-anchor="middle" font-size="11" fill="#2b6cb0" font-weight="700">ウォーピングドラム</text>
+    <!-- 錨鎖 -->
+    <line x1="60" y1="100" x2="120" y2="170" stroke="#4a5568" stroke-width="5" class="animate-chain"/>
+    <text x="50" y="90" font-size="11" fill="#4a5568" font-weight="600">錨鎖</text>
+    <!-- ホースパイプ -->
+    <rect x="55" y="110" width="30" height="50" rx="5" fill="none" stroke="#4a5568" stroke-width="2" stroke-dasharray="4 2"/>
+    <text x="70" y="175" font-size="9" fill="#718096" text-anchor="middle">ホースパイプ</text>
+    <!-- バンドブレーキ -->
+    <path d="M 120 140 Q 130 130 150 128" stroke="#e53e3e" stroke-width="3" fill="none"/>
+    <text x="110" y="130" font-size="10" fill="#e53e3e">ブレーキ</text>
+    <!-- 電動機 -->
+    <rect x="300" y="100" width="100" height="50" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+    <text x="350" y="130" text-anchor="middle" font-size="12" fill="#6b46c1" font-weight="600">電動機</text>
+    <line x1="350" y1="150" x2="350" y2="160" stroke="#6b46c1" stroke-width="2" marker-end="url(#arr9)"/>
+    <!-- チェーンストッパー -->
+    <rect x="80" y="220" width="60" height="30" rx="4" fill="#fefcbf" stroke="#975a16" stroke-width="1.5"/>
+    <text x="110" y="240" text-anchor="middle" font-size="9" fill="#975a16" font-weight="600">ストッパー</text>
+  </svg>
+  <div class="caption">図9-1: ウインドラスの構造概略図</div>
+</div>
+
+<h3>ウインドラスの操作手順</h3>
+
+<div class="box box-info">
+  <h4>揚錨手順（基本）</h4>
+  <ol>
+    <li>船橋から揚錨指令を受ける</li>
+    <li>ウインドラスの電源を入れ、油圧ポンプを起動する</li>
+    <li>チェーンストッパーを外す</li>
+    <li>バンドブレーキを緩め、クラッチを入れる</li>
+    <li>低速で錨鎖を巻き上げ始める（鎖の方向を船橋に報告）</li>
+    <li>錨が海底を離れたら（アンカーアウェイ）報告</li>
+    <li>錨を所定位置まで巻き上げ、ストッパーで固定する</li>
+  </ol>
+</div>
+
+<div class="key-point">
+  <p><strong>錨鎖の長さの単位:</strong> 錨鎖は「シャックル」（1シャックル = 25m = 約15尋）で計測します。投錨時は水深の3〜5倍の長さを繰り出すのが一般的です。錨鎖の各シャックル接続部（ケンターシャックル）には、何番目のシャックルか識別できるようペイントやワイヤの巻き方で表示されています。</p>
+</div>
+
+<!-- ===== 2. ウインチ ===== -->
+<h2>2. ウインチ（係留ウインチ・カーゴウインチ）</h2>
+
+<p>ウインチは、ロープやワイヤーの巻き取り・繰り出しを行う機械で、用途に応じて複数の種類があります。</p>
+
+<h3>係留ウインチ（ムアリングウインチ）</h3>
+<ul>
+  <li>係留索（ムアリングロープ）の巻き取り・テンション維持に使用</li>
+  <li>船首と船尾に設置され、船を岸壁に固定する</li>
+  <li><strong>オートテンション機能:</strong> 潮汐による水位変化に対して、自動的にロープの張力を調整する機能を持つものもある</li>
+  <li>駆動方式は電動式または電動油圧式が一般的</li>
+</ul>
+
+<h3>カーゴウインチ</h3>
+<ul>
+  <li>一般貨物船のデリック（荷役装置）を操作するためのウインチ</li>
+  <li>内航タンカーでは荷役にポンプを使用するため、カーゴウインチは通常設置しない</li>
+  <li>ただし、船用品や予備部品の積み降ろしに小型クレーンやデリックブームを装備している船もある</li>
+</ul>
+
+<h3>ウインチの構造</h3>
+<p>基本構造はウインドラスと共通する部分が多く、ドラム、減速ギア、ブレーキ、クラッチ、駆動用モーター（電動機または油圧モーター）から構成されます。ウインチのドラムにはロープまたはワイヤーが巻かれ、回転方向を変えることで巻き取り・繰り出しを行います。</p>
+
+<!-- ===== 3. 係留装置 ===== -->
+<h2>3. 係留装置の構造</h2>
+
+<p>船を岸壁に安全に固定するためには、ウインチだけでなく、さまざまな係留装置が必要です。</p>
+
+<table>
+  <thead>
+    <tr><th>装置名</th><th>役割</th><th>特徴</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ビット</strong></td>
+      <td>係留索を固定する柱</td>
+      <td>甲板上に2本一組で立ち、ロープを8の字に巻き付ける</td>
+    </tr>
+    <tr>
+      <td><strong>ボラード</strong></td>
+      <td>岸壁側の係留柱</td>
+      <td>船側から投げたロープの輪（アイ）を掛ける</td>
+    </tr>
+    <tr>
+      <td><strong>フェアリーダ</strong></td>
+      <td>ロープの導き口</td>
+      <td>ロープが摩耗しないよう、滑らかなローラーまたは開口部でガイドする</td>
+    </tr>
+    <tr>
+      <td><strong>チョック</strong></td>
+      <td>ロープの通し口</td>
+      <td>船側外板に設けた開口部。閉鎖型（パナマチョック）と開放型がある</td>
+    </tr>
+    <tr>
+      <td><strong>ホースパイプ</strong></td>
+      <td>錨鎖の通路</td>
+      <td>甲板から船外へ錨鎖を導く管状の通路</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="box box-warning">
+  <h4>係留作業の安全注意</h4>
+  <p>係留索は大きな張力がかかるため、切断時に跳ね返ると重大な人身事故につながります。<strong>スナップバックゾーン</strong>（ロープが切断した場合に跳ね返る範囲）には絶対に立ち入らないよう注意してください。合成繊維ロープは伸縮性が高く、特に危険です。</p>
+</div>
+
+<!-- ===== 4. 舵取機の種類 ===== -->
+<h2>4. 舵取機の種類</h2>
+
+<p><strong>舵取機</strong>（ステアリングギア）は、操舵装置からの指令に従って舵を動かす機械です。船の安全航行に直結するため、SOLAS条約により主舵取機と補助（非常用）舵取機の2系統を備えることが求められています。</p>
+
+<h3>4-1. 電動油圧式（ラム式）舵取機</h3>
+
+<p>内航船で最も一般的な型式です。油圧シリンダ（ラム）の直線運動を、ラダーホーン（舵軸の腕）を介して舵の回転運動に変換します。</p>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr9b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#2d3748"/>
+      </marker>
+    </defs>
+    <!-- タイトル -->
+    <text x="350" y="30" text-anchor="middle" class="svg-title" font-size="15">電動油圧式（ラム式）舵取機の構造</text>
+    <!-- 油圧ポンプユニット -->
+    <rect x="30" y="60" width="140" height="70" rx="8" fill="#e9d8fd" stroke="#6b46c1" stroke-width="2"/>
+    <text x="100" y="92" text-anchor="middle" font-size="12" fill="#6b46c1" font-weight="700">油圧ポンプ</text>
+    <text x="100" y="110" text-anchor="middle" font-size="10" fill="#6b46c1">（可変容量型）</text>
+    <!-- 電動機 -->
+    <rect x="50" y="150" width="100" height="40" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+    <text x="100" y="175" text-anchor="middle" font-size="11" fill="#6b46c1">電動機</text>
+    <line x1="100" y1="150" x2="100" y2="130" stroke="#6b46c1" stroke-width="2"/>
+    <!-- 油圧配管 -->
+    <line x1="170" y1="85" x2="270" y2="85" stroke="#e53e3e" stroke-width="3" class="animate-flow"/>
+    <line x1="170" y1="105" x2="270" y2="105" stroke="#2b6cb0" stroke-width="3" class="animate-flow" style="animation-direction: reverse;"/>
+    <text x="220" y="78" text-anchor="middle" font-size="9" fill="#e53e3e">高圧</text>
+    <text x="220" y="120" text-anchor="middle" font-size="9" fill="#2b6cb0">低圧（戻り）</text>
+    <!-- 油圧シリンダ（ラム） -->
+    <rect x="270" y="60" width="200" height="30" rx="5" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+    <rect x="300" y="65" width="50" height="20" rx="3" fill="#c53030" class="animate-hydraulic"/>
+    <text x="370" y="80" text-anchor="middle" font-size="10" fill="#c53030" font-weight="600">シリンダ（ラム）右舷側</text>
+    <rect x="270" y="100" width="200" height="30" rx="5" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+    <rect x="390" y="105" width="50" height="20" rx="3" fill="#2b6cb0" class="animate-hydraulic" style="animation-direction: reverse;"/>
+    <text x="370" y="120" text-anchor="middle" font-size="10" fill="#2b6cb0" font-weight="600">シリンダ（ラム）左舷側</text>
+    <!-- ティラー（ラダーホーン） -->
+    <line x1="370" y1="90" x2="370" y2="170" stroke="#4a5568" stroke-width="4"/>
+    <line x1="340" y1="90" x2="400" y2="90" stroke="#4a5568" stroke-width="3"/>
+    <text x="410" y="145" font-size="11" fill="#4a5568" font-weight="600">ティラー</text>
+    <!-- 舵軸 -->
+    <circle cx="370" cy="190" r="15" fill="#a0aec0" stroke="#2d3748" stroke-width="2"/>
+    <text x="395" y="195" font-size="10" fill="#2d3748">舵軸</text>
+    <line x1="370" y1="205" x2="370" y2="230" stroke="#2d3748" stroke-width="3"/>
+    <!-- 船底線 -->
+    <line x1="250" y1="230" x2="490" y2="230" stroke="#4a5568" stroke-width="2" stroke-dasharray="6 3"/>
+    <text x="500" y="235" font-size="9" fill="#718096">船底</text>
+    <!-- 舵板 -->
+    <g class="animate-rudder" style="transform-origin: 370px 240px;">
+      <rect x="355" y="240" width="30" height="120" rx="4" fill="#ed8936" stroke="#c05621" stroke-width="2"/>
+      <text x="370" y="310" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">舵</text>
+    </g>
+    <!-- 作動説明 -->
+    <rect x="500" y="180" width="180" height="100" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+    <text x="590" y="200" text-anchor="middle" font-size="11" fill="#38a169" font-weight="700">作動原理</text>
+    <text x="510" y="220" font-size="10" fill="#2d3748">右舷ラムに油圧を送ると</text>
+    <text x="510" y="238" font-size="10" fill="#2d3748">ティラーが押され、</text>
+    <text x="510" y="256" font-size="10" fill="#2d3748">舵が左舷側に回転する</text>
+    <text x="510" y="274" font-size="10" fill="#2d3748">（逆も同様）</text>
+  </svg>
+  <div class="caption">図9-2: 電動油圧式（ラム式）舵取機の構造と作動アニメーション</div>
+</div>
+
+<h3>4-2. ロータリーベーン式舵取機</h3>
+
+<p>ロータリーベーン式は、ハウジング（固定部）の中にベーン（羽根）を持つローターが入っており、ベーンの両側に油圧をかけることで直接回転力を発生させます。</p>
+
+<ul>
+  <li><strong>長所:</strong> ラム式に比べてコンパクト、構造が単純、応答性が良い</li>
+  <li><strong>短所:</strong> ベーンのシール部分からの油漏れに注意が必要</li>
+  <li>比較的小型の船舶で採用されることが多い</li>
+</ul>
+
+<div class="key-point">
+  <p><strong>舵角の制限:</strong> 一般的な舵の最大転舵角は左右各35度です。舵取機には最大舵角を超えないようメカニカルストッパーとリミットスイッチが設けられています。舵角指示器で常に現在の舵角を確認できるようになっています。</p>
+</div>
+
+<!-- ===== 5. 操舵モード ===== -->
+<h2>5. 舵取機の操舵モード</h2>
+
+<p>操舵には3つのモードがあり、状況に応じて切り替えます。</p>
+
+<table>
+  <thead>
+    <tr><th>モード</th><th>概要</th><th>使用場面</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>自動操舵（オートパイロット）</strong></td>
+      <td>ジャイロコンパスの信号をもとに、設定した針路を自動で保持する</td>
+      <td>外洋航行時、直線航路が長い区間</td>
+    </tr>
+    <tr>
+      <td><strong>手動操舵（マニュアル）</strong></td>
+      <td>操舵手が操舵輪またはティラーハンドルで直接操作する</td>
+      <td>入出港時、狭水道、輻輳水域、視界不良時</td>
+    </tr>
+    <tr>
+      <td><strong>非常操舵</strong></td>
+      <td>主操舵系統の故障時に、舵取機室で直接操作する</td>
+      <td>主操舵装置の故障時</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="box box-danger">
+  <h4>法的要件</h4>
+  <p>船舶安全法施行規則により、操舵装置は主操舵装置と補助操舵装置（または非常操舵装置）の2系統が必要です。また、主操舵装置から非常操舵への切替は、規定時間以内（一般的に60秒以内）に行えなければなりません。</p>
+</div>
+
+<!-- ===== 6. 油圧装置の基礎 ===== -->
+<h2>6. 油圧装置の基礎</h2>
+
+<p>甲板機械の多くは油圧で駆動されています。油圧装置の基本を理解することは、これらの機器の保守に不可欠です。</p>
+
+<h3>油圧装置の基本構成</h3>
+<ol>
+  <li><strong>油圧ポンプ:</strong> 作動油に圧力を与える（機械エネルギー → 油圧エネルギー）</li>
+  <li><strong>制御弁:</strong> 作動油の流れの方向・流量・圧力を制御する</li>
+  <li><strong>アクチュエータ:</strong> 油圧エネルギーを機械的な動き（直線運動・回転運動）に変換する</li>
+  <li><strong>油タンク:</strong> 作動油を貯蔵する</li>
+  <li><strong>フィルター:</strong> 作動油中の異物を除去する</li>
+  <li><strong>配管:</strong> 各機器をつなぐ油圧ホースまたは鋼管</li>
+</ol>
+
+<div class="diagram-container">
+  <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr9c" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#e53e3e"/>
+      </marker>
+      <marker id="arr9d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#2b6cb0"/>
+      </marker>
+    </defs>
+    <text x="350" y="28" text-anchor="middle" class="svg-title" font-size="15">油圧回路の基本構成</text>
+    <!-- 油タンク -->
+    <rect x="50" y="260" width="120" height="80" rx="6" fill="#fefcbf" stroke="#975a16" stroke-width="2"/>
+    <text x="110" y="300" text-anchor="middle" font-size="13" fill="#975a16" font-weight="700">油タンク</text>
+    <text x="110" y="320" text-anchor="middle" font-size="10" fill="#975a16">作動油貯蔵</text>
+    <!-- 吸込管 -->
+    <line x1="110" y1="260" x2="110" y2="200" stroke="#2b6cb0" stroke-width="3"/>
+    <!-- フィルター -->
+    <rect x="90" y="170" width="40" height="30" rx="4" fill="#e2e8f0" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="110" y="190" text-anchor="middle" font-size="9" fill="#4a5568">フィルタ</text>
+    <!-- ポンプ -->
+    <circle cx="110" cy="120" r="35" fill="#e9d8fd" stroke="#6b46c1" stroke-width="2"/>
+    <text x="110" y="117" text-anchor="middle" font-size="11" fill="#6b46c1" font-weight="700">油圧</text>
+    <text x="110" y="132" text-anchor="middle" font-size="11" fill="#6b46c1" font-weight="700">ポンプ</text>
+    <line x1="110" y1="170" x2="110" y2="155" stroke="#2b6cb0" stroke-width="3"/>
+    <!-- 電動機 -->
+    <rect x="20" y="100" width="50" height="40" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+    <text x="45" y="123" text-anchor="middle" font-size="9" fill="#6b46c1">電動機</text>
+    <line x1="70" y1="120" x2="75" y2="120" stroke="#6b46c1" stroke-width="2"/>
+    <!-- 高圧管（赤） -->
+    <line x1="145" y1="110" x2="300" y2="110" stroke="#e53e3e" stroke-width="3" class="animate-flow" marker-end="url(#arr9c)"/>
+    <text x="220" y="100" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="600">高圧側（吐出）</text>
+    <!-- 制御弁 -->
+    <rect x="300" y="80" width="100" height="60" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+    <text x="350" y="107" text-anchor="middle" font-size="11" fill="#38a169" font-weight="700">制御弁</text>
+    <text x="350" y="125" text-anchor="middle" font-size="9" fill="#38a169">方向・流量・圧力</text>
+    <!-- 制御弁→アクチュエータ -->
+    <line x1="400" y1="110" x2="520" y2="110" stroke="#e53e3e" stroke-width="3" class="animate-flow" marker-end="url(#arr9c)"/>
+    <!-- リリーフ弁 -->
+    <rect x="310" y="170" width="80" height="35" rx="5" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.5"/>
+    <text x="350" y="192" text-anchor="middle" font-size="9" fill="#e53e3e">リリーフ弁</text>
+    <line x1="350" y1="140" x2="350" y2="170" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <!-- アクチュエータ -->
+    <rect x="520" y="70" width="140" height="80" rx="10" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+    <text x="590" y="105" text-anchor="middle" font-size="12" fill="#c53030" font-weight="700">アクチュエータ</text>
+    <text x="590" y="125" text-anchor="middle" font-size="10" fill="#c53030">（シリンダ/モータ）</text>
+    <!-- 戻り管（青） -->
+    <line x1="590" y1="150" x2="590" y2="300" stroke="#2b6cb0" stroke-width="3"/>
+    <line x1="590" y1="300" x2="170" y2="300" stroke="#2b6cb0" stroke-width="3" class="animate-flow" style="animation-direction:reverse;" marker-end="url(#arr9d)"/>
+    <text x="400" y="320" text-anchor="middle" font-size="10" fill="#2b6cb0" font-weight="600">低圧側（戻り） → タンクへ</text>
+    <!-- 圧力計 -->
+    <circle cx="270" cy="75" r="15" fill="#fff" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="270" y="79" text-anchor="middle" font-size="8" fill="#4a5568">圧力計</text>
+    <line x1="270" y1="90" x2="270" y2="110" stroke="#4a5568" stroke-width="1"/>
+    <!-- 凡例 -->
+    <rect x="480" y="260" width="200" height="80" rx="6" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="500" y1="285" x2="540" y2="285" stroke="#e53e3e" stroke-width="3"/>
+    <text x="550" y="289" font-size="10" fill="#2d3748">高圧（吐出側）</text>
+    <line x1="500" y1="310" x2="540" y2="310" stroke="#2b6cb0" stroke-width="3"/>
+    <text x="550" y="314" font-size="10" fill="#2d3748">低圧（戻り側）</text>
+  </svg>
+  <div class="caption">図9-3: 油圧回路の基本構成図</div>
+</div>
+
+<h3>主要な油圧ポンプの種類</h3>
+<table>
+  <thead>
+    <tr><th>種類</th><th>特徴</th><th>用途</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>歯車ポンプ</strong></td>
+      <td>構造が簡単で安価、脈動あり</td>
+      <td>低圧系統、潤滑油ポンプ</td>
+    </tr>
+    <tr>
+      <td><strong>ベーンポンプ</strong></td>
+      <td>脈動が少なく静粛</td>
+      <td>中圧系統</td>
+    </tr>
+    <tr>
+      <td><strong>ピストンポンプ</strong></td>
+      <td>高圧出力が可能、可変容量型あり</td>
+      <td>舵取機、ウインドラス</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="key-point">
+  <p><strong>作動油の管理:</strong> 油圧装置の故障の約70%は作動油の汚染が原因とされています。定期的な油の交換・フィルター清掃が最も重要な保守作業です。作動油の劣化は、色の変化（透明→褐色）、酸価の上昇、水分の混入で判断します。</p>
+</div>
+
+<!-- ===== 7. 甲板機械の保守・点検 ===== -->
+<h2>7. 甲板機械の保守・点検</h2>
+
+<h3>日常点検項目</h3>
+<ul>
+  <li>作動油タンクの油面確認</li>
+  <li>油圧配管からの油漏れ点検</li>
+  <li>作動油の色・汚れの確認</li>
+  <li>各部のグリスアップ（ワイヤーシーブ、ピン、軸受）</li>
+  <li>ワイヤーロープ・係留索の損傷確認</li>
+  <li>ブレーキライニングの摩耗点検</li>
+  <li>リミットスイッチの作動確認</li>
+</ul>
+
+<h3>定期点検項目</h3>
+<ul>
+  <li>作動油の交換（メーカー推奨間隔、または油の劣化時）</li>
+  <li>油圧フィルターの清掃・交換</li>
+  <li>油圧ポンプの吐出圧力測定</li>
+  <li>シリンダのパッキン（シール）交換</li>
+  <li>歯車の摩耗点検</li>
+  <li>電動機の絶縁抵抗測定</li>
+  <li>舵取機のテスト運転（全舵角試験）</li>
+</ul>
+
+<div class="box box-warning">
+  <h4>舵取機の特別な点検義務</h4>
+  <p>出港前には必ず舵取機の作動テスト（左右全舵角への転舵）を実施し、異常がないことを確認する義務があります。これは船舶安全法に基づく重要な安全確認事項です。非常操舵装置への切替テストも定期的に行います。</p>
+</div>
+
+<!-- ===== 8. 実務 ===== -->
+<h2>8. 実務: 非常操舵の切替手順</h2>
+
+<p>主操舵装置が故障した場合、速やかに非常操舵に切り替える必要があります。以下は代表的な非常操舵切替手順です。</p>
+
+<div class="box box-danger">
+  <h4>非常操舵切替手順（一般的な電動油圧式の場合）</h4>
+  <ol>
+    <li><strong>船橋に報告:</strong>「主操舵装置故障、非常操舵に切り替えます」</li>
+    <li><strong>舵取機室へ急行:</strong> 機関士は直ちに舵取機室に向かう</li>
+    <li><strong>非常操舵の電源投入:</strong> 補助ポンプの電源を入れる（バックアップポンプがある場合）</li>
+    <li><strong>切替弁の操作:</strong> 主系統から非常系統へ切替弁を切り替える</li>
+    <li><strong>手動操作の場合:</strong> トリックホイール（手動操舵輪）で舵取機室から直接操舵する</li>
+    <li><strong>船橋との通信確立:</strong> 内線電話またはトランシーバーで船橋と連絡を取り、舵角指令を受ける</li>
+    <li><strong>舵角の確認:</strong> 舵角指示器で実際の舵角を確認し、船橋に報告する</li>
+    <li><strong>原因調査:</strong> 状況が安定したら、主操舵装置の故障原因を調査する</li>
+  </ol>
+</div>
+
+<div class="box box-info">
+  <h4>非常操舵訓練の重要性</h4>
+  <p>非常操舵への切替は、少なくとも<strong>3ヶ月に1回以上</strong>の訓練が求められています（ISMコードに基づく）。訓練時は実際に切替操作を行い、舵取機室からの操舵と船橋との通信を確認します。切替に要した時間を記録し、規定時間（60秒）以内であることを確認してください。</p>
+</div>
+
+<!-- ===== クイズ ===== -->
+<div class="quiz">
+  <h4>章末確認クイズ</h4>
+
+  <p><strong>Q1.</strong> ウインドラスにおいて、錨鎖と噛み合う星形の歯車を何というか？</p>
+  <button onclick="showAnswer('q9-1')">解答を表示</button>
+  <div id="q9-1" class="quiz-answer">
+    <p><strong>答え: チェーンホイール（ワイルドキャット）</strong></p>
+    <p>チェーンホイールは錨鎖のリンクに合った溝を持つ歯車で、錨鎖を確実に巻き上げるための核心部品です。</p>
+  </div>
+
+  <p><strong>Q2.</strong> 電動油圧式舵取機において、油圧シリンダの直線運動を舵の回転運動に変換する部品を何というか？</p>
+  <button onclick="showAnswer('q9-2')">解答を表示</button>
+  <div id="q9-2" class="quiz-answer">
+    <p><strong>答え: ティラー（ラダーホーン）</strong></p>
+    <p>ティラーは舵軸に取り付けられた腕で、ラムの直線的な押す力を回転力に変換します。</p>
+  </div>
+
+  <p><strong>Q3.</strong> 油圧装置の故障原因として最も多いものは何か？</p>
+  <button onclick="showAnswer('q9-3')">解答を表示</button>
+  <div id="q9-3" class="quiz-answer">
+    <p><strong>答え: 作動油の汚染</strong></p>
+    <p>油圧装置の故障の約70%は作動油の汚染が原因です。定期的なフィルター清掃と油の交換が最も重要な保守作業です。</p>
+  </div>
+</div>
+
+<!-- ===== 章末ナビ ===== -->
+<div class="chapter-nav">
+  <a href="eng08_compressor.html">&larr; 第8章: 空気圧縮機と空気系統</a>
+  <a href="eng10_tanker.html">第10章: タンカー特有の機器 &rarr;</a>
+</div>
+
+</div>
+
+<script>
+function showAnswer(id) { var el = document.getElementById(id); el.classList.toggle('show'); }
+</script>
+</body>
+</html>

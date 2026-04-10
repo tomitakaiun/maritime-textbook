@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第1章 ディーゼル機関の原理 — 内航船員教材・機関編</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 4サイクルアニメーション用追加スタイル */
+    .cycle-tabs { display: flex; gap: 0.5rem; margin: 1rem 0; flex-wrap: wrap; }
+    .cycle-tab {
+      padding: 0.5rem 1.2rem; border-radius: 8px; border: 2px solid var(--ocean);
+      background: var(--white); color: var(--ocean); cursor: pointer; font-weight: 600;
+      transition: all 0.2s; font-size: 0.9rem;
+    }
+    .cycle-tab:hover, .cycle-tab.active { background: var(--ocean); color: var(--white); }
+    .cycle-phase { display: none; }
+    .cycle-phase.active { display: block; }
+    .comparison-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 768px) { .comparison-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>機関編</h1>
+  <p class="subtitle">内航船員のための機関基礎 — 6級海技士レベル+実務</p>
+  <nav>
+    <a href="index.html">目次</a>
+    <a href="eng02_diesel_structure.html">次章: ディーゼル機関の構造 &rarr;</a>
+  </nav>
+</header>
+
+<div class="content">
+
+  <h1>第1章 ディーゼル機関の原理</h1>
+  <p>本章では、内航船の主機として最も広く用いられている<strong>ディーゼル機関</strong>の基本原理を学びます。ディーゼルサイクルの理解は、日常の機関管理や異常の早期発見の基礎となります。内航タンカー「裕洋丸」（主機約1,000馬力級）の実務例を交えながら解説します。</p>
+
+  <!-- ==================== 1. 熱機関とは何か ==================== -->
+  <h2>1. 熱機関とは何か</h2>
+  <p>熱機関とは、<strong>燃料を燃焼させて得た熱エネルギーを、機械的な仕事（動力）に変換する装置</strong>です。船舶のディーゼル機関は、燃料（A重油やC重油）を燃焼室内で燃やし、発生した高温・高圧のガスでピストンを押し下げ、クランク軸の回転運動として出力を取り出します。</p>
+
+  <h3>内燃機関と外燃機関</h3>
+  <ul>
+    <li><strong>内燃機関</strong>: 燃焼がシリンダ内部で行われる。ディーゼル機関、ガソリン機関が該当</li>
+    <li><strong>外燃機関</strong>: 燃焼がシリンダ外部で行われる。蒸気タービン、ボイラーが該当</li>
+  </ul>
+  <p>現在の内航船では、効率の良さとメンテナンス性から<strong>内燃機関（ディーゼル機関）</strong>がほぼ全ての船で採用されています。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 200" width="100%" style="max-width:600px;">
+      <defs>
+        <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#2b6cb0"/>
+        </marker>
+      </defs>
+      <!-- 燃料 -->
+      <rect x="20" y="60" width="120" height="70" rx="10" fill="#fed7d7" stroke="#c53030" stroke-width="2"/>
+      <text x="80" y="90" text-anchor="middle" class="svg-title" fill="#c53030">燃料</text>
+      <text x="80" y="112" text-anchor="middle" class="svg-label">（化学エネルギー）</text>
+      <!-- 矢印1 -->
+      <line x1="140" y1="95" x2="200" y2="95" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowhead1)"/>
+      <text x="170" y="82" text-anchor="middle" font-size="11" fill="#718096">燃焼</text>
+      <!-- 熱エネルギー -->
+      <rect x="210" y="60" width="120" height="70" rx="10" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+      <text x="270" y="90" text-anchor="middle" class="svg-title" fill="#975a16">熱</text>
+      <text x="270" y="112" text-anchor="middle" class="svg-label">（熱エネルギー）</text>
+      <!-- 矢印2 -->
+      <line x1="330" y1="95" x2="390" y2="95" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrowhead1)"/>
+      <text x="360" y="82" text-anchor="middle" font-size="11" fill="#718096">膨張</text>
+      <!-- 機械エネルギー -->
+      <rect x="400" y="60" width="160" height="70" rx="10" fill="#c6f6d5" stroke="#38a169" stroke-width="2"/>
+      <text x="480" y="90" text-anchor="middle" class="svg-title" fill="#276749">動力</text>
+      <text x="480" y="112" text-anchor="middle" class="svg-label">（機械エネルギー）</text>
+      <!-- 効率 -->
+      <text x="300" y="170" text-anchor="middle" font-size="13" fill="#718096">ディーゼル機関の熱効率: 約35〜45%</text>
+    </svg>
+    <p class="caption">図1-1 熱機関のエネルギー変換の流れ</p>
+  </div>
+
+  <div class="key-point">
+    <p>ディーゼル機関は内燃機関の一種であり、燃料の持つ化学エネルギーを燃焼により熱エネルギーに変え、さらにピストンの往復運動を介して機械エネルギー（回転力）に変換する装置です。熱効率は35〜45%と、他の熱機関に比べて高い部類に入ります。</p>
+  </div>
+
+  <!-- ==================== 2. ディーゼルサイクルの基礎 ==================== -->
+  <h2>2. ディーゼルサイクルの基礎</h2>
+  <p>ディーゼル機関は、ドイツの技術者<strong>ルドルフ・ディーゼル</strong>（1858-1913）が発明しました。ガソリン機関との最大の違いは、<strong>点火プラグを使わず、空気を高圧縮して高温にし、そこに燃料を噴射して自己着火させる</strong>点です。</p>
+
+  <h3>ディーゼルサイクルの4つの過程</h3>
+  <ol>
+    <li><strong>吸気行程</strong>: ピストンが下がり、シリンダ内に空気を吸い込む</li>
+    <li><strong>圧縮行程</strong>: ピストンが上がり、空気を約15〜22倍に圧縮。温度は500〜700℃に達する</li>
+    <li><strong>燃焼・膨張行程（爆発行程）</strong>: 高温の圧縮空気に燃料を噴射。自己着火して燃焼ガスが膨張し、ピストンを押し下げる（<strong>この行程だけが仕事をする</strong>）</li>
+    <li><strong>排気行程</strong>: ピストンが上がり、燃焼ガスを排出する</li>
+  </ol>
+
+  <div class="box box-info">
+    <h4>圧縮比とは</h4>
+    <p>シリンダの最大容積（ピストンが最も下がった状態）と最小容積（ピストンが最も上がった状態）の比を<strong>圧縮比</strong>と呼びます。ディーゼル機関の圧縮比は一般に<strong>14〜22</strong>程度で、ガソリン機関（8〜12）より高くなります。圧縮比が高いほど熱効率は向上しますが、機関各部への負荷も大きくなります。</p>
+  </div>
+
+  <!-- ==================== 3. 4サイクルディーゼル機関 ==================== -->
+  <h2>3. 4サイクルディーゼル機関の作動原理</h2>
+  <p>4サイクル（4ストローク）ディーゼル機関は、クランク軸が<strong>2回転（720度）する間に4つの行程を完了</strong>します。内航船では中速・高速機関のほとんどが4サイクルです。裕洋丸の主機も4サイクルディーゼルです。</p>
+
+  <!-- 4サイクルSVGアニメーション -->
+  <div class="diagram-container">
+    <div class="cycle-tabs">
+      <button class="cycle-tab active" onclick="showPhase4(0)">1. 吸気行程</button>
+      <button class="cycle-tab" onclick="showPhase4(1)">2. 圧縮行程</button>
+      <button class="cycle-tab" onclick="showPhase4(2)">3. 燃焼・膨張行程</button>
+      <button class="cycle-tab" onclick="showPhase4(3)">4. 排気行程</button>
+      <button class="cycle-tab" onclick="showPhase4(4)" style="border-color:var(--accent);color:var(--accent);">自動再生</button>
+    </div>
+
+    <!-- 吸気行程 -->
+    <div class="cycle-phase active" id="phase4-0">
+      <svg viewBox="0 0 320 380" width="100%" style="max-width:320px;">
+        <!-- シリンダ壁 -->
+        <rect x="80" y="40" width="160" height="260" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="3"/>
+        <!-- シリンダ内部 -->
+        <rect x="83" y="43" width="154" height="254" fill="#ebf8ff"/>
+        <!-- 吸気弁（開） -->
+        <rect x="105" y="36" width="30" height="14" rx="3" fill="#38a169" stroke="#2d3748" stroke-width="2"/>
+        <text x="120" y="30" text-anchor="middle" font-size="10" fill="#38a169" font-weight="bold">開</text>
+        <text x="120" y="18" text-anchor="middle" font-size="9" fill="#718096">吸気弁</text>
+        <!-- 排気弁（閉） -->
+        <rect x="185" y="40" width="30" height="8" rx="3" fill="#e53e3e" stroke="#2d3748" stroke-width="2"/>
+        <text x="200" y="34" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">閉</text>
+        <text x="200" y="18" text-anchor="middle" font-size="9" fill="#718096">排気弁</text>
+        <!-- 空気の流れ矢印 -->
+        <path d="M120,50 L120,100 L140,120 L120,140" stroke="#3182ce" stroke-width="2" fill="none" stroke-dasharray="5,3" class="animate-flow"/>
+        <text x="155" y="110" font-size="10" fill="#3182ce">空気流入</text>
+        <!-- ピストン（下降中） -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,100" dur="2s" repeatCount="indefinite"/>
+          <rect x="88" y="140" width="144" height="40" rx="4" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+          <rect x="92" y="145" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="155" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="165" width="136" height="4" rx="1" fill="#718096"/>
+          <!-- コンロッド -->
+          <line x1="160" y1="180" x2="160" y2="260" stroke="#2d3748" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <!-- ラベル -->
+        <rect x="60" y="320" width="200" height="40" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+        <text x="160" y="345" text-anchor="middle" font-size="13" fill="#2b6cb0" font-weight="bold">1. 吸気行程</text>
+      </svg>
+      <p style="text-align:left;margin-top:0.5rem;">吸気弁が<strong>開</strong>き、排気弁は<strong>閉</strong>。ピストンが下降し、シリンダ内に<strong>新鮮な空気</strong>を吸い込みます。（燃料はまだ入りません）</p>
+    </div>
+
+    <!-- 圧縮行程 -->
+    <div class="cycle-phase" id="phase4-1">
+      <svg viewBox="0 0 320 380" width="100%" style="max-width:320px;">
+        <rect x="80" y="40" width="160" height="260" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="3"/>
+        <rect x="83" y="43" width="154" height="254" fill="#fefcbf"/>
+        <!-- 両弁とも閉 -->
+        <rect x="105" y="40" width="30" height="8" rx="3" fill="#e53e3e" stroke="#2d3748" stroke-width="2"/>
+        <text x="120" y="34" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">閉</text>
+        <text x="120" y="18" text-anchor="middle" font-size="9" fill="#718096">吸気弁</text>
+        <rect x="185" y="40" width="30" height="8" rx="3" fill="#e53e3e" stroke="#2d3748" stroke-width="2"/>
+        <text x="200" y="34" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">閉</text>
+        <text x="200" y="18" text-anchor="middle" font-size="9" fill="#718096">排気弁</text>
+        <!-- 圧縮表示 -->
+        <text x="160" y="80" text-anchor="middle" font-size="11" fill="#d69e2e" font-weight="bold">圧縮中...</text>
+        <text x="160" y="100" text-anchor="middle" font-size="10" fill="#975a16">500〜700℃</text>
+        <!-- ピストン（上昇中） -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,100;0,0" dur="2s" repeatCount="indefinite"/>
+          <rect x="88" y="140" width="144" height="40" rx="4" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+          <rect x="92" y="145" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="155" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="165" width="136" height="4" rx="1" fill="#718096"/>
+          <line x1="160" y1="180" x2="160" y2="260" stroke="#2d3748" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <rect x="60" y="320" width="200" height="40" rx="8" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+        <text x="160" y="345" text-anchor="middle" font-size="13" fill="#975a16" font-weight="bold">2. 圧縮行程</text>
+      </svg>
+      <p style="text-align:left;margin-top:0.5rem;">吸気弁・排気弁ともに<strong>閉</strong>。ピストンが上昇し、空気を<strong>約15〜22倍に圧縮</strong>。温度は<strong>500〜700℃</strong>に達します。</p>
+    </div>
+
+    <!-- 燃焼・膨張行程 -->
+    <div class="cycle-phase" id="phase4-2">
+      <svg viewBox="0 0 320 380" width="100%" style="max-width:320px;">
+        <rect x="80" y="40" width="160" height="260" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="3"/>
+        <rect x="83" y="43" width="154" height="254" fill="#fed7d7"/>
+        <!-- 両弁閉 -->
+        <rect x="105" y="40" width="30" height="8" rx="3" fill="#e53e3e" stroke="#2d3748" stroke-width="2"/>
+        <text x="120" y="34" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">閉</text>
+        <text x="120" y="18" text-anchor="middle" font-size="9" fill="#718096">吸気弁</text>
+        <rect x="185" y="40" width="30" height="8" rx="3" fill="#e53e3e" stroke="#2d3748" stroke-width="2"/>
+        <text x="200" y="34" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">閉</text>
+        <text x="200" y="18" text-anchor="middle" font-size="9" fill="#718096">排気弁</text>
+        <!-- 燃料噴射 -->
+        <line x1="160" y1="48" x2="160" y2="75" stroke="#c53030" stroke-width="3" stroke-dasharray="4,2" class="animate-flow"/>
+        <text x="160" y="62" text-anchor="middle" font-size="9" fill="#c53030" dx="35">燃料噴射</text>
+        <!-- 燃焼炎 -->
+        <circle cx="160" cy="85" r="18" fill="#ed8936" opacity="0.7">
+          <animate attributeName="r" values="12;22;12" dur="0.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0.9;0.5" dur="0.8s" repeatCount="indefinite"/>
+        </circle>
+        <text x="160" y="115" text-anchor="middle" font-size="11" fill="#c53030" font-weight="bold">燃焼!</text>
+        <!-- ピストン下降 -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,100" dur="2s" repeatCount="indefinite"/>
+          <rect x="88" y="120" width="144" height="40" rx="4" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+          <rect x="92" y="125" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="135" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="145" width="136" height="4" rx="1" fill="#718096"/>
+          <line x1="160" y1="160" x2="160" y2="240" stroke="#2d3748" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <rect x="60" y="320" width="200" height="40" rx="8" fill="#fed7d7" stroke="#e53e3e" stroke-width="2"/>
+        <text x="160" y="345" text-anchor="middle" font-size="13" fill="#c53030" font-weight="bold">3. 燃焼・膨張行程</text>
+      </svg>
+      <p style="text-align:left;margin-top:0.5rem;">ピストンが上死点付近にあるとき、<strong>燃料を高圧噴射</strong>。高温の圧縮空気により<strong>自己着火</strong>し、燃焼ガスの膨張力でピストンが押し下げられます。<strong>この行程のみが仕事（動力）を生み出します</strong>。</p>
+    </div>
+
+    <!-- 排気行程 -->
+    <div class="cycle-phase" id="phase4-3">
+      <svg viewBox="0 0 320 380" width="100%" style="max-width:320px;">
+        <rect x="80" y="40" width="160" height="260" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="3"/>
+        <rect x="83" y="43" width="154" height="254" fill="#e2e8f0"/>
+        <!-- 吸気弁閉、排気弁開 -->
+        <rect x="105" y="40" width="30" height="8" rx="3" fill="#e53e3e" stroke="#2d3748" stroke-width="2"/>
+        <text x="120" y="34" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="bold">閉</text>
+        <text x="120" y="18" text-anchor="middle" font-size="9" fill="#718096">吸気弁</text>
+        <rect x="185" y="36" width="30" height="14" rx="3" fill="#38a169" stroke="#2d3748" stroke-width="2"/>
+        <text x="200" y="30" text-anchor="middle" font-size="10" fill="#38a169" font-weight="bold">開</text>
+        <text x="200" y="18" text-anchor="middle" font-size="9" fill="#718096">排気弁</text>
+        <!-- 排気の流れ -->
+        <path d="M180,100 L200,70 L200,55" stroke="#718096" stroke-width="2" fill="none" stroke-dasharray="5,3" class="animate-flow"/>
+        <text x="235" y="75" font-size="10" fill="#718096">排気ガス</text>
+        <!-- ピストン上昇 -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,100;0,0" dur="2s" repeatCount="indefinite"/>
+          <rect x="88" y="140" width="144" height="40" rx="4" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+          <rect x="92" y="145" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="155" width="136" height="4" rx="1" fill="#718096"/>
+          <rect x="92" y="165" width="136" height="4" rx="1" fill="#718096"/>
+          <line x1="160" y1="180" x2="160" y2="260" stroke="#2d3748" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <rect x="60" y="320" width="200" height="40" rx="8" fill="#e2e8f0" stroke="#718096" stroke-width="2"/>
+        <text x="160" y="345" text-anchor="middle" font-size="13" fill="#4a5568" font-weight="bold">4. 排気行程</text>
+      </svg>
+      <p style="text-align:left;margin-top:0.5rem;">排気弁が<strong>開</strong>き、吸気弁は<strong>閉</strong>。ピストンが上昇し、燃焼後の<strong>排気ガスを押し出します</strong>。排気完了後、再び吸気行程へ戻り、サイクルを繰り返します。</p>
+    </div>
+
+    <!-- 自動再生 -->
+    <div class="cycle-phase" id="phase4-4">
+      <svg viewBox="0 0 700 320" width="100%" style="max-width:700px;">
+        <!-- 4つのシリンダを並列表示 -->
+        <!-- 1. 吸気 -->
+        <g transform="translate(10,0)">
+          <rect x="20" y="40" width="120" height="200" rx="4" fill="#ebf8ff" stroke="#2d3748" stroke-width="2"/>
+          <rect x="40" y="36" width="20" height="10" rx="2" fill="#38a169"/>
+          <rect x="80" y="40" width="20" height="6" rx="2" fill="#e53e3e"/>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0;0,80;0,0" dur="8s" repeatCount="indefinite"/>
+            <rect x="25" y="100" width="110" height="30" rx="3" fill="#4a5568"/>
+            <line x1="80" y1="130" x2="80" y2="200" stroke="#2d3748" stroke-width="4"/>
+          </g>
+          <text x="80" y="275" text-anchor="middle" font-size="11" fill="#2b6cb0" font-weight="bold">1.吸気</text>
+          <rect x="20" y="255" width="120" height="30" rx="6" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+          <text x="80" y="275" text-anchor="middle" font-size="11" fill="#2b6cb0" font-weight="bold">1.吸気</text>
+        </g>
+        <!-- 2. 圧縮 -->
+        <g transform="translate(175,0)">
+          <rect x="20" y="40" width="120" height="200" rx="4" fill="#fefcbf" stroke="#2d3748" stroke-width="2"/>
+          <rect x="40" y="40" width="20" height="6" rx="2" fill="#e53e3e"/>
+          <rect x="80" y="40" width="20" height="6" rx="2" fill="#e53e3e"/>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,80;0,0;0,80" dur="8s" repeatCount="indefinite"/>
+            <rect x="25" y="100" width="110" height="30" rx="3" fill="#4a5568"/>
+            <line x1="80" y1="130" x2="80" y2="200" stroke="#2d3748" stroke-width="4"/>
+          </g>
+          <rect x="20" y="255" width="120" height="30" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+          <text x="80" y="275" text-anchor="middle" font-size="11" fill="#975a16" font-weight="bold">2.圧縮</text>
+        </g>
+        <!-- 3. 燃焼・膨張 -->
+        <g transform="translate(340,0)">
+          <rect x="20" y="40" width="120" height="200" rx="4" fill="#fed7d7" stroke="#2d3748" stroke-width="2"/>
+          <rect x="40" y="40" width="20" height="6" rx="2" fill="#e53e3e"/>
+          <rect x="80" y="40" width="20" height="6" rx="2" fill="#e53e3e"/>
+          <circle cx="80" cy="65" r="12" fill="#ed8936" opacity="0.7">
+            <animate attributeName="r" values="8;15;8" dur="1s" repeatCount="indefinite"/>
+          </circle>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0;0,80;0,0" dur="8s" repeatCount="indefinite"/>
+            <rect x="25" y="80" width="110" height="30" rx="3" fill="#4a5568"/>
+            <line x1="80" y1="110" x2="80" y2="180" stroke="#2d3748" stroke-width="4"/>
+          </g>
+          <rect x="20" y="255" width="120" height="30" rx="6" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+          <text x="80" y="275" text-anchor="middle" font-size="11" fill="#c53030" font-weight="bold">3.燃焼膨張</text>
+        </g>
+        <!-- 4. 排気 -->
+        <g transform="translate(505,0)">
+          <rect x="20" y="40" width="120" height="200" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+          <rect x="40" y="40" width="20" height="6" rx="2" fill="#e53e3e"/>
+          <rect x="80" y="36" width="20" height="10" rx="2" fill="#38a169"/>
+          <path d="M90,55 L100,45" stroke="#718096" stroke-width="1.5" stroke-dasharray="3,2" class="animate-flow"/>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,80;0,0;0,80" dur="8s" repeatCount="indefinite"/>
+            <rect x="25" y="100" width="110" height="30" rx="3" fill="#4a5568"/>
+            <line x1="80" y1="130" x2="80" y2="200" stroke="#2d3748" stroke-width="4"/>
+          </g>
+          <rect x="20" y="255" width="120" height="30" rx="6" fill="#e2e8f0" stroke="#718096" stroke-width="1.5"/>
+          <text x="80" y="275" text-anchor="middle" font-size="11" fill="#4a5568" font-weight="bold">4.排気</text>
+        </g>
+        <text x="350" y="310" text-anchor="middle" font-size="12" fill="#718096">クランク軸2回転（720°）で1サイクル完了</text>
+      </svg>
+      <p style="text-align:left;margin-top:0.5rem;">4つの行程が連続して繰り返されます。<strong>緑=弁開</strong>、<strong>赤=弁閉</strong>。ピストンの上下動とクランク軸の回転が同期しています。</p>
+    </div>
+    <p class="caption">図1-2 4サイクルディーゼル機関の作動原理（タブで行程切替）</p>
+  </div>
+
+  <div class="box box-example">
+    <h4>実務メモ: 裕洋丸の主機</h4>
+    <p>裕洋丸の主機は<strong>4サイクル中速ディーゼル機関</strong>（約1,000馬力/750kW級）です。回転数は約600〜900rpm。中速機関は減速ギアを介してプロペラ軸に接続されています。日常の機関当直では、各行程が正常に行われているかを排気温度、シリンダ圧力などから監視します。</p>
+  </div>
+
+  <!-- ==================== 4. 2サイクルディーゼル機関 ==================== -->
+  <h2>4. 2サイクルディーゼル機関の作動原理</h2>
+  <p>2サイクル（2ストローク）機関は、クランク軸<strong>1回転（360度）で1サイクルを完了</strong>します。主に大型外航船の低速機関で使われますが、内航船では一部の小型機関にも見られます。4サイクルとの最大の違いは<strong>掃気ポート</strong>の存在と、弁の代わりにポートを使う方式があることです。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 560 360" width="100%" style="max-width:560px;">
+      <!-- 2サイクル: 2段階表示 -->
+      <!-- 上昇行程（圧縮+排気+掃気） -->
+      <g transform="translate(20,0)">
+        <text x="110" y="25" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="bold">上昇行程</text>
+        <rect x="40" y="40" width="140" height="240" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="2.5"/>
+        <rect x="43" y="43" width="134" height="234" fill="#fefcbf"/>
+        <!-- 排気弁 -->
+        <rect x="90" y="36" width="26" height="12" rx="3" fill="#38a169" stroke="#2d3748" stroke-width="1.5"/>
+        <text x="103" y="30" text-anchor="middle" font-size="9" fill="#38a169" font-weight="bold">排気弁開</text>
+        <!-- 掃気ポート（シリンダ下部の穴） -->
+        <rect x="36" y="210" width="12" height="40" rx="2" fill="#3182ce" stroke="#2d3748" stroke-width="1"/>
+        <rect x="172" y="210" width="12" height="40" rx="2" fill="#3182ce" stroke="#2d3748" stroke-width="1"/>
+        <text x="15" y="232" font-size="8" fill="#3182ce">掃気</text>
+        <text x="15" y="242" font-size="8" fill="#3182ce">ポート</text>
+        <!-- 掃気空気の流入矢印 -->
+        <path d="M30,230 L50,230 L70,180" stroke="#3182ce" stroke-width="2" fill="none" stroke-dasharray="4,3" class="animate-flow"/>
+        <path d="M190,230 L170,230 L150,180" stroke="#3182ce" stroke-width="2" fill="none" stroke-dasharray="4,3" class="animate-flow"/>
+        <!-- 排気ガス排出 -->
+        <path d="M103,50 L103,30" stroke="#718096" stroke-width="2" fill="none" stroke-dasharray="4,3" class="animate-flow"/>
+        <!-- ピストン上昇 -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,70;0,0" dur="2s" repeatCount="indefinite"/>
+          <rect x="47" y="130" width="126" height="35" rx="3" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+          <line x1="110" y1="165" x2="110" y2="240" stroke="#2d3748" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <text x="110" y="310" text-anchor="middle" font-size="10" fill="#975a16">掃気・排気 → 圧縮</text>
+      </g>
+
+      <!-- 下降行程（燃焼膨張+排気+掃気） -->
+      <g transform="translate(290,0)">
+        <text x="110" y="25" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="bold">下降行程</text>
+        <rect x="40" y="40" width="140" height="240" rx="4" fill="#e2e8f0" stroke="#2d3748" stroke-width="2.5"/>
+        <rect x="43" y="43" width="134" height="234" fill="#fed7d7"/>
+        <!-- 排気弁 -->
+        <rect x="90" y="40" width="26" height="6" rx="3" fill="#e53e3e" stroke="#2d3748" stroke-width="1.5"/>
+        <text x="103" y="34" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="bold">排気弁閉</text>
+        <!-- 掃気ポート（閉じている=ピストンで覆われている） -->
+        <rect x="36" y="210" width="12" height="40" rx="2" fill="#a0aec0" stroke="#2d3748" stroke-width="1"/>
+        <rect x="172" y="210" width="12" height="40" rx="2" fill="#a0aec0" stroke="#2d3748" stroke-width="1"/>
+        <!-- 燃焼 -->
+        <circle cx="110" cy="70" r="15" fill="#ed8936" opacity="0.7">
+          <animate attributeName="r" values="10;20;10" dur="0.8s" repeatCount="indefinite"/>
+        </circle>
+        <line x1="110" y1="48" x2="110" y2="60" stroke="#c53030" stroke-width="2" stroke-dasharray="3,2"/>
+        <text x="145" y="58" font-size="9" fill="#c53030">燃料噴射</text>
+        <!-- ピストン下降 -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,70" dur="2s" repeatCount="indefinite"/>
+          <rect x="47" y="90" width="126" height="35" rx="3" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+          <line x1="110" y1="125" x2="110" y2="200" stroke="#2d3748" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <text x="110" y="310" text-anchor="middle" font-size="10" fill="#c53030">燃焼・膨張 → 排気・掃気</text>
+      </g>
+
+      <text x="280" y="345" text-anchor="middle" font-size="12" fill="#718096">クランク軸1回転（360°）で1サイクル完了</text>
+    </svg>
+    <p class="caption">図1-3 2サイクルディーゼル機関の作動原理</p>
+  </div>
+
+  <p>2サイクル機関では、ピストンが下死点付近で<strong>掃気ポートが開き</strong>、過給機などで圧縮された空気がシリンダ内に押し込まれ、燃焼ガスを排気弁から押し出します。これを<strong>掃気（スカベンジング）</strong>と呼びます。</p>
+
+  <!-- ==================== 5. 4サイクルと2サイクルの比較 ==================== -->
+  <h2>5. 4サイクルと2サイクルの比較</h2>
+
+  <table>
+    <thead>
+      <tr><th>項目</th><th>4サイクル</th><th>2サイクル</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1サイクルに必要なクランク回転</td><td>2回転（720°）</td><td>1回転（360°）</td></tr>
+      <tr><td>爆発回数（同一回転数）</td><td>少ない（1/2）</td><td>多い（理論上2倍）</td></tr>
+      <tr><td>出力（同一シリンダ容積）</td><td>小さい</td><td>大きい（理論上1.7倍程度）</td></tr>
+      <tr><td>燃費（燃料消費率）</td><td>良い</td><td>やや劣る</td></tr>
+      <tr><td>構造</td><td>弁機構が複雑</td><td>掃気装置が必要</td></tr>
+      <tr><td>回転数</td><td>中速〜高速（300〜1,800rpm）</td><td>低速〜中速（80〜500rpm）</td></tr>
+      <tr><td>主な用途</td><td><strong>内航船の主機・発電機</strong></td><td>大型外航船の主機</td></tr>
+      <tr><td>整備性</td><td>良好（各部アクセスしやすい）</td><td>掃気ポートの清掃が必要</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-point">
+    <p>内航船では<strong>4サイクル中速・高速ディーゼル機関</strong>が主流です。2サイクル機関は主に大型外航船に使われ、内航タンカーで目にする機会は限られます。6級海技士試験では両方の仕組みを問われるため、違いをしっかり理解しましょう。</p>
+  </div>
+
+  <!-- ==================== 6. 出力と回転数の関係 ==================== -->
+  <h2>6. 出力と回転数の関係</h2>
+  <p>機関の出力は「馬力」や「キロワット」で表します。出力とトルク（回転力）、回転数の関係を理解しましょう。</p>
+
+  <h3>基本公式</h3>
+  <div class="box box-info">
+    <h4>出力の計算式</h4>
+    <p><strong>P = 2&pi; &times; N &times; T</strong></p>
+    <ul>
+      <li>P : 出力 [W]（ワット）</li>
+      <li>N : 回転数 [rps]（毎秒回転数）</li>
+      <li>T : トルク [N&middot;m]（ニュートンメートル）</li>
+    </ul>
+    <p>つまり、<strong>出力 = トルク &times; 回転数</strong> に比例します。</p>
+  </div>
+
+  <h3>馬力の換算</h3>
+  <ul>
+    <li><strong>1馬力（PS）</strong> = 0.7355 kW</li>
+    <li><strong>1 kW</strong> = 1.3596 PS</li>
+    <li>裕洋丸の主機: 約1,000 PS &fallingdotseq; 約735 kW</li>
+  </ul>
+
+  <h3>回転数による分類</h3>
+  <table>
+    <thead>
+      <tr><th>分類</th><th>回転数の目安</th><th>用途例</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>低速機関</td><td>80〜300 rpm</td><td>大型外航船（直結駆動）</td></tr>
+      <tr><td>中速機関</td><td>300〜1,000 rpm</td><td><strong>内航船の主機</strong>、発電機</td></tr>
+      <tr><td>高速機関</td><td>1,000〜1,800 rpm</td><td>小型船、高速船、非常用発電機</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-example">
+    <h4>実務メモ: 回転数と速力の関係</h4>
+    <p>裕洋丸は通常航海時に主機を約750rpm前後で運転し、船速約11ノットを得ています。荒天時や入出港時には回転数を下げて安全航行を確保します。機関日誌には毎時の回転数と排気温度を記録し、異常の早期発見に努めます。</p>
+  </div>
+
+  <!-- ==================== 7. 燃料消費率 ==================== -->
+  <h2>7. 燃料消費率</h2>
+  <p>燃料消費率（SFC: Specific Fuel Consumption）は、単位出力あたりの燃料消費量で、機関の経済性を示す重要な指標です。</p>
+
+  <h3>燃料消費率の単位</h3>
+  <ul>
+    <li><strong>g/kWh</strong>: 1kWの出力を1時間得るのに必要な燃料の質量（グラム）</li>
+    <li><strong>g/PSh</strong>: 1馬力の出力を1時間得るのに必要な燃料の質量</li>
+    <li>換算: g/PSh = g/kWh &times; 0.7355</li>
+  </ul>
+
+  <h3>目安となる燃料消費率</h3>
+  <table>
+    <thead>
+      <tr><th>機関の種類</th><th>燃料消費率（g/kWh）</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>低速2サイクル機関</td><td>160〜180</td></tr>
+      <tr><td>中速4サイクル機関</td><td>190〜220</td></tr>
+      <tr><td>高速4サイクル機関</td><td>210〜240</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-warning">
+    <h4>注意: 燃費に影響する要因</h4>
+    <p>燃料消費率は一定ではありません。負荷率（何%の力で動かしているか）、整備状態、燃料の質、外気温、冷却水温度などにより変動します。特に<strong>噴射弁のノズルの摩耗</strong>や<strong>過給機の汚れ</strong>は燃費悪化の大きな要因です。定期的な保守整備が経済運航の鍵となります。</p>
+  </div>
+
+  <!-- ==================== 8. 内航船で使われるディーゼル機関の特徴 ==================== -->
+  <h2>8. 内航船で使われるディーゼル機関の特徴</h2>
+  <p>内航船（日本の沿岸を航行する船舶）の機関には、外航船とは異なるいくつかの特徴があります。</p>
+
+  <h3>主な特徴</h3>
+  <ul>
+    <li><strong>4サイクル中速・高速機関が中心</strong>: 船型が小さいため、コンパクトで保守しやすい機関が選ばれる</li>
+    <li><strong>出力規模</strong>: 数百馬力〜数千馬力。タンカーでは500〜3,000PS程度が多い</li>
+    <li><strong>燃料</strong>: 内航船はA重油（LSA重油）が主流。C重油は一部の大型船のみ</li>
+    <li><strong>減速ギア付き</strong>: 中速・高速機関はプロペラとの回転数差が大きいため、減速機（ギアボックス）を介して接続</li>
+    <li><strong>過給機付き</strong>: 出力向上と燃費改善のため、ほとんどの機関にターボチャージャーが装備</li>
+    <li><strong>M0運転対応</strong>: 機関室無人化運転に対応した監視・警報システムを搭載</li>
+  </ul>
+
+  <div class="box box-example">
+    <h4>実務メモ: 内航タンカーの機関管理</h4>
+    <p>内航タンカーは比較的短い航海（数時間〜1日程度）を頻繁に繰り返すため、<strong>起動・停止の回数</strong>が外航船より格段に多くなります。これは機関各部への熱衝撃となるため、暖機運転と冷却運転を確実に行うことが重要です。裕洋丸でも出港前は必ず15分以上の暖機運転を実施しています。</p>
+  </div>
+
+  <div class="key-point">
+    <p>内航船のディーゼル機関は、<strong>4サイクル・中速・過給機付き・A重油使用</strong>が標準的な構成です。短距離航海の繰り返しという内航船特有の運航パターンに対応するため、暖機・冷却運転の確実な実施が機関寿命を左右します。</p>
+  </div>
+
+  <!-- ==================== 9. PV線図 ==================== -->
+  <h2>9. PV線図（圧力-容積線図）</h2>
+  <p>PV線図は、シリンダ内の圧力（P）と容積（V）の関係をグラフにしたもので、機関の作動状態を理論的に把握するための基本ツールです。</p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 500 380" width="100%" style="max-width:500px;">
+      <defs>
+        <marker id="arrowPV" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#2d3748"/>
+        </marker>
+      </defs>
+      <!-- 軸 -->
+      <line x1="80" y1="310" x2="460" y2="310" stroke="#2d3748" stroke-width="2" marker-end="url(#arrowPV)"/>
+      <line x1="80" y1="310" x2="80" y2="30" stroke="#2d3748" stroke-width="2" marker-end="url(#arrowPV)"/>
+      <text x="470" y="315" font-size="14" fill="#2d3748" font-weight="bold">V（容積）</text>
+      <text x="45" y="25" font-size="14" fill="#2d3748" font-weight="bold">P（圧力）</text>
+
+      <!-- 理論ディーゼルサイクル -->
+      <!-- 1→2: 断熱圧縮 -->
+      <path d="M380,280 C350,260 200,200 130,70" stroke="#2b6cb0" stroke-width="3" fill="none"/>
+      <text x="230" y="150" font-size="11" fill="#2b6cb0" font-weight="bold">1→2 圧縮</text>
+      <!-- 2→3: 等圧燃焼 -->
+      <line x1="130" y1="70" x2="220" y2="70" stroke="#e53e3e" stroke-width="3"/>
+      <text x="175" y="60" font-size="11" fill="#e53e3e" font-weight="bold">2→3 燃焼</text>
+      <!-- 3→4: 断熱膨張 -->
+      <path d="M220,70 C250,100 350,180 380,280" stroke="#38a169" stroke-width="3" fill="none"/>
+      <text x="330" y="170" font-size="11" fill="#38a169" font-weight="bold">3→4 膨張</text>
+      <!-- 4→1: 等容排気 -->
+      <line x1="380" y1="280" x2="380" y2="280" stroke="#718096" stroke-width="2"/>
+      <!-- 実際には4→1は等容変化（排気弁開） -->
+      <path d="M380,280 L380,280" stroke="#718096" stroke-width="2" stroke-dasharray="5,3"/>
+
+      <!-- 各点のラベル -->
+      <circle cx="380" cy="280" r="5" fill="#1a365d"/>
+      <text x="390" y="290" font-size="12" fill="#1a365d" font-weight="bold">1(下死点)</text>
+      <circle cx="130" cy="70" r="5" fill="#1a365d"/>
+      <text x="95" y="62" font-size="12" fill="#1a365d" font-weight="bold">2</text>
+      <circle cx="220" cy="70" r="5" fill="#1a365d"/>
+      <text x="225" y="62" font-size="12" fill="#1a365d" font-weight="bold">3</text>
+      <circle cx="380" cy="280" r="5" fill="#1a365d"/>
+      <text x="385" y="270" font-size="12" fill="#1a365d" font-weight="bold">4</text>
+
+      <!-- 上死点・下死点の線 -->
+      <line x1="130" y1="310" x2="130" y2="305" stroke="#718096" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="130" y="330" text-anchor="middle" font-size="10" fill="#718096">Vc(すきま容積)</text>
+      <text x="380" y="330" text-anchor="middle" font-size="10" fill="#718096">Vs+Vc(全容積)</text>
+
+      <!-- 面積が仕事を表すことを示す -->
+      <path d="M130,70 L220,70 C250,100 350,180 380,280 C350,260 200,200 130,70 Z" fill="#2b6cb0" opacity="0.1"/>
+      <text x="250" y="210" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="bold">囲まれた面積</text>
+      <text x="250" y="226" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="bold">= 1サイクルの仕事量</text>
+    </svg>
+    <p class="caption">図1-4 理論ディーゼルサイクルのPV線図（簡略化）</p>
+  </div>
+
+  <h3>PV線図の読み方</h3>
+  <ul>
+    <li><strong>1→2（圧縮）</strong>: 容積が減少し、圧力が急上昇（断熱圧縮）</li>
+    <li><strong>2→3（燃焼）</strong>: 上死点付近で燃料噴射・燃焼。ディーゼルサイクルでは<strong>等圧燃焼</strong>（理論上は圧力一定で容積が増加）</li>
+    <li><strong>3→4（膨張）</strong>: 高圧ガスが膨張し、ピストンを押し下げる（断熱膨張）。<strong>この過程で仕事を取り出す</strong></li>
+    <li><strong>4→1（排気）</strong>: 排気弁が開き、圧力が急落</li>
+    <li><strong>線で囲まれた面積</strong>が1サイクルで得られる仕事量を表す</li>
+  </ul>
+
+  <div class="box box-info">
+    <h4>インジケータ線図（実際の計測）</h4>
+    <p>実際の機関では、シリンダ内の圧力を計測器（インジケータ）で記録した<strong>インジケータ線図</strong>を使います。理論サイクルとの差異から、燃焼状態の良否や異常を診断できます。最高圧力（Pmax）が極端に高い場合はノッキング、低い場合は燃焼不良の疑いがあります。</p>
+  </div>
+
+  <div class="key-point">
+    <p>PV線図において、<strong>囲まれた面積が大きいほど1サイクルあたりの仕事量が多い</strong>ことを意味します。燃焼状態が良好で、圧縮が十分に行われているほど面積は大きくなります。日常の機関管理では、排気温度やシリンダ圧力の各シリンダ間バラツキを確認することで、間接的にPV線図の状態を推測できます。</p>
+  </div>
+
+  <!-- ==================== 章末まとめ ==================== -->
+  <h2>章末まとめ</h2>
+  <div class="box box-success">
+    <h4>この章で学んだこと</h4>
+    <ol>
+      <li><strong>熱機関</strong>は燃料の化学エネルギーを機械エネルギーに変換する装置である</li>
+      <li>ディーゼル機関は<strong>圧縮着火</strong>方式（点火プラグ不要）で、高い熱効率を持つ</li>
+      <li><strong>4サイクル機関</strong>はクランク2回転で1サイクル、<strong>2サイクル機関</strong>は1回転で1サイクルを完了する</li>
+      <li>内航船では<strong>4サイクル中速ディーゼル機関</strong>が主流</li>
+      <li>機関の出力は<strong>トルク &times; 回転数</strong>に比例する</li>
+      <li>燃料消費率（SFC）は機関の経済性を示す重要な指標</li>
+      <li><strong>PV線図</strong>の囲まれた面積が1サイクルの仕事量を表す</li>
+    </ol>
+  </div>
+
+  <!-- ==================== クイズ ==================== -->
+  <div class="quiz">
+    <h4>章末クイズ</h4>
+
+    <p><strong>Q1.</strong> ディーゼル機関がガソリン機関と異なる最も重要な特徴はどれか?</p>
+    <ul class="quiz-options">
+      <li>a) 4サイクルで動作すること</li>
+      <li>b) 圧縮した空気に燃料を噴射して自己着火させること</li>
+      <li>c) ピストンが往復運動すること</li>
+      <li>d) クランク軸で回転運動に変換すること</li>
+    </ul>
+    <button onclick="showAnswer('ans1')" style="margin:0.5rem 0;padding:0.4rem 1rem;border-radius:6px;border:1px solid #9f7aea;background:#faf5ff;color:#6b46c1;cursor:pointer;">解答を見る</button>
+    <div class="quiz-answer" id="ans1">
+      <p><strong>正解: b)</strong> ディーゼル機関は点火プラグを使わず、空気を高圧縮して高温にし、そこに燃料を噴射して自己着火させます。これが最大の特徴であり、高い圧縮比と熱効率の根拠となっています。a), c), d)はガソリン機関にも共通する特徴です。</p>
+    </div>
+
+    <hr style="margin:1rem 0;border:none;border-top:1px solid #e9d8fd;">
+
+    <p><strong>Q2.</strong> 4サイクルディーゼル機関で、実際に動力（仕事）を生み出す行程はどれか?</p>
+    <ul class="quiz-options">
+      <li>a) 吸気行程</li>
+      <li>b) 圧縮行程</li>
+      <li>c) 燃焼・膨張行程</li>
+      <li>d) 排気行程</li>
+    </ul>
+    <button onclick="showAnswer('ans2')" style="margin:0.5rem 0;padding:0.4rem 1rem;border-radius:6px;border:1px solid #9f7aea;background:#faf5ff;color:#6b46c1;cursor:pointer;">解答を見る</button>
+    <div class="quiz-answer" id="ans2">
+      <p><strong>正解: c)</strong> 燃焼・膨張行程（爆発行程）のみがピストンを力強く押し下げ、仕事を取り出します。他の3行程はクランク軸やフライホイールの慣性力で行われます。</p>
+    </div>
+
+    <hr style="margin:1rem 0;border:none;border-top:1px solid #e9d8fd;">
+
+    <p><strong>Q3.</strong> 内航タンカーの主機として最も一般的な機関の種類はどれか?</p>
+    <ul class="quiz-options">
+      <li>a) 2サイクル低速ディーゼル機関</li>
+      <li>b) 4サイクル中速ディーゼル機関</li>
+      <li>c) ガスタービン機関</li>
+      <li>d) 蒸気タービン機関</li>
+    </ul>
+    <button onclick="showAnswer('ans3')" style="margin:0.5rem 0;padding:0.4rem 1rem;border-radius:6px;border:1px solid #9f7aea;background:#faf5ff;color:#6b46c1;cursor:pointer;">解答を見る</button>
+    <div class="quiz-answer" id="ans3">
+      <p><strong>正解: b)</strong> 内航船では4サイクル中速ディーゼル機関が主流です。コンパクトで保守性が良く、減速ギアを介してプロペラを駆動します。2サイクル低速機関は主に大型外航船に使われます。</p>
+    </div>
+  </div>
+
+  <!-- ==================== 章末ナビ ==================== -->
+  <div class="chapter-nav">
+    <a href="index.html">&larr; 目次に戻る</a>
+    <a href="eng02_diesel_structure.html">次章: ディーゼル機関の構造 &rarr;</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p>内航船員教材 機関編 | 有限会社トミタ海運</p>
+</footer>
+
+<script>
+function showAnswer(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+
+var autoPlayTimer = null;
+function showPhase4(n) {
+  // 自動再生タイマーをクリア
+  if (autoPlayTimer) { clearInterval(autoPlayTimer); autoPlayTimer = null; }
+
+  var phases = document.querySelectorAll('.cycle-phase');
+  var tabs = document.querySelectorAll('.cycle-tab');
+  for (var i = 0; i < phases.length; i++) {
+    phases[i].classList.remove('active');
+    tabs[i].classList.remove('active');
+  }
+  phases[n].classList.add('active');
+  tabs[n].classList.add('active');
+
+  // 自動再生モード
+  if (n === 4) {
+    var current = 0;
+    // まず0を表示
+    phases[4].classList.remove('active');
+    tabs[4].classList.add('active');
+    phases[0].classList.add('active');
+    tabs[0].classList.add('active');
+    autoPlayTimer = setInterval(function() {
+      for (var i = 0; i < 4; i++) {
+        phases[i].classList.remove('active');
+        tabs[i].classList.remove('active');
+      }
+      current = (current + 1) % 4;
+      phases[current].classList.add('active');
+      tabs[current].classList.add('active');
+    }, 2500);
+  }
+}
+</script>
+
+</body>
+</html>
